@@ -11,7 +11,12 @@ prepare:
 
 #Bibliothèque sqlite3
 sqlite:
-	gcc libs/sqlite/sqlite3.c $(LIBSQLITE) -c
+	gcc -o build/sqlite3.o libs/sqlite/sqlite3.c $(LIBSQLITE) -c build/
+	
+#Génération de la documentation Doxygen
+doc:
+	@if [ ! -d ./doxygen-pages ] ; then mkdir ./doxygen-pages ; fi;
+	@doxygen doxygen.config
 	
 #Nettoyage du dossier de build
 clean:
