@@ -11,7 +11,7 @@ prepare:
 
 #Bibliothèque sqlite3
 sqlite:
-	gcc -o build/sqlite3.o libs/sqlite/sqlite3.c $(LIBSQLITE) -c build/
+	gcc -o build/sqlite3.o libs/sqlite/sqlite3.c $(LIBSQLITE) -c
 	
 #Génération de la documentation Doxygen
 doc:
