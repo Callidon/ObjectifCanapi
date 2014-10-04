@@ -5,10 +5,9 @@
 * \author Thomas Minier
 * \date ?
 */
-#ifndef BDConnector_H
-#define BDConnector_H
+#ifndef BDCONNECTOR_H
+#define BDCONNECTOR_H
 #include <string>
-#include <list>
 #include "../libs/sqlite/sqlite3.h"
 
 //--------------------------------------------------

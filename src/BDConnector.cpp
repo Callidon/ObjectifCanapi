@@ -18,7 +18,7 @@ BDConnector::BDConnector(string fichier_db) {
 	//connexion à la base de données
 	rc = sqlite3_open((char*)fichier_db.c_str(), &db);
    if( rc ) { //si la connexion a échouée
-      cout << "Erreur : impossible de se connecter à la base de données" << endl;
+		cout << "Erreur : impossible de se connecter à la base de données" << endl;
    }
 }
 
@@ -42,7 +42,6 @@ list<list<string> > BDConnector::query(string sql_query) {
 	int ind;
 	//exécution de la requête & vérification que tout s'est bien passé
 	if( sqlite3_prepare_v2(this->db, requete, -1, &statement, 0) == SQLITE_OK) {
-		cout << "yop" << endl;
 		//on récupère le nombre de colonnes
 		int nb_cols = sqlite3_column_count(statement);
 		//on récupère la 1ère ligne
