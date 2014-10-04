@@ -8,6 +8,7 @@
 #ifndef BDCONNECTOR_H
 #define BDCONNECTOR_H
 #include <string>
+#include "FactorySQL.hpp"
 #include "../libs/sqlite/sqlite3.h"
 
 //--------------------------------------------------
@@ -19,6 +20,7 @@ class BDConnector {
 	private:
 		//Attributs
 		sqlite3 * db; //!<Pointeur vers la base de données
+		FactorySQL fabrique; //!<Fabrique servant à générer les objets de la bibliothèque
 		
 	public:
 		//Constructeur & destructeur
