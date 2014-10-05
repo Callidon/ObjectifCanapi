@@ -16,13 +16,14 @@
 * \brief Classe réalisant l'interface Factory & instanciant des objets de type Video
 */
 
-class FactorySQL: public Factory {
+class FactorySQL: virtual public Factory {
 	
 	public:
 		FactorySQL();
 		~FactorySQL();
-		std::list<Video> generateMedia(std::list<std::string>);
-}
+		//Méthode héritée de Factory
+		virtual std::list<Video> generateMedia(std::list<std::string>);
+};
 
 //--------------------------------------------------
 #endif

@@ -9,6 +9,7 @@
 #define FACTORY_H
 
 #include <list>
+#include <string>
 //#include "Video.hpp"
 
 //--------------------------------------------------
@@ -22,7 +23,7 @@ class Factory {
 	public:
 		virtual std::list<Video> generateMedia(std::list<std::string>) = 0;
 			
-}
+};
 
 //--------------------------------------------------
 #endif
