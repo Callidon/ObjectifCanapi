@@ -22,7 +22,7 @@ class FactorySQL: virtual public Factory {
 		FactorySQL();
 		~FactorySQL();
 		//Méthode héritée de Factory
-		virtual std::list<Video> generateMedia(std::list<std::string>);
+		virtual std::list<Video> generateMedia(std::list<std::string> listeParams);
 };
 
 //--------------------------------------------------

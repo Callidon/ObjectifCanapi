@@ -21,7 +21,7 @@
 class Factory {
 	
 	public:
-		virtual std::list<Video> generateMedia(std::list<std::string>) = 0;
+		virtual std::list<Video> generateMedia(std::list<std::string> listeParams) = 0;
 			
 };
 

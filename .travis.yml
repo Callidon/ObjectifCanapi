@@ -3,4 +3,4 @@ notifications:
 language: cpp
 compiler: g++
 
-script: make sqlite
+script: make prepare & make sqlite

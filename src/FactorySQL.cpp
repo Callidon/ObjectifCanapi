@@ -26,7 +26,7 @@ FactorySQL::~FactorySQL() {};
 /*!
 * \brief Méthode générant des trucs (à préciser)
 */
-list<Video> FactorySQL::generateMedia(list<string>) {
+list<Video> FactorySQL::generateMedia(list<string> listeParams) {
 
 }
 
