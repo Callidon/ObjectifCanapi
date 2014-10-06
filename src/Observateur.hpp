@@ -8,7 +8,7 @@
 #ifndef OBSERVATEUR_H
 #define OBSERVATEUR_H
 
-//#include "Video.hpp"
+#include "Video.hpp"
 
 //--------------------------------------------------
 /*!
@@ -19,7 +19,7 @@
 class Observateur {
 	
 	public:
-		virtual void notifier(Video video) = 0;
+		virtual void notifier(Video * video) = 0;
 			
 };
 

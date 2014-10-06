@@ -28,7 +28,7 @@ class FilmObservateur: virtual public Observateur {
 		FilmObservateur(BDConnector * base);
 		~FilmObservateur();
 		//Méthode héritée de Observateur
-		virtual void notifier(Video video);
+		virtual void notifier(Video * video);
 };
 
 //--------------------------------------------------

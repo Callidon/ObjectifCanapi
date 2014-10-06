@@ -64,3 +64,18 @@ list<list<string> > BDConnector::query(string sql_query) {
 	}
 	return resultats;
 }
+
+//--------------------------------------------------
+/*!
+* \brief Méthode qui récupère soit tous les films, soit touts les épisodes stockée en base et renvoie sous forme de liste
+*/
+list<Video> recupererVideos(string typeVideo) {
+	list<Video> videos;
+	if(typeVideo == "Film") { //si on veut récupérer les films
+		
+	} else if(typeVideo == "Episode") { //si on veut récupérer les épisodes
+		
+	} else {
+		return videos;
+	}
+}

@@ -10,7 +10,7 @@
 
 #include <list>
 #include <string>
-//#include "Video.hpp"
+#include "Video.hpp"
 
 //--------------------------------------------------
 /*!
@@ -21,7 +21,7 @@
 class Factory {
 	
 	public:
-		virtual std::list<Video> generateMedia(std::list<std::string> listeParams) = 0;
+		virtual Video * generateMedia(std::list<std::string> listeParams, std::string typeVideo) = 0;
 			
 };
 

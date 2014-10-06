@@ -28,6 +28,7 @@ class BDConnector {
 		~BDConnector();
 		//Méthodes
 		std::list<std::list<std::string> > query(std::string sql_query);
+		std::list<Video> recupererVideos(std::string typeVideo);
 };
 //--------------------------------------------------
 #endif
