@@ -5,10 +5,11 @@
 * \author Thomas Minier
 * \date ?
 */
-#ifndef BDConnector_H
-#define BDConnector_H
+#ifndef BDCONNECTOR_H
+#define BDCONNECTOR_H
 #include <string>
-#include "../libs/sqlite3/sqlite3.hpp"
+#include "FactorySQL.hpp"
+#include "../libs/sqlite/sqlite3.h"
 
 //--------------------------------------------------
 /*!
@@ -19,14 +20,15 @@ class BDConnector {
 	private:
 		//Attributs
 		sqlite3 * db; //!<Pointeur vers la base de données
-		char *zErrMsg; //!<Pointeur vers le message d'erreur
+		FactorySQL fabrique; //!<Fabrique servant à générer les objets de la bibliothèque
 		
 	public:
 		//Constructeur & destructeur
-		BDConnector(string fichier_db);
+		BDConnector(std::string fichier_db);
 		~BDConnector();
 		//Méthodes
-		void query(string sql_query);
+		std::list<std::list<std::string> > query(std::string sql_query);
+		std::list<Video> recupererVideos(std::string typeVideo);
 };
 //--------------------------------------------------
 #endif
