@@ -4,6 +4,7 @@
 #---------------------------------------------------------
 CC = gcc
 CXX = g++
+FLAGS = -std=c++11
 SQLITEFLAGS = -lpthread -ldl
 
 #---------------------------------------------------------
@@ -24,7 +25,7 @@ prepare:
 #---------------------------------------------------------
 # Bibliothèques (sqlite3)
 #---------------------------------------------------------
-sqlite:
+sqlite3:
 	$(CC) -o build/$@.o libs/sqlite/$@.c $(SQLITEFLAGS) -c
 	
 #---------------------------------------------------------
@@ -34,28 +35,28 @@ BDConnector:
 	$(CXX) -o build/$@.o src/$@.cpp $(SQLITEFLAGS) -c
 
 Bibliotheque:
-	$(CXX) -o build/$@.o src/$@.cpp -c
+	$(CXX) $(FLAGS) -o build/$@.o src/$@.cpp -c
 	
 Episode:
-	$(CXX) -o build/$@.o src/$@.cpp -c
+	$(CXX) $(FLAGS) -o build/$@.o src/$@.cpp -c
 	
 FactorySQL:
-	$(CXX) -o build/$@.o src/$@.cpp -c
+	$(CXX) $(FLAGS) -o build/$@.o src/$@.cpp -c
 	
 Film:
-	$(CXX) -o build/$@.o src/$@.cpp -c
+	$(CXX) $(FLAGS) -o build/$@.o src/$@.cpp -c
 	
 FilmObservateur:
-	$(CXX) -o build/$@.o src/$@.cpp -c
+	$(CXX) $(FLAGS) -o build/$@.o src/$@.cpp -c
 	
 Personne:
-	$(CXX) -o build/$@.o src/$@.cpp -c
+	$(CXX) $(FLAGS) -o build/$@.o src/$@.cpp -c
 	
 Serie:
-	$(CXX) -o build/$@.o src/$@.cpp -c
+	$(CXX) $(FLAGS) -o build/$@.o src/$@.cpp -c
 
 Video:
-	$(CXX) -o build/$@.o src/$@.cpp -c
+	$(CXX) $(FLAGS) -o build/$@.o src/$@.cpp -c
 
 #---------------------------------------------------------
 # Génération de la documentation Doxygen

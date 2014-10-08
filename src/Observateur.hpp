@@ -8,8 +8,7 @@
 #ifndef OBSERVATEUR_H
 #define OBSERVATEUR_H
 
-#include "Video.hpp"
-
+class Video;
 //--------------------------------------------------
 /*!
 * \class Observateur

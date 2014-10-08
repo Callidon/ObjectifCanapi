@@ -10,7 +10,7 @@
 
 #include <list>
 #include <string>
-#include "Video.hpp"
+class Video;
 
 //--------------------------------------------------
 /*!

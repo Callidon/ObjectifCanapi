@@ -8,7 +8,7 @@
 #ifndef Video_H
 #define Video_H
 
-//#include "Observateur.hpp"
+#include "FilmObservateur.hpp"
 #include "Personne.hpp"
 
 #include <string>
@@ -22,6 +22,7 @@
 class Video {
 	private:
 		//Attributs
+		int id;
 		std::string titre;
 		std::string lien; //lien vers BA
 		int annee;
@@ -30,11 +31,11 @@ class Video {
 		std::list<Personne> realisateurs;
 		bool vu;
 		bool aVoir;
-		Observateur observateur;
+		FilmObservateur * observateur;
 		
 	public:
 		//Constructeur & destructeur
-		Video(std::string titre, std::string lien, std::string synopsis, int annee, Observateur obs);
+		Video(int id, std::string titre, std::string lien, std::string synopsis, int annee);
 		~Video();
 		//Méthodes
 		std::string getTitre();
@@ -47,6 +48,8 @@ class Video {
 		void addActeur(Personne acteur);
 		std::list<Personne> getReal();
 		void addReal(Personne real);
+		void setObservateur(FilmObservateur * obs);
+		FilmObservateur * getObservateur();
 		
 		virtual std::string getStatut() = 0; //"à voir" ou "vu"
 		void marquerVu();

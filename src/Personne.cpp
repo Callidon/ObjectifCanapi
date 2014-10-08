@@ -63,6 +63,6 @@ void Personne::setPrenom(string prenom){
 /*!
 * \brief Méthode qui retourne la liste des films;
 */
-list<Video> Personne::getFilms(){
+list<Video*> Personne::getFilms(){
 	return this->films;
 }

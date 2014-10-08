@@ -8,7 +8,7 @@
 #ifndef Personne_H
 #define Personne_H
 
-#include "Video.hpp" 
+class Video;
 
 #include <string>
 #include <list>
@@ -21,7 +21,7 @@ class Personne {
 		//Attributs
 		std::string nom;
 		std::string prenom;
-		std::list<Video> films;
+		std::list<Video*> films;
 		
 	public:
 		//Constructeur & destructeur
@@ -32,7 +32,7 @@ class Personne {
 		void setNom(std::string nom);
 		std::string getPrenom();
 		void setPrenom(std::string prenom);
-		std::list<Video> getFilms();
+		std::list<Video*> getFilms();
 };
 //--------------------------------------------------
 #endif

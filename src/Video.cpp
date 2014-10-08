@@ -13,14 +13,15 @@ using namespace std;
 /*!
 * \brief Constructeur de base
 */
-Video::Video(string titre, string lien, string synopsis, int annee, Observateur obs) {
+Video::Video(int id, string titre, string lien, string synopsis, int annee) {
+	this->id = id;
 	this->titre = titre;
 	this->lien = lien;
 	this->annee = annee;
 	this->synopsis = synopsis;
 	this->vu = false;
 	this->aVoir = false;
-	this->observateur = obs;
+	this->observateur = 0;
 }
 
 //--------------------------------------------------
@@ -44,7 +45,7 @@ string Video::getTitre(){
 */
 void Video::setTitre(string titre){
 	this->titre = titre;
-	this->observateur.notifier(this);
+	this->observateur->notifier(this);
 }
 
 //--------------------------------------------------
@@ -61,7 +62,7 @@ string Video::getLien(){
 */
 void Video::setLien(string lien){
 	this->lien = lien;
-	this->observateur.notifier(this);
+	this->observateur->notifier(this);
 }
 
 //--------------------------------------------------
@@ -78,7 +79,7 @@ int Video::getAnnee(){
 */
 void Video::setAnnee(int annee){
 	this->annee = annee;
-	this->observateur.notifier(this);
+	this->observateur->notifier(this);
 }
 
 //--------------------------------------------------
@@ -95,7 +96,7 @@ list<Personne> Video::getActeurs(){
 */
 void Video::addActeur(Personne acteur){
 	this->acteurs.push_back(acteur);
-	this->observateur.notifier(this);
+	this->observateur->notifier(this);
 }
 
 //--------------------------------------------------
@@ -112,16 +113,23 @@ list<Personne> Video::getReal(){
 */
 void Video::addReal(Personne real){
 	this->realisateurs.push_back(real);
-	this->observateur.notifier(this);
+	this->observateur->notifier(this);
+}
+
+//--------------------------------------------------
+/*!
+* \brief Méthode qui renvoie l'observateur associé à la classe
+*/
+void Video::setObservateur(FilmObservateur * obs){
+	this->observateur = obs;
 }
 
 //--------------------------------------------------
 /*!
 * \brief Méthode qui marque le Video en tant que VU
 */
-void Video::marquerVu(){
-	this->vu = true;
-	this->observateur.notifier(this);
+FilmObservateur * Video::getObservateur(){
+	return this->observateur;
 }
 
 //--------------------------------------------------
@@ -130,7 +138,7 @@ void Video::marquerVu(){
 */
 void Video::marquerVoir(){
 	this->aVoir = true;
-	this->observateur.notifier(this);
+	this->observateur->notifier(this);
 }
 
 //--------------------------------------------------
@@ -138,7 +146,7 @@ void Video::marquerVoir(){
 * \brief Méthode qui lance la lecture de la BA du Video
 */
 void Video::lire(){
-	string command = (char*)("firefox " + lien);
-	system(command);
+	string command = "firefox " + this->lien;
+	system((char*)command.c_str());
 }
  //lire BA
