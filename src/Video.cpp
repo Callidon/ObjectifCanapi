@@ -13,8 +13,7 @@ using namespace std;
 /*!
 * \brief Constructeur de base
 */
-Video::Video(int id, string titre, string lien, string synopsis, int annee) {
-	this->id = id;
+Video::Video(string titre, string lien, string synopsis, int annee) {
 	this->titre = titre;
 	this->lien = lien;
 	this->annee = annee;

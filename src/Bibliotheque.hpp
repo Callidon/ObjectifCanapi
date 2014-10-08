@@ -18,7 +18,7 @@
 class Bibliotheque {
 	private:
 		//Attributs
-		std::list<Video> videos;
+		std::list<Video*> videos;
 		std::string user;
 		
 	public:
@@ -28,8 +28,8 @@ class Bibliotheque {
 		//Methodes
 		std::string getUser();
 		void setUser(std::string user);
-		std::list<Video> getVideos();
-		void addVideo(Video video);
+		std::list<Video*> getVideos();
+		void addVideo(Video * video);
 };
 //--------------------------------------------------
 #endif

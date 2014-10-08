@@ -22,7 +22,6 @@
 class Video {
 	private:
 		//Attributs
-		int id;
 		std::string titre;
 		std::string lien; //lien vers BA
 		int annee;
@@ -35,7 +34,7 @@ class Video {
 		
 	public:
 		//Constructeur & destructeur
-		Video(int id, std::string titre, std::string lien, std::string synopsis, int annee);
+		Video(std::string titre, std::string lien, std::string synopsis, int annee);
 		~Video();
 		//Méthodes
 		std::string getTitre();

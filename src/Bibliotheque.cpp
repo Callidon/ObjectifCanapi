@@ -45,7 +45,7 @@ void Bibliotheque::setUser(string user) {
 /*!
 * \brief Méthode qui
 */
-list<Video> Bibliotheque::getVideos() {
+list<Video*> Bibliotheque::getVideos() {
 	return this->videos;
 }
 
@@ -53,6 +53,6 @@ list<Video> Bibliotheque::getVideos() {
 /*!
 * \brief Méthode qui
 */
-void Bibliotheque::addVideo(Video video) {
+void Bibliotheque::addVideo(Video * video) {
 	this->videos.push_back(video);
 }
