@@ -1,7 +1,7 @@
 /*!
 * \file Episode.cpp
 * \brief Fichier contenant l'implémentation de la classe Episode
-* \author Camille Le LUët
+* \author Camille Le Luët
 * \author Thomas Minier
 * \date ?
 */
@@ -13,8 +13,7 @@ using namespace std;
 /*!
 * \brief Constructeur de base
 */
-Episode::Episode(string titre, string lien, int annee, int numero, int saison, Observateur obs, string serie) {
-	Video::Video(titre, lien, synopsis, annee, obs);
+Episode::Episode(string titre, string lien, int annee, int numero, int saison, string serie, string synopsis):Video(titre, lien, synopsis, annee) {
 	this->numero = numero;
 	this->saison = saison;
 	this->serie = serie; //nom de la série

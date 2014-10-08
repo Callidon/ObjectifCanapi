@@ -25,7 +25,7 @@ class Episode : public virtual Video {
 		
 	public:
 		//Constructeur & destructeur
-		Episode(std::string titre, std::string lien, int annee, int numero, int saison, Observateur obs, std::string serie);
+		Episode(std::string titre, std::string lien, int annee, int numero, int saison, std::string serie, std::string synopsis);
 		~Episode();
 		//Methodes
 		int getNumero();
@@ -34,6 +34,8 @@ class Episode : public virtual Video {
 		void setSaison(int num);
 		std::string getSerie();
 		void setSerie(std::string serie);
+		//Méthode héritée de Video
+		virtual std::string getStatut();
 };
 //--------------------------------------------------
 #endif
