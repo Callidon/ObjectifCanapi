@@ -28,9 +28,11 @@ class Video {
 		std::string synopsis;
 		std::list<Personne> acteurs;
 		std::list<Personne> realisateurs;
+		FilmObservateur * observateur;
+		
+	protected:
 		bool vu;
 		bool aVoir;
-		FilmObservateur * observateur;
 		
 	public:
 		//Constructeur & destructeur

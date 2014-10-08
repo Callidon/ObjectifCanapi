@@ -22,11 +22,13 @@ class Film : public virtual Video {
 		
 	public:
 		//Constructeur & destructeur
-		Film(std::string titre, std::string lien, int annee, std::string affiche, Observateur obs, std::string synopsis);
+		Film(std::string titre, std::string lien, int annee, std::string affiche, std::string synopsis);
 		~Film();
 		//Methodes
 		std::string getAffiche(); //afficher l'affiche
 		void setAffiche(std::string aff);
+		//Méthode héritée de Video
+		virtual std::string getStatut();
 };
 //--------------------------------------------------
 #endif

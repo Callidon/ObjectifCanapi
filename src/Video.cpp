@@ -1,7 +1,7 @@
 /*!
 * \file Film.cpp
 * \brief Fichier contenant l'implémentation de la classe Video
-* \author Camille Le LUët
+* \author Camille Le Luët
 * \author Thomas Minier
 * \date ?
 */

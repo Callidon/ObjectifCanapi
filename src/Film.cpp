@@ -1,7 +1,7 @@
 /*!
 * \file Film.cpp
 * \brief Fichier contenant l'implémentation de la classe Film
-* \author Camille Le LUët
+* \author Camille Le Luët
 * \author Thomas Minier
 * \date ?
 */
@@ -12,11 +12,8 @@ using namespace std;
 /*!
 * \brief Constructeur de base
 */
-Film::Film(string titre, string lien, int annee, string affiche, Observateur obs, string synopsis) {
-	Video::Video(titre, lien, synopsis, annee, obs);
+Film::Film(string titre, string lien, int annee, string affiche, string synopsis):Video(titre, lien, synopsis, annee) {
 	this->affiche = affiche;
-	this->vu = false;
-	this->aVoir = false;
 }
 
 //--------------------------------------------------
