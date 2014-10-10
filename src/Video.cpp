@@ -85,7 +85,7 @@ void Video::setAnnee(int annee){
 /*!
 * \brief Méthode qui retourne la liste des acteurs (principaux) du Videos
 */
-list<Personne> Video::getActeurs(){
+list<shared_ptr<Personne> > Video::getActeurs(){
 	return this->acteurs;
 }
 
@@ -93,7 +93,7 @@ list<Personne> Video::getActeurs(){
 /*!
 * \brief Méthode qui ajoute un acteur à la liste
 */
-void Video::addActeur(Personne acteur){
+void Video::addActeur(shared_ptr<Personne> acteur){
 	this->acteurs.push_back(acteur);
 	this->observateur->notifier(this);
 }
@@ -102,7 +102,7 @@ void Video::addActeur(Personne acteur){
 /*!
 * \brief Méthode qui retourne la liste des réalisateurs du Video
 */
-list<Personne> Video::getReal(){
+list<shared_ptr<Personne> > Video::getReal(){
 	return this->realisateurs;
 }
 
@@ -110,7 +110,7 @@ list<Personne> Video::getReal(){
 /*!
 * \brief Méthode qui ajoute un realisateur à la liste
 */
-void Video::addReal(Personne real){
+void Video::addReal(shared_ptr<Personne> real){
 	this->realisateurs.push_back(real);
 	this->observateur->notifier(this);
 }

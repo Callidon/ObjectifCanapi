@@ -13,6 +13,7 @@
 
 #include <string>
 #include <list>
+#include <memory>
 #include <stdlib.h>
 
 //--------------------------------------------------
@@ -26,8 +27,8 @@ class Video {
 		std::string lien; //lien vers BA
 		int annee;
 		std::string synopsis;
-		std::list<Personne> acteurs;
-		std::list<Personne> realisateurs;
+		std::list<std::shared_ptr<Personne> > acteurs;
+		std::list<std::shared_ptr<Personne> > realisateurs;
 		FilmObservateur * observateur;
 		
 	protected:
@@ -45,10 +46,10 @@ class Video {
 		void setLien(std::string lien);
 		int getAnnee();
 		void setAnnee(int annee);
-		std::list<Personne> getActeurs();
-		void addActeur(Personne acteur);
-		std::list<Personne> getReal();
-		void addReal(Personne real);
+		std::list<std::shared_ptr<Personne> > getActeurs();
+		void addActeur(std::shared_ptr<Personne> acteur);
+		std::list<std::shared_ptr<Personne> > getReal();
+		void addReal(std::shared_ptr<Personne> real);
 		void setObservateur(FilmObservateur * obs);
 		FilmObservateur * getObservateur();
 		
