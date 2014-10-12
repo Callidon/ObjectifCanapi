@@ -11,10 +11,10 @@ SQLITEFLAGS = -lpthread -ldl
 # Compilation complète du projet
 #---------------------------------------------------------
 all: objets
-	echo "nothing yet"
+	@echo "nothing yet"
 	
 objets:
-	echo "nothing yet"
+	@echo "nothing yet"
 
 #---------------------------------------------------------
 # Création du dossier de build

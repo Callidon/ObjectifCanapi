@@ -63,6 +63,15 @@ void Personne::setPrenom(string prenom){
 /*!
 * \brief Méthode qui retourne la liste des films;
 */
-list<shared_ptr<Video> > Personne::getFilms(){
+vector<shared_ptr<Video> > Personne::getFilms(){
 	return this->films;
+}
+
+
+//--------------------------------------------------
+/*!
+* \brief Méthode qui ajoute un film à la liste;
+*/
+void Personne::addFilms(Video video){
+	this->films.push_back(video);
 }

@@ -20,7 +20,6 @@ Video::Video(string titre, string lien, string synopsis, int annee) {
 	this->synopsis = synopsis;
 	this->vu = false;
 	this->aVoir = false;
-	this->observateur = 0;
 }
 
 //--------------------------------------------------
@@ -44,7 +43,6 @@ string Video::getTitre(){
 */
 void Video::setTitre(string titre){
 	this->titre = titre;
-	this->observateur->notifier(this);
 }
 
 //--------------------------------------------------
@@ -61,7 +59,6 @@ string Video::getLien(){
 */
 void Video::setLien(string lien){
 	this->lien = lien;
-	this->observateur->notifier(this);
 }
 
 //--------------------------------------------------
@@ -78,14 +75,13 @@ int Video::getAnnee(){
 */
 void Video::setAnnee(int annee){
 	this->annee = annee;
-	this->observateur->notifier(this);
 }
 
 //--------------------------------------------------
 /*!
 * \brief Méthode qui retourne la liste des acteurs (principaux) du Videos
 */
-list<shared_ptr<Personne> > Video::getActeurs(){
+vector<shared_ptr<Personne> > Video::getActeurs(){
 	return this->acteurs;
 }
 
@@ -95,14 +91,13 @@ list<shared_ptr<Personne> > Video::getActeurs(){
 */
 void Video::addActeur(shared_ptr<Personne> acteur){
 	this->acteurs.push_back(acteur);
-	this->observateur->notifier(this);
 }
 
 //--------------------------------------------------
 /*!
 * \brief Méthode qui retourne la liste des réalisateurs du Video
 */
-list<shared_ptr<Personne> > Video::getReal(){
+vector<shared_ptr<Personne> > Video::getReal(){
 	return this->realisateurs;
 }
 
@@ -112,23 +107,6 @@ list<shared_ptr<Personne> > Video::getReal(){
 */
 void Video::addReal(shared_ptr<Personne> real){
 	this->realisateurs.push_back(real);
-	this->observateur->notifier(this);
-}
-
-//--------------------------------------------------
-/*!
-* \brief Méthode qui renvoie l'observateur associé à la classe
-*/
-void Video::setObservateur(FilmObservateur * obs){
-	this->observateur = obs;
-}
-
-//--------------------------------------------------
-/*!
-* \brief Méthode qui marque le Video en tant que VU
-*/
-FilmObservateur * Video::getObservateur(){
-	return this->observateur;
 }
 
 //--------------------------------------------------
@@ -137,7 +115,6 @@ FilmObservateur * Video::getObservateur(){
 */
 void Video::marquerVoir(){
 	this->aVoir = true;
-	this->observateur->notifier(this);
 }
 
 //--------------------------------------------------

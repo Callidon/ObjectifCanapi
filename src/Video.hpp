@@ -8,11 +8,10 @@
 #ifndef Video_H
 #define Video_H
 
-#include "FilmObservateur.hpp"
 #include "Personne.hpp"
 
 #include <string>
-#include <list>
+#include <vector>
 #include <memory>
 #include <stdlib.h>
 
@@ -27,9 +26,8 @@ class Video {
 		std::string lien; //lien vers BA
 		int annee;
 		std::string synopsis;
-		std::list<std::shared_ptr<Personne> > acteurs;
-		std::list<std::shared_ptr<Personne> > realisateurs;
-		FilmObservateur * observateur;
+		std::vector<std::shared_ptr<Personne> > acteurs;
+		std::vector<std::shared_ptr<Personne> > realisateurs;
 		
 	protected:
 		bool vu;
@@ -46,12 +44,10 @@ class Video {
 		void setLien(std::string lien);
 		int getAnnee();
 		void setAnnee(int annee);
-		std::list<std::shared_ptr<Personne> > getActeurs();
+		std::vector<std::shared_ptr<Personne> > getActeurs();
 		void addActeur(std::shared_ptr<Personne> acteur);
-		std::list<std::shared_ptr<Personne> > getReal();
+		std::vector<std::shared_ptr<Personne> > getReal();
 		void addReal(std::shared_ptr<Personne> real);
-		void setObservateur(FilmObservateur * obs);
-		FilmObservateur * getObservateur();
 		
 		virtual std::string getStatut() = 0; //"à voir" ou "vu"
 		void marquerVu();

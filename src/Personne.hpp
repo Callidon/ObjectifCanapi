@@ -11,7 +11,7 @@
 class Video;
 
 #include <string>
-#include <list>
+#include <vector>
 #include <memory>
 //--------------------------------------------------
 /*!
@@ -22,7 +22,7 @@ class Personne {
 		//Attributs
 		std::string nom;
 		std::string prenom;
-		std::list<std::shared_ptr<Video> > films;
+		std::vector<std::shared_ptr<Video> > films;
 		
 	public:
 		//Constructeur & destructeur
@@ -33,7 +33,8 @@ class Personne {
 		void setNom(std::string nom);
 		std::string getPrenom();
 		void setPrenom(std::string prenom);
-		std::list<std::shared_ptr<Video> > getFilms();
+		std::vector<std::shared_ptr<Video> > getFilms();
+		void addFilms(Video video);
 };
 //--------------------------------------------------
 #endif

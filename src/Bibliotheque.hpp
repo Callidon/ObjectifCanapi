@@ -18,7 +18,7 @@
 class Bibliotheque {
 	private:
 		//Attributs
-		std::list<std::shared_ptr<Video> > videos;
+		std::vector<std::shared_ptr<Video> > videos;
 		std::string user;
 		
 	public:
@@ -28,7 +28,7 @@ class Bibliotheque {
 		//Methodes
 		std::string getUser();
 		void setUser(std::string user);
-		std::list<std::shared_ptr<Video> > getVideos();
+		std::vector<std::shared_ptr<Video> > getVideos();
 		void addVideo(std::shared_ptr<Video> video);
 };
 //--------------------------------------------------

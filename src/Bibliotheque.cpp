@@ -45,7 +45,7 @@ void Bibliotheque::setUser(string user) {
 /*!
 * \brief Méthode qui
 */
-list<shared_ptr<Video>> Bibliotheque::getVideos() {
+vector<shared_ptr<Video>> Bibliotheque::getVideos() {
 	return this->videos;
 }
 
