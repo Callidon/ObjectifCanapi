@@ -20,7 +20,6 @@ class BDConnector {
 	private:
 		//Attributs
 		sqlite3 * db; //!<Pointeur vers la base de données
-		FactorySQL fabrique; //!<Fabrique servant à générer les objets de la bibliothèque
 		
 	public:
 		//Constructeur & destructeur

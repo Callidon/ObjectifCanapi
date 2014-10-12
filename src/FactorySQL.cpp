@@ -24,17 +24,21 @@ FactorySQL::~FactorySQL() {};
 
 //--------------------------------------------------
 /*!
-* \brief Méthode générant des trucs (à préciser)
+* \brief Méthode créant et retournant un shared_ptr vers un nouveau Film
 */
-Video * FactorySQL::generateMedia(list<string> listeParams, string typeVideo) {
-	Video * media;
-	//si c'est un film que l'on doit instancier
-	if(typeVideo == "Film") {
-		media = new Film(...);
-	} else if(typeVideo == "Episode") { //sinon, si c'est un épisode
-		media = new Episode(...);
-	} else { //sinon, on retourne le pointeur vers un objet vide
-		return media;
-	}
+shared_ptr<Video> FactorySQL::generateMedia(string titre, string lien, int annee, string affiche, string synopsis) {
+	shared_ptr<Video> nouveauFilm (new Film(titre, lien, annee, affiche, synopsis));
+	//ajouter les acteurs & réalisateurs
+	return nouveauFilm;
+}
+
+//--------------------------------------------------
+/*!
+* \brief Méthode créant et retournant un shared_ptr vers un nouvel Episode
+*/
+shared_ptr<Video> FactorySQL::generateMedia(string titre, string lien, int annee, int numero, int saison, string serie, string synopsis) {
+	shared_ptr<Video> nouvelEpisode (new Episode(titre, lien, annee, affiche, numero, saison, serie, synopsis));
+	//ajouter les acteurs & réalisateurs
+	return nouvelEpisode;
 }
 

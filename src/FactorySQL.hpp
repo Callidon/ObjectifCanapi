@@ -21,8 +21,9 @@ class FactorySQL: virtual public Factory {
 	public:
 		FactorySQL();
 		~FactorySQL();
-		//Méthode héritée de Factory
-		virtual Video * generateMedia(std::list<std::string> listeParams, std::string typeVideo);
+		//Méthodes héritée de Factory
+		virtual std::shared_ptr<Video> genererFilm(std::string titre, std::string lien, int annee, std::string affiche, std::string synopsis);
+		virtual std::shared_ptr<Video> genererEpisode(std::string titre, std::string lien, int annee, int numero, int saison, std::string serie, std::string synopsis);
 };
 
 //--------------------------------------------------
