@@ -35,9 +35,9 @@ BDConnector::~BDConnector() {
 /*!
 * \brief Méthode qui exécute la requête SQL passée en en paramètre
 */
-list<list<string> > BDConnector::query(string sql_query) {
+vector<vector<string> > BDConnector::query(string sql_query) {
 	sqlite3_stmt *statement;
-	list<list<string> > resultats;
+	vector<vector<string> > resultats;
 	char * requete = (char*)sql_query.c_str();
 	int ind;
 	//exécution de la requête & vérification que tout s'est bien passé
@@ -49,7 +49,7 @@ list<list<string> > BDConnector::query(string sql_query) {
 		//tant qu'il reste des lignes à traiter
 		while(result == SQLITE_ROW) {
 			//liste temporaire contenant la ligne courante
-			list<string> temp;
+			vector<string> temp;
 			//on insère toutes les valeurs de la ligne dans la liste temporaire
 			for(ind = 0; ind < nb_cols; ind++) {
 				string val((char*)sqlite3_column_text(statement, ind));
@@ -69,8 +69,8 @@ list<list<string> > BDConnector::query(string sql_query) {
 /*!
 * \brief Méthode qui récupère soit tous les films, soit touts les épisodes stockée en base et renvoie sous forme de liste
 */
-list<Video> recupererVideos(string typeVideo) {
-	list<Video> videos;
+vector<shared_ptr<Video> > recupererVideos(string typeVideo) {
+	vector<shared_ptr<Video> > videos;
 	if(typeVideo == "Film") { //si on veut récupérer les films
 		
 	} else if(typeVideo == "Episode") { //si on veut récupérer les épisodes

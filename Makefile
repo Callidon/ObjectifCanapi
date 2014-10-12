@@ -32,7 +32,7 @@ sqlite3:
 # Compilations individuelles des différentes classes du projet
 #---------------------------------------------------------
 BDConnector:
-	$(CXX) -o build/$@.o src/$@.cpp $(SQLITEFLAGS) -c
+	$(CXX) $(FLAGS) -o build/$@.o src/$@.cpp $(SQLITEFLAGS) -c
 
 Bibliotheque:
 	$(CXX) $(FLAGS) -o build/$@.o src/$@.cpp -c
