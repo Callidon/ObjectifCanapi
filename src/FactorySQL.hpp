@@ -9,6 +9,7 @@
 #define FACTORYSQL_H
 
 #include "Factory.hpp"
+#include "BDConnector.hpp"
 
 //--------------------------------------------------
 /*!
@@ -18,12 +19,15 @@
 
 class FactorySQL: virtual public Factory {
 	
+	private:
+		std::shared_ptr<BDConnector> bd;
+		
 	public:
-		FactorySQL();
+		FactorySQL(std::shared_ptr<BDConnector> base);
 		~FactorySQL();
 		//Méthodes héritée de Factory
-		virtual std::shared_ptr<Video> genererFilm(std::string titre, std::string lien, int annee, std::string affiche, std::string synopsis);
-		virtual std::shared_ptr<Video> genererEpisode(std::string titre, std::string lien, int annee, int numero, int saison, std::string serie, std::string synopsis);
+		virtual std::shared_ptr<Video> genererFilm(std::string id, std::string titre, std::string lien, int annee, std::string affiche, std::string synopsis);
+		virtual std::shared_ptr<Video> genererEpisode(std::string id,std::string titre, std::string lien, int annee, int numero, int saison, std::string serie, std::string synopsis);
 };
 
 //--------------------------------------------------

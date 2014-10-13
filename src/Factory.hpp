@@ -17,7 +17,7 @@
 //--------------------------------------------------
 /*!
 * \class Factory
-* \brief Interface représentant une fabrique d'objets de type Video
+* \brief Classe abstraite représentant une fabrique d'objets de type Video
 */
 
 class Factory {
