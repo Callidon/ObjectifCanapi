@@ -72,6 +72,6 @@ vector<shared_ptr<Video> > Personne::getFilms(){
 /*!
 * \brief Méthode qui ajoute un film à la liste;
 */
-void Personne::addFilms(Video video){
+void Personne::addFilms(shared_ptr<Video> video){
 	this->films.push_back(video);
 }

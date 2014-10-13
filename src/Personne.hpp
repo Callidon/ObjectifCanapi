@@ -34,7 +34,7 @@ class Personne {
 		std::string getPrenom();
 		void setPrenom(std::string prenom);
 		std::vector<std::shared_ptr<Video> > getFilms();
-		void addFilms(Video video);
+		void addFilms(std::shared_ptr<Video> video);
 };
 //--------------------------------------------------
 #endif
