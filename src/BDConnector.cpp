@@ -18,7 +18,7 @@ BDConnector::BDConnector(string fichier_db) {
 	//connexion à la base de données
 	rc = sqlite3_open((char*)fichier_db.c_str(), &db);
    if( rc ) { //si la connexion a échouée
-		cout << "Erreur : impossible de se connecter à la base de données" << endl;
+		cout << "Erreur : impossible de se connecter à la base de données " << fichier_db << endl;
    }
 }
 
@@ -29,6 +29,32 @@ BDConnector::BDConnector(string fichier_db) {
 BDConnector::~BDConnector() {
 	//fermeture de la connexion à la base
 	sqlite3_close(this->db);
+}
+
+//--------------------------------------------------
+/*!
+* \brief Méthode qui permet de changer d'utilisateur
+*/
+void BDConnector::swapUser(string fichier_db) {
+	int rc;
+	//fermeture de la connexion à la base actuelle
+	sqlite3_close(this->db);
+	//connexion à la nouvelle  base de données
+	rc = sqlite3_open((char*)fichier_db.c_str(), &db);
+	if( rc ) { //si la connexion a échouée
+		cout << "Erreur : impossible de se connecter à la base de données " << fichier_db << endl;
+	}
+}
+
+//--------------------------------------------------
+/*!
+* \brief Méthode qui crée une nouvelle base de donnée pour un nouvel utilisateur
+*/
+void BDConnector::creerNewBD(string user) {
+	string nom_fichier = user + ".db";
+	string commande = "cp database/default.db database/" + nom_fichier;
+	system((char*)commande.c_str());
+	
 }
 
 //--------------------------------------------------
@@ -67,15 +93,10 @@ vector<vector<string> > BDConnector::query(string sql_query) {
 
 //--------------------------------------------------
 /*!
-* \brief Méthode qui récupère soit tous les films, soit touts les épisodes stockée en base et renvoie sous forme de liste
+* \brief Méthode qui compte le nombre de lignes dans une table de la base de données
 */
-vector<shared_ptr<Video> > recupererVideos(string typeVideo) {
-	vector<shared_ptr<Video> > videos;
-	if(typeVideo == "Film") { //si on veut récupérer les films
-		
-	} else if(typeVideo == "Episode") { //si on veut récupérer les épisodes
-		
-	} else {
-		return videos;
-	}
+int BDConnector::count(string nom_table) {
+	vector<vector<string> > table = this->query("SELECT COUNT(*) FROM " + nom_table + ";");
+	int res = atoi(table[0][0].c_str());
+	return res;
 }

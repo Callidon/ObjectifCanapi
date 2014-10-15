@@ -28,8 +28,10 @@ class BDConnector {
 		BDConnector(std::string fichier_db);
 		~BDConnector();
 		//Méthodes
+		void swapUser(std::string fichier_db);
+		void creerNewBD(std::string user);
 		std::vector<std::vector<std::string> > query(std::string sql_query);
-		std::vector<std::shared_ptr<Video> > recupererVideos(std::string typeVideo);
+		int count(std::string nom_table);
 };
 //--------------------------------------------------
 #endif
