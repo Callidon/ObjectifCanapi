@@ -38,7 +38,7 @@ shared_ptr<Video> FactorySQL::genererFilm(string id, string titre, string lien, 
 	}
 	//on fait la même chose avec les réalisateurs
 	//on récupère tous les acteurs liés au film depuis la base
-	string sql = "SELECT nom, prenom, id_episode, id_personne, id_video, id_real FROM Films,Personnes,Realisateurs WHERE id_episode = " + id + " AND Films.id_film = Realisateurs.id_video AND Personnes.id_personne = Realisateurs.id_real;";
+	sql = "SELECT nom, prenom, id_episode, id_personne, id_video, id_real FROM Films,Personnes,Realisateurs WHERE id_episode = " + id + " AND Films.id_film = Realisateurs.id_video AND Personnes.id_personne = Realisateurs.id_real;";
 	vector<vector< string> > realisateurs = bd->query(sql);
 	//on parcours la liste des acteurs
 	for(const auto &realisateur: realisateurs) {
@@ -53,7 +53,7 @@ shared_ptr<Video> FactorySQL::genererFilm(string id, string titre, string lien, 
 * \brief Méthode créant et retournant un shared_ptr vers un nouvel Episode
 */
 shared_ptr<Video> FactorySQL::genererEpisode(string id, string titre, string lien, int annee, int numero, int saison, string serie, string synopsis) {
-	shared_ptr<Video> nouvelEpisode (new Episode(id, titre, lien, annee, affiche, numero, saison, serie, synopsis));
+	shared_ptr<Video> nouvelEpisode (new Episode(id, titre, lien, annee, numero, saison, serie, synopsis));
 	//ajouter les acteurs & réalisateurs
 	return nouvelEpisode;
 }

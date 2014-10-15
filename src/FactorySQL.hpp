@@ -20,7 +20,7 @@
 class FactorySQL: virtual public Factory {
 	
 	private:
-		std::shared_ptr<BDConnector> bd;
+		std::shared_ptr<BDConnector> bd; //<! Connecteur vers la base de donnée où sont stocké les informations
 		
 	public:
 		FactorySQL(std::shared_ptr<BDConnector> base);
