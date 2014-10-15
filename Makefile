@@ -56,7 +56,7 @@ Serie:
 	$(CXX) $(FLAGS) -o build/$@.o src/$@.cpp -c
 	
 Test: Video Film Episode
-	$(CXX) $(FLAGS) src/$@.cpp build/Video.o build/Personne.o build/Film.o -o test
+	$(CXX) $(FLAGS) src/$@.cpp build/Video.o build/Personne.o build/Film.o build/Episode.o -o test
 	./test
 	
 Video: Personne

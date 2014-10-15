@@ -76,3 +76,21 @@ string Episode::getSerie(){
 void Episode::setSerie(string serie){
 	this->serie = serie;
 }
+
+
+//--------------------------------------------------
+/*!
+* \brief Méthode qui retourne le statut du episode ("a voir" ou "vu")
+*/
+string Episode::getStatut(){
+	if(this->vu){
+		return("Episode vu");
+	}
+	else if(this->aVoir){
+		return("Episode à voir");
+	}
+	else {
+		return("aucun marquage");
+	}
+}
+
