@@ -8,20 +8,23 @@
 #ifndef FACTORY_H
 #define FACTORY_H
 
-#include <list>
+#include <memory>
+#include <vector>
 #include <string>
-class Video;
+#include "Film.hpp"
+#include "Episode.hpp"
 
 //--------------------------------------------------
 /*!
 * \class Factory
-* \brief Interface représentant une fabrique d'objets de type Video
+* \brief Classe abstraite représentant une fabrique d'objets de type Video
 */
 
 class Factory {
 	
 	public:
-		virtual Video * generateMedia(std::list<std::string> listeParams, std::string typeVideo) = 0;
+		virtual std::shared_ptr<Video> genererFilm(std::string titre, std::string lien, int annee, std::string affiche, std::string synopsis) = 0;
+		virtual std::shared_ptr<Video> genererEpisode(std::string titre, std::string lien, int annee, int numero, int saison, std::string serie, std::string synopsis) = 0;
 			
 };
 
