@@ -1,4 +1,4 @@
-//#include "Film.hpp"
+#include "Film.hpp"
 #include "Episode.hpp"
 
 #include <iostream>
@@ -6,8 +6,9 @@ using namespace std;
 
 int main()
 {
-/* 
-*TEST CLASSE FILM
+ 
+//TEST CLASSE FILM
+/*
 	Film* film = new Film("01", "titre", "lien", 2014, "affiche", "synopsis");
 
 	cout << film->getId() << endl;
@@ -23,6 +24,7 @@ int main()
 */
 
 //TEST CLASSE EPISODE
+/*
 	Episode* episode = new Episode("01", "Titre", "link", 2014, 02, 03, "Serie", "Synopsis");
 	cout << episode->getNumero() << endl;
 	cout << episode->getSaison() << endl;
@@ -31,6 +33,8 @@ int main()
 	cout << episode->getStatut() << endl;
 	
 	delete(episode);
-	
+*/
+//TEST CLASS PERSONNE
+
 	return(0);
 }
