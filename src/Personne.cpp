@@ -57,21 +57,3 @@ string Personne::getPrenom(){
 void Personne::setPrenom(string prenom){	
 	this->prenom  = prenom;
 }
-
-
-//--------------------------------------------------
-/*!
-* \brief Méthode qui retourne la liste des films;
-*/
-vector<shared_ptr<Video> > Personne::getFilms(){
-	return this->films;
-}
-
-
-//--------------------------------------------------
-/*!
-* \brief Méthode qui ajoute un film à la liste;
-*/
-void Personne::addFilms(shared_ptr<Video> video){
-	this->films.push_back(video);
-}

@@ -22,6 +22,7 @@
 class Video {
 	private:
 		//Attributs
+		std::string id;
 		std::string titre;
 		std::string lien; //lien vers BA
 		int annee;
@@ -35,15 +36,19 @@ class Video {
 		
 	public:
 		//Constructeur & destructeur
-		Video(std::string titre, std::string lien, std::string synopsis, int annee);
+		Video(std::string id, std::string titre, std::string lien, std::string synopsis, int annee);
 		~Video();
 		//Méthodes
+		std::string getId();
+		void setId(int id);
 		std::string getTitre();
 		void setTitre(std::string titre);
 		std::string getLien();
 		void setLien(std::string lien);
 		int getAnnee();
 		void setAnnee(int annee);
+		std::string getSynopsis();
+		void setSynopsis(std::string syno);
 		std::vector<std::shared_ptr<Personne> > getActeurs();
 		void addActeur(std::shared_ptr<Personne> acteur);
 		std::vector<std::shared_ptr<Personne> > getReal();

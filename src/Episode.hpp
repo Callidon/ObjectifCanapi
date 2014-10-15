@@ -1,5 +1,5 @@
 /*!
-* \file Saison.hpp
+* \file Episode.hpp
 * \brief Fichier contenant les entêtes de la classe Episodes
 * \author Camille Le Luët
 * \author Thomas Minier
@@ -25,7 +25,7 @@ class Episode : public virtual Video {
 		
 	public:
 		//Constructeur & destructeur
-		Episode(std::string titre, std::string lien, int annee, int numero, int saison, std::string serie, std::string synopsis);
+		Episode(std::string id, std::string titre, std::string lien, int annee, int numero, int saison, std::string serie, std::string synopsis);
 		~Episode();
 		//Methodes
 		int getNumero();

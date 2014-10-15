@@ -5,6 +5,7 @@
 * \author Thomas Minier
 * \date ?
 */
+
 #include "Episode.hpp"
 #include <iostream>
 
@@ -13,7 +14,7 @@ using namespace std;
 /*!
 * \brief Constructeur de base
 */
-Episode::Episode(string titre, string lien, int annee, int numero, int saison, string serie, string synopsis):Video(titre, lien, synopsis, annee) {
+Episode::Episode(string id, string titre, string lien, int annee, int numero, int saison, string serie, string synopsis):Video(id, titre, lien, synopsis, annee) {
 	this->numero = numero;
 	this->saison = saison;
 	this->serie = serie; //nom de la série

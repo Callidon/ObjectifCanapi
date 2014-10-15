@@ -22,7 +22,6 @@ class Personne {
 		//Attributs
 		std::string nom;
 		std::string prenom;
-		std::vector<std::shared_ptr<Video> > films;
 		
 	public:
 		//Constructeur & destructeur
@@ -33,8 +32,6 @@ class Personne {
 		void setNom(std::string nom);
 		std::string getPrenom();
 		void setPrenom(std::string prenom);
-		std::vector<std::shared_ptr<Video> > getFilms();
-		void addFilms(std::shared_ptr<Video> video);
 };
 //--------------------------------------------------
 #endif

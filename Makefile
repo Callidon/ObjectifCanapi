@@ -34,16 +34,16 @@ sqlite3:
 BDConnector:
 	$(CXX) -o build/$@.o src/$@.cpp $(SQLITEFLAGS) -c
 
-Bibliotheque:
+Bibliotheque: Video
 	$(CXX) $(FLAGS) -o build/$@.o src/$@.cpp -c
 	
-Episode:
+Episode: Video
 	$(CXX) $(FLAGS) -o build/$@.o src/$@.cpp -c
 	
 FactorySQL:
 	$(CXX) $(FLAGS) -o build/$@.o src/$@.cpp -c
 	
-Film:
+Film: Video
 	$(CXX) $(FLAGS) -o build/$@.o src/$@.cpp -c
 	
 FilmObservateur:
@@ -54,8 +54,12 @@ Personne:
 	
 Serie:
 	$(CXX) $(FLAGS) -o build/$@.o src/$@.cpp -c
-
-Video:
+	
+Test: Video Film Episode
+	$(CXX) $(FLAGS) src/$@.cpp build/Video.o build/Personne.o build/Film.o build/Episode.o -o test
+	./test
+	
+Video: Personne
 	$(CXX) $(FLAGS) -o build/$@.o src/$@.cpp -c
 
 #---------------------------------------------------------

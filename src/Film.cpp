@@ -12,7 +12,7 @@ using namespace std;
 /*!
 * \brief Constructeur de base
 */
-Film::Film(string titre, string lien, int annee, string affiche, string synopsis):Video(titre, lien, synopsis, annee) {
+Film::Film(string id, string titre, string lien, int annee, string affiche, string synopsis):Video(id, titre, lien, synopsis, annee) {
 	this->affiche = affiche;
 }
 

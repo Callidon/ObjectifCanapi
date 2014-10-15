@@ -13,7 +13,8 @@ using namespace std;
 /*!
 * \brief Constructeur de base
 */
-Video::Video(string titre, string lien, string synopsis, int annee) {
+Video::Video(string id, string titre, string lien, string synopsis, int annee) {
+	this->id = id;
 	this->titre = titre;
 	this->lien = lien;
 	this->annee = annee;
@@ -27,6 +28,22 @@ Video::Video(string titre, string lien, string synopsis, int annee) {
 * \brief Destructeur
 */
 Video::~Video() {
+}
+
+//--------------------------------------------------
+/*!
+* \brief Méthode qui retourne l'id du film
+*/
+string Video::getId(){
+	return this->id;
+}
+
+//--------------------------------------------------
+/*!
+* \brief Méthode qui modifie l'id de la Video par celui passé en parametre
+*/
+void Video::setId(int id){
+	this->id = id;
 }
 
 //--------------------------------------------------
@@ -79,6 +96,22 @@ void Video::setAnnee(int annee){
 
 //--------------------------------------------------
 /*!
+* \brief Méthode qui retourne le synopsis de la Video
+*/
+string Video::getSynopsis(){
+	return this->synopsis;
+}
+
+//--------------------------------------------------
+/*!
+* \brief Méthode qui modifie le synopsis par celui passé en parametre
+*/
+void Video::setSynopsis(string syno){
+	this->synopsis = syno;
+}
+
+//--------------------------------------------------
+/*!
 * \brief Méthode qui retourne la liste des acteurs (principaux) du Videos
 */
 vector<shared_ptr<Personne> > Video::getActeurs(){
@@ -111,9 +144,19 @@ void Video::addReal(shared_ptr<Personne> real){
 
 //--------------------------------------------------
 /*!
+* \brief Méthode qui marque le Video en tant que VU
+*/
+void Video::marquerVu(){
+	this->vu = true;
+	this->aVoir = false;
+}
+
+//--------------------------------------------------
+/*!
 * \brief Méthode qui marque le Video en tant que A VOIR
 */
 void Video::marquerVoir(){
+	this->vu = false;
 	this->aVoir = true;
 }
 
