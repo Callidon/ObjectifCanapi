@@ -9,6 +9,7 @@
 #define Bibliotheque_H
 
 #include "Video.hpp"
+#include "BDConnector.hpp"
 
 #include <string>
 //--------------------------------------------------
@@ -20,6 +21,7 @@ class Bibliotheque {
 		//Attributs
 		std::vector<std::shared_ptr<Video> > videos;
 		std::string user;
+		std::shared_ptr<BDConnector> DataBase;
 		
 	public:
 		//Constructeur & destructeur

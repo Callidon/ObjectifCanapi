@@ -16,6 +16,8 @@ using namespace std;
 */
 Bibliotheque::Bibliotheque(string user) {
 	this->user = user;
+	shared_ptr<BDConnector> tmp(new BDConnector(user + ".db"));
+	this->DataBase = tmp;
 }
 
 //--------------------------------------------------

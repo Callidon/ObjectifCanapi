@@ -31,7 +31,7 @@ sqlite3:
 #---------------------------------------------------------
 # Compilations individuelles des différentes classes du projet
 #---------------------------------------------------------
-BDConnector:
+BDConnector: sqlite3
 	$(CXX) $(FLAGS) -o build/$@.o src/$@.cpp $(SQLITEFLAGS) -c
 
 Bibliotheque: Video
@@ -55,8 +55,8 @@ Personne:
 Serie:
 	$(CXX) $(FLAGS) -o build/$@.o src/$@.cpp -c
 	
-Test: Video Film Episode
-	$(CXX) $(FLAGS) src/$@.cpp build/Video.o build/Personne.o build/Film.o build/Episode.o -o test
+Test: Video Film Episode Bibliotheque
+	$(CXX) $(FLAGS) src/$@.cpp build/Video.o build/Personne.o build/Film.o build/Episode.o build/Bibliotheque.o build/BDConnector.o build/sqlite3.o $(SQLITEFLAGS) -o test
 	./test
 	
 Video: Personne
