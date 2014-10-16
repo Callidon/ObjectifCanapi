@@ -1,4 +1,18 @@
 ObjectifCanapi
 ==============
 
-Projet de POO de L3 : Interface de gestion des films &amp; séries
+Catalogue de films é séries réalisé dans le cadre du projet de Design & Développement d'application, matière enseigné en Licence 3 à l'université de Nantes
+
+Compilation
+----------
+*Coming soon*
+
+Utilisation
+----------
+*Coming soon*
+
+Diagramme UML
+----------
+*Coming soon*
+
+*Copyright © 2014 Camille Le Luët & Thomas Minier*
