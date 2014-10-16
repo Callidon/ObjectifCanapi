@@ -96,7 +96,31 @@ vector<vector<string> > BDConnector::query(string sql_query) {
 * \brief Méthode qui compte le nombre de lignes dans une table de la base de données
 */
 int BDConnector::count(string nom_table) {
+	//on fait la requête pour récupérer le nombre de lignes dans la table
 	vector<vector<string> > table = this->query("SELECT COUNT(*) FROM " + nom_table + ";");
-	int res = atoi(table[0][0].c_str());
+	int res = atoi(table[0][0].c_str()); //conversion de la string en int
 	return res;
+}
+
+//--------------------------------------------------
+/*!
+* \brief Méthode qui renvoie l'id de la dernière ligne de la table. L'i d de cette dernière doit être de type INTEGER
+* \param nom_id Nom de l'identifiant de la table
+* \param nom_table Nom de la table dont on veut récupérer le dernier id
+*/
+int BDConnector::lastId(string nom_id, string nom_table) {
+	//on fait la requête pour récupérer les id de la table classés par ordre décroissant
+	vector<vector<string> > table = this->query("SELECT " + nom_id + " FROM " + nom_table + " ORDER BY " + nom_id + " DESC;");
+	int res = atoi(table[0][0].c_str()); //conversion de la string en int
+	return res;
+}
+
+//--------------------------------------------------
+/*!
+* \brief Méthode qui renvoie le prochain id à insérer dans la table. L'id de cette dernière doit être de type INTEGER
+* \param nom_id Nom de l'identifiant de la table
+* \param nom_table Nom de la table dont on veut récupérer le prochain id à insérer
+*/
+int BDConnector::nextIdToInsert(string nom_id, string nom_table) {
+	return this->lastId(nom_id, nom_table) + 1;
 }

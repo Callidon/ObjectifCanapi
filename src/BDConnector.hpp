@@ -32,6 +32,8 @@ class BDConnector {
 		void creerNewBD(std::string user);
 		std::vector<std::vector<std::string> > query(std::string sql_query);
 		int count(std::string nom_table);
+		int lastId(std::string nom_id, std::string nom_table);
+		int nextIdToInsert(std::string nom_id, std::string nom_table);
 };
 //--------------------------------------------------
 #endif
