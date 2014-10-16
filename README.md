@@ -1,7 +1,7 @@
 ObjectifCanapi
 ==============
 
-Catalogue de films & séries réalisé dans le cadre du projet de Design & Développement d'application, matière enseigné en Licence 3 à l'université de Nantes
+Catalogue de films & séries réalisé dans le cadre du projet de Design & Développement d'application, matière enseignée dans le cadre de la Licence 3 Informatique à l'université de Nantes
 
 Compilation
 ----------
