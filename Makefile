@@ -59,6 +59,10 @@ Test: Video Film Episode Bibliotheque
 	$(CXX) $(FLAGS) src/$@.cpp build/Video.o build/Personne.o build/Film.o build/Episode.o build/Bibliotheque.o build/BDConnector.o build/sqlite3.o $(SQLITEFLAGS) -o test
 	./test
 	
+TestFactory: Video Film Episode BDConnector FactorySQL
+	$(CXX) $(FLAGS) src/$@.cpp build/Video.o build/Personne.o build/Film.o build/Episode.o build/FactorySQL.o build/BDConnector.o build/sqlite3.o $(SQLITEFLAGS) -o testFactory
+	./testFactory
+	
 Video: Personne
 	$(CXX) $(FLAGS) -o build/$@.o src/$@.cpp -c
 

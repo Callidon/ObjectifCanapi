@@ -63,7 +63,7 @@ void BDConnector::creerNewBD(string user) {
 */
 vector<vector<string> > BDConnector::query(string sql_query) {
 	sqlite3_stmt *statement;
-	vector<vector<string> > resultats;
+	vector<vector<string> > results;
 	char * requete = (char*)sql_query.c_str();
 	int ind;
 	//exécution de la requête & vérification que tout s'est bien passé
@@ -78,17 +78,19 @@ vector<vector<string> > BDConnector::query(string sql_query) {
 			vector<string> temp;
 			//on insère toutes les valeurs de la ligne dans la liste temporaire
 			for(ind = 0; ind < nb_cols; ind++) {
-				string val((char*)sqlite3_column_text(statement, ind));
+				string val((char*)sqlite3_column_text(statement, ind)); 
 				temp.push_back(val);
 			}
 			//on ajoute la liste temporaire à la liste des résultats
-			resultats.push_back(temp);
+			results.push_back(temp);
 			//on avance à la ligne suivante
 			result = sqlite3_step(statement);
 		}
 		sqlite3_finalize(statement);
+	} else {
+		cout << sqlite3_errmsg(this->db) << endl;
 	}
-	return resultats;
+	return results;
 }
 
 //--------------------------------------------------
