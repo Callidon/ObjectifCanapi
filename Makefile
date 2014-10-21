@@ -34,10 +34,13 @@ sqlite3:
 BDConnector: sqlite3
 	$(CXX) $(FLAGS) -o build/$@.o src/$@.cpp $(SQLITEFLAGS) -c
 
-Bibliotheque: Video
+Bibliotheque: Video BDConnector
 	$(CXX) $(FLAGS) -o build/$@.o src/$@.cpp -c
 	
 Episode: Video
+	$(CXX) $(FLAGS) -o build/$@.o src/$@.cpp -c
+	
+FactoryOMDB: BDConnector
 	$(CXX) $(FLAGS) -o build/$@.o src/$@.cpp -c
 	
 FactorySQL:
@@ -59,8 +62,8 @@ Test: Video Film Episode Bibliotheque
 	$(CXX) $(FLAGS) src/$@.cpp build/Video.o build/Personne.o build/Film.o build/Episode.o build/Bibliotheque.o build/BDConnector.o build/sqlite3.o $(SQLITEFLAGS) -o test
 	./test
 	
-TestFactory: Video Film Episode BDConnector FactorySQL
-	$(CXX) $(FLAGS) src/$@.cpp build/Video.o build/Personne.o build/Film.o build/Episode.o build/FactorySQL.o build/BDConnector.o build/sqlite3.o $(SQLITEFLAGS) -o testFactory
+TestFactory: Video Film Episode BDConnector FactoryOMDB
+	$(CXX) $(FLAGS) src/$@.cpp build/FactoryOMDB.o build/Video.o build/Personne.o build/Film.o build/Episode.o build/BDConnector.o build/sqlite3.o $(SQLITEFLAGS) -o testFactory
 	./testFactory
 	
 Video: Personne

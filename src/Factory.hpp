@@ -25,7 +25,7 @@ class Factory {
 	public:
 		virtual std::shared_ptr<Video> genererFilm(std::string titre, std::string lien, int annee, std::string affiche, std::string synopsis) = 0;
 		virtual std::shared_ptr<Video> genererEpisode(std::string titre, std::string lien, int annee, int numero, int saison, std::string serie, std::string synopsis) = 0;
-			
+		
 };
 
 //--------------------------------------------------
