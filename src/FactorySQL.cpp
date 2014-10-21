@@ -73,4 +73,3 @@ shared_ptr<Episode> FactorySQL::genererEpisode(string id, string titre, string l
 	}
 	return nouvelEpisode;
 }
-

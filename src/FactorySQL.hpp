@@ -26,8 +26,8 @@ class FactorySQL {
 		FactorySQL(std::shared_ptr<BDConnector> base);
 		~FactorySQL();
 		//Méthodes héritée de Factory
-		std::shared_ptr<Film> genererFilm(std::string id, std::string titre, std::string lien, int annee, std::string affiche, std::string synopsis);
-		std::shared_ptr<Episode> genererEpisode(std::string id,std::string titre, std::string lien, int annee, int numero, int saison, std::string serie, std::string synopsis);
+		virtual std::shared_ptr<Film> genererFilm(std::string id, std::string titre, std::string lien, int annee, std::string affiche, std::string synopsis);
+		virtual std::shared_ptr<Episode> genererEpisode(std::string id,std::string titre, std::string lien, int annee, int numero, int saison, std::string serie, std::string synopsis);
 };
 
 //--------------------------------------------------

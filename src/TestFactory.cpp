@@ -7,10 +7,9 @@ int main() {
 	
 	shared_ptr<BDConnector> testDB(new BDConnector("database/test.db"));
 	shared_ptr<FactorySQL> facto(new FactorySQL(testDB));
-	facto = facto->genererFilm("id","titre","lien",2014,"affiche","synopsis");
+	shared_ptr<Film> testFilm = facto->genererFilm("id","titre","lien",2014,"affiche","synopsis");
 	/*
 	//Test pour la génération d'un film depuis la base de donnée
-	shared_ptr<Film> testFilm = facto->genererFilm("01", "titre", "lien", 2014, "affiche", "synopsis");
 	vector<shared_ptr<Personne> > acteurs = testFilm->getActeurs();
 	cout << testFilm->getId() << endl;
 	cout << testFilm->getTitre() << endl;
