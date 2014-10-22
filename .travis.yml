@@ -3,4 +3,5 @@ notifications:
 language: cpp
 compiler: g++
 
+install : sudo apt-get install libqt4-dev
 script: make prepare & make sqlite3
