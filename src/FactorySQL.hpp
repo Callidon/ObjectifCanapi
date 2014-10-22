@@ -25,6 +25,8 @@ class FactorySQL {
 	public:
 		FactorySQL(std::shared_ptr<BDConnector> base);
 		~FactorySQL();
+		std::vector<std::shared_ptr<Video> > recupererAllFilms();
+		std::vector<std::shared_ptr<Video> > recupererAllEpisodes();
 		//Méthodes héritée de Factory
 		virtual std::shared_ptr<Film> genererFilm(std::string id, std::string titre, std::string lien, int annee, std::string affiche, std::string synopsis);
 		virtual std::shared_ptr<Episode> genererEpisode(std::string id,std::string titre, std::string lien, int annee, int numero, int saison, std::string serie, std::string synopsis);
