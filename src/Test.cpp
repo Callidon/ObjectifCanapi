@@ -83,9 +83,5 @@ int main()
 		cout << v->getStatut() << endl;
 	}
 */
-
-	shared_ptr<BDConnector> testDB(new BDConnector("database/test.db"));
-	shared_ptr<FactoryOMDB> fo(new FactoryOMDB(testDB));
-	string res = fo->queryTitle("Love Story");
 	return(0);
 }

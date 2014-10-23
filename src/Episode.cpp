@@ -20,6 +20,12 @@ Episode::Episode(string id, string titre, string lien, int annee, int numero, in
 	this->serie = serie; //nom de la série
 }
 
+Episode::Episode(string id, string titre, string lien, int annee, int numero, int saison, string serie, string synopsis, vector<string> acteurs, vector<string> real):Video(id, titre, lien, synopsis, annee, acteurs, real) {
+	this->numero = numero;
+	this->saison = saison;
+	this->serie = serie; //nom de la série
+}
+
 //--------------------------------------------------
 /*!
 * \brief Destructeur

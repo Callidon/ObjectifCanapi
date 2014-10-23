@@ -16,6 +16,10 @@ Film::Film(string id, string titre, string lien, int annee, string affiche, stri
 	this->affiche = affiche;
 }
 
+Film::Film(string id, string titre, string lien, int annee, string affiche, string synopsis, vector<string> acteurs, vector<string> real):Video(id, titre, lien, synopsis, annee, acteurs, real) {
+	this->affiche = affiche;
+}
+
 //--------------------------------------------------
 /*!
 * \brief Destructeur

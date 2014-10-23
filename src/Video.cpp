@@ -23,6 +23,18 @@ Video::Video(string id, string titre, string lien, string synopsis, int annee) {
 	this->aVoir = false;
 }
 
+Video::Video(string id, string titre, string lien, string synopsis, int annee, vector<string> acteurs, vector<string> real){
+	this->id = id;
+	this->titre = titre;
+	this->lien = lien;
+	this->annee = annee;
+	this->synopsis = synopsis;
+	this->vu = false;
+	this->aVoir = false;
+	this->acteurs = acteurs;
+	this->realisateurs = real;
+}
+
 //--------------------------------------------------
 /*!
 * \brief Destructeur
@@ -114,7 +126,7 @@ void Video::setSynopsis(string syno){
 /*!
 * \brief Méthode qui retourne la liste des acteurs (principaux) du Videos
 */
-vector<shared_ptr<Personne> > Video::getActeurs(){
+vector<string> Video::getActeurs(){
 	return this->acteurs;
 }
 
@@ -122,7 +134,7 @@ vector<shared_ptr<Personne> > Video::getActeurs(){
 /*!
 * \brief Méthode qui ajoute un acteur à la liste
 */
-void Video::addActeur(shared_ptr<Personne> acteur){
+void Video::addActeur(string acteur){
 	this->acteurs.push_back(acteur);
 }
 
@@ -130,7 +142,7 @@ void Video::addActeur(shared_ptr<Personne> acteur){
 /*!
 * \brief Méthode qui retourne la liste des réalisateurs du Video
 */
-vector<shared_ptr<Personne> > Video::getReal(){
+vector<string> Video::getReal(){
 	return this->realisateurs;
 }
 
@@ -138,7 +150,7 @@ vector<shared_ptr<Personne> > Video::getReal(){
 /*!
 * \brief Méthode qui ajoute un realisateur à la liste
 */
-void Video::addReal(shared_ptr<Personne> real){
+void Video::addReal(string real){
 	this->realisateurs.push_back(real);
 }
 

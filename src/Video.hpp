@@ -27,8 +27,8 @@ class Video {
 		std::string lien; //lien vers BA
 		int annee;
 		std::string synopsis;
-		std::vector<std::shared_ptr<Personne> > acteurs;
-		std::vector<std::shared_ptr<Personne> > realisateurs;
+		std::vector<std::string> acteurs;
+		std::vector<std::string> realisateurs;
 		
 	protected:
 		bool vu;
@@ -37,6 +37,7 @@ class Video {
 	public:
 		//Constructeur & destructeur
 		Video(std::string id, std::string titre, std::string lien, std::string synopsis, int annee);
+		Video(std::string id, std::string titre, std::string lien, std::string synopsis, int annee, std::vector<std::string> acteurs, std::vector<std::string> real);
 		~Video();
 		//Méthodes
 		std::string getId();
@@ -49,10 +50,10 @@ class Video {
 		void setAnnee(int annee);
 		std::string getSynopsis();
 		void setSynopsis(std::string syno);
-		std::vector<std::shared_ptr<Personne> > getActeurs();
-		void addActeur(std::shared_ptr<Personne> acteur);
-		std::vector<std::shared_ptr<Personne> > getReal();
-		void addReal(std::shared_ptr<Personne> real);
+		std::vector<std::string> getActeurs();
+		void addActeur(std::string acteur);
+		std::vector<std::string> getReal();
+		void addReal(std::string real);
 		
 		virtual std::string getStatut() = 0; //"à voir" ou "vu"
 		void marquerVu();
