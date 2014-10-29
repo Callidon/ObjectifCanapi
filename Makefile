@@ -34,7 +34,7 @@ sqlite3:
 BDConnector: sqlite3
 	$(CXX) $(FLAGS) -o build/$@.o src/$@.cpp $(SQLITEFLAGS) -c
 
-Bibliotheque: Video BDConnector
+Bibliotheque: Video
 	$(CXX) $(FLAGS) -o build/$@.o src/$@.cpp -c
 	
 Episode: Video

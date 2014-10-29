@@ -12,6 +12,7 @@ using namespace std;
 //--------------------------------------------------
 /*!
 * \brief Constructeur de base
+* \param fichier_db NOm du fichier contenant la base de données
 */
 BDConnector::BDConnector(string fichier_db) {
 	int rc;
@@ -34,6 +35,7 @@ BDConnector::~BDConnector() {
 //--------------------------------------------------
 /*!
 * \brief Méthode qui permet de changer d'utilisateur
+* \param fichier_db Nom du nouveau fichier contenant la base de données
 */
 void BDConnector::swapUser(string fichier_db) {
 	int rc;
@@ -49,6 +51,7 @@ void BDConnector::swapUser(string fichier_db) {
 //--------------------------------------------------
 /*!
 * \brief Méthode qui crée une nouvelle base de donnée pour un nouvel utilisateur
+* \param user Nom du nouvel utlisateur
 */
 void BDConnector::creerNewBD(string user) {
 	string nom_fichier = user + ".db";
@@ -60,6 +63,8 @@ void BDConnector::creerNewBD(string user) {
 //--------------------------------------------------
 /*!
 * \brief Méthode qui exécute la requête SQL passée en en paramètre
+* \param sql_query Requête SQL à exécuter
+* \return Table correspondant à la requête SQL passée en paramètre
 */
 vector<vector<string> > BDConnector::query(string sql_query) {
 	sqlite3_stmt *statement;
@@ -96,6 +101,8 @@ vector<vector<string> > BDConnector::query(string sql_query) {
 //--------------------------------------------------
 /*!
 * \brief Méthode qui compte le nombre de lignes dans une table de la base de données
+* \param nom_table Nom de la table sur laquelle effectuer l'opération
+* \return Nombre de lignes présentes dans la table
 */
 int BDConnector::count(string nom_table) {
 	//on fait la requête pour récupérer le nombre de lignes dans la table
@@ -109,6 +116,7 @@ int BDConnector::count(string nom_table) {
 * \brief Méthode qui renvoie l'id de la dernière ligne de la table. L'i d de cette dernière doit être de type INTEGER
 * \param nom_id Nom de l'identifiant de la table
 * \param nom_table Nom de la table dont on veut récupérer le dernier id
+* \return Id de la dernière ligne de la table
 */
 int BDConnector::lastId(string nom_id, string nom_table) {
 	//on fait la requête pour récupérer les id de la table classés par ordre décroissant
@@ -122,6 +130,7 @@ int BDConnector::lastId(string nom_id, string nom_table) {
 * \brief Méthode qui renvoie le prochain id à insérer dans la table. L'id de cette dernière doit être de type INTEGER
 * \param nom_id Nom de l'identifiant de la table
 * \param nom_table Nom de la table dont on veut récupérer le prochain id à insérer
+* \return Le prochain id à insérer dans la table
 */
 int BDConnector::nextIdToInsert(string nom_id, string nom_table) {
 	return this->lastId(nom_id, nom_table) + 1;

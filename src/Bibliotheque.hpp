@@ -9,7 +9,8 @@
 #define Bibliotheque_H
 
 #include "Video.hpp"
-#include "BDConnector.hpp"
+#include "FactorySQL.hpp"
+#include "FactoryOMDB.hpp"
 
 #include <string>
 //--------------------------------------------------
@@ -19,9 +20,11 @@
 class Bibliotheque {
 	private:
 		//Attributs
-		std::vector<std::shared_ptr<Video> > videos;
-		std::string user;
-		std::shared_ptr<BDConnector> DataBase;
+		std::string user; //!< Utilisateur lié à la bibliothèque
+		std::shared_ptr<Video> currentVideo; //!< Vidéo actuellement sélectionnée par la bibliothèque
+		std::vector<std::shared_ptr<Video> > videos; //!< Liste des vidéos de la bibliothèque
+		std::shared_ptr<BDConnector> database; //!< Base de données liée à la bibliothèque
+		std::shared_ptr<FactoryOMDB> factoryOMDB; //!< Factory servant à créer les nouvexu films & séries
 		
 	public:
 		//Constructeur & destructeur
@@ -31,7 +34,8 @@ class Bibliotheque {
 		std::string getUser();
 		void setUser(std::string user);
 		std::vector<std::shared_ptr<Video> > getVideos();
-		void addVideo(std::shared_ptr<Video> video);
+		void addVideo(std::string nom_video, bool is_episode);
+		void selectVideo(std::string titre);
 };
 //--------------------------------------------------
 #endif
