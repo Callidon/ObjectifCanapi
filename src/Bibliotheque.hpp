@@ -16,6 +16,7 @@
 //--------------------------------------------------
 /*!
 * \class Bibliotheque
+* \brief Classe gérant et pilotant une collection de vidéos (films et épisodes)
 */
 class Bibliotheque {
 	private:
@@ -24,7 +25,11 @@ class Bibliotheque {
 		std::shared_ptr<Video> currentVideo; //!< Vidéo actuellement sélectionnée par la bibliothèque
 		std::vector<std::shared_ptr<Video> > videos; //!< Liste des vidéos de la bibliothèque
 		std::shared_ptr<BDConnector> database; //!< Base de données liée à la bibliothèque
-		std::shared_ptr<FactoryOMDB> factoryOMDB; //!< Factory servant à créer les nouvexu films & séries
+		std::shared_ptr<FactoryOMDB> factoryOMDB; //!< Factory servant à créer les nouveaux films & séries
+		
+		//Méthodes privées
+		bool currentIsFilm();
+		bool currentIsEpisode();
 		
 	public:
 		//Constructeur & destructeur
@@ -36,6 +41,7 @@ class Bibliotheque {
 		std::vector<std::shared_ptr<Video> > getVideos();
 		void addVideo(std::string nom_video, bool is_episode);
 		void selectVideo(std::string titre);
+		void setStatutCurrentVideo(bool vu, bool aVoir);
 };
 //--------------------------------------------------
 #endif

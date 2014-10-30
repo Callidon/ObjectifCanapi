@@ -42,6 +42,36 @@ Bibliotheque::~Bibliotheque() {
 
 //--------------------------------------------------
 /*!
+* \brief Méthode qui vérifie si la vidéo actuellement sélectionnée est un film
+* \return Un booléen qui indique si la vidéo actuellement sélectionnée est un film ou non
+*/
+bool Bibliotheque::currentIsFilm() {
+	bool res = false; //booléen qui contient la réponse au test
+	//on teste le type de la vidéo courante
+	shared_ptr<Film> test_ptr(dynamic_pointer_cast<Film>(this->currentVideo));
+	if (test_ptr) { //si c'est bel et bien un objet de type Film
+		res = true;
+	}
+	return res;
+}
+
+//--------------------------------------------------
+/*!
+* \brief Méthode qui vérifie si la vidéo actuellement sélectionnée est un épisode
+* \return Un booléen qui indique si la vidéo actuellement sélectionnée est un épisode ou non
+*/
+bool Bibliotheque::currentIsEpisode() {
+	bool res = false; //booléen qui contient la réponse au test
+	//on teste le type de la vidéo courante
+	shared_ptr<Episode> test_ptr(dynamic_pointer_cast<Episode>(this->currentVideo));
+	if (test_ptr) { //si c'est bel et bien un objet de type Episode
+		res = true;
+	}
+	return res;
+}
+
+//--------------------------------------------------
+/*!
 * \brief Méthode qui renvoie le nom de l'utilisateur associé à la bibliothèque
 * \return Le nom de l'utilisateur associé à la bibliothèque
 */
@@ -97,5 +127,66 @@ void Bibliotheque::selectVideo(string titre) {
 			this->currentVideo = video; //on mémorise la sélection
 			break; //on arrête le parcours
 		}
+	}
+}
+
+//--------------------------------------------------
+/*!
+* \brief Méthode qui met à jour le statut de la vidéo sélectionnée
+* \param vu Si la vidéo est vu ou non
+* \param aVoir Si la vidéo est a voir ou non
+*/
+void Bibliotheque::setStatutCurrentVideo(bool vu, bool aVoir) {
+	string type_currentVideo = "null";
+	string sql_test_existence, sql_update, sql_insert;
+	
+	//mise à jour de la vidéo courante
+	if(vu) {
+		this->currentVideo->marquerVu();
+	}
+	if(aVoir) {
+		this->currentVideo->marquerVoir();
+	}
+	
+	//en fonction du type de la vidéo courante, on crée les requêtes sql adéquates
+	if(this->currentIsFilm) {
+		sql_test_existence = "SELECT * FROM Films WHERE id_film = '" + this->currentVideo->getId() + "';";
+		sql_update = "UPDATE Films "
+					 "SET vu = " + int(vu) + ", aVoir = " + int(aVoir) + " WHERE id_film = " + this->currentVideo->getId() + "';";
+		sql_insert = "INSERT INTO Films"
+					 "VALUES ('" + this->currentVideo->getId() + "'"
+							 ", '" + this->currentVideo->getTitre() + "'"
+							 ", '" + this->currentVideo->getLien() + "'"
+							 ", " + this->currentVideo->getAnnee() + ""
+							 ", '" + this->currentVideo->getSynopsis + "'"
+							 ", '" + this->currentVideo->getAffiche() + "'"
+							 ", " + int(vu) + ", " + int(aVoir) +  ");";
+	} else if(this->currentIsEpisode) {
+		sql_test_existence = "SELECT * FROM Episodes WHERE id_episode = '" + this->currentVideo->getId() + "';";
+		sql_update = "UPDATE Episodes "
+					 "SET vu = " + int(vu) + ", aVoir = " + int(aVoir) + " WHERE id_episode = " + this->currentVideo->getId() + "';";
+		sql_insert = "INSERT INTO Episodes"
+					 "VALUES ('" + this->currentVideo->getId() + "'"
+							 ", '" + this->currentVideo->getTitre() + "'"
+							 ", '" + this->currentVideo->getLien() + "'"
+							 ", " + this->currentVideo->getAnnee() + ""
+							 ", '" + this->currentVideo->getSynopsis + "'"
+							 ", " + this->currentVideo->getNumero() + ""
+							 ", " + this->currentVideo->getSaison() + ""
+							 ", '" + this->currentVideo->getSerie() + "'"
+							 ", " + int(vu) + ", " + int(aVoir) +  ");";
+	}
+	
+	//si la vidéo est déjà présente en base, on la met à jour
+	vecto<vector<string> > table = this->database->query(sql_test_existence);
+	if(! (table.size() == 0) ) {
+		this->database->query(sql_update);
+	} else { //sinon, on l'ajoute dans la base
+		
+		//on ajoute la vidéo en elle-même
+		this->database->query(sql_insert);
+		
+		//on insert les acteurs & réalisateurs en respectant la structure de la base de données
+		//TODO
 	}
 }

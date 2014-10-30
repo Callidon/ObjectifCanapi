@@ -6,7 +6,7 @@ using namespace std;
 int main() {
 	
 	shared_ptr<BDConnector> testDB(new BDConnector("database/test.db"));
-	shared_ptr<FactorySQL> facto(new FactorySQL(testDB));
+	/*shared_ptr<FactorySQL> facto(new FactorySQL(testDB));
 	shared_ptr<Film> testFilm = facto->genererFilm("id","titre","lien",2014,"affiche","synopsis");
 	//Test pour la génération d'un film depuis la base de donnée
 	vector<shared_ptr<Personne> > acteurs = testFilm->getActeurs();
@@ -18,7 +18,7 @@ int main() {
 	for(const auto &acteur: acteurs) {
 		cout << acteur->getNom() << endl;
 
-	}
+	}*/
 	/*
 	//Test pour la génération d'un épisode depuis la base de donnée
 	shared_ptr<Episode> testEp = facto->genererEpisode("11", "Episode1", "www.google.com", 2014, 01, 01, "Serie", "Synopsis");
