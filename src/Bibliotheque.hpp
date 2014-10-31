@@ -27,10 +27,6 @@ class Bibliotheque {
 		std::shared_ptr<BDConnector> database; //!< Base de données liée à la bibliothèque
 		std::shared_ptr<FactoryOMDB> factoryOMDB; //!< Factory servant à créer les nouveaux films & séries
 		
-		//Méthodes privées
-		bool currentIsFilm();
-		bool currentIsEpisode();
-		
 	public:
 		//Constructeur & destructeur
 		Bibliotheque(std::string user);

@@ -34,6 +34,7 @@ class BDConnector {
 		int count(std::string nom_table);
 		int lastId(std::string nom_id, std::string nom_table);
 		int nextIdToInsert(std::string nom_id, std::string nom_table);
+		bool isQueryEmpty(std::string sql_query);
 };
 //--------------------------------------------------
 #endif

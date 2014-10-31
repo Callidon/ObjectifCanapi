@@ -135,3 +135,15 @@ int BDConnector::lastId(string nom_id, string nom_table) {
 int BDConnector::nextIdToInsert(string nom_id, string nom_table) {
 	return this->lastId(nom_id, nom_table) + 1;
 }
+
+//--------------------------------------------------
+/*!
+* \brief Méthode qui vérifie si une requête renvoie une table vide
+* \param sql_query La requête à tester
+* \return Si la table renvoyée par la requête est vide ou non
+*/
+bool BDConnector::isQueryEmpty(string sql_query) {
+	//on récupère la table liée à la requête et on teste si elle ne contient aucun élément
+	vector<vector<string> > table = this->query(sql_query);
+	return (table.size() == 0);
+}
