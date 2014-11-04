@@ -21,15 +21,19 @@ int main() {
 	}
 	*/
 	
-	shared_ptr<Video> testFilm = facto->makeFilm(facto->queryTitle("Catch me if you can"));
+	shared_ptr<Serie> testFilm = facto->makeSerie(facto->queryTitle("Game of Thrones"));
 	cout << testFilm->getId() << endl;
 	cout << testFilm->getTitre() << endl;
 	cout << testFilm->getAnnee() << endl;
 	cout << testFilm->getSynopsis() << endl;
+	cout << testFilm->getPays() << endl;
 	for(string act : testFilm->getActeurs()){
 		cout << act << endl;
 	}
-	testFilm->lire();
+	for(shared_ptr<Episode> ep : testFilm->getEpisodes()){
+		cout << ep->getTitre() << endl;
+	}
+	//testFilm->lire();
 	
 	/*
 	//Test pour la génération d'un épisode depuis la base de donnée

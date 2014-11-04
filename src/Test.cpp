@@ -49,7 +49,7 @@ int main()
 	
 	delete(personne);
 */
-/*
+
 	string user;
 	cout << "User : ";
 	cin >> user;
@@ -82,6 +82,6 @@ int main()
 	for(shared_ptr<Video> v : biblio->getVideos()){
 		cout << v->getStatut() << endl;
 	}
-*/
+
 	return(0);
 }

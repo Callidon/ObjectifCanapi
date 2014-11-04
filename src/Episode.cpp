@@ -14,16 +14,20 @@ using namespace std;
 /*!
 * \brief Constructeur de base
 */
-Episode::Episode(string id, string titre, string lien, int annee, int numero, int saison, string serie, string synopsis):Video(id, titre, lien, synopsis, annee) {
+
+Episode::Episode(string id, string titre, string lien, int annee, string affiche, int numero, int saison, string serie, string synopsis, string pays):Video(id, titre, lien, synopsis, annee, affiche, pays) {
 	this->numero = numero;
 	this->saison = saison;
 	this->serie = serie; //nom de la série
 }
 
-Episode::Episode(string id, string titre, string lien, int annee, int numero, int saison, string serie, string synopsis, vector<string> acteurs, vector<string> real):Video(id, titre, lien, synopsis, annee, acteurs, real) {
+Episode::Episode(string id, string titre, string lien, int annee, string affiche, int numero, int saison, string serie, string synopsis, vector<string> acteurs, vector<string> real, string pays):Video(id, titre, lien, synopsis, annee, affiche, acteurs, real, pays) {
 	this->numero = numero;
 	this->saison = saison;
 	this->serie = serie; //nom de la série
+}
+
+Episode::Episode(string id, string titre, string lien, int annee, string affiche, string synopsis, vector<string> acteurs, vector<string> real, string pays):Video(id, titre, lien, synopsis, annee, affiche, acteurs, real, pays) {
 }
 
 //--------------------------------------------------

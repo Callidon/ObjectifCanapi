@@ -55,8 +55,8 @@ FilmObservateur:
 Personne:
 	$(CXX) $(FLAGS) -o build/$@.o src/$@.cpp -c
 	
-Serie:
-	$(CXX) $(FLAGS) -o build/$@.o src/$@.cpp -c
+Serie: Video Episode
+	$(CXX) -g $(FLAGS) -o build/$@.o src/$@.cpp -c
 	
 Test: Video Film Episode Bibliotheque
 	$(CXX) $(FLAGS) src/$@.cpp build/Video.o build/Personne.o build/Film.o build/Episode.o build/Bibliotheque.o build/BDConnector.o build/sqlite3.o $(SQLITEFLAGS) -o test
@@ -66,11 +66,11 @@ TestFactory: Video Film Episode BDConnector FactorySQL
 	$(CXX) $(FLAGS) src/$@.cpp build/FactorySQL.o build/Video.o build/Personne.o build/Film.o build/Episode.o build/BDConnector.o build/sqlite3.o $(SQLITEFLAGS) -o testFactory
 	./testFactory
 
-TestFactoryOMDB: Video Film Episode BDConnector FactoryOMDB
-	$(CXX) $(FLAGS) src/$@.cpp build/FactoryOMDB.o build/Video.o build/Personne.o build/Film.o build/Episode.o build/BDConnector.o build/sqlite3.o $(SQLITEFLAGS) -o testFactoryOMDB
+TestFactoryOMDB: Video Film Serie Episode BDConnector FactoryOMDB
+	$(CXX) $(FLAGS) src/$@.cpp build/FactoryOMDB.o build/Video.o build/Film.o build/Serie.o build/Episode.o build/BDConnector.o build/sqlite3.o $(SQLITEFLAGS) -o testFactoryOMDB
 	./testFactoryOMDB
 	
-Video: Personne
+Video:
 	$(CXX) $(FLAGS) -o build/$@.o src/$@.cpp -c
 
 #---------------------------------------------------------

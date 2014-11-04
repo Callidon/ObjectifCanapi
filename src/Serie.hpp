@@ -5,41 +5,33 @@
 * \author Thomas Minier
 * \date ?
 */
-#ifndef Video_H
-#define Video_H
+#ifndef Serie_H
+#define Serie_H
 
-#include "Observateur.hpp"
+#include "Video.hpp"
+#include "Episode.hpp"
 
 #include <string>
 //--------------------------------------------------
 /*!
 * \class Serie
 */
-class Serie {
+class Serie : public virtual Video {
 	private:
 		//Attributs
-		std::string titre;
-		int annee;
-		bool en_cours;
-		std::string lien; //lien vers BA
-		std::string affiche;
-		bool vu;
-		bool aVoir;
-		Observateur * observateur;
+		std::string affiche; //lien vers affiche
+		std::vector<std::shared_ptr<Episode>> episodes;
 		
 	public:
 		//Constructeur & destructeur
-		Serie(string titre, int annee, string lien, string affiche);
+		Serie(std::string id, std::string titre, std::string lien, int annee, std::string affiche, std::string synopsis, std::string pays);
+		Serie(std::string id, std::string titre, std::string lien, int annee, std::string affiche, std::string synopsis, std::vector<std::string> acteurs, std::vector<std::string> real, std::string pays);
 		~Serie();
 		//Methodes
-		void lire();
-		string getStatutSerie(); //en cours ou terminée
-		void setStatutSerie(bool ec); //ec = en cours
-		string getLien();
-		void setLien(string lien);
-		//void marquerVu();
-		//void marquerVoir();
-		
+		void addEpisode(std::shared_ptr<Episode> ep);
+		std::vector<std::shared_ptr<Episode>> getEpisodes();
+		//Méthode héritée de Video
+		virtual std::string getStatut();
 };
 //--------------------------------------------------
 #endif
