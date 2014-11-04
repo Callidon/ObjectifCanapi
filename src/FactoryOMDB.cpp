@@ -29,18 +29,18 @@ FactoryOMDB::~FactoryOMDB() {};
 * \brief Méthode créant et retournant un shared_ptr vers un nouveau film
 * \return Un shared_ptr<Film> qui pointe sur le film nouvellement crée
 */
-shared_ptr<Video> FactoryOMDB::genererFilm(string id, string titre, string lien, int annee, string affiche, string synopsis, vector<string> acteurs, vector<string> real, string pays) {
-	shared_ptr<Video> nouveauFilm (new Film(id, titre, lien, annee, affiche, synopsis, acteurs, real, pays));
+shared_ptr<Film> FactoryOMDB::genererFilm(string id, string titre, string lien, int annee, string affiche, string synopsis, vector<string> acteurs, vector<string> real, string pays) {
+	shared_ptr<Film> nouveauFilm (new Film(id, titre, lien, annee, affiche, synopsis, acteurs, real, pays));
 	return nouveauFilm;
 }
 
-shared_ptr<Video> FactoryOMDB::genererEpisode(string id, string titre, string lien, int annee, string affiche, string synopsis, vector<string> acteurs, vector<string> real, string pays) {
-	shared_ptr<Video> nouveauFilm (new Episode(id, titre, lien, annee, affiche, synopsis, acteurs, real, pays));
+shared_ptr<Episode> FactoryOMDB::genererEpisode(string id, string titre, string lien, int annee, string affiche, string synopsis, vector<string> acteurs, vector<string> real, string pays) {
+	shared_ptr<Episode> nouveauFilm (new Episode(id, titre, lien, annee, affiche, synopsis, acteurs, real, pays));
 	return nouveauFilm;
 }
 
-shared_ptr<Video> FactoryOMDB::genererSerie(string id, string titre, string lien, int annee, string affiche, string synopsis, vector<string> acteurs, vector<string> real, string pays) {
-	shared_ptr<Video> nouveauFilm (new Serie(id, titre, lien, annee, affiche, synopsis, acteurs, real, pays));
+shared_ptr<Serie> FactoryOMDB::genererSerie(string id, string titre, string lien, int annee, string affiche, string synopsis, vector<string> acteurs, vector<string> real, string pays) {
+	shared_ptr<Serie> nouveauFilm (new Serie(id, titre, lien, annee, affiche, synopsis, acteurs, real, pays));
 	return nouveauFilm;
 }
 
@@ -237,6 +237,8 @@ shared_ptr<Serie> FactoryOMDB::makeSerie(string res){
 		}
 		i = j + 1;
 	}
-	return serie;
+	//converson de serie en pointeur de Video vers Serie
+	shared_ptr<Serie> ptrSerie(dynamic_pointer_cast<Serie>(serie));
+	return ptrSerie;
 }
 
