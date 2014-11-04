@@ -1,5 +1,5 @@
 /*!
-* \file Video.hpp
+* \file Film.hpp
 * \brief Fichier contenant les entêtes de la classe Film
 * \author Camille Le Luët
 * \author Thomas Minier
@@ -22,12 +22,9 @@ class Film : public virtual Video {
 		
 	public:
 		//Constructeur & destructeur
-		Film(std::string id, std::string titre, std::string lien, int annee, std::string affiche, std::string synopsis);
-		Film(std::string id, std::string titre, std::string lien, int annee, std::string affiche, std::string synopsis, std::vector<std::string> acteurs, std::vector<std::string> real);
+		Film(std::string id, std::string titre, std::string lien, int annee, std::string affiche, std::string synopsis, std::string pays);
+		Film(std::string id, std::string titre, std::string lien, int annee, std::string affiche, std::string synopsis, std::vector<std::string> acteurs, std::vector<std::string> real, std::string pays);
 		~Film();
-		//Methodes
-		std::string getAffiche(); //afficher l'affiche
-		void setAffiche(std::string aff);
 		//Méthode héritée de Video
 		virtual std::string getStatut();
 };

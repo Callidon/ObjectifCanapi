@@ -1,7 +1,7 @@
 /*!
 * \file Serie.cpp
 * \brief Fichier contenant l'implémentation de la classe Serie
-* \author Camille Le LUët
+* \author Camille Le Luët
 * \author Thomas Minier
 * \date ?
 */
@@ -12,15 +12,10 @@ using namespace std;
 /*!
 * \brief Constructeur de base
 */
-Serie::Serie(string titre, int annee, string lien, string affiche, Observateur * obs) {
-	this->titre = titre;
-	this->annee = annee;
-	this->lien = lien;
-	this->affiche = affiche;
-	this->en_cours = true;
-	this->vu = false;
-	this->aVoir = false;
-	this->observateur = obs;
+Serie::Serie(string id, string titre, string lien, int annee, string affiche, string synopsis, string pays):Video(id, titre, lien, synopsis, annee, affiche, pays) {
+}
+
+Serie::Serie(string id, string titre, string lien, int annee, string affiche, string synopsis, vector<string> acteurs, vector<string> real, string pays):Video(id, titre, lien, synopsis, annee, affiche, acteurs, real, pays) {
 }
 
 //--------------------------------------------------
@@ -32,45 +27,33 @@ Serie::~Serie() {
 
 //--------------------------------------------------
 /*!
-* \brief Méthode qui retourne le statut de la série (en cours ou terminée)
+* \brief Méthode qui retourne le statut du Serie ("a voir" ou "vu")
 */
-string Serie::getStatutSerie(){
-	if(this->en_cours){
-		return("Série en cours");
+string Serie::getStatut(){
+	if(this->vu){
+		return("Serie vu");
 	}
-	else{
-		return("Série terminée");
+	else if(this->aVoir){
+		return("Serie à voir");
+	}
+	else {
+		return("aucun marquage");
 	}
 }
 
 //--------------------------------------------------
 /*!
-* \brief Méthode qui modifie le statut de la série
+* \brief Méthode qui ajoute un episode a la liste
 */
-void Serie::setStatutSerie(bool ec){
-	this->en_cours = ec;
+void Serie::addEpisode(shared_ptr<Episode> episode){
+	this->episodes.push_back(episode);
 }
 
 //--------------------------------------------------
 /*!
-* \brief Méthode qui retourne le lien vers la BA de la série
+* \brief Méthode qui retourne la liste des episodes
 */
-string Serie::getLien(){
-	return this->lien;
+vector<shared_ptr<Episode>> Serie::getEpisodes(){
+	return this->episodes;
 }
 
-//--------------------------------------------------
-/*!
-* \brief Méthode qui modifie le lien vers la BA
-*/
-void Serie::setLien(string lien){
-	this->lien = lien;
-}
-
-//--------------------------------------------------
-/*!
-* \brief Méthode qui lance la lecture de la BA du film
-*/
-void Serie::lire(){
-}
- //lire BA

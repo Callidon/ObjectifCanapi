@@ -8,7 +8,6 @@
 #ifndef Video_H
 #define Video_H
 
-#include "Personne.hpp"
 
 #include <string>
 #include <vector>
@@ -19,6 +18,8 @@
 /*!
 * \class Video
 */
+class Episode;
+
 class Video {
 	private:
 		//Attributs
@@ -26,6 +27,8 @@ class Video {
 		std::string titre;
 		std::string lien; //lien vers BA
 		int annee;
+		std::string affiche;
+		std::string pays;
 		std::string synopsis;
 		std::vector<std::string> acteurs;
 		std::vector<std::string> realisateurs;
@@ -36,8 +39,8 @@ class Video {
 		
 	public:
 		//Constructeur & destructeur
-		Video(std::string id, std::string titre, std::string lien, std::string synopsis, int annee);
-		Video(std::string id, std::string titre, std::string lien, std::string synopsis, int annee, std::vector<std::string> acteurs, std::vector<std::string> real);
+		Video(std::string id, std::string titre, std::string lien, std::string synopsis, int annee, std::string affiche, std::string pays);
+		Video(std::string id, std::string titre, std::string lien, std::string synopsis, int annee, std::string affiche, std::vector<std::string> acteurs, std::vector<std::string> real, std::string pays);
 		~Video();
 		//Méthodes
 		std::string getId();
@@ -48,6 +51,10 @@ class Video {
 		void setLien(std::string lien);
 		int getAnnee();
 		void setAnnee(int annee);
+		std::string getAffiche();
+		void setAffiche(std::string aff);
+		std::string getPays();
+		void setPays(std::string pays);
 		std::string getSynopsis();
 		void setSynopsis(std::string syno);
 		std::vector<std::string> getActeurs();
@@ -60,6 +67,19 @@ class Video {
 		void marquerVoir();
 		
 		void lire(); //lire BA
+		/*
+		virtual std::vector<std::shared_ptr<Episode> > getEpisodes();
+		virtual void addEpisode(std::shared_ptr<Episode> ep);
+		
+		virtual int getNumero();
+		virtual void setNumero(int num);
+		
+		virtual int getSaison();
+		virtual void setSaison(int num);
+		
+		virtual std::string getSerie();
+		virtual void setSerie(std::string serie);
+		*/
 };
 //--------------------------------------------------
 #endif

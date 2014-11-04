@@ -11,6 +11,7 @@
 #include <vector>
 #include <string>
 #include "Film.hpp"
+#include "Serie.hpp"
 #include "Episode.hpp"
 #include "BDConnector.hpp"
 
@@ -28,13 +29,16 @@ class FactoryOMDB {
 	public:
 		FactoryOMDB(std::shared_ptr<BDConnector> base);
 		~FactoryOMDB();
-		std::vector<std::shared_ptr<Video> > recupererAllFilms();
-		std::vector<std::shared_ptr<Video> > recupererAllEpisodes();
 		
-		std::shared_ptr<Video> genererVideo(std::string id, std::string titre, std::string lien, int annee, std::string affiche, std::string synopsis, std::vector<std::string> acteurs, std::vector<std::string> real);
-		//std::shared_ptr<Episode> genererEpisode(std::string id,std::string titre, std::string lien, int annee, int numero, int saison, std::string serie, std::string synopsis, std::vector<std::string> acteurs, std::vector<std::string> real);
+		std::shared_ptr<Video> genererFilm(std::string id, std::string titre, std::string lien, int annee, std::string affiche, std::string synopsis, std::vector<std::string> acteurs, std::vector<std::string> real, std::string pays);
+		std::shared_ptr<Video> genererEpisode(std::string id, std::string titre, std::string lien, int annee, std::string affiche, std::string synopsis , std::vector<std::string> acteurs, std::vector<std::string> real, std::string pays);
+		std::shared_ptr<Video> genererSerie(std::string id, std::string titre, std::string lien, int annee, std::string affiche, std::string synopsis, std::vector<std::string> acteurs, std::vector<std::string> real, std::string pays);
+		
+		
 		std::string queryTitle(std::string title);
-		std::shared_ptr<Video> makeFilm(std::string res);
+		std::string querySerie(std::string title);
+		std::shared_ptr<Video> makeVideo(std::string res, std::string type);
+		std::shared_ptr<Serie> makeSerie(std::string res);
 };
 
 //--------------------------------------------------

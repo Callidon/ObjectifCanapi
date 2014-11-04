@@ -12,12 +12,10 @@ using namespace std;
 /*!
 * \brief Constructeur de base
 */
-Film::Film(string id, string titre, string lien, int annee, string affiche, string synopsis):Video(id, titre, lien, synopsis, annee) {
-	this->affiche = affiche;
+Film::Film(string id, string titre, string lien, int annee, string affiche, string synopsis, string pays):Video(id, titre, lien, synopsis, annee, affiche, pays) {
 }
 
-Film::Film(string id, string titre, string lien, int annee, string affiche, string synopsis, vector<string> acteurs, vector<string> real):Video(id, titre, lien, synopsis, annee, acteurs, real) {
-	this->affiche = affiche;
+Film::Film(string id, string titre, string lien, int annee, string affiche, string synopsis, vector<string> acteurs, vector<string> real, string pays):Video(id, titre, lien, synopsis, annee, affiche, acteurs, real, pays) {
 }
 
 //--------------------------------------------------
@@ -41,25 +39,4 @@ string Film::getStatut(){
 	else {
 		return("aucun marquage");
 	}
-}
-
-
-
-//--------------------------------------------------
-/*!
-* \brief Méthode qui retourne l'affiche du film 
-* gerer l'affichage de l'affiche à l'appel de cette méthode
-*/
-string Film::getAffiche(){
-	return this->affiche;
-}
-
-
-
-//--------------------------------------------------
-/*!
-* \brief Méthode qui modifie le lien de l'affiche
-*/
-void Film::setAffiche(string aff){
-	this->affiche = aff;
 }

@@ -23,69 +23,67 @@ FactoryOMDB::FactoryOMDB(shared_ptr<BDConnector> base): bd(base) {};
 */
 FactoryOMDB::~FactoryOMDB() {};
 
+
 //--------------------------------------------------
 /*!
-* \brief Méthode créant et retournant un shared_ptr vers une nouvelle Video
-* \return Un shared_ptr<Video> qui pointe sur la video nouvellement crée
+* \brief Méthode créant et retournant un shared_ptr vers un nouveau film
+* \return Un shared_ptr<Film> qui pointe sur le film nouvellement crée
 */
-shared_ptr<Video> FactoryOMDB::genererVideo(string id, string titre, string lien, int annee, string affiche, string synopsis, vector<string> acteurs, vector<string> real) {
-	shared_ptr<Film> nouveauFilm (new Film(id, titre, lien, annee, affiche, synopsis, acteurs, real));
+shared_ptr<Video> FactoryOMDB::genererFilm(string id, string titre, string lien, int annee, string affiche, string synopsis, vector<string> acteurs, vector<string> real, string pays) {
+	shared_ptr<Video> nouveauFilm (new Film(id, titre, lien, annee, affiche, synopsis, acteurs, real, pays));
 	return nouveauFilm;
 }
 
+shared_ptr<Video> FactoryOMDB::genererEpisode(string id, string titre, string lien, int annee, string affiche, string synopsis, vector<string> acteurs, vector<string> real, string pays) {
+	shared_ptr<Video> nouveauFilm (new Episode(id, titre, lien, annee, affiche, synopsis, acteurs, real, pays));
+	return nouveauFilm;
+}
 
-//--------------------------------------------------
-/*!
-* \brief Méthode retournant la liste de tous les films contenus dans la base de données
-* \return Un vector de shared_ptr<Video> qui contient  tous les films contenus dans la base de données
-*/
-vector<shared_ptr<Video> > FactoryOMDB::recupererAllFilms() {
-	vector<shared_ptr<Video> > result;
-//	//on sélectionne tous les films contenus dans la base via une requête sql
-//	string sql = "SELECT * FROM Films";
-//	vector<vector< string> > films = bd->query(sql);
-	//on parcours la liste des films et on les ajoute à la liste de réponse
-//	for(const auto &film: films) {
-//		result.push_back(this->genererFilm(film[0], film[1], film[2], atoi(film[3].c_str()), film[4], film[5]));
-//	}
-	//on retourne le résultat
-	return result;
+shared_ptr<Video> FactoryOMDB::genererSerie(string id, string titre, string lien, int annee, string affiche, string synopsis, vector<string> acteurs, vector<string> real, string pays) {
+	shared_ptr<Video> nouveauFilm (new Serie(id, titre, lien, annee, affiche, synopsis, acteurs, real, pays));
+	return nouveauFilm;
 }
 
 //--------------------------------------------------
 /*!
-* \brief Méthode retournant la liste de tous les épisodes contenus dans la base de données
-* \return Un vector de shared_ptr<Video> qui contient  tous les épisodes contenus dans la base de données
-*/
-vector<shared_ptr<Video> > FactoryOMDB::recupererAllEpisodes() {
-	vector<shared_ptr<Video> > result;
-	//on sélectionne tous les épisodes contenus la base via une requête sql
-//	string sql = "SELECT * FROM Episodes";
-//	vector<vector< string> > episodes = bd->query(sql);
-	//on parcours la liste des épisodes et on les ajoute à la liste de réponse
-//	for(const auto &episode: episodes) {
-//		result.push_back(this->genererEpisode(episode[0], episode[1], episode[2], atoi(episode[3].c_str()), atoi(episode[4].c_str()), atoi(episode[5].c_str()), episode[6], episode[7]));
-//	}
-	//on retourne le résultat
-	return result;
-}
-
-
-//--------------------------------------------------
-/*!
-* \brief Méthode affectuant une rechercher par titre de film
+* \brief Méthode affectuant une recherche par titre de film
 */
 string FactoryOMDB::queryTitle(string title){
-	FILE *fp=popen((char*)("wget --quiet -O - \"http://www.omdbapi.com/?t=" + title + "\"").c_str(), "r");
+	FILE *fp;
+	fp=popen((char*)("wget --quiet -O - \"http://www.omdbapi.com/?t=" + title + "\"").c_str(), "r");
 	char buffer[128];
 	string res = "";
 	while(!feof(fp)){
 		if(fgets(buffer, 128, fp) != NULL){
-    		res += buffer;
-    	}
+			res += buffer;
+		}
 	}
-    pclose(fp);
+	pclose(fp);
     return res;
+}
+
+//--------------------------------------------------
+/*!
+* \brief Méthode affectuant une recherche par titre de film
+*/
+string FactoryOMDB::querySerie(string title){
+	FILE *fp;
+	fp=popen((char*)("wget --quiet -O - \"http://imdbapi.poromenos.org/js/?name=" + title + "\"").c_str(), "r");
+	char buffer[128];
+	string res = "";
+	while(!feof(fp)){
+		if(fgets(buffer, 128, fp) != NULL){
+			res += buffer;
+		}
+	}
+	pclose(fp);
+	
+	string find = "\"episodes\":";
+	int size = find.size();
+	int posd = res.find(find) + size + 1;
+	int posf = res.find("}]", posd);
+	return res.substr(posd, posf - posd);
+	
 }
 
 
@@ -93,7 +91,7 @@ string FactoryOMDB::queryTitle(string title){
 /*!
 * \brief Méthode permettant de creer un objet film/episode en fonction du resultat de la requete
 */
-shared_ptr<Video> FactoryOMDB::makeFilm(string res){
+shared_ptr<Video> FactoryOMDB::makeVideo(string res, string type){
 	if(res.substr(13,5) == "False"){
 		cout << "Film non trouvé" << endl;
 	}
@@ -141,6 +139,13 @@ shared_ptr<Video> FactoryOMDB::makeFilm(string res){
 		posf = res.find(separateur, posd);
 		string synopsis = res.substr(posd, posf - posd);
 		
+		
+		find = "\"Country\":";
+		size = find.size();
+		posd = res.find(find) + size + 1;
+		posf = res.find(separateur, posd);
+		string pays = res.substr(posd, posf - posd);
+		
 		find = "\"Poster\":";
 		size = find.size();
 		posd = res.find(find) + size + 1;
@@ -168,10 +173,70 @@ shared_ptr<Video> FactoryOMDB::makeFilm(string res){
 			i = j + 2;
 		}
 		string lien = "https://www.youtube.com/results?search_query=" + titreLien + "+trailer";
-		//system((char*)("firefox " + lien).c_str());
 		
-		return genererVideo(id, titre, lien, annee, affiche, synopsis, acteurs, real);
-			
+		if(type=="Film"){
+			return genererFilm(id, titre, lien, annee, affiche, synopsis, acteurs, real, pays);
+		} else if(type=="Serie"){
+			return genererSerie(id, titre, lien, annee, affiche, synopsis, acteurs, real, pays);
+		} else if(type=="Episode"){
+			return genererEpisode(id, titre, lien, annee, affiche, synopsis, acteurs, real, pays);
+		}
 	}
+}
+
+//--------------------------------------------------
+/*!
+* \brief Méthode permettant de creer un objet film/episode en fonction du resultat de la requete
+*/
+shared_ptr<Serie> FactoryOMDB::makeSerie(string res){
+	shared_ptr<Video> serie = makeVideo(res, "Serie");
+	shared_ptr<Video> ep;
+	string liste = querySerie(serie->getTitre());
+	
+	string episode;
+	int i = 0, j=0;
+	int posd,posf,size;
+	string find, titre, numero, season;
+	int saison, num;
+	string sep = "}";
+	while(i<liste.size() && j!= -1){
+		j = liste.find(sep, i);
+		episode = liste.substr(i, j - i);
+
+		find = "\"season\":";
+		size = find.size();
+		posd = episode.find(find) + size + 1;
+		posf = episode.find(", \"", posd);
+		if(posd != -1 && posf != -1){
+			season = episode.substr(posd, posf - posd);
+			saison = atoi((char*)season.c_str());
+		}
+
+		find = "\"name\":";
+		size = find.size();
+		posd = episode.find(find) + size + 2;
+		posf = episode.find(", \"", posd);
+		if(posd != -1 && posf != -1){
+			titre = episode.substr(posd, posf - posd - 1);
+		}
+
+		find = "\"number\":";
+		size = find.size();
+		posd = episode.find(find) + size + 1;
+		posf = episode.size();
+		if(posd != -1 && posf != -1){
+			numero = episode.substr(posd, posf - posd);
+			num = atoi((char*)numero.c_str());
+		}
+		if(titre != ("Episode #"+season+"."+numero)){
+			ep = makeVideo(queryTitle(titre), "Episode");
+			//cout << ep->getTitre() << endl
+			//ep->setSaison(saison);
+			//ep->setNumero(num);
+			//cout << ep->getSaison() << "x" << ep->getNumero() << " : " << ep->getTitre() << endl;
+		}
+		i = j + 1;
+	}
+	return serie;
 }
 

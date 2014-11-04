@@ -13,21 +13,25 @@ using namespace std;
 /*!
 * \brief Constructeur de base
 */
-Video::Video(string id, string titre, string lien, string synopsis, int annee) {
+Video::Video(string id, string titre, string lien, string synopsis, int annee, string affiche, string pays) {
 	this->id = id;
 	this->titre = titre;
 	this->lien = lien;
 	this->annee = annee;
+	this->affiche = affiche;
 	this->synopsis = synopsis;
 	this->vu = false;
 	this->aVoir = false;
+	this->pays = pays;
 }
 
-Video::Video(string id, string titre, string lien, string synopsis, int annee, vector<string> acteurs, vector<string> real){
+Video::Video(string id, string titre, string lien, string synopsis, int annee, string affiche, vector<string> acteurs, vector<string> real, string pays){
 	this->id = id;
 	this->titre = titre;
 	this->lien = lien;
 	this->annee = annee;
+	this->affiche = affiche;
+	this->pays = pays;
 	this->synopsis = synopsis;
 	this->vu = false;
 	this->aVoir = false;
@@ -104,6 +108,38 @@ int Video::getAnnee(){
 */
 void Video::setAnnee(int annee){
 	this->annee = annee;
+}
+
+//--------------------------------------------------
+/*!
+* \brief Méthode qui retourne l'affiche de la Video
+*/
+string Video::getAffiche(){
+	return this->affiche;
+}
+
+//--------------------------------------------------
+/*!
+* \brief Méthode qui modifie l'affiche de la video par celle passée en parametre
+*/
+void Video::setAffiche(string aff){
+	this->affiche = aff;
+}
+
+//--------------------------------------------------
+/*!
+* \brief Méthode qui retourne le pays de la Video
+*/
+string Video::getPays(){
+	return this->pays;
+}
+
+//--------------------------------------------------
+/*!
+* \brief Méthode qui modifie le pays de prod par celle passé en parametre
+*/
+void Video::setPays(string pays){
+	this->pays = pays;
 }
 
 //--------------------------------------------------

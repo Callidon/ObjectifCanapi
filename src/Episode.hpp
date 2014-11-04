@@ -11,6 +11,7 @@
 #include "Video.hpp"
 
 #include <string>
+#include <vector>
 
 //--------------------------------------------------
 /*!
@@ -25,8 +26,9 @@ class Episode : public virtual Video {
 		
 	public:
 		//Constructeur & destructeur
-		Episode(std::string id, std::string titre, std::string lien, int annee, int numero, int saison, std::string serie, std::string synopsis);
-		Episode(std::string id, std::string titre, std::string lien, int annee, int numero, int saison, std::string serie, std::string synopsis , std::vector<std::string> acteurs, std::vector<std::string> real);
+		Episode(std::string id, std::string titre, std::string lien, int annee, std::string affiche, int numero, int saison, std::string serie, std::string synopsis, std::string pays);
+		Episode(std::string id, std::string titre, std::string lien, int annee, std::string affiche, int numero, int saison, std::string serie, std::string synopsis , std::vector<std::string> acteurs, std::vector<std::string> real, std::string pays);
+		Episode(std::string id, std::string titre, std::string lien, int annee, std::string affiche, std::string synopsis , std::vector<std::string> acteurs, std::vector<std::string> real, std::string pays);
 		~Episode();
 		//Methodes
 		int getNumero();
