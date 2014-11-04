@@ -17,10 +17,10 @@
 * \brief Classe réalisant l'interface Factory & instanciant des objets de type Video
 */
 
-class FactorySQL : public Factory {
+class FactorySQL {
 	
 	private:
-		std::shared_ptr<BDConnector> bd; //<! Connecteur vers la base de donnée où sont stocké les informations
+		std::shared_ptr<BDConnector> bd; //!< Connecteur vers la base de donnée où sont stocké les informations
 		
 	public:
 		FactorySQL(std::shared_ptr<BDConnector> base);
