@@ -121,24 +121,29 @@ void Bibliotheque::setStatutCurrentVideo(bool vu, bool aVoir) {
 	}
 	
 	//en fonction du type de la vidéo courante, on crée les requêtes sql adéquates
-	//on essaye de convertir la vidéo courante en Film
-	shared_ptr<Film> currentfilm(dynamic_pointer_cast<Film>(this->currentVideo));
-	if(currentfilm) { //si la conversion a réussi, la vidéo est bien de type Film
-		test_existence << "SELECT * FROM Films WHERE id_film = '" << currentfilm->getId() << "';";
+	//on essaye de convertir la vidéo courante dans les différents types disponibles
+	shared_ptr<Film> currentFilm(dynamic_pointer_cast<Film>(this->currentVideo));
+	shared_ptr<Episode> currentEpisode(dynamic_pointer_cast<Episode>(this->currentVideo));
+	
+	if(currentFilm) { //si la conversion en Film a réussi, la vidéo est bien de type Film
+		
+		test_existence << "SELECT * FROM Films WHERE id_film = '" << currentFilm->getId() << "';";
 		update << "UPDATE Films " 
 				  "SET vu = " << vu 
 				  << ", aVoir = " << aVoir 
-				  << " WHERE id_film = " << currentfilm->getId() + "';";
+				  << " WHERE id_film = " << currentFilm->getId() << "';";
 		insert_film << "INSERT INTO Films "
-				  "VALUES ('" << currentfilm->getId() 
-				  << "','" << currentfilm->getTitre() 
-				  << "', '" << currentfilm->getLien() 
-				  << "', " << currentfilm->getAnnee() 
-				  << ", '" << currentfilm->getSynopsis()
-				  << "', '" << currentfilm->getAffiche() 
+				  "VALUES ('" << currentFilm->getId() 
+				  << "','" << currentFilm->getTitre() 
+				  << "', '" << currentFilm->getLien() 
+				  << "', " << currentFilm->getAnnee() 
+				  << ", '" << currentFilm->getSynopsis()
+				  << "', '" << currentFilm->getAffiche() 
+				  << ", '" << currentFilm->getPays()
 				  << "', " << vu << ", " << aVoir << ");";
-	} else { //sinon, elle est de type Episode et il faut la convertir correctement
-		shared_ptr<Episode> currentEpisode(dynamic_pointer_cast<Episode>(this->currentVideo));
+				  
+	} else if (currentEpisode) { //si la conversion en Episode a réussi, la vidéo est bien de type Episode
+		
 		test_existence << "SELECT * FROM Episodes WHERE id_episode = '" << currentEpisode->getId() << "';";
 		update << "UPDATE Episodes "
 				  "SET vu = " << vu 
@@ -152,7 +157,8 @@ void Bibliotheque::setStatutCurrentVideo(bool vu, bool aVoir) {
 				   << ", '" << currentEpisode->getSynopsis() 
 				   << "', " << currentEpisode->getNumero()
 				   << ", " << currentEpisode->getSaison() 
-				   << ", '" << currentEpisode->getSerie() 
+				   << ", '" << currentEpisode->getSerie()
+				   << ", '" << currentEpisode->getPays()
 				   << "', " << vu << ", " << aVoir << ");";
 	}
 	//conversion des stringstream en string
@@ -162,7 +168,9 @@ void Bibliotheque::setStatutCurrentVideo(bool vu, bool aVoir) {
 	
 	//si la vidéo est déjà présente en base, on la met à jour
 	if(! this->database->isQueryEmpty(sql_test_existence) ) {
+		
 		this->database->query(sql_update);
+		
 	} else { //sinon, on l'ajoute dans la base
 		
 		//on ajoute la vidéo en elle-même
@@ -188,7 +196,7 @@ void Bibliotheque::setStatutCurrentVideo(bool vu, bool aVoir) {
 				this->database->query(insert_personne.str()); 
 				
 			} else { //sinon, on récupère son id
-				vector<vector<string> > table = this->database->query("SELECT id_personne, nom FROM Personnes WHERE nom = " + acteur + ";");
+				vector<vector<string> > table = this->database->query(sql_recherche);
 				id_acteur_courant = atoi(table[0][0].c_str());
 			}
 			
@@ -197,9 +205,11 @@ void Bibliotheque::setStatutCurrentVideo(bool vu, bool aVoir) {
 			insert_acteur << "INSERT INTO Acteurs "
 							 "VALUES (" << id_acteur_courant 
 							 << ", '" << this->currentVideo->getId() << "');";
+			this->database->query(insert_acteur.str());
 		}
 		
 		//on fait pareil avec les réalisateurs
 		//TODO
+		
 	}
 }
