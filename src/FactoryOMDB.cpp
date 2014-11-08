@@ -34,16 +34,6 @@ shared_ptr<Film> FactoryOMDB::genererFilm(string id, string titre, string lien, 
 	return nouveauFilm;
 }
 
-shared_ptr<Episode> FactoryOMDB::genererEpisode(string id, string titre, string lien, int annee, string affiche, string synopsis, vector<string> acteurs, vector<string> real, string pays) {
-	shared_ptr<Episode> nouveauFilm (new Episode(id, titre, lien, annee, affiche, synopsis, acteurs, real, pays));
-	return nouveauFilm;
-}
-
-shared_ptr<Serie> FactoryOMDB::genererSerie(string id, string titre, string lien, int annee, string affiche, string synopsis, vector<string> acteurs, vector<string> real, string pays) {
-	shared_ptr<Serie> nouveauFilm (new Serie(id, titre, lien, annee, affiche, synopsis, acteurs, real, pays));
-	return nouveauFilm;
-}
-
 //--------------------------------------------------
 /*!
 * \brief Méthode affectuant une recherche par titre de film
@@ -93,7 +83,7 @@ string FactoryOMDB::querySerie(string title){
 */
 shared_ptr<Video> FactoryOMDB::makeVideo(string res, string type){
 	if(res.substr(13,5) == "False"){
-		cout << "Film non trouvé" << endl;
+		//cout << "Film non trouvé" << endl;
 	}
 	else {
 		string separateur = "\","; string find; int size; int posd; int posf;
@@ -174,13 +164,7 @@ shared_ptr<Video> FactoryOMDB::makeVideo(string res, string type){
 		}
 		string lien = "https://www.youtube.com/results?search_query=" + titreLien + "+trailer";
 		
-		if(type=="Film"){
-			return genererFilm(id, titre, lien, annee, affiche, synopsis, acteurs, real, pays);
-		} else if(type=="Serie"){
-			return genererSerie(id, titre, lien, annee, affiche, synopsis, acteurs, real, pays);
-		} else if(type=="Episode"){
-			return genererEpisode(id, titre, lien, annee, affiche, synopsis, acteurs, real, pays);
-		}
+		return genererFilm(id, titre, lien, annee, affiche, synopsis, acteurs, real, pays);
 	}
 }
 
@@ -189,8 +173,14 @@ shared_ptr<Video> FactoryOMDB::makeVideo(string res, string type){
 * \brief Méthode permettant de creer un objet film/episode en fonction du resultat de la requete
 */
 shared_ptr<Serie> FactoryOMDB::makeSerie(string res){
+	
 	shared_ptr<Video> serie = makeVideo(res, "Serie");
+	//converson de serie en pointeur de Video vers Serie
+	shared_ptr<Serie> ptrSerie(dynamic_pointer_cast<Serie>(serie));
+	
 	shared_ptr<Video> ep;
+	shared_ptr<Episode> epi;
+	
 	string liste = querySerie(serie->getTitre());
 	
 	string episode;
@@ -230,15 +220,13 @@ shared_ptr<Serie> FactoryOMDB::makeSerie(string res){
 		}
 		if(titre != ("Episode #"+season+"."+numero)){
 			ep = makeVideo(queryTitle(titre), "Episode");
-			//cout << ep->getTitre() << endl
-			//ep->setSaison(saison);
-			//ep->setNumero(num);
-			//cout << ep->getSaison() << "x" << ep->getNumero() << " : " << ep->getTitre() << endl;
+			epi = dynamic_pointer_cast<Episode>(ep);
+			ptrSerie->addEpisode(epi);
+			epi->setSaison(saison);
+			epi->setNumero(num);
 		}
 		i = j + 1;
 	}
-	//converson de serie en pointeur de Video vers Serie
-	shared_ptr<Serie> ptrSerie(dynamic_pointer_cast<Serie>(serie));
 	return ptrSerie;
 }
 

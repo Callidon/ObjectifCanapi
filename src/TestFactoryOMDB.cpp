@@ -22,7 +22,7 @@ int main() {
 	*/
 	
 	shared_ptr<Serie> testFilm = facto->makeSerie(facto->queryTitle("Game of Thrones"));
-	cout << testFilm->getId() << endl;
+	/*cout << testFilm->getId() << endl;
 	cout << testFilm->getTitre() << endl;
 	cout << testFilm->getAnnee() << endl;
 	cout << testFilm->getSynopsis() << endl;
@@ -32,7 +32,7 @@ int main() {
 	}
 	for(shared_ptr<Episode> ep : testFilm->getEpisodes()){
 		cout << ep->getTitre() << endl;
-	}
+	}*/
 	//testFilm->lire();
 	
 	/*
