@@ -35,7 +35,7 @@ class Bibliotheque {
 		std::string getUser();
 		void setUser(std::string user);
 		std::vector<std::shared_ptr<Video> > getVideos();
-		void addVideo(std::string nom_video, bool is_episode);
+		void addVideo(std::string nom_video, std::string type_video);
 		void selectVideo(std::string titre);
 		void setStatutCurrentVideo(bool vu, bool aVoir);
 };

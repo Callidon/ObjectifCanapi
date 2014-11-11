@@ -8,7 +8,11 @@
 #ifndef FACTORYSQL_H
 #define FACTORYSQL_H
 
-#include "Factory.hpp"
+#include <memory>
+#include <vector>
+#include <string>
+#include "Film.hpp"
+#include "Serie.hpp"
 #include "BDConnector.hpp"
 
 //--------------------------------------------------
@@ -26,10 +30,11 @@ class FactorySQL {
 		FactorySQL(std::shared_ptr<BDConnector> base);
 		~FactorySQL();
 		std::vector<std::shared_ptr<Video> > recupererAllFilms();
-		std::vector<std::shared_ptr<Video> > recupererAllEpisodes();
+		std::vector<std::shared_ptr<Video> > recupererAllSeries();
 		//Méthodes héritée de Factory
-		virtual std::shared_ptr<Film> genererFilm(std::string id, std::string titre, std::string lien, int annee, std::string affiche, std::string synopsis);
-		virtual std::shared_ptr<Episode> genererEpisode(std::string id,std::string titre, std::string lien, int annee, int numero, int saison, std::string serie, std::string synopsis);
+		virtual std::shared_ptr<Film> genererFilm(std::string id, std::string titre, std::string lien, int annee, std::string affiche, std::string synopsis, std::string pays, bool vu, bool aVoir);
+		virtual std::shared_ptr<Serie> genererSerie(std::string id, std::string titre, std::string lien, int annee, std::string affiche, std::string synopsis, std::string pays, bool vu, bool aVoir);
+		virtual std::shared_ptr<Episode> genererEpisode(std::string id,std::string titre, std::string lien, int annee, std::string affiche, int numero, int saison, std::string id_serie, std::string synopsis, std::string pays, bool vu, bool aVoir);
 };
 
 //--------------------------------------------------
