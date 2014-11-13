@@ -67,19 +67,6 @@ class Video {
 		void marquerVoir();
 		
 		void lire(); //lire BA
-		/*
-		virtual std::vector<std::shared_ptr<Episode> > getEpisodes();
-		virtual void addEpisode(std::shared_ptr<Episode> ep);
-		
-		virtual int getNumero();
-		virtual void setNumero(int num);
-		
-		virtual int getSaison();
-		virtual void setSaison(int num);
-		
-		virtual std::string getSerie();
-		virtual void setSerie(std::string serie);
-		*/
 };
 //--------------------------------------------------
 #endif

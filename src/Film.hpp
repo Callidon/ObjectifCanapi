@@ -9,6 +9,8 @@
 #define Film_H
 
 #include "Video.hpp"
+#include "Serie.hpp"
+#include "Episode.hpp"
 
 #include <string>
 //--------------------------------------------------
@@ -18,7 +20,6 @@
 class Film : public virtual Video {
 	private:
 		//Attributs
-		std::string affiche; //lien vers affiche
 		
 	public:
 		//Constructeur & destructeur
@@ -27,6 +28,8 @@ class Film : public virtual Video {
 		~Film();
 		//Méthode héritée de Video
 		virtual std::string getStatut();
+		std::shared_ptr<Episode> filmToEpisode();
+		std::shared_ptr<Serie> filmToSerie();
 };
 //--------------------------------------------------
 #endif

@@ -68,7 +68,7 @@ int Episode::getSaison(){
 * \brief Méthode qui modifie le numero de la saison
 */
 void Episode::setSaison(int num){
-	this->saison = saison;
+	this->saison = num;
 }
 
 //--------------------------------------------------

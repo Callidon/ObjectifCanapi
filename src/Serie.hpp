@@ -19,7 +19,6 @@
 class Serie : public virtual Video {
 	private:
 		//Attributs
-		std::string affiche; //lien vers affiche
 		std::vector<std::shared_ptr<Episode>> episodes;
 		
 	public:

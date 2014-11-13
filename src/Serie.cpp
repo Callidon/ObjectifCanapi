@@ -18,7 +18,6 @@ Serie::Serie(string id, string titre, string lien, int annee, string affiche, st
 Serie::Serie(string id, string titre, string lien, int annee, string affiche, string synopsis, vector<string> acteurs, vector<string> real, string pays):Video(id, titre, lien, synopsis, annee, affiche, acteurs, real, pays) {
 }
 
-
 //--------------------------------------------------
 /*!
 * \brief Destructeur

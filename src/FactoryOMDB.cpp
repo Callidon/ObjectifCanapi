@@ -81,9 +81,10 @@ string FactoryOMDB::querySerie(string title){
 /*!
 * \brief Méthode permettant de creer un objet film/episode en fonction du resultat de la requete
 */
-shared_ptr<Video> FactoryOMDB::makeVideo(string res, string type){
+shared_ptr<Film> FactoryOMDB::makeVideo(string res){
 	if(res.substr(13,5) == "False"){
 		//cout << "Film non trouvé" << endl;
+		throw -1;
 	}
 	else {
 		string separateur = "\","; string find; int size; int posd; int posf;
@@ -174,11 +175,10 @@ shared_ptr<Video> FactoryOMDB::makeVideo(string res, string type){
 */
 shared_ptr<Serie> FactoryOMDB::makeSerie(string res){
 	
-	shared_ptr<Video> serie = makeVideo(res, "Serie");
-	//converson de serie en pointeur de Video vers Serie
-	shared_ptr<Serie> ptrSerie(dynamic_pointer_cast<Serie>(serie));
+	shared_ptr<Film> fserie = makeVideo(res);
+	shared_ptr<Serie> serie = fserie->filmToSerie();
 	
-	shared_ptr<Video> ep;
+	shared_ptr<Film> ep;
 	shared_ptr<Episode> epi;
 	
 	string liste = querySerie(serie->getTitre());
@@ -218,15 +218,22 @@ shared_ptr<Serie> FactoryOMDB::makeSerie(string res){
 			numero = episode.substr(posd, posf - posd);
 			num = atoi((char*)numero.c_str());
 		}
+		
 		if(titre != ("Episode #"+season+"."+numero)){
-			ep = makeVideo(queryTitle(titre), "Episode");
-			epi = dynamic_pointer_cast<Episode>(ep);
-			ptrSerie->addEpisode(epi);
+			try{
+				ep = makeVideo(queryTitle(titre));
+			}
+			catch(int code){
+				//cerr << "Exception " << code << endl;
+			}
+			epi = ep->filmToEpisode();
 			epi->setSaison(saison);
 			epi->setNumero(num);
+			serie->addEpisode(epi);
+			
 		}
 		i = j + 1;
 	}
-	return ptrSerie;
+	return serie;
 }
 

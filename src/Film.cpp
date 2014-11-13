@@ -40,3 +40,22 @@ string Film::getStatut(){
 		return("aucun marquage");
 	}
 }
+
+
+//--------------------------------------------------
+/*!
+* \brief Méthode qui converti le film en episode
+*/
+shared_ptr<Episode> Film::filmToEpisode(){
+	shared_ptr<Episode> ep (new Episode(this->getId(), this->getTitre(), getLien(), getAnnee(), getAffiche(), getSynopsis(), getActeurs(), getReal(), getPays()));
+	return ep;
+}
+
+//--------------------------------------------------
+/*!
+* \brief Méthode qui converti le film en serie
+*/
+shared_ptr<Serie> Film::filmToSerie(){
+	shared_ptr<Serie> serie (new Serie(this->getId(), this->getTitre(), getLien(), getAnnee(), getAffiche(), getSynopsis(), getActeurs(), getReal(), getPays()));
+	return serie;
+}
