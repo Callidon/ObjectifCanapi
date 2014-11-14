@@ -34,13 +34,13 @@ sqlite3:
 BDConnector: sqlite3
 	$(CXX) $(FLAGS) -o build/$@.o src/$@.cpp $(SQLITEFLAGS) -c
 
-Bibliotheque: Video
+Bibliotheque: FactorySQL FactoryOMDB
 	$(CXX) $(FLAGS) -o build/$@.o src/$@.cpp -c
 	
 Episode: Video
 	$(CXX) $(FLAGS) -o build/$@.o src/$@.cpp -c
 	
-FactoryOMDB: BDConnector
+FactoryOMDB:
 	$(CXX) $(FLAGS) -o build/$@.o src/$@.cpp -c
 	
 FactorySQL:
@@ -66,10 +66,14 @@ TestFactory: Video Film Serie Episode BDConnector FactorySQL
 	$(CXX) $(FLAGS) -g src/$@.cpp build/FactorySQL.o build/Video.o build/Serie.o build/Film.o build/Episode.o build/BDConnector.o build/sqlite3.o $(SQLITEFLAGS) -o testFactory
 	./testFactory
 
-TestFactoryOMDB: Video Film Serie Episode BDConnector FactoryOMDB
+TestFactoryOMDB: Video Film Serie Episode FactoryOMDB
 	$(CXX) $(FLAGS) src/$@.cpp build/FactoryOMDB.o build/Video.o build/Film.o build/Serie.o build/Episode.o build/BDConnector.o build/sqlite3.o $(SQLITEFLAGS) -o testFactoryOMDB
 	#gdb testFactoryOMDB
 	./testFactoryOMDB
+
+TestBibliotheque: Video Film Episode Serie Bibliotheque 
+	$(CXX) $(FLAGS) src/$@.cpp build/Bibliotheque.o build/FactoryOMDB.o build/FactorySQL.o build/Video.o build/Film.o build/Serie.o build/Episode.o build/BDConnector.o build/sqlite3.o $(SQLITEFLAGS) -o testBibliotheque
+	./testBibliotheque
 	
 Video:
 	$(CXX) $(FLAGS) -o build/$@.o src/$@.cpp -c
