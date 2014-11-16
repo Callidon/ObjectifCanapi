@@ -6,7 +6,6 @@ using namespace std;
 int main() {
 	
 	shared_ptr<Bibliotheque> biblio (new Bibliotheque("database/test"));
-	biblio->addVideo("","");
 	
 	//affichage des vidéos de la bibliothèque
 	vector<shared_ptr<Video> > videos = biblio->getVideos();
@@ -14,7 +13,7 @@ int main() {
 		cout << video->getTitre() << endl;
 	}
 	
-	cout << "on set le statut 'àvoir'" << endl;
+	cout << "on set le statut 'à voir'" << endl;
 	biblio->selectVideo("Game of Thrones");
 	biblio->setStatutCurrentVideo(false,true);
 	

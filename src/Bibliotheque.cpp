@@ -71,26 +71,38 @@ vector<shared_ptr<Video>> Bibliotheque::getVideos() {
 /*!
 * \brief Méthode qui ajoute une nouvelle vidéo (film ou episode) à la bibliothèque
 * \param nom_video Titre de la vidéo à ajouter
-* \param is_episode Si la vidéo est un épisode ou non
+* \param is_episode Le type de la vidéo
 */
 void Bibliotheque::addVideo(string nom_video, string type_video) {
-	shared_ptr<Serie> testFilm = this->factoryOMDB->makeSerie(this->factoryOMDB->queryTitle("Game of Thrones"));
-	this->videos.push_back(testFilm);
 	//en fonction du type de la vidéo
-	/*if(type_video == "Film") {
-		//stuff
+	if(type_video == "Film") {
+		//on récupère le film depuis IMDB
+		shared_ptr<Film> film = this->factoryOMDB->makeVideo(this->factoryOMDB->queryTitle(nom_video));
+		
+		//on l'ajoute à la collection	
+		this->videos.push_back(film);
+		
+		//on l'ajoute ensuite en base
+		this->database->addFilm(film,false,false);
+		
 	} else if(type_video == "Serie") {
-		//stuff
-	} else if(type_video == "Episode") {
-		//stuff
+		//on récupère la série depuis IMDB
+		shared_ptr<Serie> serie = this->factoryOMDB->makeSerie(this->factoryOMDB->querySerie(nom_video));
+		
+		//on l'ajoute à la collection
+		this->videos.push_back(serie);
+		
+		//on l'ajoute ensuite en base
+		this->database->addSerie(serie,false,false);
+		
 	} else {
 		cout << "Erreur : type de vidéo inconnu" << endl;
-	}	*/
+	}
 }
 
 //--------------------------------------------------
 /*!
-* \brief Méthode qui sélectionne une vidéo de la bibliothèque
+* \brief Méthode qui sélectionne une vidéo (Film ou Série) de la bibliothèque
 * \param titre Titre de la vidéo à sélectionner
 */
 void Bibliotheque::selectVideo(string titre) {
@@ -105,15 +117,37 @@ void Bibliotheque::selectVideo(string titre) {
 
 //--------------------------------------------------
 /*!
+* \brief Méthode qui sélectionne un épisode del la série actuellement sélectionnée
+* \brief PRE : La vidéo actuellement sélectionnée doit être une série
+* \param titre Titre de l'épisode à sélectionner
+*/
+void Bibliotheque::selectEpisode(string titre) {
+	//on vérifie que le type de la vidéo actuellement sélectionée est bien Serie
+	shared_ptr<Serie> currentSerie(dynamic_pointer_cast<Serie>(this->currentVideo));
+	
+	if(currentSerie) { //si c'est bien le cas
+		
+		//on récupère la liste des épisodes de la série
+		vector<shared_ptr<Episode> > episodes = currentSerie->getEpisodes();
+		
+		//on recherche & sélectionne l'épisode en question
+		for(const auto &episode: episodes) {
+			//si le titre de l'épisode courant correspond au titre passé en paramètre
+			if(episode->getTitre() == titre) {
+				this->currentVideo = episode; //on mémorise la sélection
+			}
+		}
+	}
+}
+
+//--------------------------------------------------
+/*!
 * \brief Méthode qui met à jour le statut de la vidéo sélectionnée
 * \param vu Si la vidéo est vu ou non
 * \param aVoir Si la vidéo est a voir ou non
 */
 void Bibliotheque::setStatutCurrentVideo(bool vu, bool aVoir) {
-	string sql_test_existence, sql_update, sql_insert_video, sql_insert_personne, sql_insert_acteur, sql_insert_real, sql_recherche;
-	int id_acteur_courant, id_real_courant;
-	
-	
+
 	//mise à jour de la vidéo courante
 	if(vu) {
 		this->currentVideo->marquerVu();
@@ -122,138 +156,22 @@ void Bibliotheque::setStatutCurrentVideo(bool vu, bool aVoir) {
 		this->currentVideo->marquerVoir();
 	}
 
-	//en fonction du type de la vidéo courante, on crée les requêtes sql adéquates
+
 	//on essaye de convertir la vidéo courante dans les différents types disponibles
 	shared_ptr<Film> currentFilm(dynamic_pointer_cast<Film>(this->currentVideo));
 	shared_ptr<Serie> currentSerie(dynamic_pointer_cast<Serie>(this->currentVideo));
 	shared_ptr<Episode> currentEpisode(dynamic_pointer_cast<Episode>(this->currentVideo));
 
 	if(currentFilm) { //si la conversion en Film a réussi, la vidéo est bien de type Film
-		
-		sql_test_existence = "SELECT * FROM Films WHERE id_film = '" + currentFilm->getId() + "';";
-		
-		sql_update = "UPDATE Films " 
-				  "SET vu = " + to_string(vu) 
-				  + ", aVoir = " + to_string(aVoir) 
-				  + " WHERE id_film = '" + currentFilm->getId() + "';";
-				  
-		sql_insert_video = "INSERT INTO Films "
-				  "VALUES ('" + currentFilm->getId() + "', '" 
-				  + currentFilm->getTitre() + "', '" 
-				  + currentFilm->getLien() + "', " 
-				  + to_string(currentFilm->getAnnee()) + ", '" 
-				  + currentFilm->getSynopsis() + "', '" 
-				  + currentFilm->getAffiche() + "', '" 
-				  + currentFilm->getPays() + "', " 
-				  + to_string(vu) + ", " + to_string(aVoir) + ");";
-				  
+		//on met à jour l'objet en base
+		this->database->updateFilm(currentFilm, vu, aVoir);
+	
 	} else if(currentSerie) { //si la conversion en Serie a réussi, la vidéo est bien de type Serie
-		
-		sql_test_existence = "SELECT * FROM Series WHERE id_serie = '" + currentSerie->getId() + "';";
+		//on met à jour l'objet en base
+		this->database->updateSerie(currentSerie, vu, aVoir);
 
-		sql_update = "UPDATE Series "
-				  "SET vu = " + to_string(vu) 
-				  + ", aVoir = " + to_string(aVoir) 
-				  + " WHERE id_serie = '" + currentSerie->getId() + "';";
-
-		sql_insert_video = "INSERT INTO Series "
-				  "VALUES ('" + currentSerie->getId() + "', '" 
-				  + currentSerie->getTitre() + "', '" 
-				  + currentSerie->getLien() + "', " 
-				  + to_string(currentSerie->getAnnee()) + ", '" 
-				  + currentSerie->getSynopsis() + "', '" 
-				  + currentSerie->getAffiche() + "', '" 
-				  + currentSerie->getPays() + "', " 
-				  + to_string(vu) + ", " + to_string(aVoir) + ");";
-		
 	} else if (currentEpisode) { //si la conversion en Episode a réussi, la vidéo est bien de type Episode
-		
-		sql_test_existence = "SELECT * FROM Episodes WHERE id_episode = '" + currentEpisode->getId() + "';";
-		
-		sql_update = "UPDATE Episodes "
-				  "SET vu = " + to_string(vu) 
-				  + ", aVoir = " + to_string(aVoir) 
-				  + " WHERE id_episode = '" + currentEpisode->getId() + "';";
-				  
-		sql_insert_video = "INSERT INTO Episodes"
-				  "VALUES ('" + currentEpisode->getId() 
-				  + "', '" + currentEpisode->getTitre()
-				  + "', '" + currentEpisode->getLien() 
-				  + "', " + to_string(currentEpisode->getAnnee()) 
-				  + "', '" + currentEpisode->getAffiche()
-				  + "', '" + currentEpisode->getSynopsis() 
-				  + "', " + to_string(currentEpisode->getNumero())
-				  + ", " + to_string(currentEpisode->getSaison()) 
-				  + ", '" + currentEpisode->getSerie()
-				  + ", '" + currentEpisode->getPays()
-				  + "', " + to_string(vu) + ", " + to_string(aVoir) + ");";
-	}
-
-	//si la vidéo est déjà présente en base, on la met à jour
-	if(! this->database->isQueryEmpty(sql_test_existence) ) {
-		
-		this->database->query(sql_update);
-
-	} else { //sinon, on l'ajoute dans la base
-		
-		//on ajoute la vidéo en elle-même
-		this->database->query(sql_insert_video);
-
-		//on insert les acteurs & réalisateurs en respectant la structure de la base de données
-		//on récupère les deux listes
-		vector<string> acteurs = this->currentVideo->getActeurs();
-		vector<string> realisateurs = this->currentVideo->getReal();
-		
-		//on parcours la liste des acteurs
-		for(const auto &acteur: acteurs) {
-			sql_recherche = "SELECT * FROM Personnes WHERE nom = '" + acteur + "';";
-			
-			//si c'est acteur n'est pas déjà présent en base
-			if(this->database->isQueryEmpty(sql_recherche)) {
-				//alors on l'insère dans la table Personnes
-				id_acteur_courant = this->database->nextIdToInsert("id_personne","Personnes"); //on récupère son id
-				sql_insert_personne = "INSERT INTO Personnes "
-								   "VALUES (" + to_string(id_acteur_courant)
-								   + ", '" + acteur + "');";
-				this->database->query(sql_insert_personne); 
-				
-			} else { //sinon, on récupère son id
-				vector<vector<string> > table = this->database->query(sql_recherche);
-				id_acteur_courant = atoi(table[0][0].c_str());
-			}
-			
-			//on associe l'acteur au film grâce à la table Acteurs
-			sql_insert_acteur = "INSERT INTO Acteurs "
-							 "VALUES (" + to_string(id_acteur_courant) 
-							 + ", '" + this->currentVideo->getId() + "');";
-			this->database->query(sql_insert_acteur);
-		}
-		
-		//on fait pareil avec les réalisateurs
-		//on parcours la liste des réalisateurs
-		for(const auto &realisateur: realisateurs) {
-			sql_recherche = "SELECT * FROM Personnes WHERE nom = '" + realisateur + "';";
-			
-			//si ce réalisateur n'est pas déjà présent en base
-			if(this->database->isQueryEmpty(sql_recherche)) {
-				//alors on l'insère dans la table Personnes
-				id_real_courant = this->database->nextIdToInsert("id_personne","Personnes"); //on récupère son id
-				sql_insert_personne = "INSERT INTO Personnes "
-								   "VALUES (" + to_string(id_real_courant)
-								   + ", '" + realisateur + "');";
-				this->database->query(sql_insert_personne); 
-				
-			} else { //sinon, on récupère son id
-				vector<vector<string> > table = this->database->query(sql_recherche);
-				id_real_courant = atoi(table[0][0].c_str());
-			}
-			
-			//on associe le réalisateur au film grâce à la table Realisateurs
-			sql_insert_real = "INSERT INTO Realisateurs "
-							 "VALUES (" + to_string(id_real_courant) 
-							 + ", '" + this->currentVideo->getId() + "');";
-			this->database->query(sql_insert_real);
-		}
-		
+		//on met à jour l'objet en base
+		this->database->updateEpisode(currentEpisode, vu, aVoir);
 	}
 }
