@@ -16,6 +16,7 @@ class Video;
 //--------------------------------------------------
 /*!
 * \class Personne
+* \brief Classe représentant une personne
 */
 class Personne {
 	private:

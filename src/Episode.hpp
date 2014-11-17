@@ -16,6 +16,7 @@
 //--------------------------------------------------
 /*!
 * \class Episode
+* \brief Classe héritant de Video et représentant un épisode d'une série
 */
 class Episode : public virtual Video {
 	private:

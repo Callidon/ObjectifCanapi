@@ -17,8 +17,8 @@
 
 //--------------------------------------------------
 /*!
-* \class FactorySQL
-* \brief Classe réalisant l'interface Factory & instanciant des objets de type Video
+* \class FactoryOMDB
+* \brief Classe réalisant l'interface Factory & qui interargit avec l'api d'IMDB pour créer des objets Video
 */
 
 class FactoryOMDB {

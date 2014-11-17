@@ -40,6 +40,7 @@ Episode::~Episode() {
 //--------------------------------------------------
 /*!
 * \brief Méthode qui retourne le numero de l'épiode
+* \return Le numéro de l'épisode
 */
 int Episode::getNumero(){
 	return this->numero;
@@ -48,6 +49,7 @@ int Episode::getNumero(){
 //--------------------------------------------------
 /*!
 * \brief Méthode qui modifie le numero de l'épisode
+* \param num Le nouveau numéro de l'épisode
 */
 void Episode::setNumero(int num){
 	this->numero = num;
@@ -57,6 +59,7 @@ void Episode::setNumero(int num){
 //--------------------------------------------------
 /*!
 * \brief Méthode qui retourne le numero de la saison
+* \return La saison de l'épisode
 */
 int Episode::getSaison(){
 	return this->saison;
@@ -66,6 +69,7 @@ int Episode::getSaison(){
 //--------------------------------------------------
 /*!
 * \brief Méthode qui modifie le numero de la saison
+* \param num Le nouveau numéro de la saison
 */
 void Episode::setSaison(int num){
 	this->saison = num;
@@ -74,6 +78,7 @@ void Episode::setSaison(int num){
 //--------------------------------------------------
 /*!
 * \brief Méthode qui retourne le nom de la série
+* \return Le nom de la série associée à l'épisode
 */
 string Episode::getSerie(){
 	return this->serie;
@@ -82,6 +87,7 @@ string Episode::getSerie(){
 //--------------------------------------------------
 /*!
 * \brief Méthode qui modifie le nom de la série
+* \param serie Le nouveau nom de la série associée à l'épisode
 */
 void Episode::setSerie(string serie){
 	this->serie = serie;
@@ -91,6 +97,7 @@ void Episode::setSerie(string serie){
 //--------------------------------------------------
 /*!
 * \brief Méthode qui retourne le statut du episode ("a voir" ou "vu")
+* \return Le statut de l'épisode
 */
 string Episode::getStatut(){
 	if(this->vu){

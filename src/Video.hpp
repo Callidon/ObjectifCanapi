@@ -17,6 +17,7 @@
 //--------------------------------------------------
 /*!
 * \class Video
+* \brief Classe représentant une vidéo générique
 */
 class Episode;
 

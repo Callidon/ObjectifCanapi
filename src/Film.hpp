@@ -16,6 +16,7 @@
 //--------------------------------------------------
 /*!
 * \class Film
+* \brief Classe héritant de Video et représentant des films
 */
 class Film : public virtual Video {
 	private:
