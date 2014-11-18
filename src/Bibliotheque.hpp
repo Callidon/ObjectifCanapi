@@ -8,9 +8,9 @@
 #ifndef Bibliotheque_H
 #define Bibliotheque_H
 
-#include "Video.hpp"
-#include "FactorySQL.hpp"
-#include "FactoryOMDB.hpp"
+#include "Video/Video.hpp"
+#include "Factory/FactorySQL.hpp"
+#include "Factory/FactoryOMDB.hpp"
 
 #include <string>
 //--------------------------------------------------

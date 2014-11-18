@@ -8,7 +8,7 @@
 #ifndef Episode_H
 #define Episode_H
 
-#include "Video.hpp"
+#include "../Video/Video.hpp"
 
 #include <string>
 #include <vector>

@@ -32,42 +32,42 @@ sqlite3:
 # Compilations individuelles des différentes classes du projet
 #---------------------------------------------------------
 BDConnector: sqlite3
-	$(CXX) $(FLAGS) -o build/$@.o src/$@.cpp $(SQLITEFLAGS) -c
+	$(CXX) $(FLAGS) -o build/$@.o src/BDConnector/$@.cpp $(SQLITEFLAGS) -c
 
 Bibliotheque: FactorySQL FactoryOMDB
 	$(CXX) $(FLAGS) -o build/$@.o src/$@.cpp -c
 	
 Episode: Video
-	$(CXX) $(FLAGS) -o build/$@.o src/$@.cpp -c
+	$(CXX) $(FLAGS) -o build/$@.o src/Video/$@.cpp -c
 	
 FactoryOMDB:
-	$(CXX) $(FLAGS) -o build/$@.o src/$@.cpp -c
+	$(CXX) $(FLAGS) -o build/$@.o src/Factory/$@.cpp -c
 	
 FactorySQL:
-	$(CXX) $(FLAGS) -o build/$@.o src/$@.cpp -c
+	$(CXX) $(FLAGS) -o build/$@.o src/Factory/$@.cpp -c
 	
 Film: Video
-	$(CXX) $(FLAGS) -o build/$@.o src/$@.cpp -c
-	
+	$(CXX) $(FLAGS) -o build/$@.o src/Video/$@.cpp -c
+#DEPRECATED 
 FilmObservateur:
 	$(CXX) $(FLAGS) -o build/$@.o src/$@.cpp -c
 	
 Personne:
-	$(CXX) $(FLAGS) -o build/$@.o src/$@.cpp -c
+	$(CXX) $(FLAGS) -o build/$@.o src/Video/$@.cpp -c
 	
 Serie: Video Episode
-	$(CXX) -g $(FLAGS) -o build/$@.o src/$@.cpp -c
+	$(CXX) -g $(FLAGS) -o build/$@.o src/Video/$@.cpp -c
 	
 Test: Video Film Episode Bibliotheque
 	$(CXX) $(FLAGS) src/$@.cpp build/Video.o build/Personne.o build/Film.o build/Episode.o build/Bibliotheque.o build/BDConnector.o build/sqlite3.o $(SQLITEFLAGS) -o test
 	./test
 	
 TestFactory: Video Film Serie Episode BDConnector FactorySQL
-	$(CXX) $(FLAGS) -g src/$@.cpp build/FactorySQL.o build/Video.o build/Serie.o build/Film.o build/Episode.o build/BDConnector.o build/sqlite3.o $(SQLITEFLAGS) -o testFactory
+	$(CXX) $(FLAGS) -g src/Factory/$@.cpp build/FactorySQL.o build/Video.o build/Serie.o build/Film.o build/Episode.o build/BDConnector.o build/sqlite3.o $(SQLITEFLAGS) -o testFactory
 	./testFactory
 
 TestFactoryOMDB: Video Film Serie Episode FactoryOMDB
-	$(CXX) $(FLAGS) src/$@.cpp build/FactoryOMDB.o build/Video.o build/Film.o build/Serie.o build/Episode.o build/BDConnector.o build/sqlite3.o $(SQLITEFLAGS) -o testFactoryOMDB
+	$(CXX) $(FLAGS) src/Factory/$@.cpp build/FactoryOMDB.o build/Video.o build/Film.o build/Serie.o build/Episode.o build/BDConnector.o build/sqlite3.o $(SQLITEFLAGS) -o testFactoryOMDB
 	#gdb testFactoryOMDB
 	./testFactoryOMDB
 
@@ -76,7 +76,7 @@ TestBibliotheque: Video Film Episode Serie Bibliotheque
 	./testBibliotheque
 	
 Video:
-	$(CXX) $(FLAGS) -o build/$@.o src/$@.cpp -c
+	$(CXX) $(FLAGS) -o build/$@.o src/Video/$@.cpp -c
 
 #---------------------------------------------------------
 # Génération de la documentation Doxygen

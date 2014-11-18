@@ -11,9 +11,9 @@
 #include <memory>
 #include <vector>
 #include <string>
-#include "Film.hpp"
-#include "Serie.hpp"
-#include "BDConnector.hpp"
+#include "../Video/Film.hpp"
+#include "../Video/Serie.hpp"
+#include "../BDConnector/BDConnector.hpp"
 
 //--------------------------------------------------
 /*!

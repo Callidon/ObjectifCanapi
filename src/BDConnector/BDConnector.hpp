@@ -10,9 +10,9 @@
 #include <string>
 #include <vector>
 #include <memory>
-#include "../libs/sqlite/sqlite3.h"
-#include "Film.hpp"
-#include "Serie.hpp"
+#include "../../libs/sqlite/sqlite3.h"
+#include "../Video/Film.hpp"
+#include "../Video/Serie.hpp"
 
 //--------------------------------------------------
 /*!

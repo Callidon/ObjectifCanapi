@@ -8,8 +8,8 @@
 #ifndef Serie_H
 #define Serie_H
 
-#include "Video.hpp"
-#include "Episode.hpp"
+#include "../Video/Video.hpp"
+#include "../Video/Episode.hpp"
 
 #include <string>
 //--------------------------------------------------

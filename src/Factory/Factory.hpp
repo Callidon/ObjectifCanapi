@@ -11,8 +11,8 @@
 #include <memory>
 #include <vector>
 #include <string>
-#include "Film.hpp"
-#include "Episode.hpp"
+#include "../Video/Film.hpp"
+#include "../Video/Episode.hpp"
 
 //--------------------------------------------------
 /*!
