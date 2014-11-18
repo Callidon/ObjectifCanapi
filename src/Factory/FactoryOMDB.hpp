@@ -10,6 +10,7 @@
 #include <memory>
 #include <vector>
 #include <string>
+#include "Factory.hpp"
 #include "../Video/Film.hpp"
 #include "../Video/Serie.hpp"
 #include "../Video/Episode.hpp"
@@ -21,7 +22,7 @@
 * \brief Classe réalisant l'interface Factory & qui interargit avec l'api d'IMDB pour créer des objets Video
 */
 
-class FactoryOMDB {
+class FactoryOMDB : public Factory {
 	
 	private:
 		std::shared_ptr<BDConnector> bd; //<! Connecteur vers la base de donnée où sont stocké les informations

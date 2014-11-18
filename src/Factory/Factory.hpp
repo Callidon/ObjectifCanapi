@@ -22,12 +22,10 @@
 
 class Factory {
 	
-	public:
-		virtual std::shared_ptr<Film> genererFilm(std::string id, std::string titre, std::string lien, int annee, std::string affiche, std::string synopsis) = 0;
-		virtual std::shared_ptr<Film> genererFilm(std::string id, std::string titre, std::string lien, int annee, std::string affiche, std::string synopsis, std::vector<std::string> acteurs, std::vector<std::string> real) = 0;
-		virtual std::shared_ptr<Episode> genererEpisode(std::string id, std::string titre, std::string lien, int annee, int numero, int saison, std::string serie, std::string synopsis) = 0;
-		virtual std::shared_ptr<Episode> genererEpisode(std::string id, std::string titre, std::string lien, int annee, int numero, int saison, std::string serie, std::string synopsis, std::vector<std::string> acteurs, std::vector<std::string> real) = 0;
-		
+	/*public:
+		virtual std::shared_ptr<Film> genererFilm(std::string id, std::string titre, std::string lien, int annee, std::string affiche, std::string synopsis, std::string pays, bool vu, bool aVoir) = 0;
+		virtual std::shared_ptr<Film> genererFilm(std::string id, std::string titre, std::string lien, int annee, std::string affiche, std::string synopsis, std::vector<std::string> acteurs, std::vector<std::string> real, std::string pays) = 0;
+		*/
 };
 
 //--------------------------------------------------

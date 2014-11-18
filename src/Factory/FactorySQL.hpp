@@ -11,6 +11,7 @@
 #include <memory>
 #include <vector>
 #include <string>
+#include "Factory.hpp"
 #include "../Video/Film.hpp"
 #include "../Video/Serie.hpp"
 #include "../BDConnector/BDConnector.hpp"
@@ -21,7 +22,7 @@
 * \brief Classe réalisant l'interface Factory & instanciant des objets de type Video
 */
 
-class FactorySQL {
+class FactorySQL: public Factory {
 	
 	private:
 		std::shared_ptr<BDConnector> bd; //!< Connecteur vers la base de donnée où sont stocké les informations
@@ -31,10 +32,10 @@ class FactorySQL {
 		~FactorySQL();
 		std::vector<std::shared_ptr<Video> > recupererAllFilms();
 		std::vector<std::shared_ptr<Video> > recupererAllSeries();
-		//Méthodes héritée de Factory
-		virtual std::shared_ptr<Film> genererFilm(std::string id, std::string titre, std::string lien, int annee, std::string affiche, std::string synopsis, std::string pays, bool vu, bool aVoir);
-		virtual std::shared_ptr<Serie> genererSerie(std::string id, std::string titre, std::string lien, int annee, std::string affiche, std::string synopsis, std::string pays, bool vu, bool aVoir);
-		virtual std::shared_ptr<Episode> genererEpisode(std::string id,std::string titre, std::string lien, int annee, std::string affiche, int numero, int saison, std::string id_serie, std::string synopsis, std::string pays, bool vu, bool aVoir);
+		std::shared_ptr<Serie> genererSerie(std::string id, std::string titre, std::string lien, int annee, std::string affiche, std::string synopsis, std::string pays, bool vu, bool aVoir);
+		std::shared_ptr<Episode> genererEpisode(std::string id,std::string titre, std::string lien, int annee, std::string affiche, int numero, int saison, std::string id_serie, std::string synopsis, std::string pays, bool vu, bool aVoir);
+
+		std::shared_ptr<Film> genererFilm(std::string id, std::string titre, std::string lien, int annee, std::string affiche, std::string synopsis, std::string pays, bool vu, bool aVoir);
 };
 
 //--------------------------------------------------
