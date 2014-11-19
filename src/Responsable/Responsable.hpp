@@ -20,17 +20,20 @@
 class Responsable {
 	private:
 		//Attributs
-		std::shared_ptr<Responsable> suivant;
-		std::shared_ptr<BDConnector> database;
+		std::shared_ptr<Responsable> suivant; //!< Pointeur vers le responsable suivant
+		std::shared_ptr<BDConnector> database; //!< Base de données avec laquelle interargir
 	
 	protected:
+		//Méthodes protected
 		void passerAuSuivant(std::shared_ptr<Video> video);
+		void addActeur(std::string nom, std::string id_video);
+		void addRealisateur(std::string nom, std::string id_video);
 		
 	public:
 		//Constructeur & destructeur
 		Responsable(std::shared_ptr<BDConnector> db, std::shared_ptr<Video> suiv);
 		~Responsable();
-		//Méthodes publiques
+		//Méthode publique
 		virtual void traiter(std::shared_ptr<Video> video) = 0;
 
 };
