@@ -11,10 +11,7 @@
 #include <vector>
 #include <string>
 #include "Factory.hpp"
-#include "../Video/Film.hpp"
-#include "../Video/Serie.hpp"
-#include "../Video/Episode.hpp"
-#include "../BDConnector/BDConnector.hpp"
+
 
 //--------------------------------------------------
 /*!
@@ -23,12 +20,9 @@
 */
 
 class FactoryOMDB : public Factory {
-	
-	private:
-		std::shared_ptr<BDConnector> bd; //<! Connecteur vers la base de donnée où sont stocké les informations
 		
 	public:
-		FactoryOMDB(std::shared_ptr<BDConnector> base);
+		FactoryOMDB();
 		~FactoryOMDB();
 		
 		std::shared_ptr<Film> genererFilm(std::string id, std::string titre, std::string lien, int annee, std::string affiche, std::string synopsis, std::vector<std::string> acteurs, std::vector<std::string> real, std::string pays);

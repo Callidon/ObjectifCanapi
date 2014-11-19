@@ -14,7 +14,7 @@ using namespace std;
 /*!
 * \brief Constructeur de base
 */
-FactoryOMDB::FactoryOMDB(shared_ptr<BDConnector> base): bd(base) {};
+FactoryOMDB::FactoryOMDB() {};
 
 
 //--------------------------------------------------
@@ -189,6 +189,7 @@ shared_ptr<Serie> FactoryOMDB::makeSerie(string res){
 	string find, titre, numero, season;
 	int saison, num;
 	string sep = "}";
+	cout << "Recupération des données..... veuillez patienter et l'attente en vaut la peine" << endl;
 	while(i<liste.size() && j!= -1){
 		j = liste.find(sep, i);
 		episode = liste.substr(i, j - i);

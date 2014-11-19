@@ -5,8 +5,7 @@ using namespace std;
 
 int main() {
 	
-	shared_ptr<BDConnector> testDB(new BDConnector("database/test.db"));
-	shared_ptr<FactoryOMDB> facto(new FactoryOMDB(testDB));
+	shared_ptr<FactoryOMDB> facto(new FactoryOMDB());
 	/*
 	shared_ptr<Film> testFilm = facto->genererFilm("id","titre","lien",2014,"affiche","synopsis");
 	//Test pour la génération d'un film depuis la base de donnée

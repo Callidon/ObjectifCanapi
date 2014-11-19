@@ -1,0 +1,35 @@
+/*!
+* \file ResponsableFilm.hpp
+* \brief Fichier contenant les entêtes de la classe ResponsableFilm
+* \author Camille Le Luët
+* \author Thomas Minier
+* \date ?
+*/
+#ifndef RESPONSABLEFILM_H
+#define RESPONSABLEFILM_H
+#include <string>
+#include <vector>
+#include <memory>
+#include "Responsable.hpp"
+#include "ResponsableSerie.hpp"
+#include "../Video/Film.hpp"
+
+//--------------------------------------------------
+/*!
+* \class ResponsableFilm
+* \brief Classe représentant un responsable chargé de traiter des objets Film
+*/
+class ResponsableFilm : public Responsable {
+		
+	public:
+		//Constructeur & destructeur
+		ResponsableFilm(std::shared_ptr<BDConnector> db);
+		~ResponsableFilm();
+		//Méthode publique
+		virtual void traiter(std::shared_ptr<Video> video);
+
+};
+//--------------------------------------------------
+#endif
+
+

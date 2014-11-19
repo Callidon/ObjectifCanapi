@@ -13,6 +13,7 @@
 #include <string>
 #include "../Video/Film.hpp"
 #include "../Video/Episode.hpp"
+#include "../Video/Serie.hpp"
 
 //--------------------------------------------------
 /*!
