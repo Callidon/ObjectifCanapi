@@ -8,9 +8,9 @@
 #ifndef Film_H
 #define Film_H
 
-#include "../Video/Video.hpp"
-#include "../Video/Serie.hpp"
-#include "../Video/Episode.hpp"
+#include "Video.hpp"
+#include "Serie.hpp"
+#include "Episode.hpp"
 
 #include <string>
 //--------------------------------------------------
