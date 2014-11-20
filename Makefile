@@ -48,12 +48,21 @@ FactorySQL:
 	
 Film: Video
 	$(CXX) $(FLAGS) -o build/$@.o src/Video/$@.cpp -c
-#DEPRECATED 
-FilmObservateur:
-	$(CXX) $(FLAGS) -o build/$@.o src/$@.cpp -c
 	
 Personne:
 	$(CXX) $(FLAGS) -o build/$@.o src/Video/$@.cpp -c
+	
+Responsable: ResponsableFilm ResponsableSerie ResponsableEpisode
+	$(CXX) $(FLAGS) -o build/$@.o src/Responsable/$@.cpp -c
+	
+ResponsableFilm:
+	$(CXX) $(FLAGS) -o build/$@.o src/Responsable/$@.cpp -c
+
+ResponsableSerie:
+	$(CXX) $(FLAGS) -o build/$@.o src/Responsable/$@.cpp -c
+	
+ResponsableEpisode:
+	$(CXX) $(FLAGS) -o build/$@.o src/Responsable/$@.cpp -c
 	
 Serie: Video Episode
 	$(CXX) -g $(FLAGS) -o build/$@.o src/Video/$@.cpp -c
@@ -71,8 +80,8 @@ TestFactoryOMDB: Video Film Serie Episode FactoryOMDB
 	#gdb testFactoryOMDB
 	./testFactoryOMDB
 
-TestBibliotheque: Video Film Episode Serie Bibliotheque 
-	$(CXX) $(FLAGS) src/$@.cpp build/Bibliotheque.o build/FactoryOMDB.o build/FactorySQL.o build/Video.o build/Film.o build/Serie.o build/Episode.o build/BDConnector.o build/sqlite3.o $(SQLITEFLAGS) -o testBibliotheque
+TestBibliotheque: Video Film Episode Serie Responsable Bibliotheque 
+	$(CXX) $(FLAGS) src/$@.cpp build/Bibliotheque.o build/FactoryOMDB.o build/FactorySQL.o build/Video.o build/Film.o build/Serie.o build/Episode.o build/Responsable.o build/ResponsableFilm.o build/ResponsableSerie.o build/ResponsableEpisode.o build/BDConnector.o build/sqlite3.o $(SQLITEFLAGS) -o testBibliotheque
 	./testBibliotheque
 	
 Video:

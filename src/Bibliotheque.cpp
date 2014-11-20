@@ -19,10 +19,9 @@ using namespace std;
 Bibliotheque::Bibliotheque(string user) {
 	//initilisation des attributs
 	this->user = user;
-	shared_ptr<BDConnector> tmpDB(new BDConnector(user + ".db"));
-	shared_ptr<FactoryOMDB> tmpOMDB(new FactoryOMDB(this->database));
-	this->database = tmpDB;
-	this->factoryOMDB = tmpOMDB;
+	this->database = shared_ptr<BDConnector>(new BDConnector(user + ".db"));
+	this->factoryOMDB = shared_ptr<FactoryOMDB>(new FactoryOMDB());
+	this->responsable = shared_ptr<ResponsableFilm>(new ResponsableFilm(this->database));
 	this->currentVideo = 0;
 	
 	//récupération des vidéos liées à cet utilisateur et enregistrées dans la base de données
@@ -83,7 +82,7 @@ void Bibliotheque::addVideo(string nom_video, string type_video) {
 		this->videos.push_back(film);
 		
 		//on l'ajoute ensuite en base
-		this->database->addFilm(film,false,false);
+		this->responsable->traiter(film,false,false);
 		
 	} else if(type_video == "Serie") {
 		//on récupère la série depuis IMDB
@@ -93,7 +92,7 @@ void Bibliotheque::addVideo(string nom_video, string type_video) {
 		this->videos.push_back(serie);
 		
 		//on l'ajoute ensuite en base
-		this->database->addSerie(serie,false,false);
+		this->responsable->traiter(serie,false,false);
 		
 	} else {
 		cout << "Erreur : type de vidéo inconnu" << endl;
@@ -156,22 +155,8 @@ void Bibliotheque::setStatutCurrentVideo(bool vu, bool aVoir) {
 		this->currentVideo->marquerVoir();
 	}
 
-
-	//on essaye de convertir la vidéo courante dans les différents types disponibles
-	shared_ptr<Film> currentFilm(dynamic_pointer_cast<Film>(this->currentVideo));
-	shared_ptr<Serie> currentSerie(dynamic_pointer_cast<Serie>(this->currentVideo));
-	shared_ptr<Episode> currentEpisode(dynamic_pointer_cast<Episode>(this->currentVideo));
-
-	if(currentFilm) { //si la conversion en Film a réussi, la vidéo est bien de type Film
-		//on met à jour l'objet en base
-		this->database->updateFilm(currentFilm, vu, aVoir);
+	//on transmet l'objet à la chaîne de responsabilité pour le mettre à jour en base
+	this->responsable->traiter(this->currentVideo,false,false);
 	
-	} else if(currentSerie) { //si la conversion en Serie a réussi, la vidéo est bien de type Serie
-		//on met à jour l'objet en base
-		this->database->updateSerie(currentSerie, vu, aVoir);
-
-	} else if (currentEpisode) { //si la conversion en Episode a réussi, la vidéo est bien de type Episode
-		//on met à jour l'objet en base
-		this->database->updateEpisode(currentEpisode, vu, aVoir);
-	}
+	cout << this->currentVideo->getStatut() << endl;
 }

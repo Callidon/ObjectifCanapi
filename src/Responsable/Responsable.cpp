@@ -14,7 +14,7 @@ using namespace std;
 * \brief Constructeur de base
 * \param suiv Pointeur vers le responsable suivant
 */
-Responsable::Responsable(shared_ptr<BDConnector> db, shared_ptr<Video> suiv) {
+Responsable::Responsable(shared_ptr<BDConnector> db, shared_ptr<Responsable> suiv) {
 	this->database = db;
 	this->suivant = suiv;
 }
@@ -30,8 +30,8 @@ Responsable::~Responsable() {}
 * \brief Méthode passant l'objet Video au responsable suivant
 * \param video shared_ptr de l'objet Video à transmettre
 */
-void Responsable::passerAuSuivant(shared_ptr<Video> video) {
-	this->suivant->traiter(video);
+void Responsable::passerAuSuivant(shared_ptr<Video> video, bool vu, bool aVoir) {
+	this->suivant->traiter(video, vu, aVoir);
 }
 
 
@@ -47,7 +47,7 @@ void Responsable::addActeur(string acteur, string id_video) {
 	string sql_recherche = "SELECT * FROM Personnes WHERE nom = '" + acteur + "';";
 			
 			//si c'est acteur n'est pas déjà présent en base
-			if(this->database->isQueryEmpty(sql_recherche)) {
+			if(this->database->isReturnEmpty(sql_recherche)) {
 				//alors on l'insère dans la table Personnes
 				id_acteur = this->database->nextIdToInsert("id_personne","Personnes"); //on récupère son id
 				sql_insert = "INSERT INTO Personnes "
@@ -79,7 +79,7 @@ void Responsable::addRealisateur(string real, string id_video) {
 	string sql_recherche = "SELECT * FROM Personnes WHERE nom = '" + real + "';";
 			
 			//si ce réalisateur n'est pas déjà présent en base
-			if(this->database->isQueryEmpty(sql_recherche)) {
+			if(this->database->isReturnEmpty(sql_recherche)) {
 				//alors on l'insère dans la table Personnes
 				id_real = this->database->nextIdToInsert("id_personne","Personnes"); //on récupère son id
 				sql_insert = "INSERT INTO Personnes "

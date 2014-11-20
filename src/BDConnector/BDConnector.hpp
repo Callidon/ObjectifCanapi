@@ -38,14 +38,7 @@ class BDConnector {
 		int count(std::string nom_table);
 		int lastId(std::string nom_id, std::string nom_table);
 		int nextIdToInsert(std::string nom_id, std::string nom_table);
-		bool isQueryEmpty(std::string sql_query);
-		//Méthodes d'ajout & de mise à jour des objets contenus dans la base
-		void addFilm(std::shared_ptr<Film> film, bool vu, bool aVoir);
-		void updateFilm(std::shared_ptr<Film> film, bool vu, bool aVoir);
-		void addSerie(std::shared_ptr<Serie> serie, bool vu, bool aVoir);
-		void updateSerie(std::shared_ptr<Serie> serie, bool vu, bool aVoir);
-		void addEpisode(std::shared_ptr<Episode> episode, bool vu, bool aVoir);
-		void updateEpisode(std::shared_ptr<Episode> episode, bool vu, bool aVoir);
+		bool isReturnEmpty(std::string sql_query);
 };
 //--------------------------------------------------
 #endif

@@ -11,7 +11,6 @@
 #include <vector>
 #include <memory>
 #include "Responsable.hpp"
-#include "ResponsableSerie.hpp"
 #include "../Video/Film.hpp"
 
 //--------------------------------------------------
@@ -26,7 +25,7 @@ class ResponsableFilm : public Responsable {
 		ResponsableFilm(std::shared_ptr<BDConnector> db);
 		~ResponsableFilm();
 		//Méthode publique
-		virtual void traiter(std::shared_ptr<Video> video);
+		void traiter(std::shared_ptr<Video> video, bool vu, bool aVoir);
 
 };
 //--------------------------------------------------

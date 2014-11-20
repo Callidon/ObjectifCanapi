@@ -11,6 +11,7 @@
 #include "Video/Video.hpp"
 #include "Factory/FactorySQL.hpp"
 #include "Factory/FactoryOMDB.hpp"
+#include "Responsable/ResponsableFilm.hpp"
 
 #include <string>
 //--------------------------------------------------
@@ -26,6 +27,7 @@ class Bibliotheque {
 		std::vector<std::shared_ptr<Video> > videos; //!< Liste des vidéos de la bibliothèque
 		std::shared_ptr<BDConnector> database; //!< Base de données liée à la bibliothèque
 		std::shared_ptr<FactoryOMDB> factoryOMDB; //!< Factory servant à créer les nouveaux films & séries
+		std::shared_ptr<ResponsableFilm> responsable; //!< Chaîne de responsabilité chargée de l'ajout & la mise à jour des objets en base
 		
 	public:
 		//Constructeur & destructeur
