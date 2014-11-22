@@ -12,6 +12,7 @@
 #include <memory>
 #include "../Video/Video.hpp"
 #include "../BDConnector/BDConnector.hpp"
+#include "../ComportementBD/ComportementBD.hpp"
 
 //--------------------------------------------------
 /*!
@@ -24,16 +25,18 @@ class Responsable {
 		//Attributs
 		std::shared_ptr<Responsable> suivant; //!< Pointeur vers le responsable suivant
 		std::shared_ptr<BDConnector> database; //!< Base de données avec laquelle interargir
-		//Méthodes protected
+		std::shared_ptr<ComportementBD> comportement; //!< Comportement à utiliser pour traiter les objets
+		
+		//Méthode protected
 		void passerAuSuivant(std::shared_ptr<Video> video, bool vu, bool aVoir);
-		void addActeur(std::string nom, std::string id_video);
-		void addRealisateur(std::string nom, std::string id_video);
 		
 	public:
 		//Constructeur & destructeur
 		Responsable(std::shared_ptr<BDConnector> db, std::shared_ptr<Responsable> suiv);
 		~Responsable();
-		//Méthode publique
+		//Méthodes publiques
+		void setComportement(std::shared_ptr<ComportementBD> comp);
+		std::shared_ptr<ComportementBD> getComportement();
 		virtual void traiter(std::shared_ptr<Video> video, bool vu, bool aVoir) = 0;
 
 };

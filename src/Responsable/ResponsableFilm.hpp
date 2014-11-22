@@ -7,9 +7,6 @@
 */
 #ifndef RESPONSABLEFILM_H
 #define RESPONSABLEFILM_H
-#include <string>
-#include <vector>
-#include <memory>
 #include "Responsable.hpp"
 #include "../Video/Film.hpp"
 

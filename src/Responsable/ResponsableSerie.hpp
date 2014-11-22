@@ -7,9 +7,6 @@
 */
 #ifndef RESPONSABLESERIE_H
 #define RESPONSABLESERIE_H
-#include <string>
-#include <vector>
-#include <memory>
 #include "Responsable.hpp"
 #include "../Video/Serie.hpp"
 

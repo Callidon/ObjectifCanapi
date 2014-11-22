@@ -7,9 +7,6 @@
 */
 #ifndef RESPONSABLEEPISODE_H
 #define RESPONSABLEEPISODE_H
-#include <string>
-#include <vector>
-#include <memory>
 #include "Responsable.hpp"
 #include "../Video/Episode.hpp"
 

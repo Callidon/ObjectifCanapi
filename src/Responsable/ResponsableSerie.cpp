@@ -39,55 +39,19 @@ void ResponsableSerie::traiter(std::shared_ptr<Video> video, bool vu, bool aVoir
 	
 	//si c'est bien un objet Film
 	if(serie) {
-		sql_test_existence = "SELECT * FROM Series WHERE id_serie = '" + serie->getId() + "';";
-		//si le film n'est pas déjà présent en base, on l'ajoute
-		if( this->database->isReturnEmpty(sql_test_existence) ) {	
+		
+		//on utilise le comportement pour effectuer les requêtes adéquates sur l'objet
+		comportement->traiterSerie(serie, vu, aVoir);
 			
-			sql = "INSERT INTO Series "
-					"VALUES ('" + serie->getId() + "', '" 
-					+ serie->getTitre() + "', '" 
-					+ serie->getLien() + "', " 
-					+ to_string(serie->getAnnee()) + ", '" 
-					+ serie->getSynopsis() + "', '" 
-					+ serie->getAffiche() + "', '" 
-					+ serie->getPays() + "', " 
-					+ to_string(vu) + ", " + to_string(aVoir) + ");";
-					
-			//on effectue la requête
-			this->database->query(sql);
+		//on traite aussi tous les épisodes de la série
+		//on récupère la liste des épisodes
+		vector<shared_ptr<Episode> > episodes = serie->getEpisodes();
 			
-			//on insère tous les épisodes de la série en base
-			//on récupère la liste des épisodes
-			vector<shared_ptr<Episode> > episodes = serie->getEpisodes();
-			
-			//on parcours la liste des épisodes & on les insère en base via le responsable suivant
-			for(const auto &episode: episodes) {
-				this->suivant->traiter(episode,false,false);
-			}
-			
-			//on insère les acteurs & les réalisateurs en base
-			//on récupère les listes des acteurs & réalisateurs
-			vector<string> acteurs = serie->getActeurs();
-			vector<string> realisateurs = serie->getReal();
-			
-			//parcours de la liste des acteurs
-			for(const auto &acteur: acteurs) {
-				this->addActeur(acteur, serie->getId());
-			}
-			
-			//parcours de la liste des réalisateurs
-			for(const auto &realisateur: realisateurs) {
-				this->addRealisateur(realisateur, serie->getId());
-			}
-			
-		} else { //sinon, on le met à jour
-			sql = "UPDATE Series "
-					"SET vu = " + to_string(vu) 
-					+ ", aVoir = " + to_string(aVoir) 
-					+ " WHERE id_serie = '" + serie->getId() + "';";
-			//on effectue la requête
-			this->database->query(sql);
-		}	
+		//on parcours la liste des épisodes & on les insère en base via le responsable suivant
+		for(const auto &episode: episodes) {
+			this->suivant->traiter(episode,false,false);
+		}
+
 	} else { //sinon, on passe au responsable suivant
 		this->passerAuSuivant(video,vu, aVoir);
 	}

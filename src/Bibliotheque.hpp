@@ -33,7 +33,7 @@ class Bibliotheque {
 		//Constructeur & destructeur
 		Bibliotheque(std::string user);
 		~Bibliotheque();
-		//Methodes
+		//Méthodes
 		std::string getUser();
 		void setUser(std::string user);
 		std::vector<std::shared_ptr<Video> > getVideos();

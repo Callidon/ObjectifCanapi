@@ -37,6 +37,9 @@ BDConnector: sqlite3
 Bibliotheque: FactorySQL FactoryOMDB
 	$(CXX) $(FLAGS) -o build/$@.o src/$@.cpp -c
 	
+ComportementSQL:
+	$(CXX) $(FLAGS) -o build/$@.o src/ComportementBD/$@.cpp -c
+	
 Episode: Video
 	$(CXX) $(FLAGS) -o build/$@.o src/Video/$@.cpp -c
 	
