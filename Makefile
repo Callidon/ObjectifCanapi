@@ -2,18 +2,24 @@
 # Makefile pour le projet ObjectifCanapi
 # Auteurs : Camille Le LUET & Thomas MINIER
 #---------------------------------------------------------
+
+#---------------------------------------------------------
+# Variables
+#---------------------------------------------------------
+# Flags utilisés
 CC = gcc
 CXX = g++
 FLAGS = -std=c++11
 SQLITEFLAGS = -lpthread -ldl
+# Liste de tous les objets du projet
+OBJETS = BDConnector Bibliotheque ComportementSQL FactorySQL FactoryOMDB Responsable Video
 
 #---------------------------------------------------------
-# Compilation complète du projet
+# Compilation complète du projet & éxecution
 #---------------------------------------------------------
-all: objets
-	@echo "nothing yet"
-	
-objets:
+all: $(OBJETS)
+
+exec:
 	@echo "nothing yet"
 
 #---------------------------------------------------------
@@ -23,7 +29,7 @@ prepare:
 	@if [ ! -d ./build ] ; then mkdir ./build ; fi;
 
 #---------------------------------------------------------
-# Bibliothèques (sqlite3)
+# Bibliothèque annexe (sqlite3)
 #---------------------------------------------------------
 sqlite3:
 	$(CC) -o build/$@.o libs/sqlite/$@.c $(SQLITEFLAGS) -c
@@ -34,13 +40,13 @@ sqlite3:
 BDConnector: sqlite3
 	$(CXX) $(FLAGS) -o build/$@.o src/BDConnector/$@.cpp $(SQLITEFLAGS) -c
 
-Bibliotheque: FactorySQL FactoryOMDB
+Bibliotheque:
 	$(CXX) $(FLAGS) -o build/$@.o src/$@.cpp -c
 	
 ComportementSQL:
 	$(CXX) $(FLAGS) -o build/$@.o src/ComportementBD/$@.cpp -c
 	
-Episode: Video
+Episode:
 	$(CXX) $(FLAGS) -o build/$@.o src/Video/$@.cpp -c
 	
 FactoryOMDB:
@@ -49,10 +55,7 @@ FactoryOMDB:
 FactorySQL:
 	$(CXX) $(FLAGS) -o build/$@.o src/Factory/$@.cpp -c
 	
-Film: Video
-	$(CXX) $(FLAGS) -o build/$@.o src/Video/$@.cpp -c
-	
-Personne:
+Film:
 	$(CXX) $(FLAGS) -o build/$@.o src/Video/$@.cpp -c
 	
 Responsable: ResponsableFilm ResponsableSerie ResponsableEpisode
@@ -67,9 +70,16 @@ ResponsableSerie:
 ResponsableEpisode:
 	$(CXX) $(FLAGS) -o build/$@.o src/Responsable/$@.cpp -c
 	
-Serie: Video Episode
+Serie:
 	$(CXX) -g $(FLAGS) -o build/$@.o src/Video/$@.cpp -c
 	
+Video: Film Serie Episode
+	$(CXX) $(FLAGS) -o build/$@.o src/Video/$@.cpp -c
+
+#---------------------------------------------------------
+# Compilaton des programmes utlisées pour tester les différents modules
+#---------------------------------------------------------
+
 Test: Video Film Episode Bibliotheque
 	$(CXX) $(FLAGS) src/$@.cpp build/Video.o build/Personne.o build/Film.o build/Episode.o build/Bibliotheque.o build/BDConnector.o build/sqlite3.o $(SQLITEFLAGS) -o test
 	./test
@@ -85,9 +95,6 @@ TestFactoryOMDB: Video Film Serie Episode FactoryOMDB
 TestBibliotheque: Video Film Episode Serie Responsable Bibliotheque 
 	$(CXX) $(FLAGS) src/$@.cpp build/Bibliotheque.o build/FactoryOMDB.o build/FactorySQL.o build/Video.o build/Film.o build/Serie.o build/Episode.o build/Responsable.o build/ResponsableFilm.o build/ResponsableSerie.o build/ResponsableEpisode.o build/ComportementSQL.o build/BDConnector.o build/sqlite3.o $(SQLITEFLAGS) -o testBibliotheque
 	./testBibliotheque
-	
-Video:
-	$(CXX) $(FLAGS) -o build/$@.o src/Video/$@.cpp -c
 
 #---------------------------------------------------------
 # Génération de la documentation Doxygen
