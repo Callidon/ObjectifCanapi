@@ -1,0 +1,145 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.7"/>
+<title>ObjectifCanapi:  Fichier source de src/Responsable/Responsable.hpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">ObjectifCanapi
+   &#160;<span id="projectnumber">1.0</span>
+   </div>
+   <div id="projectbrief">Projet de Programmation orienté objet réalisé dans le cadre de la L3 Informatique</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.7 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Page&#160;principale</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="files.html"><span>Fichiers</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Recherche" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Liste&#160;des&#160;fichiers</span></a></li>
+      <li><a href="globals.html"><span>Membres&#160;de&#160;fichier</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Fichiers</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_4295b85b272e63e28c8e5e7fb579d02e.html">Responsable</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">Responsable.hpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="Responsable_8hpp.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#ifndef RESPONSABLE_H</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#define RESPONSABLE_H</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &lt;memory&gt;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &quot;../Video/Video.hpp&quot;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &quot;../BDConnector/BDConnector.hpp&quot;</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &quot;../ComportementBD/ComportementBD.hpp&quot;</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment">//--------------------------------------------------</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="classResponsable.html">   22</a></span>&#160;<span class="comment"></span><span class="keyword">class </span><a class="code" href="classResponsable.html">Responsable</a> {</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    </div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        <span class="comment">//Attributs</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="classResponsable.html#ad4b68882cc4eef13612abde628cb8a2f">   26</a></span>&#160;        std::shared_ptr&lt;Responsable&gt; <a class="code" href="classResponsable.html#ad4b68882cc4eef13612abde628cb8a2f">suivant</a>; </div>
+<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="classResponsable.html#aa9e08d83d26a0decbf5f7c12f46c8d6f">   27</a></span>&#160;        std::shared_ptr&lt;BDConnector&gt; <a class="code" href="classResponsable.html#aa9e08d83d26a0decbf5f7c12f46c8d6f">database</a>; </div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="classResponsable.html#a513fd17148c85ab05e874a665848780f">   28</a></span>&#160;        std::shared_ptr&lt;ComportementBD&gt; <a class="code" href="classResponsable.html#a513fd17148c85ab05e874a665848780f">comportement</a>; </div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        </div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        <span class="comment">//Méthode protected</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classResponsable.html#a3f8e475ea7e099b5bce2cec832823064">passerAuSuivant</a>(std::shared_ptr&lt;Video&gt; video, <span class="keywordtype">bool</span> vu, <span class="keywordtype">bool</span> aVoir);</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        </div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        <span class="comment">//Constructeur &amp; destructeur</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        <a class="code" href="classResponsable.html#a48655d584d2b0021ecb102616c997a1b">Responsable</a>(std::shared_ptr&lt;BDConnector&gt; db, std::shared_ptr&lt;Responsable&gt; suiv);</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        <a class="code" href="classResponsable.html#a7e85e5341dbabb8995499ef58ada7fa5">~Responsable</a>();</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        <span class="comment">//Méthodes publiques</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classResponsable.html#aa443b831fdb6c3b6ddaf0f5863aed31a">setComportement</a>(std::shared_ptr&lt;ComportementBD&gt; comp);</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        std::shared_ptr&lt;ComportementBD&gt; <a class="code" href="classResponsable.html#a37f242ffc4e893f77527823be28b0e1c">getComportement</a>();</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classResponsable.html#a2740e7c29a919ab15601afa983f72c08">traiter</a>(std::shared_ptr&lt;Video&gt; video, <span class="keywordtype">bool</span> vu, <span class="keywordtype">bool</span> aVoir) = 0;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;};</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="comment">//--------------------------------------------------</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;</div>
+<div class="ttc" id="classResponsable_html_a37f242ffc4e893f77527823be28b0e1c"><div class="ttname"><a href="classResponsable.html#a37f242ffc4e893f77527823be28b0e1c">Responsable::getComportement</a></div><div class="ttdeci">std::shared_ptr&lt; ComportementBD &gt; getComportement()</div><div class="ttdoc">Accesseur qui renvoie le comportement utiliser par le responsable pour traiter les objets...</div><div class="ttdef"><b>Definition:</b> Responsable.cpp:63</div></div>
+<div class="ttc" id="classResponsable_html_a513fd17148c85ab05e874a665848780f"><div class="ttname"><a href="classResponsable.html#a513fd17148c85ab05e874a665848780f">Responsable::comportement</a></div><div class="ttdeci">std::shared_ptr&lt; ComportementBD &gt; comportement</div><div class="ttdoc">Comportement à utiliser pour traiter les objets. </div><div class="ttdef"><b>Definition:</b> Responsable.hpp:28</div></div>
+<div class="ttc" id="classResponsable_html_aa9e08d83d26a0decbf5f7c12f46c8d6f"><div class="ttname"><a href="classResponsable.html#aa9e08d83d26a0decbf5f7c12f46c8d6f">Responsable::database</a></div><div class="ttdeci">std::shared_ptr&lt; BDConnector &gt; database</div><div class="ttdoc">Base de données avec laquelle interargir. </div><div class="ttdef"><b>Definition:</b> Responsable.hpp:27</div></div>
+<div class="ttc" id="classResponsable_html_a7e85e5341dbabb8995499ef58ada7fa5"><div class="ttname"><a href="classResponsable.html#a7e85e5341dbabb8995499ef58ada7fa5">Responsable::~Responsable</a></div><div class="ttdeci">~Responsable()</div><div class="ttdoc">Destructeur. </div><div class="ttdef"><b>Definition:</b> Responsable.cpp:28</div></div>
+<div class="ttc" id="classResponsable_html_a3f8e475ea7e099b5bce2cec832823064"><div class="ttname"><a href="classResponsable.html#a3f8e475ea7e099b5bce2cec832823064">Responsable::passerAuSuivant</a></div><div class="ttdeci">void passerAuSuivant(std::shared_ptr&lt; Video &gt; video, bool vu, bool aVoir)</div><div class="ttdoc">Méthode passant l&#39;objet Video au responsable suivant. </div><div class="ttdef"><b>Definition:</b> Responsable.cpp:35</div></div>
+<div class="ttc" id="classResponsable_html_a2740e7c29a919ab15601afa983f72c08"><div class="ttname"><a href="classResponsable.html#a2740e7c29a919ab15601afa983f72c08">Responsable::traiter</a></div><div class="ttdeci">virtual void traiter(std::shared_ptr&lt; Video &gt; video, bool vu, bool aVoir)=0</div></div>
+<div class="ttc" id="classResponsable_html_a48655d584d2b0021ecb102616c997a1b"><div class="ttname"><a href="classResponsable.html#a48655d584d2b0021ecb102616c997a1b">Responsable::Responsable</a></div><div class="ttdeci">Responsable(std::shared_ptr&lt; BDConnector &gt; db, std::shared_ptr&lt; Responsable &gt; suiv)</div><div class="ttdoc">Constructeur de base. </div><div class="ttdef"><b>Definition:</b> Responsable.cpp:18</div></div>
+<div class="ttc" id="classResponsable_html_ad4b68882cc4eef13612abde628cb8a2f"><div class="ttname"><a href="classResponsable.html#ad4b68882cc4eef13612abde628cb8a2f">Responsable::suivant</a></div><div class="ttdeci">std::shared_ptr&lt; Responsable &gt; suivant</div><div class="ttdoc">Pointeur vers le responsable suivant. </div><div class="ttdef"><b>Definition:</b> Responsable.hpp:26</div></div>
+<div class="ttc" id="classResponsable_html"><div class="ttname"><a href="classResponsable.html">Responsable</a></div><div class="ttdoc">Classe représentant un responsable abstrait chargé de gérer des objets Video. </div><div class="ttdef"><b>Definition:</b> Responsable.hpp:22</div></div>
+<div class="ttc" id="classResponsable_html_aa443b831fdb6c3b6ddaf0f5863aed31a"><div class="ttname"><a href="classResponsable.html#aa443b831fdb6c3b6ddaf0f5863aed31a">Responsable::setComportement</a></div><div class="ttdeci">void setComportement(std::shared_ptr&lt; ComportementBD &gt; comp)</div><div class="ttdoc">Méthode qui définit kle comportement utilisé par le Responsable et ses successeurs pour traiter les o...</div><div class="ttdef"><b>Definition:</b> Responsable.cpp:47</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré le Samedi 22 Novembre 2014 11:50:29 pour ObjectifCanapi par &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.7
+</small></address>
+</body>
+</html>

@@ -1,0 +1,147 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.7"/>
+<title>ObjectifCanapi:  Fichier source de src/BDConnector/BDConnector.hpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">ObjectifCanapi
+   &#160;<span id="projectnumber">1.0</span>
+   </div>
+   <div id="projectbrief">Projet de Programmation orienté objet réalisé dans le cadre de la L3 Informatique</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.7 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Page&#160;principale</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="files.html"><span>Fichiers</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Recherche" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Liste&#160;des&#160;fichiers</span></a></li>
+      <li><a href="globals.html"><span>Membres&#160;de&#160;fichier</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Fichiers</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_7d10b72b6dd38e4433bce1667a08110e.html">BDConnector</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">BDConnector.hpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="BDConnector_8hpp.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#ifndef BDCONNECTOR_H</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#define BDCONNECTOR_H</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &lt;memory&gt;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &quot;../../libs/sqlite/sqlite3.h&quot;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &quot;../Video/Film.hpp&quot;</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &quot;../Video/Serie.hpp&quot;</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment">//--------------------------------------------------</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="classBDConnector.html">   22</a></span>&#160;<span class="comment"></span><span class="keyword">class </span><a class="code" href="classBDConnector.html">BDConnector</a> {</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        <span class="comment">//Attributs</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="classBDConnector.html#a788db397595db80fc32166f8ce2b6850">   25</a></span>&#160;        sqlite3 * <a class="code" href="classBDConnector.html#a788db397595db80fc32166f8ce2b6850">db</a>; </div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        <span class="comment">//Méthodes privées</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classBDConnector.html#ae43574fe493b23734672ae831f41f47e">addActeur</a>(std::string acteur, std::string id_video);</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classBDConnector.html#a7bea46579c755bfdb7cc920bb555e706">addRealisateur</a>(std::string real, std::string id_video);</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        </div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        <span class="comment">//Constructeur &amp; destructeur</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        <a class="code" href="classBDConnector.html#a941f992657f9791f4aed6f6567c447ef">BDConnector</a>(std::string fichier_db);</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        <a class="code" href="classBDConnector.html#a88b04f046486ed6b3e5cd996adb58641">~BDConnector</a>();</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        <span class="comment">//Méthodes publiques</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classBDConnector.html#a599c22595bc44ace7a3d048bfb04065f">swapUser</a>(std::string fichier_db);</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classBDConnector.html#a8d7493c36648b1ab68cb25960a808d99">creerNewBD</a>(std::string user);</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        std::vector&lt;std::vector&lt;std::string&gt; &gt; <a class="code" href="classBDConnector.html#a4e4e8d6c11199cc6529e289f9dd0bb2b">query</a>(std::string sql_query);</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        <span class="keywordtype">int</span> <a class="code" href="classBDConnector.html#a50ad117654e27ca55ea51de6c7ebead5">count</a>(std::string nom_table);</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        <span class="keywordtype">int</span> <a class="code" href="classBDConnector.html#abb7b3c4aa5c1817af265b49ab2554fbe">lastId</a>(std::string nom_id, std::string nom_table);</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        <span class="keywordtype">int</span> <a class="code" href="classBDConnector.html#a71b8bcd48b5d5e3061ce9edf338435be">nextIdToInsert</a>(std::string nom_id, std::string nom_table);</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="classBDConnector.html#a3b2d0e15a6f38dcf142bba684c2764b9">isReturnEmpty</a>(std::string sql_query);</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;};</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="comment">//--------------------------------------------------</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="ttc" id="classBDConnector_html_a50ad117654e27ca55ea51de6c7ebead5"><div class="ttname"><a href="classBDConnector.html#a50ad117654e27ca55ea51de6c7ebead5">BDConnector::count</a></div><div class="ttdeci">int count(std::string nom_table)</div><div class="ttdoc">Méthode qui compte le nombre de lignes dans une table de la base de données. </div><div class="ttdef"><b>Definition:</b> BDConnector.cpp:107</div></div>
+<div class="ttc" id="classBDConnector_html_ae43574fe493b23734672ae831f41f47e"><div class="ttname"><a href="classBDConnector.html#ae43574fe493b23734672ae831f41f47e">BDConnector::addActeur</a></div><div class="ttdeci">void addActeur(std::string acteur, std::string id_video)</div></div>
+<div class="ttc" id="classBDConnector_html_a71b8bcd48b5d5e3061ce9edf338435be"><div class="ttname"><a href="classBDConnector.html#a71b8bcd48b5d5e3061ce9edf338435be">BDConnector::nextIdToInsert</a></div><div class="ttdeci">int nextIdToInsert(std::string nom_id, std::string nom_table)</div><div class="ttdoc">Méthode qui renvoie le prochain id à insérer dans la table. L&#39;id de cette dernière doit être de type ...</div><div class="ttdef"><b>Definition:</b> BDConnector.cpp:135</div></div>
+<div class="ttc" id="classBDConnector_html_a599c22595bc44ace7a3d048bfb04065f"><div class="ttname"><a href="classBDConnector.html#a599c22595bc44ace7a3d048bfb04065f">BDConnector::swapUser</a></div><div class="ttdeci">void swapUser(std::string fichier_db)</div><div class="ttdoc">Méthode qui permet de changer d&#39;utilisateur. </div><div class="ttdef"><b>Definition:</b> BDConnector.cpp:40</div></div>
+<div class="ttc" id="classBDConnector_html"><div class="ttname"><a href="classBDConnector.html">BDConnector</a></div><div class="ttdoc">Classe simplifiant l&#39;usage de la bibliothèque sqlite3. </div><div class="ttdef"><b>Definition:</b> BDConnector.hpp:22</div></div>
+<div class="ttc" id="classBDConnector_html_a8d7493c36648b1ab68cb25960a808d99"><div class="ttname"><a href="classBDConnector.html#a8d7493c36648b1ab68cb25960a808d99">BDConnector::creerNewBD</a></div><div class="ttdeci">void creerNewBD(std::string user)</div><div class="ttdoc">Méthode qui crée une nouvelle base de donnée pour un nouvel utilisateur. </div><div class="ttdef"><b>Definition:</b> BDConnector.cpp:56</div></div>
+<div class="ttc" id="classBDConnector_html_abb7b3c4aa5c1817af265b49ab2554fbe"><div class="ttname"><a href="classBDConnector.html#abb7b3c4aa5c1817af265b49ab2554fbe">BDConnector::lastId</a></div><div class="ttdeci">int lastId(std::string nom_id, std::string nom_table)</div><div class="ttdoc">Méthode qui renvoie l&#39;id de la dernière ligne de la table. L&#39;i d de cette dernière doit être de type ...</div><div class="ttdef"><b>Definition:</b> BDConnector.cpp:121</div></div>
+<div class="ttc" id="classBDConnector_html_a3b2d0e15a6f38dcf142bba684c2764b9"><div class="ttname"><a href="classBDConnector.html#a3b2d0e15a6f38dcf142bba684c2764b9">BDConnector::isReturnEmpty</a></div><div class="ttdeci">bool isReturnEmpty(std::string sql_query)</div><div class="ttdoc">Méthode qui vérifie si une requête renvoie une table vide. </div><div class="ttdef"><b>Definition:</b> BDConnector.cpp:145</div></div>
+<div class="ttc" id="classBDConnector_html_a788db397595db80fc32166f8ce2b6850"><div class="ttname"><a href="classBDConnector.html#a788db397595db80fc32166f8ce2b6850">BDConnector::db</a></div><div class="ttdeci">sqlite3 * db</div><div class="ttdoc">Pointeur vers la base de données. </div><div class="ttdef"><b>Definition:</b> BDConnector.hpp:25</div></div>
+<div class="ttc" id="classBDConnector_html_a941f992657f9791f4aed6f6567c447ef"><div class="ttname"><a href="classBDConnector.html#a941f992657f9791f4aed6f6567c447ef">BDConnector::BDConnector</a></div><div class="ttdeci">BDConnector(std::string fichier_db)</div><div class="ttdoc">Constructeur de base. </div><div class="ttdef"><b>Definition:</b> BDConnector.cpp:17</div></div>
+<div class="ttc" id="classBDConnector_html_a4e4e8d6c11199cc6529e289f9dd0bb2b"><div class="ttname"><a href="classBDConnector.html#a4e4e8d6c11199cc6529e289f9dd0bb2b">BDConnector::query</a></div><div class="ttdeci">std::vector&lt; std::vector&lt; std::string &gt; &gt; query(std::string sql_query)</div><div class="ttdoc">Méthode qui exécute la requête SQL passée en en paramètre. </div><div class="ttdef"><b>Definition:</b> BDConnector.cpp:69</div></div>
+<div class="ttc" id="classBDConnector_html_a7bea46579c755bfdb7cc920bb555e706"><div class="ttname"><a href="classBDConnector.html#a7bea46579c755bfdb7cc920bb555e706">BDConnector::addRealisateur</a></div><div class="ttdeci">void addRealisateur(std::string real, std::string id_video)</div></div>
+<div class="ttc" id="classBDConnector_html_a88b04f046486ed6b3e5cd996adb58641"><div class="ttname"><a href="classBDConnector.html#a88b04f046486ed6b3e5cd996adb58641">BDConnector::~BDConnector</a></div><div class="ttdeci">~BDConnector()</div><div class="ttdoc">Destructeur. </div><div class="ttdef"><b>Definition:</b> BDConnector.cpp:30</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré le Samedi 22 Novembre 2014 11:50:29 pour ObjectifCanapi par &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.7
+</small></address>
+</body>
+</html>
