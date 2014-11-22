@@ -80,11 +80,10 @@ TestFactory: Video Film Serie Episode BDConnector FactorySQL
 
 TestFactoryOMDB: Video Film Serie Episode FactoryOMDB
 	$(CXX) $(FLAGS) src/Factory/$@.cpp build/FactoryOMDB.o build/Video.o build/Film.o build/Serie.o build/Episode.o build/BDConnector.o build/sqlite3.o $(SQLITEFLAGS) -o testFactoryOMDB
-	#gdb testFactoryOMDB
 	./testFactoryOMDB
 
 TestBibliotheque: Video Film Episode Serie Responsable Bibliotheque 
-	$(CXX) $(FLAGS) src/$@.cpp build/Bibliotheque.o build/FactoryOMDB.o build/FactorySQL.o build/Video.o build/Film.o build/Serie.o build/Episode.o build/Responsable.o build/ResponsableFilm.o build/ResponsableSerie.o build/ResponsableEpisode.o build/BDConnector.o build/sqlite3.o $(SQLITEFLAGS) -o testBibliotheque
+	$(CXX) $(FLAGS) src/$@.cpp build/Bibliotheque.o build/FactoryOMDB.o build/FactorySQL.o build/Video.o build/Film.o build/Serie.o build/Episode.o build/Responsable.o build/ResponsableFilm.o build/ResponsableSerie.o build/ResponsableEpisode.o build/ComportementSQL.o build/BDConnector.o build/sqlite3.o $(SQLITEFLAGS) -o testBibliotheque
 	./testBibliotheque
 	
 Video:

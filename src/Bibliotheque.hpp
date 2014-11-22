@@ -41,6 +41,7 @@ class Bibliotheque {
 		void selectVideo(std::string titre);
 		void selectEpisode(std::string titre);
 		void setStatutCurrentVideo(bool vu, bool aVoir);
+		std::shared_ptr<Video> getCurrentVideo();
 };
 //--------------------------------------------------
 #endif

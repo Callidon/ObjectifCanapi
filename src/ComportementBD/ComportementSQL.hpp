@@ -17,7 +17,7 @@
 //--------------------------------------------------
 /*!
 * \class ComportementSQL
-* \brief Interface représentant un comportement vis à vis d'une base de données SQL
+* \brief Classe représentant un comportement vis à vis d'une base de données SQL
 */
 class ComportementSQL : public ComportementBD {
 		

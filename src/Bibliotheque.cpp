@@ -7,6 +7,7 @@
 */
 
 #include "Bibliotheque.hpp"
+#include "ComportementBD/ComportementSQL.hpp"
 #include <iostream>
 #include <sstream>
 
@@ -22,6 +23,8 @@ Bibliotheque::Bibliotheque(string user) {
 	this->database = shared_ptr<BDConnector>(new BDConnector(user + ".db"));
 	this->factoryOMDB = shared_ptr<FactoryOMDB>(new FactoryOMDB());
 	this->responsable = shared_ptr<ResponsableFilm>(new ResponsableFilm(this->database));
+	//on set le comportement de la chaîne de responsabilité
+	responsable->setComportement(shared_ptr<ComportementSQL>(new ComportementSQL(database)));
 	this->currentVideo = 0;
 	
 	//récupération des vidéos liées à cet utilisateur et enregistrées dans la base de données
@@ -159,4 +162,13 @@ void Bibliotheque::setStatutCurrentVideo(bool vu, bool aVoir) {
 	this->responsable->traiter(this->currentVideo,false,false);
 	
 	cout << this->currentVideo->getStatut() << endl;
+}
+
+//--------------------------------------------------
+/*!
+* \brief Accesseur qui renvoie la vidéo actuellement sélectionnée
+* \return shared_ptr vers la vidéo actuellement sélectionnée
+*/
+shared_ptr<Video> Bibliotheque::getCurrentVideo() {
+	return currentVideo;	
 }
