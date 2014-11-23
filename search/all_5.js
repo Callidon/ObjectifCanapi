@@ -2,6 +2,10 @@ var searchData=
 [
   ['factory',['Factory',['../classFactory.html',1,'']]],
   ['factory_2ehpp',['Factory.hpp',['../Factory_8hpp.html',1,'']]],
+  ['factorybd',['FactoryBD',['../classFactoryBD.html',1,'']]],
+  ['factorybd_2ehpp',['FactoryBD.hpp',['../FactoryBD_8hpp.html',1,'']]],
+  ['factoryimdb',['FactoryIMDB',['../classFactoryIMDB.html',1,'']]],
+  ['factoryimdb_2ehpp',['FactoryIMDB.hpp',['../FactoryIMDB_8hpp.html',1,'']]],
   ['factoryomdb',['FactoryOMDB',['../classFactoryOMDB.html',1,'FactoryOMDB'],['../classBibliotheque.html#a347b1a5910485d43a2815defd33a25a8',1,'Bibliotheque::factoryOMDB()'],['../classFactoryOMDB.html#a22f8631cfcb8c84e7491b263b709c6de',1,'FactoryOMDB::FactoryOMDB()']]],
   ['factoryomdb_2ecpp',['FactoryOMDB.cpp',['../FactoryOMDB_8cpp.html',1,'']]],
   ['factoryomdb_2ehpp',['FactoryOMDB.hpp',['../FactoryOMDB_8hpp.html',1,'']]],

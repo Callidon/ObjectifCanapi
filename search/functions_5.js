@@ -1,8 +1,8 @@
 var searchData=
 [
-  ['genererepisode',['genererEpisode',['../classFactorySQL.html#a2a04b6be730d60a361b77f3be3e4455e',1,'FactorySQL']]],
-  ['genererfilm',['genererFilm',['../classFactoryOMDB.html#ad4dcdb88d22b22d05dcca946b06aeebb',1,'FactoryOMDB::genererFilm()'],['../classFactorySQL.html#a425ac707f83b9160d360c89dfe302848',1,'FactorySQL::genererFilm()']]],
-  ['genererserie',['genererSerie',['../classFactorySQL.html#a37c0f4b0720b77eb13545ae5c42f5f3e',1,'FactorySQL']]],
+  ['genererepisode',['genererEpisode',['../classFactoryBD.html#a0a98a1f80479a624d2bec6717ffd66f6',1,'FactoryBD::genererEpisode()'],['../classFactorySQL.html#a2a04b6be730d60a361b77f3be3e4455e',1,'FactorySQL::genererEpisode()']]],
+  ['genererfilm',['genererFilm',['../classFactoryBD.html#a6089d55a0c0b9d4365f4d777997c4a38',1,'FactoryBD::genererFilm()'],['../classFactoryIMDB.html#af74ff756b4ed51d57c6f975982008f58',1,'FactoryIMDB::genererFilm()'],['../classFactoryOMDB.html#ad4dcdb88d22b22d05dcca946b06aeebb',1,'FactoryOMDB::genererFilm()'],['../classFactorySQL.html#a425ac707f83b9160d360c89dfe302848',1,'FactorySQL::genererFilm()']]],
+  ['genererserie',['genererSerie',['../classFactoryBD.html#ad024eabaac28aea3e17f2a7b5f55745e',1,'FactoryBD::genererSerie()'],['../classFactorySQL.html#a37c0f4b0720b77eb13545ae5c42f5f3e',1,'FactorySQL::genererSerie()']]],
   ['getacteurs',['getActeurs',['../classVideo.html#a69e3a8a22de9efbc34cd5e6fe8226433',1,'Video']]],
   ['getaffiche',['getAffiche',['../classVideo.html#a168d5e5417063b5e45e095dbf14bc460',1,'Video']]],
   ['getannee',['getAnnee',['../classVideo.html#a6e11117c5a0029887ab1ff798e33accb',1,'Video']]],

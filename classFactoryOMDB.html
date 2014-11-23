@@ -91,7 +91,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
 </div><!--header-->
 <div class="contents">
 
-<p>Classe réalisant l'interface <a class="el" href="classFactory.html" title="Interface représentant une fabrique d&#39;objets de type Video. ">Factory</a> &amp; qui interargit avec l'api d'IMDB pour créer des objets <a class="el" href="classVideo.html" title="Classe représentant une vidéo générique. ">Video</a>.  
+<p>Classe réalisant l'interface <a class="el" href="classFactoryIMDB.html" title="Interface resprésentant une fabrique créant des objets de type Film et Serie à partir de l&#39;APi du sit...">FactoryIMDB</a> &amp; qui interargit avec l'api OMDB pour créer des objets <a class="el" href="classVideo.html" title="Classe représentant une vidéo générique. ">Video</a>.  
  <a href="classFactoryOMDB.html#details">Plus de détails...</a></p>
 
 <p><code>#include &lt;<a class="el" href="FactoryOMDB_8hpp_source.html">FactoryOMDB.hpp</a>&gt;</code></p>
@@ -101,7 +101,7 @@ Graphe d'héritage de FactoryOMDB:</div>
  <div class="center">
   <img src="classFactoryOMDB.png" usemap="#FactoryOMDB_map" alt=""/>
   <map id="FactoryOMDB_map" name="FactoryOMDB_map">
-<area href="classFactory.html" title="Interface représentant une fabrique d&#39;objets de type Video. " alt="Factory" shape="rect" coords="0,0,94,24"/>
+<area href="classFactoryIMDB.html" title="Interface resprésentant une fabrique créant des objets de type Film et Serie à partir de l&#39;APi du sit..." alt="FactoryIMDB" shape="rect" coords="0,0,94,24"/>
 </map>
  </div></div>
 <table class="memberdecls">
@@ -130,7 +130,7 @@ Fonctions membres publiques</h2></td></tr>
 <tr class="separator:a13b62d63614edc1c7b5663b9a2b03197"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Description détaillée</h2>
-<div class="textblock"><p>Classe réalisant l'interface <a class="el" href="classFactory.html" title="Interface représentant une fabrique d&#39;objets de type Video. ">Factory</a> &amp; qui interargit avec l'api d'IMDB pour créer des objets <a class="el" href="classVideo.html" title="Classe représentant une vidéo générique. ">Video</a>. </p>
+<div class="textblock"><p>Classe réalisant l'interface <a class="el" href="classFactoryIMDB.html" title="Interface resprésentant une fabrique créant des objets de type Film et Serie à partir de l&#39;APi du sit...">FactoryIMDB</a> &amp; qui interargit avec l'api OMDB pour créer des objets <a class="el" href="classVideo.html" title="Classe représentant une vidéo générique. ">Video</a>. </p>
 </div><h2 class="groupheader">Documentation des constructeurs et destructeur</h2>
 <a class="anchor" id="a22f8631cfcb8c84e7491b263b709c6de"></a>
 <div class="memitem">
@@ -170,6 +170,9 @@ Fonctions membres publiques</h2></td></tr>
 <a class="anchor" id="ad4dcdb88d22b22d05dcca946b06aeebb"></a>
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">shared_ptr&lt; <a class="el" href="classFilm.html">Film</a> &gt; FactoryOMDB::genererFilm </td>
@@ -231,16 +234,26 @@ Fonctions membres publiques</h2></td></tr>
           <td></td><td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>Méthode créant et retournant un shared_ptr vers un nouveau film. </p>
 <dl class="section return"><dt>Renvoie</dt><dd>Un shared_ptr&lt;Film&gt; qui pointe sur le film nouvellement crée </dd></dl>
+
+<p>Implémente <a class="el" href="classFactoryIMDB.html#af74ff756b4ed51d57c6f975982008f58">FactoryIMDB</a>.</p>
 
 </div>
 </div>
 <a class="anchor" id="a13b62d63614edc1c7b5663b9a2b03197"></a>
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">shared_ptr&lt; <a class="el" href="classSerie.html">Serie</a> &gt; FactoryOMDB::makeSerie </td>
@@ -250,15 +263,25 @@ Fonctions membres publiques</h2></td></tr>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>Méthode permettant de creer un objet film/episode en fonction du resultat de la requete. </p>
+
+<p>Implémente <a class="el" href="classFactoryIMDB.html#afd42604754f0499a6a954b2674a108ba">FactoryIMDB</a>.</p>
 
 </div>
 </div>
 <a class="anchor" id="a112b17b5efaa706037afd432756bf7b0"></a>
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">shared_ptr&lt; <a class="el" href="classFilm.html">Film</a> &gt; FactoryOMDB::makeVideo </td>
@@ -268,15 +291,25 @@ Fonctions membres publiques</h2></td></tr>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>Méthode permettant de creer un objet film/episode en fonction du resultat de la requete. </p>
+
+<p>Implémente <a class="el" href="classFactoryIMDB.html#a7096aa25414bbf45ff5086fc27ec6fb7">FactoryIMDB</a>.</p>
 
 </div>
 </div>
 <a class="anchor" id="acabc8a55f6bf5be51cf7e1597d964a2d"></a>
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">string FactoryOMDB::querySerie </td>
@@ -286,15 +319,25 @@ Fonctions membres publiques</h2></td></tr>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>Méthode affectuant une recherche par titre de film. </p>
+
+<p>Implémente <a class="el" href="classFactoryIMDB.html#a7954bc36b601d51d71ecbd424429e352">FactoryIMDB</a>.</p>
 
 </div>
 </div>
 <a class="anchor" id="aca44262614c659b7fce55e850b977546"></a>
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">string FactoryOMDB::queryTitle </td>
@@ -304,9 +347,16 @@ Fonctions membres publiques</h2></td></tr>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>Méthode affectuant une recherche par titre de film. </p>
+
+<p>Implémente <a class="el" href="classFactoryIMDB.html#accb4b1622008b4fd00880d354e78a506">FactoryIMDB</a>.</p>
 
 </div>
 </div>
@@ -317,7 +367,7 @@ Fonctions membres publiques</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Généré le Samedi 22 Novembre 2014 11:50:30 pour ObjectifCanapi par &#160;<a href="http://www.doxygen.org/index.html">
+Généré le Dimanche 23 Novembre 2014 10:21:16 pour ObjectifCanapi par &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.7
 </small></address>

@@ -92,7 +92,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
 </div><!--header-->
 <div class="contents">
 
-<p>Classe réalisant l'interface <a class="el" href="classFactory.html" title="Interface représentant une fabrique d&#39;objets de type Video. ">Factory</a> &amp; instanciant des objets de type <a class="el" href="classVideo.html" title="Classe représentant une vidéo générique. ">Video</a>.  
+<p>Classe réalisant l'interface <a class="el" href="classFactoryBD.html" title="Interface resprésentant une fabrique instanciant des objets de type Film, Serie & Video à patir d&#39;une bas...">FactoryBD</a> &amp; instanciant des objets à partir d'une base Sqlite.  
  <a href="classFactorySQL.html#details">Plus de détails...</a></p>
 
 <p><code>#include &lt;<a class="el" href="FactorySQL_8hpp_source.html">FactorySQL.hpp</a>&gt;</code></p>
@@ -102,7 +102,7 @@ Graphe d'héritage de FactorySQL:</div>
  <div class="center">
   <img src="classFactorySQL.png" usemap="#FactorySQL_map" alt=""/>
   <map id="FactorySQL_map" name="FactorySQL_map">
-<area href="classFactory.html" title="Interface représentant une fabrique d&#39;objets de type Video. " alt="Factory" shape="rect" coords="0,0,81,24"/>
+<area href="classFactoryBD.html" title="Interface resprésentant une fabrique instanciant des objets de type Film, Serie & Video à patir d&#39;une bas..." alt="FactoryBD" shape="rect" coords="0,0,81,24"/>
 </map>
  </div></div>
 <table class="memberdecls">
@@ -139,7 +139,7 @@ Attributs privés</h2></td></tr>
 <tr class="separator:adb8992e4657f72f619cfff893a102b2f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Description détaillée</h2>
-<div class="textblock"><p>Classe réalisant l'interface <a class="el" href="classFactory.html" title="Interface représentant une fabrique d&#39;objets de type Video. ">Factory</a> &amp; instanciant des objets de type <a class="el" href="classVideo.html" title="Classe représentant une vidéo générique. ">Video</a>. </p>
+<div class="textblock"><p>Classe réalisant l'interface <a class="el" href="classFactoryBD.html" title="Interface resprésentant une fabrique instanciant des objets de type Film, Serie & Video à patir d&#39;une bas...">FactoryBD</a> &amp; instanciant des objets à partir d'une base Sqlite. </p>
 </div><h2 class="groupheader">Documentation des constructeurs et destructeur</h2>
 <a class="anchor" id="a17f5794b1df16ca73689058b4303f7e9"></a>
 <div class="memitem">
@@ -180,6 +180,9 @@ Attributs privés</h2></td></tr>
 <a class="anchor" id="a2a04b6be730d60a361b77f3be3e4455e"></a>
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">shared_ptr&lt; <a class="el" href="classEpisode.html">Episode</a> &gt; FactorySQL::genererEpisode </td>
@@ -259,16 +262,26 @@ Attributs privés</h2></td></tr>
           <td></td><td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>Méthode créant et retournant un shared_ptr vers un nouvel <a class="el" href="classEpisode.html" title="Classe héritant de Video et représentant un épisode d&#39;une série. ">Episode</a>. </p>
 <dl class="section return"><dt>Renvoie</dt><dd>Un shared_ptr&lt;Episode&gt; qui pointe sur l'épisode nouvellement crée </dd></dl>
+
+<p>Implémente <a class="el" href="classFactoryBD.html#a0a98a1f80479a624d2bec6717ffd66f6">FactoryBD</a>.</p>
 
 </div>
 </div>
 <a class="anchor" id="a425ac707f83b9160d360c89dfe302848"></a>
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">shared_ptr&lt; <a class="el" href="classFilm.html">Film</a> &gt; FactorySQL::genererFilm </td>
@@ -330,16 +343,26 @@ Attributs privés</h2></td></tr>
           <td></td><td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>Méthode créant et retournant un shared_ptr vers un nouveau <a class="el" href="classFilm.html" title="Classe héritant de Video et représentant des films. ">Film</a>. </p>
 <dl class="section return"><dt>Renvoie</dt><dd>Un shared_ptr&lt;Film&gt; qui pointe sur le film nouvellement crée </dd></dl>
+
+<p>Implémente <a class="el" href="classFactoryBD.html#a6089d55a0c0b9d4365f4d777997c4a38">FactoryBD</a>.</p>
 
 </div>
 </div>
 <a class="anchor" id="a37c0f4b0720b77eb13545ae5c42f5f3e"></a>
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">shared_ptr&lt; <a class="el" href="classSerie.html">Serie</a> &gt; FactorySQL::genererSerie </td>
@@ -401,16 +424,26 @@ Attributs privés</h2></td></tr>
           <td></td><td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>Méthode créant et retournant un shared_ptr vers un nouvel <a class="el" href="classEpisode.html" title="Classe héritant de Video et représentant un épisode d&#39;une série. ">Episode</a>. </p>
 <dl class="section return"><dt>Renvoie</dt><dd>Un shared_ptr&lt;Episode&gt; qui pointe sur l'épisode nouvellement crée </dd></dl>
+
+<p>Implémente <a class="el" href="classFactoryBD.html#ad024eabaac28aea3e17f2a7b5f55745e">FactoryBD</a>.</p>
 
 </div>
 </div>
 <a class="anchor" id="aa6913ce9ab1908ee6476ba1e1ac3b11f"></a>
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">vector&lt; shared_ptr&lt; <a class="el" href="classVideo.html">Video</a> &gt; &gt; FactorySQL::recupererAllFilms </td>
@@ -419,16 +452,26 @@ Attributs privés</h2></td></tr>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>Méthode retournant la liste de tous les films contenus dans la base de données. </p>
 <dl class="section return"><dt>Renvoie</dt><dd>Un vector de shared_ptr&lt;Video&gt; qui contient tous les films contenus dans la base de données </dd></dl>
+
+<p>Implémente <a class="el" href="classFactoryBD.html#a9e9dc5d7e45eb40fd4d26eaf4d1a5158">FactoryBD</a>.</p>
 
 </div>
 </div>
 <a class="anchor" id="ab2869309f6573766bc4974ccdf003794"></a>
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">vector&lt; shared_ptr&lt; <a class="el" href="classVideo.html">Video</a> &gt; &gt; FactorySQL::recupererAllSeries </td>
@@ -437,10 +480,17 @@ Attributs privés</h2></td></tr>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>Méthode retournant la liste de tous les épisodes contenus dans la base de données. </p>
 <dl class="section return"><dt>Renvoie</dt><dd>Un vector de shared_ptr&lt;Video&gt; qui contient tous les épisodes contenus dans la base de données </dd></dl>
+
+<p>Implémente <a class="el" href="classFactoryBD.html#a859b7088dd614d1e8ebacae39ad063b4">FactoryBD</a>.</p>
 
 </div>
 </div>
@@ -474,7 +524,7 @@ Attributs privés</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Généré le Samedi 22 Novembre 2014 11:50:30 pour ObjectifCanapi par &#160;<a href="http://www.doxygen.org/index.html">
+Généré le Dimanche 23 Novembre 2014 10:21:16 pour ObjectifCanapi par &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.7
 </small></address>
