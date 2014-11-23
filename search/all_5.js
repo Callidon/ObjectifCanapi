@@ -1,7 +1,5 @@
 var searchData=
 [
-  ['factory',['Factory',['../classFactory.html',1,'']]],
-  ['factory_2ehpp',['Factory.hpp',['../Factory_8hpp.html',1,'']]],
   ['factorybd',['FactoryBD',['../classFactoryBD.html',1,'']]],
   ['factorybd_2ehpp',['FactoryBD.hpp',['../FactoryBD_8hpp.html',1,'']]],
   ['factoryimdb',['FactoryIMDB',['../classFactoryIMDB.html',1,'']]],
