@@ -19,7 +19,7 @@
 //--------------------------------------------------
 /*!
 * \class FactoryBD
-* \brief Interface resprésentant une fabrique instanciant des objets de type Film, Serie & Video à patir d'une base de données
+* \brief Interface représentant une fabrique instanciant des objets de type Film, Serie & Video à patir d'une base de données
 */
 
 class FactoryBD {

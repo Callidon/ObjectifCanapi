@@ -19,7 +19,7 @@
 //--------------------------------------------------
 /*!
 * \class FactoryIMDB
-* \brief Interface resprésentant une fabrique créant des objets de type Film et Serie à partir de l'APi du site IMDB
+* \brief Interface représentant une fabrique créant des objets de type Film et Serie à partir de l'APi du site IMDB
 */
 
 class FactoryIMDB {

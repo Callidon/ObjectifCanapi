@@ -12,16 +12,17 @@ CXX = g++
 FLAGS = -std=c++11
 SQLITEFLAGS = -lpthread -ldl
 # Liste de tous les objets du projet
-OBJETS = BDConnector Bibliotheque ComportementSQL FactorySQL FactoryOMDB Responsable Video
+OBJETS = BDConnector Bibliotheque ComportementSQL Episode FactorySQL FactoryOMDB Film Responsable ResponsableEpisode ResponsableFilm ResponsableSerie Serie sqlite3 Video
+DEPENDANCES = $(foreach file, $(OBJETS), build/$(file).o)
 
 #---------------------------------------------------------
 # Compilation complète du projet & éxecution
 #---------------------------------------------------------
 all: $(OBJETS)
+	$(CXX) $(FLAGS) main.cpp $(DEPENDANCES) $(SQLITEFLAGS) -o main
 
 exec:
 	@echo "nothing yet"
-
 #---------------------------------------------------------
 # Création du dossier de build
 #---------------------------------------------------------
@@ -92,10 +93,10 @@ TestFactoryOMDB: Video Film Serie Episode FactoryOMDB
 	$(CXX) $(FLAGS) src/Factory/$@.cpp build/FactoryOMDB.o build/Video.o build/Film.o build/Serie.o build/Episode.o build/BDConnector.o build/sqlite3.o $(SQLITEFLAGS) -o testFactoryOMDB
 	./testFactoryOMDB
 
-TestBibliotheque: Video Film Episode Serie Responsable Bibliotheque 
-	$(CXX) $(FLAGS) src/$@.cpp build/Bibliotheque.o build/FactoryOMDB.o build/FactorySQL.o build/Video.o build/Film.o build/Serie.o build/Episode.o build/Responsable.o build/ResponsableFilm.o build/ResponsableSerie.o build/ResponsableEpisode.o build/ComportementSQL.o build/BDConnector.o build/sqlite3.o $(SQLITEFLAGS) -o testBibliotheque
+TestBibliotheque: $(OBJETS) 
+	$(CXX) $(FLAGS) src/$@.cpp $(foreach file, $^, build/$(file).o) $(SQLITEFLAGS) -o testBibliotheque
 	./testBibliotheque
-
+	
 #---------------------------------------------------------
 # Génération de la documentation Doxygen
 #---------------------------------------------------------
