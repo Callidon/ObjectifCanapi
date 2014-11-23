@@ -8,19 +8,16 @@
 #ifndef FACTORYSQL_H
 #define FACTORYSQL_H
 
-#include <memory>
-#include <vector>
-#include <string>
-#include "Factory.hpp"
+#include "FactoryBD.hpp"
 #include "../BDConnector/BDConnector.hpp"
 
 //--------------------------------------------------
 /*!
 * \class FactorySQL
-* \brief Classe réalisant l'interface Factory & instanciant des objets de type Video
+* \brief Classe réalisant l'interface FactoryBD & instanciant des objets à partir d'une base Sqlite
 */
 
-class FactorySQL: public Factory {
+class FactorySQL: public FactoryBD {
 	
 	private:
 		std::shared_ptr<BDConnector> bd; //!< Connecteur vers la base de donnée où sont stocké les informations

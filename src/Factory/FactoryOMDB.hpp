@@ -7,19 +7,17 @@
 */
 #ifndef FACTORYOMDB_H
 #define FACTORYOMDB_H
-#include <memory>
-#include <vector>
-#include <string>
-#include "Factory.hpp"
+
+#include "FactoryIMDB.hpp"
 
 
 //--------------------------------------------------
 /*!
 * \class FactoryOMDB
-* \brief Classe réalisant l'interface Factory & qui interargit avec l'api d'IMDB pour créer des objets Video
+* \brief Classe réalisant l'interface FactoryIMDB & qui interargit avec l'api OMDB pour créer des objets Video
 */
 
-class FactoryOMDB : public Factory {
+class FactoryOMDB : public FactoryIMDB {
 		
 	public:
 		FactoryOMDB();
