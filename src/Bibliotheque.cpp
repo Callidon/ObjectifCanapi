@@ -33,7 +33,6 @@ Bibliotheque::Bibliotheque(string user) {
 	//initilisation des attributs
 	this->user = user;
 	this->database = shared_ptr<BDConnector>(new BDConnector(nom_db));
-	this->factoryOMDB = shared_ptr<FactoryOMDB>(new FactoryOMDB());
 	this->responsable = shared_ptr<ResponsableFilm>(new ResponsableFilm(this->database));
 	//on set le comportement de la chaîne de responsabilité
 	responsable->setComportement(shared_ptr<ComportementSQL>(new ComportementSQL(database)));
@@ -90,8 +89,12 @@ vector<shared_ptr<Video>> Bibliotheque::getVideos() {
 void Bibliotheque::addVideo(string nom_video, string type_video) {
 	//en fonction du type de la vidéo
 	if(type_video == "Film") {
+		
+		//on instancie la bonne factory
+		shared_ptr<FactoryOMDB> factory (new FactoryOMDBFilm());
+		
 		//on récupère le film depuis IMDB
-		shared_ptr<Film> film = this->factoryOMDB->makeVideo(this->factoryOMDB->queryTitle(nom_video));
+		shared_ptr<Video> film = factory->makeVideo(nom_video);
 		
 		//on l'ajoute à la collection	
 		this->videos.push_back(film);
@@ -100,8 +103,12 @@ void Bibliotheque::addVideo(string nom_video, string type_video) {
 		this->responsable->traiter(film,false,false);
 		
 	} else if(type_video == "Serie") {
+		
+		//on instancie la bonne factory
+		shared_ptr<FactoryOMDB> factory (new FactoryOMDBSerie());
+		
 		//on récupère la série depuis IMDB
-		shared_ptr<Serie> serie = this->factoryOMDB->makeSerie(this->factoryOMDB->querySerie(nom_video));
+		shared_ptr<Video> serie = factory->makeVideo(nom_video);
 		
 		//on l'ajoute à la collection
 		this->videos.push_back(serie);

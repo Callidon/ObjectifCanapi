@@ -13,9 +13,12 @@ int main() {
 		cout << video->getTitre() << endl;
 	}
 	
-	cout << "on set le statut 'à voir'" << endl;
+	/*cout << "on ajoute Hot Fuzz" << endl;
+	biblio->addVideo("Hot Fuzz","Film");*/
+	
+	/*cout << "on set le statut 'à voir'" << endl;
 	biblio->selectVideo("Game of Thrones");
-	biblio->setStatutCurrentVideo(false,true);
+	biblio->setStatutCurrentVideo(false,true);*/
 	
 	return 0;
 }

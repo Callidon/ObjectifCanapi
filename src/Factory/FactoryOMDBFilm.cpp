@@ -1,11 +1,11 @@
 /*!
-* \file FactoryOMDB.cpp
-* \brief Fichier contenant l'implémentation de la classe FactoryOMDB
+* \file FactoryOMDBFilm.cpp
+* \brief Fichier contenant l'implémentation de la classe FactoryOMDBFilm
 * \author Camille Le Luët
 * \author Thomas Minier
 * \date 26.11.2014
 */
-#include "FactoryOMDB.hpp"
+#include "FactoryOMDBFilm.hpp"
 #include <iostream>
 #include <stdlib.h>
 using namespace std;
@@ -14,14 +14,14 @@ using namespace std;
 /*!
 * \brief Constructeur de base
 */
-FactoryOMDB::FactoryOMDB() {};
+FactoryOMDBFilm::FactoryOMDBFilm() {};
 
 
 //--------------------------------------------------
 /*!
 * \brief Destructeur
 */
-FactoryOMDB::~FactoryOMDB() {};
+FactoryOMDBFilm::~FactoryOMDBFilm() {};
 
 
 //--------------------------------------------------
@@ -29,7 +29,7 @@ FactoryOMDB::~FactoryOMDB() {};
 * \brief Méthode créant et retournant un shared_ptr vers un nouveau film
 * \return Un shared_ptr<Film> qui pointe sur le film nouvellement crée
 */
-shared_ptr<Film> FactoryOMDB::genererFilm(string id, string titre, string lien, int annee, string affiche, string synopsis, vector<string> acteurs, vector<string> real, string pays) {
+shared_ptr<Film> FactoryOMDBFilm::genererFilm(string id, string titre, string lien, int annee, string affiche, string synopsis, vector<string> acteurs, vector<string> real, string pays) {
 	shared_ptr<Film> nouveauFilm (new Film(id, titre, lien, annee, affiche, synopsis, acteurs, real, pays));
 	return nouveauFilm;
 }
@@ -38,7 +38,7 @@ shared_ptr<Film> FactoryOMDB::genererFilm(string id, string titre, string lien, 
 /*!
 * \brief Méthode affectuant une recherche par titre de film
 */
-string FactoryOMDB::queryTitle(string title){
+string FactoryOMDBFilm::queryTitle(string title){
 	FILE *fp;
 	fp=popen((char*)("wget --quiet -O - \"http://www.omdbapi.com/?t=" + title + "\"").c_str(), "r");
 	char buffer[128];
@@ -54,34 +54,11 @@ string FactoryOMDB::queryTitle(string title){
 
 //--------------------------------------------------
 /*!
-* \brief Méthode affectuant une recherche par titre de film
+* \brief Méthode permettant de creer un objet film en fonction du resultat de la requete
 */
-string FactoryOMDB::querySerie(string title){
-	FILE *fp;
-	fp=popen((char*)("wget --quiet -O - \"http://imdbapi.poromenos.org/js/?name=" + title + "\"").c_str(), "r");
-	char buffer[128];
-	string res = "";
-	while(!feof(fp)){
-		if(fgets(buffer, 128, fp) != NULL){
-			res += buffer;
-		}
-	}
-	pclose(fp);
+shared_ptr<Video> FactoryOMDBFilm::makeVideo(string title){
+	string res = queryTitle(title);
 	
-	string find = "\"episodes\":";
-	int size = find.size();
-	int posd = res.find(find) + size + 1;
-	int posf = res.find("}]", posd);
-	return res.substr(posd, posf - posd);
-	
-}
-
-
-//--------------------------------------------------
-/*!
-* \brief Méthode permettant de creer un objet film/episode en fonction du resultat de la requete
-*/
-shared_ptr<Film> FactoryOMDB::makeVideo(string res){
 	if(res.substr(13,5) == "False"){
 		//cout << "Film non trouvé" << endl;
 		throw -1;
@@ -168,73 +145,3 @@ shared_ptr<Film> FactoryOMDB::makeVideo(string res){
 		return genererFilm(id, titre, lien, annee, affiche, synopsis, acteurs, real, pays);
 	}
 }
-
-//--------------------------------------------------
-/*!
-* \brief Méthode permettant de creer un objet film/episode en fonction du resultat de la requete
-*/
-shared_ptr<Serie> FactoryOMDB::makeSerie(string res){
-	
-	shared_ptr<Film> fserie = makeVideo(res);
-	shared_ptr<Serie> serie = fserie->filmToSerie();
-	
-	shared_ptr<Film> ep;
-	shared_ptr<Episode> epi;
-	
-	string liste = querySerie(serie->getTitre());
-	
-	string episode;
-	int i = 0, j=0;
-	int posd,posf,size;
-	string find, titre, numero, season;
-	int saison, num;
-	string sep = "}";
-	cout << "Recupération des données..... veuillez patienter et l'attente en vaut la peine" << endl;
-	while(i<liste.size() && j!= -1){
-		j = liste.find(sep, i);
-		episode = liste.substr(i, j - i);
-
-		find = "\"season\":";
-		size = find.size();
-		posd = episode.find(find) + size + 1;
-		posf = episode.find(", \"", posd);
-		if(posd != -1 && posf != -1){
-			season = episode.substr(posd, posf - posd);
-			saison = atoi((char*)season.c_str());
-		}
-
-		find = "\"name\":";
-		size = find.size();
-		posd = episode.find(find) + size + 2;
-		posf = episode.find(", \"", posd);
-		if(posd != -1 && posf != -1){
-			titre = episode.substr(posd, posf - posd - 1);
-		}
-
-		find = "\"number\":";
-		size = find.size();
-		posd = episode.find(find) + size + 1;
-		posf = episode.size();
-		if(posd != -1 && posf != -1){
-			numero = episode.substr(posd, posf - posd);
-			num = atoi((char*)numero.c_str());
-		}
-		
-		if(titre != ("Episode #"+season+"."+numero)){
-			try{
-				ep = makeVideo(queryTitle(titre));
-			}
-			catch(int code){
-				//cerr << "Exception " << code << endl;
-			}
-			epi = ep->filmToEpisode();
-			epi->setSaison(saison);
-			epi->setNumero(num);
-			serie->addEpisode(epi);
-			
-		}
-		i = j + 1;
-	}
-	return serie;
-}
-

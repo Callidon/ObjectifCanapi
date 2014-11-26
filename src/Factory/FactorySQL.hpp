@@ -1,6 +1,6 @@
 /*!
 * \file FactorySQL.hpp
-* \brief Fichier contenant la définition de la classe FactorySQL
+* \brief Fichier contenant la définition de l'interface FactorySQL
 * \author Camille Le Luët
 * \author Thomas Minier
 * \date 26.11.2014
@@ -8,30 +8,32 @@
 #ifndef FACTORYSQL_H
 #define FACTORYSQL_H
 
-#include "FactoryBD.hpp"
-#include "../BDConnector/BDConnector.hpp"
+#include <memory>
+#include <vector>
+#include <string>
+#include "../Video/Film.hpp"
+#include "../Video/Episode.hpp"
+#include "../Video/Serie.hpp"
+
 
 //--------------------------------------------------
 /*!
 * \class FactorySQL
-* \brief Classe réalisant l'interface FactoryBD & instanciant des objets à partir d'une base Sqlite
+* \brief Interface représentant une fabrique instanciant des objets de type Video à patir d'une base de données
 */
 
-class FactorySQL: public FactoryBD {
+class FactorySQL {
 	
-	private:
-		std::shared_ptr<BDConnector> bd; //!< Connecteur vers la base de donnée où sont stocké les informations
-		
+	
 	public:
-		FactorySQL(std::shared_ptr<BDConnector> base);
-		~FactorySQL();
-		std::vector<std::shared_ptr<Video> > recupererAllFilms();
-		std::vector<std::shared_ptr<Video> > recupererAllSeries();
-		std::shared_ptr<Serie> genererSerie(std::string id, std::string titre, std::string lien, int annee, std::string affiche, std::string synopsis, std::string pays, bool vu, bool aVoir);
-		std::shared_ptr<Episode> genererEpisode(std::string id,std::string titre, std::string lien, int annee, std::string affiche, int numero, int saison, std::string id_serie, std::string synopsis, std::string pays, bool vu, bool aVoir);
-
-		std::shared_ptr<Film> genererFilm(std::string id, std::string titre, std::string lien, int annee, std::string affiche, std::string synopsis, std::string pays, bool vu, bool aVoir);
+		virtual std::vector<std::shared_ptr<Video> > recupererAll() = 0;
+		
+		/*virtual std::shared_ptr<Serie> genererSerie(std::string id, std::string titre, std::string lien, int annee, std::string affiche, std::string synopsis, std::string pays, bool vu, bool aVoir) = 0;
+		virtual std::shared_ptr<Episode> genererEpisode(std::string id,std::string titre, std::string lien, int annee, std::string affiche, int numero, int saison, std::string id_serie, std::string synopsis, std::string pays, bool vu, bool aVoir) = 0;
+		virtual std::shared_ptr<Film> genererFilm(std::string id, std::string titre, std::string lien, int annee, std::string affiche, std::string synopsis, std::string pays, bool vu, bool aVoir) = 0;
+	*/
 };
 
 //--------------------------------------------------
 #endif
+
