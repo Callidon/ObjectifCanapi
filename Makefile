@@ -9,7 +9,7 @@
 # Flags utilisés
 CC = gcc
 CXX = g++
-FLAGS = -std=c++11
+FLAGS = -std=c++0x
 SQLITEFLAGS = -lpthread -ldl
 # Liste de tous les objets du projet
 OBJETS = BDConnector Bibliotheque ComportementSQL Episode FactorySQL FactoryOMDB Film Responsable ResponsableEpisode ResponsableFilm ResponsableSerie Serie sqlite3 Video
