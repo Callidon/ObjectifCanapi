@@ -3,7 +3,7 @@
 * \brief Fichier contenant l'implémentation de la classe Bibliotheque
 * \author Camille Le Luët
 * \author Thomas Minier
-* \date ?
+* \date 26.11.2014
 */
 
 #include "Bibliotheque.hpp"

@@ -3,15 +3,23 @@
 * \brief Fichier contenant l'implémentation de la classe Video
 * \author Camille Le Luët
 * \author Thomas Minier
-* \date ?
+* \date 26.11.2014
 */
 #include "Video.hpp"
 
 #include <iostream>
 using namespace std;
+
 //--------------------------------------------------
 /*!
-* \brief Constructeur de base
+* \brief Constructeur n°1
+* \param id Identifiant de la vidéo
+* \param titre Titre de la vidéo
+* \param lien Lien vers la bande-annonce
+* \param synopsis Synopsis de la vidéo
+* \param annee Année de la vidéo
+* \param affiche Lien vers l'affiche
+* \param pays pays associé à la vidéo
 */
 Video::Video(string id, string titre, string lien, string synopsis, int annee, string affiche, string pays) {
 	this->id = id;
@@ -25,6 +33,19 @@ Video::Video(string id, string titre, string lien, string synopsis, int annee, s
 	this->pays = pays;
 }
 
+//--------------------------------------------------
+/*!
+* \brief Constructeur n°2
+* \param id Identifiant de la vidéo
+* \param titre Titre de la vidéo
+* \param lien Lien vers la bande-annonce
+* \param synopsis Synopsis de la vidéo
+* \param annee Année de la vidéo
+* \param affiche Lien vers l'affiche
+* \param acteurs Liste (vector) des acteurs de la vidéo
+* \param real Liste (vector) des réalisateurs de la vidéo
+* \param pays pays associé à la vidéo
+*/
 Video::Video(string id, string titre, string lien, string synopsis, int annee, string affiche, vector<string> acteurs, vector<string> real, string pays){
 	this->id = id;
 	this->titre = titre;
@@ -48,7 +69,8 @@ Video::~Video() {
 
 //--------------------------------------------------
 /*!
-* \brief Méthode qui retourne l'id du film
+* \brief Méthode qui retourne l'id de la vidéo
+* \return L'identifiant de la vidéo
 */
 string Video::getId(){
 	return this->id;
@@ -57,6 +79,7 @@ string Video::getId(){
 //--------------------------------------------------
 /*!
 * \brief Méthode qui modifie l'id de la Video par celui passé en parametre
+* \param id Nouvel identifiant de la vidéo
 */
 void Video::setId(int id){
 	this->id = id;
@@ -64,7 +87,8 @@ void Video::setId(int id){
 
 //--------------------------------------------------
 /*!
-* \brief Méthode qui retourne le titre du film
+* \brief Méthode qui retourne le titre de la vidéo
+* \return Le titre de la vidéo
 */
 string Video::getTitre(){
 	return this->titre;
@@ -72,7 +96,8 @@ string Video::getTitre(){
 
 //--------------------------------------------------
 /*!
-* \brief Méthode qui modifie le titre du Video par celui passé en parametre
+* \brief Méthode qui modifie le titre de la vidéo par celui passé en parametre
+* \param titre Le nouveau titre de la vidéo
 */
 void Video::setTitre(string titre){
 	this->titre = titre;
@@ -81,6 +106,7 @@ void Video::setTitre(string titre){
 //--------------------------------------------------
 /*!
 * \brief Méthode qui retourne le lien de la BA
+* \return Le lien vers la bande-annonce
 */
 string Video::getLien(){
 	return this->lien;
@@ -89,6 +115,7 @@ string Video::getLien(){
 //--------------------------------------------------
 /*!
 * \brief Méthode qui modifie le lien de la BA par celui passé en parametre
+* \param lien Le nouveau lien vers la bande-annonce
 */
 void Video::setLien(string lien){
 	this->lien = lien;
@@ -97,6 +124,7 @@ void Video::setLien(string lien){
 //--------------------------------------------------
 /*!
 * \brief Méthode qui retourne l'annee de production du Video
+* \return L'année de la vidéo
 */
 int Video::getAnnee(){
 	return this->annee;
@@ -105,6 +133,7 @@ int Video::getAnnee(){
 //--------------------------------------------------
 /*!
 * \brief Méthode qui modifie l'annee de prod par celle passé en parametre
+* \param annee La nouvelle année de la vidéo
 */
 void Video::setAnnee(int annee){
 	this->annee = annee;
@@ -113,6 +142,7 @@ void Video::setAnnee(int annee){
 //--------------------------------------------------
 /*!
 * \brief Méthode qui retourne l'affiche de la Video
+* \return Le lien vers l'affiche de la vidéo
 */
 string Video::getAffiche(){
 	return this->affiche;
@@ -121,6 +151,7 @@ string Video::getAffiche(){
 //--------------------------------------------------
 /*!
 * \brief Méthode qui modifie l'affiche de la video par celle passée en parametre
+* \param aff le nouveau lien vers l'affiche de la vidéo
 */
 void Video::setAffiche(string aff){
 	this->affiche = aff;
@@ -129,6 +160,7 @@ void Video::setAffiche(string aff){
 //--------------------------------------------------
 /*!
 * \brief Méthode qui retourne le pays de la Video
+* \return Le pays associé à la vidéo
 */
 string Video::getPays(){
 	return this->pays;
@@ -136,7 +168,8 @@ string Video::getPays(){
 
 //--------------------------------------------------
 /*!
-* \brief Méthode qui modifie le pays de prod par celle passé en parametre
+* \brief Méthode qui modifie le pays de prod par celle passé en paramètre
+* \param pays Le nouveau pays associé à la vidéo
 */
 void Video::setPays(string pays){
 	this->pays = pays;
@@ -145,6 +178,7 @@ void Video::setPays(string pays){
 //--------------------------------------------------
 /*!
 * \brief Méthode qui retourne le synopsis de la Video
+* \return Le synopsis de la vidéo
 */
 string Video::getSynopsis(){
 	return this->synopsis;
@@ -153,6 +187,7 @@ string Video::getSynopsis(){
 //--------------------------------------------------
 /*!
 * \brief Méthode qui modifie le synopsis par celui passé en parametre
+* \param syno Le nouveau synopsis de la vidéo
 */
 void Video::setSynopsis(string syno){
 	this->synopsis = syno;
@@ -161,6 +196,7 @@ void Video::setSynopsis(string syno){
 //--------------------------------------------------
 /*!
 * \brief Méthode qui retourne la liste des acteurs (principaux) du Videos
+* \return Un vector contenant les noms des acteurs de la vidéo
 */
 vector<string> Video::getActeurs(){
 	return this->acteurs;
@@ -169,6 +205,7 @@ vector<string> Video::getActeurs(){
 //--------------------------------------------------
 /*!
 * \brief Méthode qui ajoute un acteur à la liste
+* \param acteur Le nom de l'acteur à ajouter
 */
 void Video::addActeur(string acteur){
 	this->acteurs.push_back(acteur);
@@ -177,6 +214,7 @@ void Video::addActeur(string acteur){
 //--------------------------------------------------
 /*!
 * \brief Méthode qui retourne la liste des réalisateurs du Video
+* \return Un vector contenant les noms des réalisateurs de la vidéo
 */
 vector<string> Video::getReal(){
 	return this->realisateurs;
@@ -185,6 +223,7 @@ vector<string> Video::getReal(){
 //--------------------------------------------------
 /*!
 * \brief Méthode qui ajoute un realisateur à la liste
+* \param real Le nom du réalisateur à ajouter
 */
 void Video::addReal(string real){
 	this->realisateurs.push_back(real);
@@ -216,4 +255,3 @@ void Video::lire(){
 	string command = "firefox " + this->lien;
 	system((char*)command.c_str());
 }
- //lire BA

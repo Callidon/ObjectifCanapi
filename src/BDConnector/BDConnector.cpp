@@ -3,7 +3,7 @@
 * \brief Fichier contenant l'implémentation de la classe BDConnector
 * \author Camille Le Luët
 * \author Thomas Minier
-* \date ?
+* \date 26.11.2014
 */
 #include "BDConnector.hpp"
 #include <iostream>

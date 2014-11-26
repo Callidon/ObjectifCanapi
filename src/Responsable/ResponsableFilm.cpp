@@ -3,7 +3,7 @@
 * \brief Fichier contenant les entêtes de la classe ResponsableFilm
 * \author Camille Le Luët
 * \author Thomas Minier
-* \date ?
+* \date 26.11.2014
 */
 
 #include "ResponsableFilm.hpp"

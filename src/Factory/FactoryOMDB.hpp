@@ -3,7 +3,7 @@
 * \brief Fichier contenant la définition de la classe FactoryOMDB
 * \author Camille Le Luët
 * \author Thomas Minier
-* \date ?
+* \date 26.11.2014
 */
 #ifndef FACTORYOMDB_H
 #define FACTORYOMDB_H

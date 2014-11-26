@@ -3,7 +3,7 @@
 * \brief Fichier contenant les entêtes de la classe Serie
 * \author Camille Le Luët
 * \author Thomas Minier
-* \date ?
+* \date 26.11.2014
 */
 #ifndef Serie_H
 #define Serie_H
@@ -20,10 +20,10 @@
 class Serie : public virtual Video {
 	private:
 		//Attributs
-		std::vector<std::shared_ptr<Episode>> episodes;
+		std::vector<std::shared_ptr<Episode>> episodes; //!< Liste des épisodes de la série
 		
 	public:
-		//Constructeur & destructeur
+		//Constructeurs & destructeur
 		Serie(std::string id, std::string titre, std::string lien, int annee, std::string affiche, std::string synopsis, std::string pays);
 		Serie(std::string id, std::string titre, std::string lien, int annee, std::string affiche, std::string synopsis, std::vector<std::string> acteurs, std::vector<std::string> real, std::string pays);
 		~Serie();

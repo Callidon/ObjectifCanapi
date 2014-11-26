@@ -3,7 +3,7 @@
 * \brief Fichier contenant les entêtes de la classe ResponsableSerie
 * \author Camille Le Luët
 * \author Thomas Minier
-* \date ?
+* \date 26.11.2014
 */
 
 #include "ResponsableSerie.hpp"

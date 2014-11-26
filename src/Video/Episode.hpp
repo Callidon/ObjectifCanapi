@@ -3,7 +3,7 @@
 * \brief Fichier contenant les entêtes de la classe Episodes
 * \author Camille Le Luët
 * \author Thomas Minier
-* \date ?
+* \date 26.11.2014
 */
 #ifndef Episode_H
 #define Episode_H
@@ -21,12 +21,12 @@
 class Episode : public virtual Video {
 	private:
 		//Attributs
-		int numero;
-		int saison;
-		std::string serie;
+		int numero; //!< Numéro de l'épisode dans la saison
+		int saison; //!< Numéro de la saison de l'épisode
+		std::string serie; //!< Identifiant de la série associée à l'épisode
 		
 	public:
-		//Constructeur & destructeur
+		//Constructeurs & destructeur
 		Episode(std::string id, std::string titre, std::string lien, int annee, std::string affiche, int numero, int saison, std::string serie, std::string synopsis, std::string pays);
 		Episode(std::string id, std::string titre, std::string lien, int annee, std::string affiche, int numero, int saison, std::string serie, std::string synopsis , std::vector<std::string> acteurs, std::vector<std::string> real, std::string pays);
 		Episode(std::string id, std::string titre, std::string lien, int annee, std::string affiche, std::string synopsis , std::vector<std::string> acteurs, std::vector<std::string> real, std::string pays);

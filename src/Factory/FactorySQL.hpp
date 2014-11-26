@@ -3,7 +3,7 @@
 * \brief Fichier contenant la définition de la classe FactorySQL
 * \author Camille Le Luët
 * \author Thomas Minier
-* \date ?
+* \date 26.11.2014
 */
 #ifndef FACTORYSQL_H
 #define FACTORYSQL_H

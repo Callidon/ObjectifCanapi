@@ -3,7 +3,7 @@
 * \brief Fichier contenant l'implémentation de la classe FactorySQL
 * \author Camille Le Luët
 * \author Thomas Minier
-* \date ?
+* \date 26.11.2014
 */
 #include "FactorySQL.hpp"
 #include <iostream>

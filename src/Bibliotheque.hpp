@@ -3,7 +3,7 @@
 * \brief Fichier contenant les entêtes de la classe Bibliotheque
 * \author Camille Le Luët
 * \author Thomas Minier
-* \date ?
+* \date 26.11.2014
 */
 #ifndef Bibliotheque_H
 #define Bibliotheque_H

@@ -3,7 +3,7 @@
 * \brief Fichier contenant la définition de l'interface FactoryBD
 * \author Camille Le Luët
 * \author Thomas Minier
-* \date ?
+* \date 26.11.2014
 */
 #ifndef FACTORYBD_H
 #define FACTORYBD_H

@@ -3,7 +3,7 @@
 * \brief Fichier contenant les entêtes de l'interface Video
 * \author Camille Le Luët
 * \author Thomas Minier
-* \date ?
+* \date 26.11.2014
 */
 #ifndef Video_H
 #define Video_H
@@ -24,22 +24,22 @@ class Episode;
 class Video {
 	private:
 		//Attributs
-		std::string id;
-		std::string titre;
-		std::string lien; //lien vers BA
-		int annee;
-		std::string affiche;
-		std::string pays;
-		std::string synopsis;
-		std::vector<std::string> acteurs;
-		std::vector<std::string> realisateurs;
+		std::string id; //!< Identifiant (unique) de la vidéo
+		std::string titre; //!< Titre de la vidéo
+		std::string lien; //!< Lien vers la bande-annonce
+		int annee; //!< Année de diffusion
+		std::string affiche; //!< Lien vers l'affiche de la vidéo
+		std::string pays; //!< Pays associé
+		std::string synopsis; //!< Synopsis de la vidéo
+		std::vector<std::string> acteurs; //!< Liste des acteurs jouant dans la vidéo
+		std::vector<std::string> realisateurs; //!< Liste des réalisateurs ayant participé à la video
 		
 	protected:
-		bool vu;
-		bool aVoir;
+		bool vu; //!< Si la vidéo a été vu
+		bool aVoir; //!< Si la vidéo est à voir
 		
 	public:
-		//Constructeur & destructeur
+		//Constructeurs & destructeur
 		Video(std::string id, std::string titre, std::string lien, std::string synopsis, int annee, std::string affiche, std::string pays);
 		Video(std::string id, std::string titre, std::string lien, std::string synopsis, int annee, std::string affiche, std::vector<std::string> acteurs, std::vector<std::string> real, std::string pays);
 		~Video();

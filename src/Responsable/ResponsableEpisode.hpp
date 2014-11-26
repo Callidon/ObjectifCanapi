@@ -3,7 +3,7 @@
 * \brief Fichier contenant les entêtes de la classe ResponsableEpisode
 * \author Camille Le Luët
 * \author Thomas Minier
-* \date ?
+* \date 26.11.2014
 */
 #ifndef RESPONSABLEEPISODE_H
 #define RESPONSABLEEPISODE_H

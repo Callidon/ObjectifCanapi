@@ -3,7 +3,7 @@
 * \brief Fichier contenant la définition de l'interface FactoryIMDB
 * \author Camille Le Luët
 * \author Thomas Minier
-* \date ?
+* \date 26.11.2014
 */
 #ifndef FACTORYIMDB_H
 #define FACTORYIMDB_H
