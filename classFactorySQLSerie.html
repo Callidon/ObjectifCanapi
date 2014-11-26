@@ -123,7 +123,7 @@ Fonctions membres publiques</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
 Fonctions membres privées</h2></td></tr>
 <tr class="memitem:ae1f6852200783d5ae250edcc7e588c04"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="classSerie.html">Serie</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFactorySQLSerie.html#ae1f6852200783d5ae250edcc7e588c04">genererSerie</a> (std::string id, std::string titre, std::string lien, int annee, std::string affiche, std::string synopsis, std::string pays, bool vu, bool aVoir)</td></tr>
-<tr class="memdesc:ae1f6852200783d5ae250edcc7e588c04"><td class="mdescLeft">&#160;</td><td class="mdescRight">Méthode créant et retournant un shared_ptr vers un nouvel <a class="el" href="classEpisode.html" title="Classe héritant de Video et représentant un épisode d&#39;une série. ">Episode</a>.  <a href="#ae1f6852200783d5ae250edcc7e588c04">Plus de détails...</a><br/></td></tr>
+<tr class="memdesc:ae1f6852200783d5ae250edcc7e588c04"><td class="mdescLeft">&#160;</td><td class="mdescRight">Méthode créant et retournant un shared_ptr vers une nouvelle série.  <a href="#ae1f6852200783d5ae250edcc7e588c04">Plus de détails...</a><br/></td></tr>
 <tr class="separator:ae1f6852200783d5ae250edcc7e588c04"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aca70bd09ff5e3836a0946ec301bb7250"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="classEpisode.html">Episode</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFactorySQLSerie.html#aca70bd09ff5e3836a0946ec301bb7250">genererEpisode</a> (std::string id, std::string titre, std::string lien, int annee, std::string affiche, int numero, int saison, std::string id_serie, std::string synopsis, std::string pays, bool vu, bool aVoir)</td></tr>
 <tr class="memdesc:aca70bd09ff5e3836a0946ec301bb7250"><td class="mdescLeft">&#160;</td><td class="mdescRight">Méthode créant et retournant un shared_ptr vers un nouvel <a class="el" href="classEpisode.html" title="Classe héritant de Video et représentant un épisode d&#39;une série. ">Episode</a>.  <a href="#aca70bd09ff5e3836a0946ec301bb7250">Plus de détails...</a><br/></td></tr>
@@ -153,6 +153,12 @@ Attributs privés</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Constructeur de base. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">base</td><td>shared_ptr vers un <a class="el" href="classBDConnector.html" title="Classe simplifiant l&#39;usage de la bibliothèque sqlite3. ">BDConnector</a> accédant à la base de données </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -267,6 +273,23 @@ Attributs privés</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Méthode créant et retournant un shared_ptr vers un nouvel <a class="el" href="classEpisode.html" title="Classe héritant de Video et représentant un épisode d&#39;une série. ">Episode</a>. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">id</td><td>Identifiant de l'épisode à créer </td></tr>
+    <tr><td class="paramname">titre</td><td>Titre de l'épisode </td></tr>
+    <tr><td class="paramname">lien</td><td>Lien vers la bande-annonce </td></tr>
+    <tr><td class="paramname">annee</td><td>Année de l'épisode </td></tr>
+    <tr><td class="paramname">affiche</td><td>Lien vers l'affiche de l'épisode </td></tr>
+    <tr><td class="paramname">numero</td><td>Numéro de l'épisode dans la saison </td></tr>
+    <tr><td class="paramname">saison</td><td>Numéro de la saison </td></tr>
+    <tr><td class="paramname">id_serie</td><td>Identifiant de la série associée à l'épisode </td></tr>
+    <tr><td class="paramname">synopsis</td><td>Synopsis de l'épisode </td></tr>
+    <tr><td class="paramname">pays</td><td>Pays associé à l'épisode </td></tr>
+    <tr><td class="paramname">vu</td><td>Si l'épisode a été vu </td></tr>
+    <tr><td class="paramname">aVoir</td><td>Si l'épisode est à voir </td></tr>
+  </table>
+  </dd>
+</dl>
 <dl class="section return"><dt>Renvoie</dt><dd>Un shared_ptr&lt;Episode&gt; qui pointe sur l'épisode nouvellement crée </dd></dl>
 
 </div>
@@ -345,8 +368,22 @@ Attributs privés</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Méthode créant et retournant un shared_ptr vers un nouvel <a class="el" href="classEpisode.html" title="Classe héritant de Video et représentant un épisode d&#39;une série. ">Episode</a>. </p>
-<dl class="section return"><dt>Renvoie</dt><dd>Un shared_ptr&lt;Episode&gt; qui pointe sur l'épisode nouvellement crée </dd></dl>
+<p>Méthode créant et retournant un shared_ptr vers une nouvelle série. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">id</td><td>Identifiant de la série à créer </td></tr>
+    <tr><td class="paramname">titre</td><td>Titre de la série </td></tr>
+    <tr><td class="paramname">lien</td><td>Lien vers la bande-annonce </td></tr>
+    <tr><td class="paramname">annee</td><td>Année de la série </td></tr>
+    <tr><td class="paramname">affiche</td><td>Lien vers l'affiche de la série </td></tr>
+    <tr><td class="paramname">synopsis</td><td>Synopsis de la série </td></tr>
+    <tr><td class="paramname">pays</td><td>Pays associé à la série </td></tr>
+    <tr><td class="paramname">vu</td><td>Si la série a été vue </td></tr>
+    <tr><td class="paramname">aVoir</td><td>Si la série est à voir </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>Un shared_ptr&lt;Serie&gt; qui pointe sur la série nouvellement crée </dd></dl>
 
 </div>
 </div>
@@ -408,7 +445,7 @@ Attributs privés</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Généré le Mercredi 26 Novembre 2014 13:14:38 pour ObjectifCanapi par &#160;<a href="http://www.doxygen.org/index.html">
+Généré le Mercredi 26 Novembre 2014 15:00:54 pour ObjectifCanapi par &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

@@ -240,6 +240,20 @@ Fonctions membres privées</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Méthode créant et retournant un shared_ptr vers un nouveau film. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">id</td><td>L'identifiant du film </td></tr>
+    <tr><td class="paramname">titre</td><td>Le titre du film </td></tr>
+    <tr><td class="paramname">lien</td><td>Le lien vers la bande-annonce </td></tr>
+    <tr><td class="paramname">annee</td><td>L'année du film </td></tr>
+    <tr><td class="paramname">affiche</td><td>Le lien vers l'affiche </td></tr>
+    <tr><td class="paramname">synopsis</td><td>Le synopsis du film </td></tr>
+    <tr><td class="paramname">acteurs</td><td>vector contenant les acteurs du film </td></tr>
+    <tr><td class="paramname">real</td><td>vector contenant les réalisateurs du film </td></tr>
+    <tr><td class="paramname">pays</td><td>Pays associé au film </td></tr>
+  </table>
+  </dd>
+</dl>
 <dl class="section return"><dt>Renvoie</dt><dd>Un shared_ptr&lt;Film&gt; qui pointe sur le film nouvellement crée </dd></dl>
 
 </div>
@@ -267,6 +281,13 @@ Fonctions membres privées</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Méthode permettant de creer un objet film en fonction du resultat de la requete. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">title</td><td>Le titre du film à créer depuis OMDB </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>Un shared_ptr vers le film crée </dd></dl>
 
 <p>Implémente <a class="el" href="classFactoryOMDB.html#acf094159819afc842959b62976b94d29">FactoryOMDB</a>.</p>
 
@@ -295,6 +316,13 @@ Fonctions membres privées</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Méthode affectuant une recherche par titre de film. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">title</td><td>Titre du film à rechercher sur OMDB </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>Le resultat de la requête </dd></dl>
 
 <p>Implémente <a class="el" href="classFactoryOMDB.html#a4c18ef2ec12e132af5830ab3f989aee7">FactoryOMDB</a>.</p>
 
@@ -307,7 +335,7 @@ Fonctions membres privées</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Généré le Mercredi 26 Novembre 2014 13:14:38 pour ObjectifCanapi par &#160;<a href="http://www.doxygen.org/index.html">
+Généré le Mercredi 26 Novembre 2014 15:00:54 pour ObjectifCanapi par &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

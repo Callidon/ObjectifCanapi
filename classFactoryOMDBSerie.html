@@ -92,6 +92,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
 </div><!--header-->
 <div class="contents">
 
+<p>Classe réalisant l'interface <a class="el" href="classFactoryOMDB.html" title="Interface représentant une fabrique créant des objets de type Video à partir de l&#39;APi du site IMDB...">FactoryOMDB</a> &amp; qui interargit avec l'api OMDB pour créer des objets <a class="el" href="classVideo.html" title="Classe représentant une vidéo générique. ">Video</a>.  
+ <a href="classFactoryOMDBSerie.html#details">Plus de détails...</a></p>
+
 <p><code>#include &lt;<a class="el" href="FactoryOMDBSerie_8hpp_source.html">FactoryOMDBSerie.hpp</a>&gt;</code></p>
 <div class="dynheader">
 Graphe d'héritage de FactoryOMDBSerie:</div>
@@ -112,16 +115,18 @@ Fonctions membres publiques</h2></td></tr>
 <tr class="memdesc:a7a4d32a5fb8b2dfd231af1eaf8fb8d57"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructeur.  <a href="#a7a4d32a5fb8b2dfd231af1eaf8fb8d57">Plus de détails...</a><br/></td></tr>
 <tr class="separator:a7a4d32a5fb8b2dfd231af1eaf8fb8d57"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afe3cc09c3377ca97f23095eeb430df4f"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="classVideo.html">Video</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFactoryOMDBSerie.html#afe3cc09c3377ca97f23095eeb430df4f">makeVideo</a> (std::string title)</td></tr>
-<tr class="memdesc:afe3cc09c3377ca97f23095eeb430df4f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Méthode permettant de creer un objet film/episode en fonction du resultat de la requete.  <a href="#afe3cc09c3377ca97f23095eeb430df4f">Plus de détails...</a><br/></td></tr>
+<tr class="memdesc:afe3cc09c3377ca97f23095eeb430df4f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Méthode permettant de creer un objet série en fonction du resultat de la requete.  <a href="#afe3cc09c3377ca97f23095eeb430df4f">Plus de détails...</a><br/></td></tr>
 <tr class="separator:afe3cc09c3377ca97f23095eeb430df4f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
 Fonctions membres privées</h2></td></tr>
 <tr class="memitem:acc9e81ca958d97e473b53959eafbe3ca"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFactoryOMDBSerie.html#acc9e81ca958d97e473b53959eafbe3ca">queryTitle</a> (std::string title)</td></tr>
-<tr class="memdesc:acc9e81ca958d97e473b53959eafbe3ca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Méthode affectuant une recherche par titre de film.  <a href="#acc9e81ca958d97e473b53959eafbe3ca">Plus de détails...</a><br/></td></tr>
+<tr class="memdesc:acc9e81ca958d97e473b53959eafbe3ca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Méthode affectuant une recherche par titre de série.  <a href="#acc9e81ca958d97e473b53959eafbe3ca">Plus de détails...</a><br/></td></tr>
 <tr class="separator:acc9e81ca958d97e473b53959eafbe3ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Documentation des constructeurs et destructeur</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Description détaillée</h2>
+<div class="textblock"><p>Classe réalisant l'interface <a class="el" href="classFactoryOMDB.html" title="Interface représentant une fabrique créant des objets de type Video à partir de l&#39;APi du site IMDB...">FactoryOMDB</a> &amp; qui interargit avec l'api OMDB pour créer des objets <a class="el" href="classVideo.html" title="Classe représentant une vidéo générique. ">Video</a>. </p>
+</div><h2 class="groupheader">Documentation des constructeurs et destructeur</h2>
 <a class="anchor" id="ab5f2c34dab0cecec5513e6e6e4077fb3"></a>
 <div class="memitem">
 <div class="memproto">
@@ -179,7 +184,14 @@ Fonctions membres privées</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Méthode permettant de creer un objet film/episode en fonction du resultat de la requete. </p>
+<p>Méthode permettant de creer un objet série en fonction du resultat de la requete. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">title</td><td>Le titre de la série à créer depuis OMDB </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>Un shared_ptr vers la série crée </dd></dl>
 
 <p>Implémente <a class="el" href="classFactoryOMDB.html#acf094159819afc842959b62976b94d29">FactoryOMDB</a>.</p>
 
@@ -207,7 +219,14 @@ Fonctions membres privées</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Méthode affectuant une recherche par titre de film. </p>
+<p>Méthode affectuant une recherche par titre de série. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">title</td><td>Titre de la série à rechercher sur OMDB </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>Le resultat de la requête </dd></dl>
 
 <p>Implémente <a class="el" href="classFactoryOMDB.html#a4c18ef2ec12e132af5830ab3f989aee7">FactoryOMDB</a>.</p>
 
@@ -220,7 +239,7 @@ Fonctions membres privées</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Généré le Mercredi 26 Novembre 2014 13:14:38 pour ObjectifCanapi par &#160;<a href="http://www.doxygen.org/index.html">
+Généré le Mercredi 26 Novembre 2014 15:00:54 pour ObjectifCanapi par &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

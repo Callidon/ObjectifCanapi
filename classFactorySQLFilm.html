@@ -150,6 +150,12 @@ Attributs privés</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Constructeur de base. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">base</td><td>shared_ptr vers un <a class="el" href="classBDConnector.html" title="Classe simplifiant l&#39;usage de la bibliothèque sqlite3. ">BDConnector</a> accédant à la base de données </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -246,6 +252,20 @@ Attributs privés</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Méthode créant et retournant un shared_ptr vers un nouveau <a class="el" href="classFilm.html" title="Classe héritant de Video et représentant des films. ">Film</a>. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">id</td><td>Identifiant du film à créer </td></tr>
+    <tr><td class="paramname">titre</td><td>Titre du film </td></tr>
+    <tr><td class="paramname">lien</td><td>Lien vers la bande-annonce </td></tr>
+    <tr><td class="paramname">annee</td><td>Année du film </td></tr>
+    <tr><td class="paramname">affiche</td><td>Lien vers l'affiche du film </td></tr>
+    <tr><td class="paramname">synopsis</td><td>Synopsis du film </td></tr>
+    <tr><td class="paramname">pays</td><td>Pays associé au film </td></tr>
+    <tr><td class="paramname">vu</td><td>Si le film a été vu </td></tr>
+    <tr><td class="paramname">aVoir</td><td>Si le film est à voir </td></tr>
+  </table>
+  </dd>
+</dl>
 <dl class="section return"><dt>Renvoie</dt><dd>Un shared_ptr&lt;Film&gt; qui pointe sur le film nouvellement crée </dd></dl>
 
 </div>
@@ -308,7 +328,7 @@ Attributs privés</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Généré le Mercredi 26 Novembre 2014 13:14:38 pour ObjectifCanapi par &#160;<a href="http://www.doxygen.org/index.html">
+Généré le Mercredi 26 Novembre 2014 15:00:54 pour ObjectifCanapi par &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>
