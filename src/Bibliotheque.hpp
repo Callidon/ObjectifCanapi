@@ -9,9 +9,6 @@
 #define Bibliotheque_H
 
 #include "Video/Video.hpp"
-#include "Factory/FactorySQL.hpp"
-#include "Factory/FactoryOMDBFilm.hpp"
-#include "Factory/FactoryOMDBSerie.hpp"
 #include "Responsable/ResponsableFilm.hpp"
 
 #include <string>

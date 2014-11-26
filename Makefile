@@ -12,7 +12,7 @@ CXX = g++
 FLAGS = -std=c++0x
 SQLITEFLAGS = -lpthread -ldl
 # Liste de tous les objets du projet
-OBJETS = BDConnector Bibliotheque ComportementSQL Episode FactorySQL FactoryOMDBFilm FactoryOMDBSerie Film Responsable ResponsableEpisode ResponsableFilm ResponsableSerie Serie sqlite3 Video
+OBJETS = BDConnector Bibliotheque ComportementSQL Episode FactorySQLFilm FactorySQLSerie FactoryOMDBFilm FactoryOMDBSerie Film Responsable ResponsableEpisode ResponsableFilm ResponsableSerie Serie sqlite3 Video
 DEPENDANCES = $(foreach file, $(OBJETS), build/$(file).o)
 
 #---------------------------------------------------------

@@ -7,6 +7,10 @@
 */
 
 #include "Bibliotheque.hpp"
+#include "Factory/FactorySQLFilm.hpp"
+#include "Factory/FactorySQLSerie.hpp"
+#include "Factory/FactoryOMDBFilm.hpp"
+#include "Factory/FactoryOMDBSerie.hpp"
 #include "ComportementBD/ComportementSQL.hpp"
 #include <iostream>
 #include <sys/stat.h>
@@ -39,9 +43,12 @@ Bibliotheque::Bibliotheque(string user) {
 	this->currentVideo = 0;
 	
 	//récupération des vidéos liées à cet utilisateur et enregistrées dans la base de données
-	shared_ptr<FactorySQL> factorySQL(new FactorySQL(this->database));
-	vector<shared_ptr<Video> > tmpFilms = factorySQL->recupererAllFilms();
-	vector<shared_ptr<Video> > tmpSeries = factorySQL->recupererAllSeries();
+	//on instancie les fabriques
+	shared_ptr<FactorySQL> factoryFilm(new FactorySQLFilm(this->database));
+	shared_ptr<FactorySQL> factorySerie(new FactorySQLSerie(this->database));
+	//on récupère les films & séries depuis la base
+	vector<shared_ptr<Video> > tmpFilms = factoryFilm->recupererAll();
+	vector<shared_ptr<Video> > tmpSeries = factorySerie->recupererAll();
 	//ajouts des films & séries à la bibliothèque
 	this->videos.insert(this->videos.end(), tmpFilms.begin(), tmpFilms.end());
 	this->videos.insert(this->videos.end(), tmpSeries.begin(), tmpSeries.end());
