@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<meta name="generator" content="Doxygen 1.8.7"/>
+<meta name="generator" content="Doxygen 1.8.6"/>
 <title>ObjectifCanapi: Membres de classe</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
@@ -32,7 +32,7 @@
 </table>
 </div>
 <!-- end header part -->
-<!-- Généré par Doxygen 1.8.7 -->
+<!-- Généré par Doxygen 1.8.6 -->
 <script type="text/javascript">
 var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
 </script>
@@ -153,7 +153,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
 
 <h3><a class="anchor" id="index_b"></a>- b -</h3><ul>
 <li>bd
-: <a class="el" href="classFactorySQL.html#adb8992e4657f72f619cfff893a102b2f">FactorySQL</a>
+: <a class="el" href="classFactorySQLFilm.html#ab0550d875eeb6cc654eb69b11dcfc5f0">FactorySQLFilm</a>
+, <a class="el" href="classFactorySQLSerie.html#a1505cdeb09aab153dfb32fa4a834ee7c">FactorySQLSerie</a>
 </li>
 <li>BDConnector()
 : <a class="el" href="classBDConnector.html#a941f992657f9791f4aed6f6567c447ef">BDConnector</a>
@@ -206,17 +207,20 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
 
 
 <h3><a class="anchor" id="index_f"></a>- f -</h3><ul>
-<li>factoryOMDB
-: <a class="el" href="classBibliotheque.html#a347b1a5910485d43a2815defd33a25a8">Bibliotheque</a>
+<li>FactoryOMDBFilm()
+: <a class="el" href="classFactoryOMDBFilm.html#aaa1730c56b71d0c5b8372b94a2a21e87">FactoryOMDBFilm</a>
 </li>
-<li>FactoryOMDB()
-: <a class="el" href="classFactoryOMDB.html#a22f8631cfcb8c84e7491b263b709c6de">FactoryOMDB</a>
+<li>FactoryOMDBSerie()
+: <a class="el" href="classFactoryOMDBSerie.html#ab5f2c34dab0cecec5513e6e6e4077fb3">FactoryOMDBSerie</a>
 </li>
-<li>FactorySQL()
-: <a class="el" href="classFactorySQL.html#a17f5794b1df16ca73689058b4303f7e9">FactorySQL</a>
+<li>FactorySQLFilm()
+: <a class="el" href="classFactorySQLFilm.html#a586104150ad47e088a3f3e425362eb7b">FactorySQLFilm</a>
+</li>
+<li>FactorySQLSerie()
+: <a class="el" href="classFactorySQLSerie.html#a325aa7ab46a6bf47075a29e098da5924">FactorySQLSerie</a>
 </li>
 <li>Film()
-: <a class="el" href="classFilm.html#a43aefbce7e4896ce59f3553490b48aac">Film</a>
+: <a class="el" href="classFilm.html#a8828832b98c83df840c053144a4d1454">Film</a>
 </li>
 <li>filmToEpisode()
 : <a class="el" href="classFilm.html#a617f23b8628143db4a48a3e94528e528">Film</a>
@@ -229,18 +233,14 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
 
 <h3><a class="anchor" id="index_g"></a>- g -</h3><ul>
 <li>genererEpisode()
-: <a class="el" href="classFactoryBD.html#a0a98a1f80479a624d2bec6717ffd66f6">FactoryBD</a>
-, <a class="el" href="classFactorySQL.html#a2a04b6be730d60a361b77f3be3e4455e">FactorySQL</a>
+: <a class="el" href="classFactorySQLSerie.html#aca70bd09ff5e3836a0946ec301bb7250">FactorySQLSerie</a>
 </li>
 <li>genererFilm()
-: <a class="el" href="classFactoryBD.html#a6089d55a0c0b9d4365f4d777997c4a38">FactoryBD</a>
-, <a class="el" href="classFactoryIMDB.html#af74ff756b4ed51d57c6f975982008f58">FactoryIMDB</a>
-, <a class="el" href="classFactoryOMDB.html#ad4dcdb88d22b22d05dcca946b06aeebb">FactoryOMDB</a>
-, <a class="el" href="classFactorySQL.html#a425ac707f83b9160d360c89dfe302848">FactorySQL</a>
+: <a class="el" href="classFactoryOMDBFilm.html#a17fe26385d01789820c75276575f1aa0">FactoryOMDBFilm</a>
+, <a class="el" href="classFactorySQLFilm.html#a195dfc68b42da1acb648ba67a5c81f52">FactorySQLFilm</a>
 </li>
 <li>genererSerie()
-: <a class="el" href="classFactoryBD.html#ad024eabaac28aea3e17f2a7b5f55745e">FactoryBD</a>
-, <a class="el" href="classFactorySQL.html#a37c0f4b0720b77eb13545ae5c42f5f3e">FactorySQL</a>
+: <a class="el" href="classFactorySQLSerie.html#ae1f6852200783d5ae250edcc7e588c04">FactorySQLSerie</a>
 </li>
 <li>getActeurs()
 : <a class="el" href="classVideo.html#a69e3a8a22de9efbc34cd5e6fe8226433">Video</a>
@@ -326,13 +326,10 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
 
 
 <h3><a class="anchor" id="index_m"></a>- m -</h3><ul>
-<li>makeSerie()
-: <a class="el" href="classFactoryIMDB.html#afd42604754f0499a6a954b2674a108ba">FactoryIMDB</a>
-, <a class="el" href="classFactoryOMDB.html#a13b62d63614edc1c7b5663b9a2b03197">FactoryOMDB</a>
-</li>
 <li>makeVideo()
-: <a class="el" href="classFactoryIMDB.html#a7096aa25414bbf45ff5086fc27ec6fb7">FactoryIMDB</a>
-, <a class="el" href="classFactoryOMDB.html#a112b17b5efaa706037afd432756bf7b0">FactoryOMDB</a>
+: <a class="el" href="classFactoryOMDB.html#acf094159819afc842959b62976b94d29">FactoryOMDB</a>
+, <a class="el" href="classFactoryOMDBFilm.html#a8fd8f40919d9c683f0fafce9d16928a1">FactoryOMDBFilm</a>
+, <a class="el" href="classFactoryOMDBSerie.html#afe3cc09c3377ca97f23095eeb430df4f">FactoryOMDBSerie</a>
 </li>
 <li>marquerVoir()
 : <a class="el" href="classVideo.html#a636c4370f679d693de494c856115eb9c">Video</a>
@@ -367,13 +364,10 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
 <li>query()
 : <a class="el" href="classBDConnector.html#a4e4e8d6c11199cc6529e289f9dd0bb2b">BDConnector</a>
 </li>
-<li>querySerie()
-: <a class="el" href="classFactoryIMDB.html#a7954bc36b601d51d71ecbd424429e352">FactoryIMDB</a>
-, <a class="el" href="classFactoryOMDB.html#acabc8a55f6bf5be51cf7e1597d964a2d">FactoryOMDB</a>
-</li>
 <li>queryTitle()
-: <a class="el" href="classFactoryIMDB.html#accb4b1622008b4fd00880d354e78a506">FactoryIMDB</a>
-, <a class="el" href="classFactoryOMDB.html#aca44262614c659b7fce55e850b977546">FactoryOMDB</a>
+: <a class="el" href="classFactoryOMDB.html#a4c18ef2ec12e132af5830ab3f989aee7">FactoryOMDB</a>
+, <a class="el" href="classFactoryOMDBFilm.html#a9330b7d70a5200522d8911a18afe9893">FactoryOMDBFilm</a>
+, <a class="el" href="classFactoryOMDBSerie.html#acc9e81ca958d97e473b53959eafbe3ca">FactoryOMDBSerie</a>
 </li>
 </ul>
 
@@ -382,13 +376,10 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
 <li>realisateurs
 : <a class="el" href="classVideo.html#a1163f7debd0213436820635700fc9dde">Video</a>
 </li>
-<li>recupererAllFilms()
-: <a class="el" href="classFactoryBD.html#a9e9dc5d7e45eb40fd4d26eaf4d1a5158">FactoryBD</a>
-, <a class="el" href="classFactorySQL.html#aa6913ce9ab1908ee6476ba1e1ac3b11f">FactorySQL</a>
-</li>
-<li>recupererAllSeries()
-: <a class="el" href="classFactoryBD.html#a859b7088dd614d1e8ebacae39ad063b4">FactoryBD</a>
-, <a class="el" href="classFactorySQL.html#ab2869309f6573766bc4974ccdf003794">FactorySQL</a>
+<li>recupererAll()
+: <a class="el" href="classFactorySQL.html#acf6461b641886997a5662b5af54ee96c">FactorySQL</a>
+, <a class="el" href="classFactorySQLFilm.html#aae2779154e8ff6442532eadb300d5af5">FactorySQLFilm</a>
+, <a class="el" href="classFactorySQLSerie.html#af1ce8cdf24fba0609b6839de0af20aa1">FactorySQLSerie</a>
 </li>
 <li>responsable
 : <a class="el" href="classBibliotheque.html#a8e4fc0424fc35d67ca4134b76fb0ab51">Bibliotheque</a>
@@ -533,11 +524,17 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
 <li>~Episode()
 : <a class="el" href="classEpisode.html#ad5a3c015579ae794f6332085495418a5">Episode</a>
 </li>
-<li>~FactoryOMDB()
-: <a class="el" href="classFactoryOMDB.html#ac232e824e659198c0007ad2cc1b8789a">FactoryOMDB</a>
+<li>~FactoryOMDBFilm()
+: <a class="el" href="classFactoryOMDBFilm.html#acf353d9284b48a2dd628219881463dbf">FactoryOMDBFilm</a>
 </li>
-<li>~FactorySQL()
-: <a class="el" href="classFactorySQL.html#a00386b6529262aff77ba88eb390c7eb5">FactorySQL</a>
+<li>~FactoryOMDBSerie()
+: <a class="el" href="classFactoryOMDBSerie.html#a7a4d32a5fb8b2dfd231af1eaf8fb8d57">FactoryOMDBSerie</a>
+</li>
+<li>~FactorySQLFilm()
+: <a class="el" href="classFactorySQLFilm.html#aa459d2adad317f8be8014f78d33aa950">FactorySQLFilm</a>
+</li>
+<li>~FactorySQLSerie()
+: <a class="el" href="classFactorySQLSerie.html#ad3fbc04faa9b1cf413f8daf26fe5fcae">FactorySQLSerie</a>
 </li>
 <li>~Film()
 : <a class="el" href="classFilm.html#a8dab653f8a6c0635ca5ddbe0bbdd9a25">Film</a>
@@ -564,9 +561,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Généré le Dimanche 23 Novembre 2014 10:27:10 pour ObjectifCanapi par &#160;<a href="http://www.doxygen.org/index.html">
+Généré le Mercredi 26 Novembre 2014 13:14:38 pour ObjectifCanapi par &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.7
+</a> 1.8.6
 </small></address>
 </body>
 </html>

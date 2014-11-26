@@ -1,6 +1,5 @@
 var searchData=
 [
   ['query',['query',['../classBDConnector.html#a4e4e8d6c11199cc6529e289f9dd0bb2b',1,'BDConnector']]],
-  ['queryserie',['querySerie',['../classFactoryIMDB.html#a7954bc36b601d51d71ecbd424429e352',1,'FactoryIMDB::querySerie()'],['../classFactoryOMDB.html#acabc8a55f6bf5be51cf7e1597d964a2d',1,'FactoryOMDB::querySerie()']]],
-  ['querytitle',['queryTitle',['../classFactoryIMDB.html#accb4b1622008b4fd00880d354e78a506',1,'FactoryIMDB::queryTitle()'],['../classFactoryOMDB.html#aca44262614c659b7fce55e850b977546',1,'FactoryOMDB::queryTitle()']]]
+  ['querytitle',['queryTitle',['../classFactoryOMDB.html#a4c18ef2ec12e132af5830ab3f989aee7',1,'FactoryOMDB::queryTitle()'],['../classFactoryOMDBFilm.html#a9330b7d70a5200522d8911a18afe9893',1,'FactoryOMDBFilm::queryTitle()'],['../classFactoryOMDBSerie.html#acc9e81ca958d97e473b53959eafbe3ca',1,'FactoryOMDBSerie::queryTitle()']]]
 ];

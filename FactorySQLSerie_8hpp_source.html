@@ -1,0 +1,137 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.6"/>
+<title>ObjectifCanapi:  Fichier source de src/Factory/FactorySQLSerie.hpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">ObjectifCanapi
+   &#160;<span id="projectnumber">1.0</span>
+   </div>
+   <div id="projectbrief">Projet de Programmation orienté objet réalisé dans le cadre de la L3 Informatique</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.6 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Page&#160;principale</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="files.html"><span>Fichiers</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Recherche" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Liste&#160;des&#160;fichiers</span></a></li>
+      <li><a href="globals.html"><span>Membres&#160;de&#160;fichier</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Fichiers</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_ebd355f492f50ea33d294d31d7726b7c.html">Factory</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">FactorySQLSerie.hpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="FactorySQLSerie_8hpp.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#ifndef FACTORYSQLSERIE_H</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define FACTORYSQLSERIE_H</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="FactorySQL_8hpp.html">FactorySQL.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &quot;../BDConnector/BDConnector.hpp&quot;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment">//--------------------------------------------------</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="classFactorySQLSerie.html">   20</a></span>&#160;<span class="comment"></span><span class="keyword">class </span><a class="code" href="classFactorySQLSerie.html">FactorySQLSerie</a>: <span class="keyword">public</span> <a class="code" href="classFactorySQL.html">FactorySQL</a> {</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    </div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        <span class="comment">//Attribut</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="classFactorySQLSerie.html#a1505cdeb09aab153dfb32fa4a834ee7c">   24</a></span>&#160;        std::shared_ptr&lt;BDConnector&gt; <a class="code" href="classFactorySQLSerie.html#a1505cdeb09aab153dfb32fa4a834ee7c">bd</a>; </div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        <span class="comment">//Méthodes privées</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        std::shared_ptr&lt;Serie&gt; <a class="code" href="classFactorySQLSerie.html#ae1f6852200783d5ae250edcc7e588c04">genererSerie</a>(std::string <span class="keywordtype">id</span>, std::string titre, std::string lien, <span class="keywordtype">int</span> annee, std::string affiche, std::string synopsis, std::string pays, <span class="keywordtype">bool</span> vu, <span class="keywordtype">bool</span> aVoir);</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        std::shared_ptr&lt;Episode&gt; <a class="code" href="classFactorySQLSerie.html#aca70bd09ff5e3836a0946ec301bb7250">genererEpisode</a>(std::string <span class="keywordtype">id</span>,std::string titre, std::string lien, <span class="keywordtype">int</span> annee, std::string affiche, <span class="keywordtype">int</span> numero, <span class="keywordtype">int</span> saison, std::string id_serie, std::string synopsis, std::string pays, <span class="keywordtype">bool</span> vu, <span class="keywordtype">bool</span> aVoir);</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        </div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        <span class="comment">//Constructeur &amp; destructeur</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        <a class="code" href="classFactorySQLSerie.html#a325aa7ab46a6bf47075a29e098da5924">FactorySQLSerie</a>(std::shared_ptr&lt;BDConnector&gt; base);</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        <a class="code" href="classFactorySQLSerie.html#ad3fbc04faa9b1cf413f8daf26fe5fcae">~FactorySQLSerie</a>();</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        <span class="comment">//Méthode publique</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        std::vector&lt;std::shared_ptr&lt;Video&gt; &gt; <a class="code" href="classFactorySQLSerie.html#af1ce8cdf24fba0609b6839de0af20aa1">recupererAll</a>();</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;};</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="comment">//--------------------------------------------------</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="ttc" id="FactorySQL_8hpp_html"><div class="ttname"><a href="FactorySQL_8hpp.html">FactorySQL.hpp</a></div><div class="ttdoc">Fichier contenant la définition de l&#39;interface FactorySQL. </div></div>
+<div class="ttc" id="classFactorySQLSerie_html_ae1f6852200783d5ae250edcc7e588c04"><div class="ttname"><a href="classFactorySQLSerie.html#ae1f6852200783d5ae250edcc7e588c04">FactorySQLSerie::genererSerie</a></div><div class="ttdeci">std::shared_ptr&lt; Serie &gt; genererSerie(std::string id, std::string titre, std::string lien, int annee, std::string affiche, std::string synopsis, std::string pays, bool vu, bool aVoir)</div><div class="ttdoc">Méthode créant et retournant un shared_ptr vers un nouvel Episode. </div><div class="ttdef"><b>Definition:</b> FactorySQLSerie.cpp:31</div></div>
+<div class="ttc" id="classFactorySQLSerie_html_aca70bd09ff5e3836a0946ec301bb7250"><div class="ttname"><a href="classFactorySQLSerie.html#aca70bd09ff5e3836a0946ec301bb7250">FactorySQLSerie::genererEpisode</a></div><div class="ttdeci">std::shared_ptr&lt; Episode &gt; genererEpisode(std::string id, std::string titre, std::string lien, int annee, std::string affiche, int numero, int saison, std::string id_serie, std::string synopsis, std::string pays, bool vu, bool aVoir)</div><div class="ttdoc">Méthode créant et retournant un shared_ptr vers un nouvel Episode. </div><div class="ttdef"><b>Definition:</b> FactorySQLSerie.cpp:87</div></div>
+<div class="ttc" id="classFactorySQLSerie_html_af1ce8cdf24fba0609b6839de0af20aa1"><div class="ttname"><a href="classFactorySQLSerie.html#af1ce8cdf24fba0609b6839de0af20aa1">FactorySQLSerie::recupererAll</a></div><div class="ttdeci">std::vector&lt; std::shared_ptr&lt; Video &gt; &gt; recupererAll()</div><div class="ttdoc">Méthode retournant la liste de toutes les séries contenus dans la base de données. </div><div class="ttdef"><b>Definition:</b> FactorySQLSerie.cpp:128</div></div>
+<div class="ttc" id="classFactorySQLSerie_html_ad3fbc04faa9b1cf413f8daf26fe5fcae"><div class="ttname"><a href="classFactorySQLSerie.html#ad3fbc04faa9b1cf413f8daf26fe5fcae">FactorySQLSerie::~FactorySQLSerie</a></div><div class="ttdeci">~FactorySQLSerie()</div><div class="ttdoc">Destructeur. </div><div class="ttdef"><b>Definition:</b> FactorySQLSerie.cpp:23</div></div>
+<div class="ttc" id="classFactorySQLSerie_html"><div class="ttname"><a href="classFactorySQLSerie.html">FactorySQLSerie</a></div><div class="ttdoc">Classe réalisant l&#39;interface FactorySQL &amp; instanciant des objets Serie à partir d&#39;une base Sqlite...</div><div class="ttdef"><b>Definition:</b> FactorySQLSerie.hpp:20</div></div>
+<div class="ttc" id="classFactorySQLSerie_html_a1505cdeb09aab153dfb32fa4a834ee7c"><div class="ttname"><a href="classFactorySQLSerie.html#a1505cdeb09aab153dfb32fa4a834ee7c">FactorySQLSerie::bd</a></div><div class="ttdeci">std::shared_ptr&lt; BDConnector &gt; bd</div><div class="ttdoc">Connecteur vers la base de donnée où sont stocké les informations. </div><div class="ttdef"><b>Definition:</b> FactorySQLSerie.hpp:24</div></div>
+<div class="ttc" id="classFactorySQL_html"><div class="ttname"><a href="classFactorySQL.html">FactorySQL</a></div><div class="ttdoc">Interface représentant une fabrique instanciant des objets de type Video à patir d&#39;une base de donnée...</div><div class="ttdef"><b>Definition:</b> FactorySQL.hpp:25</div></div>
+<div class="ttc" id="classFactorySQLSerie_html_a325aa7ab46a6bf47075a29e098da5924"><div class="ttname"><a href="classFactorySQLSerie.html#a325aa7ab46a6bf47075a29e098da5924">FactorySQLSerie::FactorySQLSerie</a></div><div class="ttdeci">FactorySQLSerie(std::shared_ptr&lt; BDConnector &gt; base)</div><div class="ttdoc">Constructeur de base. </div><div class="ttdef"><b>Definition:</b> FactorySQLSerie.cpp:16</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré le Mercredi 26 Novembre 2014 13:14:37 pour ObjectifCanapi par &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.6
+</small></address>
+</body>
+</html>

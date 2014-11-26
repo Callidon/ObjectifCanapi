@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<meta name="generator" content="Doxygen 1.8.7"/>
+<meta name="generator" content="Doxygen 1.8.6"/>
 <title>ObjectifCanapi:  Fichier source de src/Factory/FactoryIMDB.hpp</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
@@ -32,7 +32,7 @@
 </table>
 </div>
 <!-- end header part -->
-<!-- Généré par Doxygen 1.8.7 -->
+<!-- Généré par Doxygen 1.8.6 -->
 <script type="text/javascript">
 var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
 </script>
@@ -90,9 +90,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
 </div><!--header-->
 <div class="contents">
 <a href="FactoryIMDB_8hpp.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#ifndef FACTORYIMDB_H</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#define FACTORYIMDB_H</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#ifndef FACTORYOMDB_H</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define FACTORYOMDB_H</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor"></span></div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &lt;memory&gt;</span></div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
@@ -102,33 +102,29 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;</div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment">//--------------------------------------------------</span></div>
-<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="classFactoryIMDB.html">   25</a></span>&#160;<span class="comment"></span><span class="keyword">class </span><a class="code" href="classFactoryIMDB.html">FactoryIMDB</a> {</div>
+<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="classFactoryOMDB.html">   25</a></span>&#160;<span class="comment"></span><span class="keyword">class </span><a class="code" href="classFactoryOMDB.html">FactoryOMDB</a> {</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        </div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        </div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        <span class="keyword">virtual</span> std::shared_ptr&lt;Film&gt; <a class="code" href="classFactoryIMDB.html#af74ff756b4ed51d57c6f975982008f58">genererFilm</a>(std::string <span class="keywordtype">id</span>, std::string titre, std::string lien, <span class="keywordtype">int</span> annee, std::string affiche, std::string synopsis, std::vector&lt;std::string&gt; acteurs, std::vector&lt;std::string&gt; real, std::string pays) = 0;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        <span class="comment">//Méthode privée</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        <span class="keyword">virtual</span> std::string <a class="code" href="classFactoryOMDB.html#a4c18ef2ec12e132af5830ab3f989aee7">queryTitle</a>(std::string title) = 0;</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        </div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        <span class="keyword">virtual</span> std::string <a class="code" href="classFactoryIMDB.html#accb4b1622008b4fd00880d354e78a506">queryTitle</a>(std::string title) = 0;</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        <span class="keyword">virtual</span> std::string <a class="code" href="classFactoryIMDB.html#a7954bc36b601d51d71ecbd424429e352">querySerie</a>(std::string title) = 0;</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        <span class="keyword">virtual</span> std::shared_ptr&lt;Film&gt; <a class="code" href="classFactoryIMDB.html#a7096aa25414bbf45ff5086fc27ec6fb7">makeVideo</a>(std::string res) = 0;</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        <span class="keyword">virtual</span> std::shared_ptr&lt;Serie&gt; <a class="code" href="classFactoryIMDB.html#afd42604754f0499a6a954b2674a108ba">makeSerie</a>(std::string res) = 0;</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;};</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="comment">//--------------------------------------------------</span></div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;</div>
-<div class="ttc" id="classFactoryIMDB_html_accb4b1622008b4fd00880d354e78a506"><div class="ttname"><a href="classFactoryIMDB.html#accb4b1622008b4fd00880d354e78a506">FactoryIMDB::queryTitle</a></div><div class="ttdeci">virtual std::string queryTitle(std::string title)=0</div></div>
-<div class="ttc" id="classFactoryIMDB_html"><div class="ttname"><a href="classFactoryIMDB.html">FactoryIMDB</a></div><div class="ttdoc">Interface représentant une fabrique créant des objets de type Film et Serie à partir de l&#39;APi du site...</div><div class="ttdef"><b>Definition:</b> FactoryIMDB.hpp:25</div></div>
-<div class="ttc" id="classFactoryIMDB_html_afd42604754f0499a6a954b2674a108ba"><div class="ttname"><a href="classFactoryIMDB.html#afd42604754f0499a6a954b2674a108ba">FactoryIMDB::makeSerie</a></div><div class="ttdeci">virtual std::shared_ptr&lt; Serie &gt; makeSerie(std::string res)=0</div></div>
-<div class="ttc" id="classFactoryIMDB_html_af74ff756b4ed51d57c6f975982008f58"><div class="ttname"><a href="classFactoryIMDB.html#af74ff756b4ed51d57c6f975982008f58">FactoryIMDB::genererFilm</a></div><div class="ttdeci">virtual std::shared_ptr&lt; Film &gt; genererFilm(std::string id, std::string titre, std::string lien, int annee, std::string affiche, std::string synopsis, std::vector&lt; std::string &gt; acteurs, std::vector&lt; std::string &gt; real, std::string pays)=0</div></div>
-<div class="ttc" id="classFactoryIMDB_html_a7954bc36b601d51d71ecbd424429e352"><div class="ttname"><a href="classFactoryIMDB.html#a7954bc36b601d51d71ecbd424429e352">FactoryIMDB::querySerie</a></div><div class="ttdeci">virtual std::string querySerie(std::string title)=0</div></div>
-<div class="ttc" id="classFactoryIMDB_html_a7096aa25414bbf45ff5086fc27ec6fb7"><div class="ttname"><a href="classFactoryIMDB.html#a7096aa25414bbf45ff5086fc27ec6fb7">FactoryIMDB::makeVideo</a></div><div class="ttdeci">virtual std::shared_ptr&lt; Film &gt; makeVideo(std::string res)=0</div></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        <span class="comment">//Méthode publique</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        <span class="keyword">virtual</span> std::shared_ptr&lt;Video&gt; <a class="code" href="classFactoryOMDB.html#acf094159819afc842959b62976b94d29">makeVideo</a>(std::string title) = 0;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;};</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="comment">//--------------------------------------------------</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="preprocessor"></span></div>
+<div class="ttc" id="classFactoryOMDB_html_a4c18ef2ec12e132af5830ab3f989aee7"><div class="ttname"><a href="classFactoryOMDB.html#a4c18ef2ec12e132af5830ab3f989aee7">FactoryOMDB::queryTitle</a></div><div class="ttdeci">virtual std::string queryTitle(std::string title)=0</div></div>
+<div class="ttc" id="classFactoryOMDB_html"><div class="ttname"><a href="classFactoryOMDB.html">FactoryOMDB</a></div><div class="ttdoc">Interface représentant une fabrique créant des objets de type Video à partir de l&#39;APi du site IMDB...</div><div class="ttdef"><b>Definition:</b> FactoryIMDB.hpp:25</div></div>
+<div class="ttc" id="classFactoryOMDB_html_acf094159819afc842959b62976b94d29"><div class="ttname"><a href="classFactoryOMDB.html#acf094159819afc842959b62976b94d29">FactoryOMDB::makeVideo</a></div><div class="ttdeci">virtual std::shared_ptr&lt; Video &gt; makeVideo(std::string title)=0</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Généré le Dimanche 23 Novembre 2014 10:27:09 pour ObjectifCanapi par &#160;<a href="http://www.doxygen.org/index.html">
+Généré le Mercredi 26 Novembre 2014 13:02:38 pour ObjectifCanapi par &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.7
+</a> 1.8.6
 </small></address>
 </body>
 </html>

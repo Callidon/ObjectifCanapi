@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<meta name="generator" content="Doxygen 1.8.7"/>
+<meta name="generator" content="Doxygen 1.8.6"/>
 <title>ObjectifCanapi: Liste des membres</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
@@ -32,7 +32,7 @@
 </table>
 </div>
 <!-- end header part -->
-<!-- Généré par Doxygen 1.8.7 -->
+<!-- Généré par Doxygen 1.8.6 -->
 <script type="text/javascript">
 var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
 </script>
@@ -84,23 +84,24 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
 </div><!-- top -->
 <div class="header">
   <div class="headertitle">
-<div class="title">FactoryIMDB Liste des membres</div>  </div>
+<div class="title">FactorySQLSerie Liste des membres</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>Liste complète des membres de <a class="el" href="classFactoryIMDB.html">FactoryIMDB</a>, y compris les membres hérités :</p>
+<p>Liste complète des membres de <a class="el" href="classFactorySQLSerie.html">FactorySQLSerie</a>, y compris les membres hérités :</p>
 <table class="directory">
-  <tr class="even"><td class="entry"><a class="el" href="classFactoryIMDB.html#af74ff756b4ed51d57c6f975982008f58">genererFilm</a>(std::string id, std::string titre, std::string lien, int annee, std::string affiche, std::string synopsis, std::vector&lt; std::string &gt; acteurs, std::vector&lt; std::string &gt; real, std::string pays)=0</td><td class="entry"><a class="el" href="classFactoryIMDB.html">FactoryIMDB</a></td><td class="entry"><span class="mlabel">pure virtual</span></td></tr>
-  <tr><td class="entry"><a class="el" href="classFactoryIMDB.html#afd42604754f0499a6a954b2674a108ba">makeSerie</a>(std::string res)=0</td><td class="entry"><a class="el" href="classFactoryIMDB.html">FactoryIMDB</a></td><td class="entry"><span class="mlabel">pure virtual</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classFactoryIMDB.html#a7096aa25414bbf45ff5086fc27ec6fb7">makeVideo</a>(std::string res)=0</td><td class="entry"><a class="el" href="classFactoryIMDB.html">FactoryIMDB</a></td><td class="entry"><span class="mlabel">pure virtual</span></td></tr>
-  <tr><td class="entry"><a class="el" href="classFactoryIMDB.html#a7954bc36b601d51d71ecbd424429e352">querySerie</a>(std::string title)=0</td><td class="entry"><a class="el" href="classFactoryIMDB.html">FactoryIMDB</a></td><td class="entry"><span class="mlabel">pure virtual</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classFactoryIMDB.html#accb4b1622008b4fd00880d354e78a506">queryTitle</a>(std::string title)=0</td><td class="entry"><a class="el" href="classFactoryIMDB.html">FactoryIMDB</a></td><td class="entry"><span class="mlabel">pure virtual</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classFactorySQLSerie.html#a1505cdeb09aab153dfb32fa4a834ee7c">bd</a></td><td class="entry"><a class="el" href="classFactorySQLSerie.html">FactorySQLSerie</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr><td class="entry"><a class="el" href="classFactorySQLSerie.html#a325aa7ab46a6bf47075a29e098da5924">FactorySQLSerie</a>(std::shared_ptr&lt; BDConnector &gt; base)</td><td class="entry"><a class="el" href="classFactorySQLSerie.html">FactorySQLSerie</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classFactorySQLSerie.html#aca70bd09ff5e3836a0946ec301bb7250">genererEpisode</a>(std::string id, std::string titre, std::string lien, int annee, std::string affiche, int numero, int saison, std::string id_serie, std::string synopsis, std::string pays, bool vu, bool aVoir)</td><td class="entry"><a class="el" href="classFactorySQLSerie.html">FactorySQLSerie</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr><td class="entry"><a class="el" href="classFactorySQLSerie.html#ae1f6852200783d5ae250edcc7e588c04">genererSerie</a>(std::string id, std::string titre, std::string lien, int annee, std::string affiche, std::string synopsis, std::string pays, bool vu, bool aVoir)</td><td class="entry"><a class="el" href="classFactorySQLSerie.html">FactorySQLSerie</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classFactorySQLSerie.html#af1ce8cdf24fba0609b6839de0af20aa1">recupererAll</a>()</td><td class="entry"><a class="el" href="classFactorySQLSerie.html">FactorySQLSerie</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
+  <tr><td class="entry"><a class="el" href="classFactorySQLSerie.html#ad3fbc04faa9b1cf413f8daf26fe5fcae">~FactorySQLSerie</a>()</td><td class="entry"><a class="el" href="classFactorySQLSerie.html">FactorySQLSerie</a></td><td class="entry"></td></tr>
 </table></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Généré le Dimanche 23 Novembre 2014 10:27:10 pour ObjectifCanapi par &#160;<a href="http://www.doxygen.org/index.html">
+Généré le Mercredi 26 Novembre 2014 13:14:38 pour ObjectifCanapi par &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.7
+</a> 1.8.6
 </small></address>
 </body>
 </html>
