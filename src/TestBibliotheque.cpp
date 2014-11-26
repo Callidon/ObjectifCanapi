@@ -5,7 +5,7 @@ using namespace std;
 
 int main() {
 	
-	shared_ptr<Bibliotheque> biblio (new Bibliotheque("database/test"));
+	shared_ptr<Bibliotheque> biblio (new Bibliotheque("test"));
 	
 	//affichage des vidéos de la bibliothèque
 	vector<shared_ptr<Video> > videos = biblio->getVideos();

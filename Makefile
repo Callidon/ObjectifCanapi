@@ -1,6 +1,6 @@
 #---------------------------------------------------------
 # Makefile pour le projet ObjectifCanapi
-# Auteurs : Camille Le LUET & Thomas MINIER
+# Auteurs : Camille Le LUËT & Thomas MINIER
 #---------------------------------------------------------
 
 #---------------------------------------------------------
