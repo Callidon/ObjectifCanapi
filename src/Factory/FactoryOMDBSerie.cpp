@@ -26,7 +26,9 @@ FactoryOMDBSerie::~FactoryOMDBSerie() {};
 
 //--------------------------------------------------
 /*!
-* \brief Méthode affectuant une recherche par titre de film
+* \brief Méthode affectuant une recherche par titre de série
+* \param title Titre de la série à rechercher sur OMDB
+* \return Le resultat de la requête
 */
 string FactoryOMDBSerie::queryTitle(string title){
 	FILE *fp;
@@ -50,7 +52,9 @@ string FactoryOMDBSerie::queryTitle(string title){
 
 //--------------------------------------------------
 /*!
-* \brief Méthode permettant de creer un objet film/episode en fonction du resultat de la requete
+* \brief Méthode permettant de creer un objet série en fonction du resultat de la requete
+* \param title Le titre de la série à créer depuis OMDB
+* \return Un shared_ptr vers la série crée 
 */
 shared_ptr<Video> FactoryOMDBSerie::makeVideo(string title){
 	

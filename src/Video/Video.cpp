@@ -81,7 +81,7 @@ string Video::getId(){
 * \brief Méthode qui modifie l'id de la Video par celui passé en parametre
 * \param id Nouvel identifiant de la vidéo
 */
-void Video::setId(int id){
+void Video::setId(string id){
 	this->id = id;
 }
 

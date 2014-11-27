@@ -12,6 +12,7 @@ using namespace std;
 //--------------------------------------------------
 /*!
 * \brief Constructeur de base
+* \param base shared_ptr vers un BDConnector accédant à la base de données
 */
 FactorySQLSerie::FactorySQLSerie(shared_ptr<BDConnector> base): bd(base) {};
 
@@ -25,8 +26,17 @@ FactorySQLSerie::~FactorySQLSerie() {};
 
 //--------------------------------------------------
 /*!
-* \brief Méthode créant et retournant un shared_ptr vers un nouvel Episode
-* \return Un shared_ptr<Episode> qui pointe sur l'épisode nouvellement crée
+* \brief Méthode créant et retournant un shared_ptr vers une nouvelle série
+* \param id Identifiant de la série à créer
+* \param titre Titre de la série
+* \param lien Lien vers la bande-annonce
+* \param annee Année de la série
+* \param affiche Lien vers l'affiche de la série
+* \param synopsis Synopsis de la série
+* \param pays Pays associé à la série
+* \param vu Si la série a été vue
+* \param aVoir Si la série est à voir
+* \return Un shared_ptr<Serie> qui pointe sur la série nouvellement crée
 */
 shared_ptr<Serie> FactorySQLSerie::genererSerie(string id, string titre, string lien, int annee, string affiche, string synopsis, string pays, bool vu, bool aVoir) {
 	//création de la nouvelle série
@@ -82,6 +92,18 @@ shared_ptr<Serie> FactorySQLSerie::genererSerie(string id, string titre, string 
 //--------------------------------------------------
 /*!
 * \brief Méthode créant et retournant un shared_ptr vers un nouvel Episode
+* \param id Identifiant de l'épisode à créer
+* \param titre Titre de l'épisode
+* \param lien Lien vers la bande-annonce
+* \param annee Année de l'épisode
+* \param affiche Lien vers l'affiche de l'épisode
+* \param numero Numéro de l'épisode dans la saison
+* \param saison Numéro de la saison
+* \param id_serie Identifiant de la série associée à l'épisode
+* \param synopsis Synopsis de l'épisode
+* \param pays Pays associé à l'épisode
+* \param vu Si l'épisode a été vu
+* \param aVoir Si l'épisode est à voir
 * \return Un shared_ptr<Episode> qui pointe sur l'épisode nouvellement crée
 */
 shared_ptr<Episode> FactorySQLSerie::genererEpisode(string id, string titre, string lien, int annee, string affiche, int numero, int saison, string id_serie, string synopsis, string pays, bool vu, bool aVoir) {

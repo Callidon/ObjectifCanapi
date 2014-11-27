@@ -13,8 +13,8 @@
 
 //--------------------------------------------------
 /*!
-* \class FactoryOMDB
-* \brief Classe réalisant l'interface FactoryIMDB & qui interargit avec l'api OMDB pour créer des objets Video
+* \class FactoryOMDBSerie
+* \brief Classe réalisant l'interface FactoryOMDB & qui interargit avec l'api OMDB pour créer des objets Video
 */
 
 class FactoryOMDBSerie : public FactoryOMDB {

@@ -12,6 +12,7 @@ using namespace std;
 //--------------------------------------------------
 /*!
 * \brief Constructeur de base
+* \param base shared_ptr vers un BDConnector accédant à la base de données
 */
 FactorySQLFilm::FactorySQLFilm(shared_ptr<BDConnector> base): bd(base) {};
 
@@ -25,6 +26,15 @@ FactorySQLFilm::~FactorySQLFilm() {};
 //--------------------------------------------------
 /*!
 * \brief Méthode créant et retournant un shared_ptr vers un nouveau Film
+* \param id Identifiant du film à créer
+* \param titre Titre du film
+* \param lien Lien vers la bande-annonce
+* \param annee Année du film
+* \param affiche Lien vers l'affiche du film
+* \param synopsis Synopsis du film
+* \param pays Pays associé au film
+* \param vu Si le film a été vu
+* \param aVoir Si le film est à voir
 * \return Un shared_ptr<Film> qui pointe sur le film nouvellement crée
 */
 shared_ptr<Film> FactorySQLFilm::genererFilm(string id, string titre, string lien, int annee, string affiche, string synopsis, string pays, bool vu, bool aVoir) {

@@ -81,7 +81,8 @@ void Bibliotheque::setUser(string user) {
 
 //--------------------------------------------------
 /*!
-* \brief Méthode qui
+* \brief Méthode qui renvoie la liste des vidéos de la bibliothèque
+* \return Un vector des objets Video de la bibliothèque
 */
 vector<shared_ptr<Video>> Bibliotheque::getVideos() {
 	return this->videos;

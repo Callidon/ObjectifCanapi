@@ -26,12 +26,9 @@ class FactorySQL {
 	
 	
 	public:
+		//Méthode publique
 		virtual std::vector<std::shared_ptr<Video> > recupererAll() = 0;
 		
-		/*virtual std::shared_ptr<Serie> genererSerie(std::string id, std::string titre, std::string lien, int annee, std::string affiche, std::string synopsis, std::string pays, bool vu, bool aVoir) = 0;
-		virtual std::shared_ptr<Episode> genererEpisode(std::string id,std::string titre, std::string lien, int annee, std::string affiche, int numero, int saison, std::string id_serie, std::string synopsis, std::string pays, bool vu, bool aVoir) = 0;
-		virtual std::shared_ptr<Film> genererFilm(std::string id, std::string titre, std::string lien, int annee, std::string affiche, std::string synopsis, std::string pays, bool vu, bool aVoir) = 0;
-	*/
 };
 
 //--------------------------------------------------

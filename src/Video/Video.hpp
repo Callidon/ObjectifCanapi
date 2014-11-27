@@ -45,7 +45,7 @@ class Video {
 		~Video();
 		//Méthodes
 		std::string getId();
-		void setId(int id);
+		void setId(string id);
 		std::string getTitre();
 		void setTitre(std::string titre);
 		std::string getLien();
