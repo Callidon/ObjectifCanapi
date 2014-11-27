@@ -19,7 +19,7 @@
 */
 class Serie : public virtual Video {
 	private:
-		//Attributs
+		//Attribut
 		std::vector<std::shared_ptr<Episode>> episodes; //!< Liste des épisodes de la série
 		
 	public:
@@ -27,7 +27,7 @@ class Serie : public virtual Video {
 		Serie(std::string id, std::string titre, std::string lien, int annee, std::string affiche, std::string synopsis, std::string pays);
 		Serie(std::string id, std::string titre, std::string lien, int annee, std::string affiche, std::string synopsis, std::vector<std::string> acteurs, std::vector<std::string> real, std::string pays);
 		~Serie();
-		//Methodes
+		//Methodes publiques
 		void addEpisode(std::shared_ptr<Episode> ep);
 		std::vector<std::shared_ptr<Episode>> getEpisodes();
 		//Méthode héritée de Video

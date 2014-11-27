@@ -23,7 +23,7 @@ class Episode;
 
 class Video {
 	private:
-		//Attributs
+		//Attributs privés
 		std::string id; //!< Identifiant (unique) de la vidéo
 		std::string titre; //!< Titre de la vidéo
 		std::string lien; //!< Lien vers la bande-annonce
@@ -35,6 +35,7 @@ class Video {
 		std::vector<std::string> realisateurs; //!< Liste des réalisateurs ayant participé à la video
 		
 	protected:
+		//Attributs protected
 		bool vu; //!< Si la vidéo a été vu
 		bool aVoir; //!< Si la vidéo est à voir
 		
@@ -43,7 +44,7 @@ class Video {
 		Video(std::string id, std::string titre, std::string lien, std::string synopsis, int annee, std::string affiche, std::string pays);
 		Video(std::string id, std::string titre, std::string lien, std::string synopsis, int annee, std::string affiche, std::vector<std::string> acteurs, std::vector<std::string> real, std::string pays);
 		~Video();
-		//Méthodes
+		//Méthodes publiques
 		std::string getId();
 		void setId(string id);
 		std::string getTitre();

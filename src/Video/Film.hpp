@@ -25,10 +25,11 @@ class Film : public virtual Video {
 		Film(std::string id, std::string titre, std::string lien, int annee, std::string affiche, std::string synopsis, std::string pays);
 		Film(std::string id, std::string titre, std::string lien, int annee, std::string affiche, std::string synopsis, std::vector<std::string> acteurs, std::vector<std::string> real, std::string pays);
 		~Film();
-		//Méthode héritée de Video
-		virtual std::string getStatut();
+		//Méthodes publiques
 		std::shared_ptr<Episode> filmToEpisode();
 		std::shared_ptr<Serie> filmToSerie();
+		//Méthode héritée de Video
+		virtual std::string getStatut();
 };
 //--------------------------------------------------
 #endif
