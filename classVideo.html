@@ -63,7 +63,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
     <ul class="tablist">
       <li><a href="annotated.html"><span>Liste&#160;des&#160;classes</span></a></li>
       <li><a href="classes.html"><span>Index&#160;des&#160;classes</span></a></li>
-      <li><a href="hierarchy.html"><span>Hiérarchie&#160;des&#160;classes</span></a></li>
+      <li><a href="inherits.html"><span>Hiérarchie&#160;des&#160;classes</span></a></li>
       <li><a href="functions.html"><span>Membres&#160;de&#160;classe</span></a></li>
     </ul>
   </div>
@@ -100,14 +100,15 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
 <div class="dynheader">
 Graphe d'héritage de Video:</div>
 <div class="dyncontent">
- <div class="center">
-  <img src="classVideo.png" usemap="#Video_map" alt=""/>
-  <map id="Video_map" name="Video_map">
-<area href="classEpisode.html" title="Classe héritant de Video et représentant un épisode d&#39;une série. " alt="Episode" shape="rect" coords="0,56,57,80"/>
-<area href="classFilm.html" title="Classe héritant de Video et représentant des films. " alt="Film" shape="rect" coords="67,56,124,80"/>
-<area href="classSerie.html" title="Classe héritant de Video et représentant une série TV. " alt="Serie" shape="rect" coords="134,56,191,80"/>
-</map>
- </div></div>
+<div class="center"><img src="classVideo__inherit__graph.png" border="0" usemap="#Video_inherit__map" alt="Inheritance graph"/></div>
+<map name="Video_inherit__map" id="Video_inherit__map">
+<area shape="rect" id="node2" href="classEpisode.html" title="Classe héritant de Video et représentant un épisode d&#39;une série. " alt="" coords="5,424,112,677"/><area shape="rect" id="node3" href="classFilm.html" title="Classe héritant de Video et représentant des films. " alt="" coords="136,475,261,626"/><area shape="rect" id="node4" href="classSerie.html" title="Classe héritant de Video et représentant une série TV. " alt="" coords="285,475,400,626"/></map>
+</div>
+<div class="dynheader">
+Graphe de collaboration de Video:</div>
+<div class="dyncontent">
+<div class="center"><img src="classVideo__coll__graph.png" border="0" usemap="#Video_coll__map" alt="Collaboration graph"/></div>
+</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Fonctions membres publiques</h2></td></tr>
@@ -121,9 +122,9 @@ Fonctions membres publiques</h2></td></tr>
 <tr class="memitem:a2766ddc18eebad6f1ac7a7ebe97c30e8"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVideo.html#a2766ddc18eebad6f1ac7a7ebe97c30e8">getId</a> ()</td></tr>
 <tr class="memdesc:a2766ddc18eebad6f1ac7a7ebe97c30e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Méthode qui retourne l'id de la vidéo.  <a href="#a2766ddc18eebad6f1ac7a7ebe97c30e8">Plus de détails...</a><br/></td></tr>
 <tr class="separator:a2766ddc18eebad6f1ac7a7ebe97c30e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af1caf509db28c50b775ddd2a7568b896"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVideo.html#af1caf509db28c50b775ddd2a7568b896">setId</a> (int <a class="el" href="classVideo.html#a944518aa1fa6f81858ce17d066f66244">id</a>)</td></tr>
-<tr class="memdesc:af1caf509db28c50b775ddd2a7568b896"><td class="mdescLeft">&#160;</td><td class="mdescRight">Méthode qui modifie l'id de la <a class="el" href="classVideo.html" title="Classe représentant une vidéo générique. ">Video</a> par celui passé en parametre.  <a href="#af1caf509db28c50b775ddd2a7568b896">Plus de détails...</a><br/></td></tr>
-<tr class="separator:af1caf509db28c50b775ddd2a7568b896"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a439237b87da6e2f556f67e2f0454f324"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVideo.html#a439237b87da6e2f556f67e2f0454f324">setId</a> (string <a class="el" href="classVideo.html#a944518aa1fa6f81858ce17d066f66244">id</a>)</td></tr>
+<tr class="memdesc:a439237b87da6e2f556f67e2f0454f324"><td class="mdescLeft">&#160;</td><td class="mdescRight">Méthode qui modifie l'id de la <a class="el" href="classVideo.html" title="Classe représentant une vidéo générique. ">Video</a> par celui passé en parametre.  <a href="#a439237b87da6e2f556f67e2f0454f324">Plus de détails...</a><br/></td></tr>
+<tr class="separator:a439237b87da6e2f556f67e2f0454f324"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab3716a4b954daa9b7760d44f14164f3f"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVideo.html#ab3716a4b954daa9b7760d44f14164f3f">getTitre</a> ()</td></tr>
 <tr class="memdesc:ab3716a4b954daa9b7760d44f14164f3f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Méthode qui retourne le titre de la vidéo.  <a href="#ab3716a4b954daa9b7760d44f14164f3f">Plus de détails...</a><br/></td></tr>
 <tr class="separator:ab3716a4b954daa9b7760d44f14164f3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -432,6 +433,15 @@ Attributs privés</h2></td></tr>
 <p>Méthode qui retourne la liste des acteurs (principaux) du Videos. </p>
 <dl class="section return"><dt>Renvoie</dt><dd>Un vector contenant les noms des acteurs de la vidéo </dd></dl>
 
+<p><div class="dynheader">
+Voici le graphe des appelants de cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="classVideo_a69e3a8a22de9efbc34cd5e6fe8226433_icgraph.png" border="0" usemap="#classVideo_a69e3a8a22de9efbc34cd5e6fe8226433_icgraph" alt=""/></div>
+<map name="classVideo_a69e3a8a22de9efbc34cd5e6fe8226433_icgraph" id="classVideo_a69e3a8a22de9efbc34cd5e6fe8226433_icgraph">
+<area shape="rect" id="node2" href="classFilm.html#a617f23b8628143db4a48a3e94528e528" title="Méthode qui converti le film en episode. " alt="" coords="181,5,320,32"/><area shape="rect" id="node4" href="classFilm.html#a82cfe08fbc83d62b4501d87996526ef5" title="Méthode qui converti le film en serie. " alt="" coords="190,56,311,83"/><area shape="rect" id="node3" href="classFactoryOMDBSerie.html#afe3cc09c3377ca97f23095eeb430df4f" title="Méthode permettant de creer un objet série en fonction du resultat de la requete. ..." alt="" coords="369,31,578,57"/></map>
+</div>
+</p>
+
 </div>
 </div>
 <a class="anchor" id="a168d5e5417063b5e45e095dbf14bc460"></a>
@@ -449,6 +459,15 @@ Attributs privés</h2></td></tr>
 
 <p>Méthode qui retourne l'affiche de la <a class="el" href="classVideo.html" title="Classe représentant une vidéo générique. ">Video</a>. </p>
 <dl class="section return"><dt>Renvoie</dt><dd>Le lien vers l'affiche de la vidéo </dd></dl>
+
+<p><div class="dynheader">
+Voici le graphe des appelants de cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="classVideo_a168d5e5417063b5e45e095dbf14bc460_icgraph.png" border="0" usemap="#classVideo_a168d5e5417063b5e45e095dbf14bc460_icgraph" alt=""/></div>
+<map name="classVideo_a168d5e5417063b5e45e095dbf14bc460_icgraph" id="classVideo_a168d5e5417063b5e45e095dbf14bc460_icgraph">
+<area shape="rect" id="node2" href="classFilm.html#a617f23b8628143db4a48a3e94528e528" title="Méthode qui converti le film en episode. " alt="" coords="176,5,315,32"/><area shape="rect" id="node4" href="classFilm.html#a82cfe08fbc83d62b4501d87996526ef5" title="Méthode qui converti le film en serie. " alt="" coords="185,56,306,83"/><area shape="rect" id="node3" href="classFactoryOMDBSerie.html#afe3cc09c3377ca97f23095eeb430df4f" title="Méthode permettant de creer un objet série en fonction du resultat de la requete. ..." alt="" coords="363,31,573,57"/></map>
+</div>
+</p>
 
 </div>
 </div>
@@ -468,6 +487,15 @@ Attributs privés</h2></td></tr>
 <p>Méthode qui retourne l'annee de production du <a class="el" href="classVideo.html" title="Classe représentant une vidéo générique. ">Video</a>. </p>
 <dl class="section return"><dt>Renvoie</dt><dd>L'année de la vidéo </dd></dl>
 
+<p><div class="dynheader">
+Voici le graphe des appelants de cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="classVideo_a6e11117c5a0029887ab1ff798e33accb_icgraph.png" border="0" usemap="#classVideo_a6e11117c5a0029887ab1ff798e33accb_icgraph" alt=""/></div>
+<map name="classVideo_a6e11117c5a0029887ab1ff798e33accb_icgraph" id="classVideo_a6e11117c5a0029887ab1ff798e33accb_icgraph">
+<area shape="rect" id="node2" href="classFilm.html#a617f23b8628143db4a48a3e94528e528" title="Méthode qui converti le film en episode. " alt="" coords="173,5,312,32"/><area shape="rect" id="node4" href="classFilm.html#a82cfe08fbc83d62b4501d87996526ef5" title="Méthode qui converti le film en serie. " alt="" coords="182,56,303,83"/><area shape="rect" id="node3" href="classFactoryOMDBSerie.html#afe3cc09c3377ca97f23095eeb430df4f" title="Méthode permettant de creer un objet série en fonction du resultat de la requete. ..." alt="" coords="361,31,570,57"/></map>
+</div>
+</p>
+
 </div>
 </div>
 <a class="anchor" id="a2766ddc18eebad6f1ac7a7ebe97c30e8"></a>
@@ -485,6 +513,15 @@ Attributs privés</h2></td></tr>
 
 <p>Méthode qui retourne l'id de la vidéo. </p>
 <dl class="section return"><dt>Renvoie</dt><dd>L'identifiant de la vidéo </dd></dl>
+
+<p><div class="dynheader">
+Voici le graphe des appelants de cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="classVideo_a2766ddc18eebad6f1ac7a7ebe97c30e8_icgraph.png" border="0" usemap="#classVideo_a2766ddc18eebad6f1ac7a7ebe97c30e8_icgraph" alt=""/></div>
+<map name="classVideo_a2766ddc18eebad6f1ac7a7ebe97c30e8_icgraph" id="classVideo_a2766ddc18eebad6f1ac7a7ebe97c30e8_icgraph">
+<area shape="rect" id="node2" href="classFilm.html#a617f23b8628143db4a48a3e94528e528" title="Méthode qui converti le film en episode. " alt="" coords="147,5,285,32"/><area shape="rect" id="node4" href="classFilm.html#a82cfe08fbc83d62b4501d87996526ef5" title="Méthode qui converti le film en serie. " alt="" coords="155,56,277,83"/><area shape="rect" id="node3" href="classFactoryOMDBSerie.html#afe3cc09c3377ca97f23095eeb430df4f" title="Méthode permettant de creer un objet série en fonction du resultat de la requete. ..." alt="" coords="334,31,543,57"/></map>
+</div>
+</p>
 
 </div>
 </div>
@@ -504,6 +541,15 @@ Attributs privés</h2></td></tr>
 <p>Méthode qui retourne le lien de la BA. </p>
 <dl class="section return"><dt>Renvoie</dt><dd>Le lien vers la bande-annonce </dd></dl>
 
+<p><div class="dynheader">
+Voici le graphe des appelants de cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="classVideo_a2762ce6a4ef8f4c400f3660b3090921e_icgraph.png" border="0" usemap="#classVideo_a2762ce6a4ef8f4c400f3660b3090921e_icgraph" alt=""/></div>
+<map name="classVideo_a2762ce6a4ef8f4c400f3660b3090921e_icgraph" id="classVideo_a2762ce6a4ef8f4c400f3660b3090921e_icgraph">
+<area shape="rect" id="node2" href="classFilm.html#a617f23b8628143db4a48a3e94528e528" title="Méthode qui converti le film en episode. " alt="" coords="160,5,299,32"/><area shape="rect" id="node4" href="classFilm.html#a82cfe08fbc83d62b4501d87996526ef5" title="Méthode qui converti le film en serie. " alt="" coords="169,56,290,83"/><area shape="rect" id="node3" href="classFactoryOMDBSerie.html#afe3cc09c3377ca97f23095eeb430df4f" title="Méthode permettant de creer un objet série en fonction du resultat de la requete. ..." alt="" coords="347,31,557,57"/></map>
+</div>
+</p>
+
 </div>
 </div>
 <a class="anchor" id="a8bc6eed9c79468987f0be3e07ad3ce96"></a>
@@ -522,6 +568,15 @@ Attributs privés</h2></td></tr>
 <p>Méthode qui retourne le pays de la <a class="el" href="classVideo.html" title="Classe représentant une vidéo générique. ">Video</a>. </p>
 <dl class="section return"><dt>Renvoie</dt><dd>Le pays associé à la vidéo </dd></dl>
 
+<p><div class="dynheader">
+Voici le graphe des appelants de cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="classVideo_a8bc6eed9c79468987f0be3e07ad3ce96_icgraph.png" border="0" usemap="#classVideo_a8bc6eed9c79468987f0be3e07ad3ce96_icgraph" alt=""/></div>
+<map name="classVideo_a8bc6eed9c79468987f0be3e07ad3ce96_icgraph" id="classVideo_a8bc6eed9c79468987f0be3e07ad3ce96_icgraph">
+<area shape="rect" id="node2" href="classFilm.html#a617f23b8628143db4a48a3e94528e528" title="Méthode qui converti le film en episode. " alt="" coords="165,5,304,32"/><area shape="rect" id="node4" href="classFilm.html#a82cfe08fbc83d62b4501d87996526ef5" title="Méthode qui converti le film en serie. " alt="" coords="174,56,295,83"/><area shape="rect" id="node3" href="classFactoryOMDBSerie.html#afe3cc09c3377ca97f23095eeb430df4f" title="Méthode permettant de creer un objet série en fonction du resultat de la requete. ..." alt="" coords="353,31,562,57"/></map>
+</div>
+</p>
+
 </div>
 </div>
 <a class="anchor" id="a130ddc9b904fd1ca138ce651018f23f8"></a>
@@ -539,6 +594,15 @@ Attributs privés</h2></td></tr>
 
 <p>Méthode qui retourne la liste des réalisateurs du <a class="el" href="classVideo.html" title="Classe représentant une vidéo générique. ">Video</a>. </p>
 <dl class="section return"><dt>Renvoie</dt><dd>Un vector contenant les noms des réalisateurs de la vidéo </dd></dl>
+
+<p><div class="dynheader">
+Voici le graphe des appelants de cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="classVideo_a130ddc9b904fd1ca138ce651018f23f8_icgraph.png" border="0" usemap="#classVideo_a130ddc9b904fd1ca138ce651018f23f8_icgraph" alt=""/></div>
+<map name="classVideo_a130ddc9b904fd1ca138ce651018f23f8_icgraph" id="classVideo_a130ddc9b904fd1ca138ce651018f23f8_icgraph">
+<area shape="rect" id="node2" href="classFilm.html#a617f23b8628143db4a48a3e94528e528" title="Méthode qui converti le film en episode. " alt="" coords="163,5,301,32"/><area shape="rect" id="node4" href="classFilm.html#a82cfe08fbc83d62b4501d87996526ef5" title="Méthode qui converti le film en serie. " alt="" coords="171,56,293,83"/><area shape="rect" id="node3" href="classFactoryOMDBSerie.html#afe3cc09c3377ca97f23095eeb430df4f" title="Méthode permettant de creer un objet série en fonction du resultat de la requete. ..." alt="" coords="350,31,559,57"/></map>
+</div>
+</p>
 
 </div>
 </div>
@@ -583,6 +647,15 @@ Attributs privés</h2></td></tr>
 <p>Méthode qui retourne le synopsis de la <a class="el" href="classVideo.html" title="Classe représentant une vidéo générique. ">Video</a>. </p>
 <dl class="section return"><dt>Renvoie</dt><dd>Le synopsis de la vidéo </dd></dl>
 
+<p><div class="dynheader">
+Voici le graphe des appelants de cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="classVideo_aeae9d4f8a8e7e4623cf92176d20bc674_icgraph.png" border="0" usemap="#classVideo_aeae9d4f8a8e7e4623cf92176d20bc674_icgraph" alt=""/></div>
+<map name="classVideo_aeae9d4f8a8e7e4623cf92176d20bc674_icgraph" id="classVideo_aeae9d4f8a8e7e4623cf92176d20bc674_icgraph">
+<area shape="rect" id="node2" href="classFilm.html#a617f23b8628143db4a48a3e94528e528" title="Méthode qui converti le film en episode. " alt="" coords="189,5,328,32"/><area shape="rect" id="node4" href="classFilm.html#a82cfe08fbc83d62b4501d87996526ef5" title="Méthode qui converti le film en serie. " alt="" coords="198,56,319,83"/><area shape="rect" id="node3" href="classFactoryOMDBSerie.html#afe3cc09c3377ca97f23095eeb430df4f" title="Méthode permettant de creer un objet série en fonction du resultat de la requete. ..." alt="" coords="377,31,586,57"/></map>
+</div>
+</p>
+
 </div>
 </div>
 <a class="anchor" id="ab3716a4b954daa9b7760d44f14164f3f"></a>
@@ -600,6 +673,15 @@ Attributs privés</h2></td></tr>
 
 <p>Méthode qui retourne le titre de la vidéo. </p>
 <dl class="section return"><dt>Renvoie</dt><dd>Le titre de la vidéo </dd></dl>
+
+<p><div class="dynheader">
+Voici le graphe des appelants de cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="classVideo_ab3716a4b954daa9b7760d44f14164f3f_icgraph.png" border="0" usemap="#classVideo_ab3716a4b954daa9b7760d44f14164f3f_icgraph" alt=""/></div>
+<map name="classVideo_ab3716a4b954daa9b7760d44f14164f3f_icgraph" id="classVideo_ab3716a4b954daa9b7760d44f14164f3f_icgraph">
+<area shape="rect" id="node2" href="classFilm.html#a617f23b8628143db4a48a3e94528e528" title="Méthode qui converti le film en episode. " alt="" coords="160,5,299,32"/><area shape="rect" id="node4" href="classFilm.html#a82cfe08fbc83d62b4501d87996526ef5" title="Méthode qui converti le film en serie. " alt="" coords="169,56,290,83"/><area shape="rect" id="node3" href="classFactoryOMDBSerie.html#afe3cc09c3377ca97f23095eeb430df4f" title="Méthode permettant de creer un objet série en fonction du resultat de la requete. ..." alt="" coords="347,31,557,57"/></map>
+</div>
+</p>
 
 </div>
 </div>
@@ -702,14 +784,14 @@ Attributs privés</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="af1caf509db28c50b775ddd2a7568b896"></a>
+<a class="anchor" id="a439237b87da6e2f556f67e2f0454f324"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">void Video::setId </td>
           <td>(</td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype">string&#160;</td>
           <td class="paramname"><em>id</em></td><td>)</td>
           <td></td>
         </tr>
@@ -1072,7 +1154,7 @@ Attributs privés</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Généré le Mercredi 26 Novembre 2014 15:00:54 pour ObjectifCanapi par &#160;<a href="http://www.doxygen.org/index.html">
+Généré le Jeudi 27 Novembre 2014 12:10:48 pour ObjectifCanapi par &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

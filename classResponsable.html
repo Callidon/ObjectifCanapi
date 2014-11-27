@@ -63,7 +63,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
     <ul class="tablist">
       <li><a href="annotated.html"><span>Liste&#160;des&#160;classes</span></a></li>
       <li><a href="classes.html"><span>Index&#160;des&#160;classes</span></a></li>
-      <li><a href="hierarchy.html"><span>Hiérarchie&#160;des&#160;classes</span></a></li>
+      <li><a href="inherits.html"><span>Hiérarchie&#160;des&#160;classes</span></a></li>
       <li><a href="functions.html"><span>Membres&#160;de&#160;classe</span></a></li>
     </ul>
   </div>
@@ -100,14 +100,15 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
 <div class="dynheader">
 Graphe d'héritage de Responsable:</div>
 <div class="dyncontent">
- <div class="center">
-  <img src="classResponsable.png" usemap="#Responsable_map" alt=""/>
-  <map id="Responsable_map" name="Responsable_map">
-<area href="classResponsableEpisode.html" title="Classe représentant un responsable chargé de traiter des objets Episode. " alt="ResponsableEpisode" shape="rect" coords="0,56,129,80"/>
-<area href="classResponsableFilm.html" title="Classe représentant un responsable chargé de traiter des objets Film. " alt="ResponsableFilm" shape="rect" coords="139,56,268,80"/>
-<area href="classResponsableSerie.html" title="Classe représentant un responsable chargé de traiter des objets Serie. " alt="ResponsableSerie" shape="rect" coords="278,56,407,80"/>
-</map>
- </div></div>
+<div class="center"><img src="classResponsable__inherit__graph.png" border="0" usemap="#Responsable_inherit__map" alt="Inheritance graph"/></div>
+<map name="Responsable_inherit__map" id="Responsable_inherit__map">
+<area shape="rect" id="node2" href="classResponsableEpisode.html" title="Classe représentant un responsable chargé de traiter des objets Episode. " alt="" coords="5,235,179,341"/><area shape="rect" id="node3" href="classResponsableFilm.html" title="Classe représentant un responsable chargé de traiter des objets Film. " alt="" coords="203,235,353,341"/><area shape="rect" id="node4" href="classResponsableSerie.html" title="Classe représentant un responsable chargé de traiter des objets Serie. " alt="" coords="378,235,533,341"/></map>
+</div>
+<div class="dynheader">
+Graphe de collaboration de Responsable:</div>
+<div class="dyncontent">
+<div class="center"><img src="classResponsable__coll__graph.png" border="0" usemap="#Responsable_coll__map" alt="Collaboration graph"/></div>
+</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Fonctions membres publiques</h2></td></tr>
@@ -263,6 +264,15 @@ Attributs protégés</h2></td></tr>
   </dd>
 </dl>
 
+<p><div class="dynheader">
+Voici le graphe des appelants de cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="classResponsable_a3f8e475ea7e099b5bce2cec832823064_icgraph.png" border="0" usemap="#classResponsable_a3f8e475ea7e099b5bce2cec832823064_icgraph" alt=""/></div>
+<map name="classResponsable_a3f8e475ea7e099b5bce2cec832823064_icgraph" id="classResponsable_a3f8e475ea7e099b5bce2cec832823064_icgraph">
+<area shape="rect" id="node2" href="classResponsableFilm.html#ae776b9b4003fc3f6887e4f76816dc3c3" title="Méthode effectuant le traitement de l&#39;objet si c&#39;est un film. " alt="" coords="262,5,426,32"/><area shape="rect" id="node3" href="classResponsableSerie.html#a5f9c04624e9453dda5f4e3617923be79" title="Méthode effectuant le traitement de l&#39;objet si c&#39;est une série. " alt="" coords="259,56,429,83"/></map>
+</div>
+</p>
+
 </div>
 </div>
 <a class="anchor" id="aa443b831fdb6c3b6ddaf0f5863aed31a"></a>
@@ -405,7 +415,7 @@ Attributs protégés</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Généré le Mercredi 26 Novembre 2014 15:00:54 pour ObjectifCanapi par &#160;<a href="http://www.doxygen.org/index.html">
+Généré le Jeudi 27 Novembre 2014 12:10:48 pour ObjectifCanapi par &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

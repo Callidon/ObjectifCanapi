@@ -1,0 +1,5 @@
+<map id="main" name="main">
+<area shape="rect" id="node2" href="$classBibliotheque.html#afe2b560a40354b0467cc7a253b2f62b9" title="Méthode qui renvoie le nom de l&#39;utilisateur associé à la bibliothèque. " alt="" coords="111,5,257,32"/>
+<area shape="rect" id="node3" href="$classBibliotheque.html#a91cb6475fb41e41992b403a02a5cb5fa" title="Méthode qui ajoute une nouvelle vidéo (film ou episode) à la bibliothèque. " alt="" coords="107,56,261,83"/>
+<area shape="rect" id="node4" href="$classBibliotheque.html#ae1aa002d561de8252aaec96a4f638600" title="Méthode qui renvoie la liste des vidéos de la bibliothèque. " alt="" coords="105,107,263,133"/>
+</map>

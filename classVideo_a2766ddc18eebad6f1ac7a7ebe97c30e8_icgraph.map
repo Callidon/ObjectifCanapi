@@ -1,0 +1,5 @@
+<map id="Video::getId" name="Video::getId">
+<area shape="rect" id="node2" href="$classFilm.html#a617f23b8628143db4a48a3e94528e528" title="Méthode qui converti le film en episode. " alt="" coords="147,5,285,32"/>
+<area shape="rect" id="node4" href="$classFilm.html#a82cfe08fbc83d62b4501d87996526ef5" title="Méthode qui converti le film en serie. " alt="" coords="155,56,277,83"/>
+<area shape="rect" id="node3" href="$classFactoryOMDBSerie.html#afe3cc09c3377ca97f23095eeb430df4f" title="Méthode permettant de creer un objet série en fonction du resultat de la requete. ..." alt="" coords="334,31,543,57"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="Graphe hiérarchique des classes" name="Graphe hiérarchique des classes">
+<area shape="rect" id="node1" href="$classFactoryOMDB.html" title="Interface représentant une fabrique créant des objets de type Video à partir de l&#39;APi du site IMDB..." alt="" coords="5,31,112,57"/>
+<area shape="rect" id="node2" href="$classFactoryOMDBFilm.html" title="Classe réalisant l&#39;interface FactoryOMDB &amp; instanciant des objets de type Film. " alt="" coords="163,5,293,32"/>
+<area shape="rect" id="node3" href="$classFactoryOMDBSerie.html" title="Classe réalisant l&#39;interface FactoryOMDB &amp; qui interargit avec l&#39;api OMDB pour créer des objets Video..." alt="" coords="160,56,296,83"/>
+</map>

@@ -1,0 +1,6 @@
+<map id="Graphe hiérarchique des classes" name="Graphe hiérarchique des classes">
+<area shape="rect" id="node1" href="$classVideo.html" title="Classe représentant une vidéo générique. " alt="" coords="6,56,61,83"/>
+<area shape="rect" id="node2" href="$classEpisode.html" title="Classe héritant de Video et représentant un épisode d&#39;une série. " alt="" coords="109,5,179,32"/>
+<area shape="rect" id="node3" href="$classFilm.html" title="Classe héritant de Video et représentant des films. " alt="" coords="121,56,167,83"/>
+<area shape="rect" id="node4" href="$classSerie.html" title="Classe héritant de Video et représentant une série TV. " alt="" coords="118,107,170,133"/>
+</map>

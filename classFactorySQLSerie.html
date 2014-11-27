@@ -63,7 +63,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
     <ul class="tablist">
       <li><a href="annotated.html"><span>Liste&#160;des&#160;classes</span></a></li>
       <li><a href="classes.html"><span>Index&#160;des&#160;classes</span></a></li>
-      <li><a href="hierarchy.html"><span>Hiérarchie&#160;des&#160;classes</span></a></li>
+      <li><a href="inherits.html"><span>Hiérarchie&#160;des&#160;classes</span></a></li>
       <li><a href="functions.html"><span>Membres&#160;de&#160;classe</span></a></li>
     </ul>
   </div>
@@ -100,12 +100,17 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
 <div class="dynheader">
 Graphe d'héritage de FactorySQLSerie:</div>
 <div class="dyncontent">
- <div class="center">
-  <img src="classFactorySQLSerie.png" usemap="#FactorySQLSerie_map" alt=""/>
-  <map id="FactorySQLSerie_map" name="FactorySQLSerie_map">
-<area href="classFactorySQL.html" title="Interface représentant une fabrique instanciant des objets de type Video à patir d&#39;une base de donnée..." alt="FactorySQL" shape="rect" coords="0,0,111,24"/>
-</map>
- </div></div>
+<div class="center"><img src="classFactorySQLSerie__inherit__graph.png" border="0" usemap="#FactorySQLSerie_inherit__map" alt="Inheritance graph"/></div>
+<map name="FactorySQLSerie_inherit__map" id="FactorySQLSerie_inherit__map">
+<area shape="rect" id="node2" href="classFactorySQL.html" title="Interface représentant une fabrique instanciant des objets de type Video à patir d&#39;une base de donnée..." alt="" coords="25,5,135,83"/></map>
+</div>
+<div class="dynheader">
+Graphe de collaboration de FactorySQLSerie:</div>
+<div class="dyncontent">
+<div class="center"><img src="classFactorySQLSerie__coll__graph.png" border="0" usemap="#FactorySQLSerie_coll__map" alt="Collaboration graph"/></div>
+<map name="FactorySQLSerie_coll__map" id="FactorySQLSerie_coll__map">
+<area shape="rect" id="node2" href="classFactorySQL.html" title="Interface représentant une fabrique instanciant des objets de type Video à patir d&#39;une base de donnée..." alt="" coords="25,5,135,83"/></map>
+</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Fonctions membres publiques</h2></td></tr>
@@ -292,6 +297,15 @@ Attributs privés</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Renvoie</dt><dd>Un shared_ptr&lt;Episode&gt; qui pointe sur l'épisode nouvellement crée </dd></dl>
 
+<p><div class="dynheader">
+Voici le graphe des appelants de cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="classFactorySQLSerie_aca70bd09ff5e3836a0946ec301bb7250_icgraph.png" border="0" usemap="#classFactorySQLSerie_aca70bd09ff5e3836a0946ec301bb7250_icgraph" alt=""/></div>
+<map name="classFactorySQLSerie_aca70bd09ff5e3836a0946ec301bb7250_icgraph" id="classFactorySQLSerie_aca70bd09ff5e3836a0946ec301bb7250_icgraph">
+<area shape="rect" id="node2" href="classFactorySQLSerie.html#ae1f6852200783d5ae250edcc7e588c04" title="Méthode créant et retournant un shared_ptr vers une nouvelle série. " alt="" coords="227,5,400,46"/><area shape="rect" id="node3" href="classFactorySQLSerie.html#af1ce8cdf24fba0609b6839de0af20aa1" title="Méthode retournant la liste de toutes les séries contenus dans la base de données. " alt="" coords="449,12,647,39"/></map>
+</div>
+</p>
+
 </div>
 </div>
 <a class="anchor" id="ae1f6852200783d5ae250edcc7e588c04"></a>
@@ -385,6 +399,24 @@ Attributs privés</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Renvoie</dt><dd>Un shared_ptr&lt;Serie&gt; qui pointe sur la série nouvellement crée </dd></dl>
 
+<p><div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="classFactorySQLSerie_ae1f6852200783d5ae250edcc7e588c04_cgraph.png" border="0" usemap="#classFactorySQLSerie_ae1f6852200783d5ae250edcc7e588c04_cgraph" alt=""/></div>
+<map name="classFactorySQLSerie_ae1f6852200783d5ae250edcc7e588c04_cgraph" id="classFactorySQLSerie_ae1f6852200783d5ae250edcc7e588c04_cgraph">
+<area shape="rect" id="node2" href="classFactorySQLSerie.html#aca70bd09ff5e3836a0946ec301bb7250" title="Méthode créant et retournant un shared_ptr vers un nouvel Episode. " alt="" coords="227,5,400,46"/></map>
+</div>
+</p>
+
+<p><div class="dynheader">
+Voici le graphe des appelants de cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="classFactorySQLSerie_ae1f6852200783d5ae250edcc7e588c04_icgraph.png" border="0" usemap="#classFactorySQLSerie_ae1f6852200783d5ae250edcc7e588c04_icgraph" alt=""/></div>
+<map name="classFactorySQLSerie_ae1f6852200783d5ae250edcc7e588c04_icgraph" id="classFactorySQLSerie_ae1f6852200783d5ae250edcc7e588c04_icgraph">
+<area shape="rect" id="node2" href="classFactorySQLSerie.html#af1ce8cdf24fba0609b6839de0af20aa1" title="Méthode retournant la liste de toutes les séries contenus dans la base de données. " alt="" coords="227,12,426,39"/></map>
+</div>
+</p>
+
 </div>
 </div>
 <a class="anchor" id="af1ce8cdf24fba0609b6839de0af20aa1"></a>
@@ -412,6 +444,15 @@ Attributs privés</h2></td></tr>
 <dl class="section return"><dt>Renvoie</dt><dd>Un vector de shared_ptr&lt;Video&gt; qui contient tous les épisodes contenus dans la base de données </dd></dl>
 
 <p>Implémente <a class="el" href="classFactorySQL.html#acf6461b641886997a5662b5af54ee96c">FactorySQL</a>.</p>
+
+<p><div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="classFactorySQLSerie_af1ce8cdf24fba0609b6839de0af20aa1_cgraph.png" border="0" usemap="#classFactorySQLSerie_af1ce8cdf24fba0609b6839de0af20aa1_cgraph" alt=""/></div>
+<map name="classFactorySQLSerie_af1ce8cdf24fba0609b6839de0af20aa1_cgraph" id="classFactorySQLSerie_af1ce8cdf24fba0609b6839de0af20aa1_cgraph">
+<area shape="rect" id="node2" href="classFactorySQLSerie.html#ae1f6852200783d5ae250edcc7e588c04" title="Méthode créant et retournant un shared_ptr vers une nouvelle série. " alt="" coords="253,5,427,46"/><area shape="rect" id="node3" href="classFactorySQLSerie.html#aca70bd09ff5e3836a0946ec301bb7250" title="Méthode créant et retournant un shared_ptr vers un nouvel Episode. " alt="" coords="475,5,648,46"/></map>
+</div>
+</p>
 
 </div>
 </div>
@@ -445,7 +486,7 @@ Attributs privés</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Généré le Mercredi 26 Novembre 2014 15:00:54 pour ObjectifCanapi par &#160;<a href="http://www.doxygen.org/index.html">
+Généré le Jeudi 27 Novembre 2014 12:10:48 pour ObjectifCanapi par &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

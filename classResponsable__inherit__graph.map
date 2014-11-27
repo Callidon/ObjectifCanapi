@@ -1,0 +1,5 @@
+<map id="Responsable" name="Responsable">
+<area shape="rect" id="node2" href="$classResponsableEpisode.html" title="Classe représentant un responsable chargé de traiter des objets Episode. " alt="" coords="5,235,179,341"/>
+<area shape="rect" id="node3" href="$classResponsableFilm.html" title="Classe représentant un responsable chargé de traiter des objets Film. " alt="" coords="203,235,353,341"/>
+<area shape="rect" id="node4" href="$classResponsableSerie.html" title="Classe représentant un responsable chargé de traiter des objets Serie. " alt="" coords="378,235,533,341"/>
+</map>

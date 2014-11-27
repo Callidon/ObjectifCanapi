@@ -1,0 +1,4 @@
+<map id="FactorySQLSerie::genererEpisode" name="FactorySQLSerie::genererEpisode">
+<area shape="rect" id="node2" href="$classFactorySQLSerie.html#ae1f6852200783d5ae250edcc7e588c04" title="Méthode créant et retournant un shared_ptr vers une nouvelle série. " alt="" coords="227,5,400,46"/>
+<area shape="rect" id="node3" href="$classFactorySQLSerie.html#af1ce8cdf24fba0609b6839de0af20aa1" title="Méthode retournant la liste de toutes les séries contenus dans la base de données. " alt="" coords="449,12,647,39"/>
+</map>

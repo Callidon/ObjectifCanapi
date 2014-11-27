@@ -63,7 +63,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
     <ul class="tablist">
       <li><a href="annotated.html"><span>Liste&#160;des&#160;classes</span></a></li>
       <li><a href="classes.html"><span>Index&#160;des&#160;classes</span></a></li>
-      <li><a href="hierarchy.html"><span>Hiérarchie&#160;des&#160;classes</span></a></li>
+      <li><a href="inherits.html"><span>Hiérarchie&#160;des&#160;classes</span></a></li>
       <li><a href="functions.html"><span>Membres&#160;de&#160;classe</span></a></li>
     </ul>
   </div>
@@ -100,12 +100,17 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
 <div class="dynheader">
 Graphe d'héritage de FactorySQLFilm:</div>
 <div class="dyncontent">
- <div class="center">
-  <img src="classFactorySQLFilm.png" usemap="#FactorySQLFilm_map" alt=""/>
-  <map id="FactorySQLFilm_map" name="FactorySQLFilm_map">
-<area href="classFactorySQL.html" title="Interface représentant une fabrique instanciant des objets de type Video à patir d&#39;une base de donnée..." alt="FactorySQL" shape="rect" coords="0,0,104,24"/>
-</map>
- </div></div>
+<div class="center"><img src="classFactorySQLFilm__inherit__graph.png" border="0" usemap="#FactorySQLFilm_inherit__map" alt="Inheritance graph"/></div>
+<map name="FactorySQLFilm_inherit__map" id="FactorySQLFilm_inherit__map">
+<area shape="rect" id="node2" href="classFactorySQL.html" title="Interface représentant une fabrique instanciant des objets de type Video à patir d&#39;une base de donnée..." alt="" coords="22,5,132,83"/></map>
+</div>
+<div class="dynheader">
+Graphe de collaboration de FactorySQLFilm:</div>
+<div class="dyncontent">
+<div class="center"><img src="classFactorySQLFilm__coll__graph.png" border="0" usemap="#FactorySQLFilm_coll__map" alt="Collaboration graph"/></div>
+<map name="FactorySQLFilm_coll__map" id="FactorySQLFilm_coll__map">
+<area shape="rect" id="node2" href="classFactorySQL.html" title="Interface représentant une fabrique instanciant des objets de type Video à patir d&#39;une base de donnée..." alt="" coords="22,5,132,83"/></map>
+</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Fonctions membres publiques</h2></td></tr>
@@ -268,6 +273,15 @@ Attributs privés</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Renvoie</dt><dd>Un shared_ptr&lt;Film&gt; qui pointe sur le film nouvellement crée </dd></dl>
 
+<p><div class="dynheader">
+Voici le graphe des appelants de cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="classFactorySQLFilm_a195dfc68b42da1acb648ba67a5c81f52_icgraph.png" border="0" usemap="#classFactorySQLFilm_a195dfc68b42da1acb648ba67a5c81f52_icgraph" alt=""/></div>
+<map name="classFactorySQLFilm_a195dfc68b42da1acb648ba67a5c81f52_icgraph" id="classFactorySQLFilm_a195dfc68b42da1acb648ba67a5c81f52_icgraph">
+<area shape="rect" id="node2" href="classFactorySQLFilm.html#aae2779154e8ff6442532eadb300d5af5" title="Méthode retournant la liste de tous les films contenus dans la base de données. " alt="" coords="248,5,443,32"/></map>
+</div>
+</p>
+
 </div>
 </div>
 <a class="anchor" id="aae2779154e8ff6442532eadb300d5af5"></a>
@@ -295,6 +309,15 @@ Attributs privés</h2></td></tr>
 <dl class="section return"><dt>Renvoie</dt><dd>Un vector de shared_ptr&lt;Video&gt; qui contient tous les films contenus dans la base de données </dd></dl>
 
 <p>Implémente <a class="el" href="classFactorySQL.html#acf6461b641886997a5662b5af54ee96c">FactorySQL</a>.</p>
+
+<p><div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="classFactorySQLFilm_aae2779154e8ff6442532eadb300d5af5_cgraph.png" border="0" usemap="#classFactorySQLFilm_aae2779154e8ff6442532eadb300d5af5_cgraph" alt=""/></div>
+<map name="classFactorySQLFilm_aae2779154e8ff6442532eadb300d5af5_cgraph" id="classFactorySQLFilm_aae2779154e8ff6442532eadb300d5af5_cgraph">
+<area shape="rect" id="node2" href="classFactorySQLFilm.html#a195dfc68b42da1acb648ba67a5c81f52" title="Méthode créant et retournant un shared_ptr vers un nouveau Film. " alt="" coords="249,5,442,32"/></map>
+</div>
+</p>
 
 </div>
 </div>
@@ -328,7 +351,7 @@ Attributs privés</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Généré le Mercredi 26 Novembre 2014 15:00:54 pour ObjectifCanapi par &#160;<a href="http://www.doxygen.org/index.html">
+Généré le Jeudi 27 Novembre 2014 12:10:48 pour ObjectifCanapi par &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

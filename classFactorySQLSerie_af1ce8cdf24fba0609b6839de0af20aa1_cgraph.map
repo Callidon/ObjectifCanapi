@@ -1,0 +1,4 @@
+<map id="FactorySQLSerie::recupererAll" name="FactorySQLSerie::recupererAll">
+<area shape="rect" id="node2" href="$classFactorySQLSerie.html#ae1f6852200783d5ae250edcc7e588c04" title="Méthode créant et retournant un shared_ptr vers une nouvelle série. " alt="" coords="253,5,427,46"/>
+<area shape="rect" id="node3" href="$classFactorySQLSerie.html#aca70bd09ff5e3836a0946ec301bb7250" title="Méthode créant et retournant un shared_ptr vers un nouvel Episode. " alt="" coords="475,5,648,46"/>
+</map>

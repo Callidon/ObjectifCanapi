@@ -63,7 +63,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
     <ul class="tablist">
       <li><a href="annotated.html"><span>Liste&#160;des&#160;classes</span></a></li>
       <li><a href="classes.html"><span>Index&#160;des&#160;classes</span></a></li>
-      <li><a href="hierarchy.html"><span>Hiérarchie&#160;des&#160;classes</span></a></li>
+      <li><a href="inherits.html"><span>Hiérarchie&#160;des&#160;classes</span></a></li>
       <li><a href="functions.html"><span>Membres&#160;de&#160;classe</span></a></li>
     </ul>
   </div>
@@ -99,13 +99,15 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
 <div class="dynheader">
 Graphe d'héritage de FactoryOMDB:</div>
 <div class="dyncontent">
- <div class="center">
-  <img src="classFactoryOMDB.png" usemap="#FactoryOMDB_map" alt=""/>
-  <map id="FactoryOMDB_map" name="FactoryOMDB_map">
-<area href="classFactoryOMDBFilm.html" title="Classe réalisant l&#39;interface FactoryOMDB &amp; instanciant des objets de type Film. " alt="FactoryOMDBFilm" shape="rect" coords="0,56,124,80"/>
-<area href="classFactoryOMDBSerie.html" title="Classe réalisant l&#39;interface FactoryOMDB &amp; qui interargit avec l&#39;api OMDB pour créer des objets Video..." alt="FactoryOMDBSerie" shape="rect" coords="134,56,258,80"/>
-</map>
- </div></div>
+<div class="center"><img src="classFactoryOMDB__inherit__graph.png" border="0" usemap="#FactoryOMDB_inherit__map" alt="Inheritance graph"/></div>
+<map name="FactoryOMDB_inherit__map" id="FactoryOMDB_inherit__map">
+<area shape="rect" id="node2" href="classFactoryOMDBFilm.html" title="Classe réalisant l&#39;interface FactoryOMDB &amp; instanciant des objets de type Film. " alt="" coords="5,147,163,283"/><area shape="rect" id="node3" href="classFactoryOMDBSerie.html" title="Classe réalisant l&#39;interface FactoryOMDB &amp; qui interargit avec l&#39;api OMDB pour créer des objets Video..." alt="" coords="187,154,351,275"/></map>
+</div>
+<div class="dynheader">
+Graphe de collaboration de FactoryOMDB:</div>
+<div class="dyncontent">
+<div class="center"><img src="classFactoryOMDB__coll__graph.png" border="0" usemap="#FactoryOMDB_coll__map" alt="Collaboration graph"/></div>
+</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Fonctions membres publiques</h2></td></tr>
@@ -178,7 +180,7 @@ Fonctions membres privées</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Généré le Mercredi 26 Novembre 2014 15:00:54 pour ObjectifCanapi par &#160;<a href="http://www.doxygen.org/index.html">
+Généré le Jeudi 27 Novembre 2014 12:10:48 pour ObjectifCanapi par &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

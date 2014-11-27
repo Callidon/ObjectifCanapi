@@ -1,0 +1,4 @@
+<map id="Responsable::passerAuSuivant" name="Responsable::passerAuSuivant">
+<area shape="rect" id="node2" href="$classResponsableFilm.html#ae776b9b4003fc3f6887e4f76816dc3c3" title="Méthode effectuant le traitement de l&#39;objet si c&#39;est un film. " alt="" coords="262,5,426,32"/>
+<area shape="rect" id="node3" href="$classResponsableSerie.html#a5f9c04624e9453dda5f4e3617923be79" title="Méthode effectuant le traitement de l&#39;objet si c&#39;est une série. " alt="" coords="259,56,429,83"/>
+</map>

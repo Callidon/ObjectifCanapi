@@ -1,0 +1,13 @@
+<map id="FactoryOMDBSerie::makeVideo" name="FactoryOMDBSerie::makeVideo">
+<area shape="rect" id="node2" href="$classFilm.html#a82cfe08fbc83d62b4501d87996526ef5" title="Méthode qui converti le film en serie. " alt="" coords="273,183,394,209"/>
+<area shape="rect" id="node12" href="$classFilm.html#a617f23b8628143db4a48a3e94528e528" title="Méthode qui converti le film en episode. " alt="" coords="264,233,403,260"/>
+<area shape="rect" id="node3" href="$classVideo.html#a2766ddc18eebad6f1ac7a7ebe97c30e8" title="Méthode qui retourne l&#39;id de la vidéo. " alt="" coords="473,309,565,336"/>
+<area shape="rect" id="node4" href="$classVideo.html#ab3716a4b954daa9b7760d44f14164f3f" title="Méthode qui retourne le titre de la vidéo. " alt="" coords="465,360,572,387"/>
+<area shape="rect" id="node5" href="$classVideo.html#a2762ce6a4ef8f4c400f3660b3090921e" title="Méthode qui retourne le lien de la BA. " alt="" coords="466,411,571,437"/>
+<area shape="rect" id="node6" href="$classVideo.html#a6e11117c5a0029887ab1ff798e33accb" title="Méthode qui retourne l&#39;annee de production du Video. " alt="" coords="459,5,578,32"/>
+<area shape="rect" id="node7" href="$classVideo.html#a168d5e5417063b5e45e095dbf14bc460" title="Méthode qui retourne l&#39;affiche de la Video. " alt="" coords="457,56,580,83"/>
+<area shape="rect" id="node8" href="$classVideo.html#aeae9d4f8a8e7e4623cf92176d20bc674" title="Méthode qui retourne le synopsis de la Video. " alt="" coords="451,107,586,133"/>
+<area shape="rect" id="node9" href="$classVideo.html#a69e3a8a22de9efbc34cd5e6fe8226433" title="Méthode qui retourne la liste des acteurs (principaux) du Videos. " alt="" coords="455,157,582,184"/>
+<area shape="rect" id="node10" href="$classVideo.html#a130ddc9b904fd1ca138ce651018f23f8" title="Méthode qui retourne la liste des réalisateurs du Video. " alt="" coords="465,208,573,235"/>
+<area shape="rect" id="node11" href="$classVideo.html#a8bc6eed9c79468987f0be3e07ad3ce96" title="Méthode qui retourne le pays de la Video. " alt="" coords="463,259,574,285"/>
+</map>

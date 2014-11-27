@@ -63,7 +63,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
     <ul class="tablist">
       <li><a href="annotated.html"><span>Liste&#160;des&#160;classes</span></a></li>
       <li><a href="classes.html"><span>Index&#160;des&#160;classes</span></a></li>
-      <li><a href="hierarchy.html"><span>Hiérarchie&#160;des&#160;classes</span></a></li>
+      <li><a href="inherits.html"><span>Hiérarchie&#160;des&#160;classes</span></a></li>
       <li><a href="functions.html"><span>Membres&#160;de&#160;classe</span></a></li>
     </ul>
   </div>
@@ -100,12 +100,17 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
 <div class="dynheader">
 Graphe d'héritage de ComportementSQL:</div>
 <div class="dyncontent">
- <div class="center">
-  <img src="classComportementSQL.png" usemap="#ComportementSQL_map" alt=""/>
-  <map id="ComportementSQL_map" name="ComportementSQL_map">
-<area href="classComportementBD.html" title="Interface représentant un comportement vis à vis d&#39;une base de données. " alt="ComportementBD" shape="rect" coords="0,0,117,24"/>
-</map>
- </div></div>
+<div class="center"><img src="classComportementSQL__inherit__graph.png" border="0" usemap="#ComportementSQL_inherit__map" alt="Inheritance graph"/></div>
+<map name="ComportementSQL_inherit__map" id="ComportementSQL_inherit__map">
+<area shape="rect" id="node2" href="classComportementBD.html" title="Interface représentant un comportement vis à vis d&#39;une base de données. " alt="" coords="23,5,151,141"/></map>
+</div>
+<div class="dynheader">
+Graphe de collaboration de ComportementSQL:</div>
+<div class="dyncontent">
+<div class="center"><img src="classComportementSQL__coll__graph.png" border="0" usemap="#ComportementSQL_coll__map" alt="Collaboration graph"/></div>
+<map name="ComportementSQL_coll__map" id="ComportementSQL_coll__map">
+<area shape="rect" id="node2" href="classComportementBD.html" title="Interface représentant un comportement vis à vis d&#39;une base de données. " alt="" coords="23,5,151,141"/></map>
+</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Fonctions membres publiques</h2></td></tr>
@@ -455,7 +460,7 @@ Attributs protégés</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Généré le Mercredi 26 Novembre 2014 15:00:54 pour ObjectifCanapi par &#160;<a href="http://www.doxygen.org/index.html">
+Généré le Jeudi 27 Novembre 2014 12:10:48 pour ObjectifCanapi par &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

@@ -1,0 +1,4 @@
+<map id="FactorySQL" name="FactorySQL">
+<area shape="rect" id="node2" href="$classFactorySQLFilm.html" title="Classe réalisant l&#39;interface FactoryBD &amp; instanciant des objets Film à partir d&#39;une base Sqlite..." alt="" coords="5,138,149,259"/>
+<area shape="rect" id="node3" href="$classFactorySQLSerie.html" title="Classe réalisant l&#39;interface FactorySQL &amp; instanciant des objets Serie à partir d&#39;une base Sqlite..." alt="" coords="174,131,324,267"/>
+</map>

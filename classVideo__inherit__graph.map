@@ -1,0 +1,5 @@
+<map id="Video" name="Video">
+<area shape="rect" id="node2" href="$classEpisode.html" title="Classe héritant de Video et représentant un épisode d&#39;une série. " alt="" coords="5,424,112,677"/>
+<area shape="rect" id="node3" href="$classFilm.html" title="Classe héritant de Video et représentant des films. " alt="" coords="136,475,261,626"/>
+<area shape="rect" id="node4" href="$classSerie.html" title="Classe héritant de Video et représentant une série TV. " alt="" coords="285,475,400,626"/>
+</map>
