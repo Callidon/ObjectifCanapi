@@ -25,6 +25,20 @@ ComportementSQL::ComportementSQL(shared_ptr<BDConnector> db) {
 ComportementSQL::~ComportementSQL() {}
 
 //--------------------------------------------------
+string ComportementSQL::escape_string(string str) {
+	string res = "";
+	for (string::iterator it = str.begin(); it != str.end(); ++it) {
+		char c = *it;
+		if(c == '\'') {
+			res += "\'\'";
+		} else {
+			res += c;
+		}
+	}
+	return res;
+}
+
+//--------------------------------------------------
 /*!
 * \brief Méthode ajoutant un acteur à la base
 * \param acteur L'acteur (nom + prénom) à ajouter dans la base
@@ -34,19 +48,19 @@ void ComportementSQL::addActeur(string acteur, string id_video) {
 	int id_acteur;
 	string sql_insert;
 	string sql_recherche = "SELECT * FROM Personnes WHERE nom = '" + acteur + "';";
-			
+
 			//si c'est acteur n'est pas déjà présent en base
 			if(this->database->isReturnEmpty(sql_recherche)) {
 				//alors on l'insère dans la table Personnes
 				id_acteur = this->database->nextIdToInsert("id_personne","Personnes"); //on récupère son id
 				sql_insert = "INSERT INTO Personnes "
 							"VALUES (" + to_string(id_acteur)
-							+ ", '" + acteur + "');";
+							+ ", '" + escape_string(acteur) + "');";
 				this->database->query(sql_insert); 
-				
 			} else { //sinon, on récupère son id
 				vector<vector<string> > table = this->database->query(sql_recherche);
 				id_acteur = atoi(table[0][0].c_str());
+
 			}
 			
 			//on associe l'acteur au film grâce à la table Acteurs
@@ -73,7 +87,7 @@ void ComportementSQL::addRealisateur(string real, string id_video) {
 				id_real = this->database->nextIdToInsert("id_personne","Personnes"); //on récupère son id
 				sql_insert = "INSERT INTO Personnes "
 							"VALUES (" + to_string(id_real)
-							+ ", '" + real + "');";
+							+ ", '" + escape_string(real) + "');";
 				this->database->query(sql_insert); 
 				
 			} else { //sinon, on récupère son id
@@ -104,12 +118,12 @@ void ComportementSQL::traiterFilm(shared_ptr<Film> film, bool vu, bool aVoir) {
 			
 		sql = "INSERT INTO Films "
 				"VALUES ('" + film->getId() + "', '" 
-				+ film->getTitre() + "', '" 
-				+ film->getLien() + "', " 
+				+ escape_string(film->getTitre()) + "', '" 
+				+ escape_string(film->getLien()) + "', " 
 				+ to_string(film->getAnnee()) + ", '" 
-				+ film->getSynopsis() + "', '" 
-				+ film->getAffiche() + "', '" 
-				+ film->getPays() + "', " 
+				+ escape_string(film->getSynopsis()) + "', '" 
+				+ escape_string(film->getAffiche()) + "', '" 
+				+ escape_string(film->getPays()) + "', " 
 				+ to_string(vu) + ", " + to_string(aVoir) + ");";
 				
 		//on effectue la requête
@@ -155,14 +169,14 @@ void ComportementSQL::traiterSerie(shared_ptr<Serie> serie, bool vu, bool aVoir)
 			
 		sql = "INSERT INTO Series "
 				"VALUES ('" + serie->getId() + "', '" 
-				+ serie->getTitre() + "', '" 
-				+ serie->getLien() + "', " 
+				+ escape_string(serie->getTitre()) + "', '" 
+				+ escape_string(serie->getLien()) + "', " 
 				+ to_string(serie->getAnnee()) + ", '" 
-				+ serie->getSynopsis() + "', '" 
-				+ serie->getAffiche() + "', '" 
-				+ serie->getPays() + "', " 
+				+ escape_string(serie->getSynopsis()) + "', '" 
+				+ escape_string(serie->getAffiche()) + "', '" 
+				+ escape_string(serie->getPays()) + "', " 
 				+ to_string(vu) + ", " + to_string(aVoir) + ");";
-					
+		
 		//on effectue la requête
 		this->database->query(sql);
 			
@@ -196,7 +210,7 @@ void ComportementSQL::traiterSerie(shared_ptr<Serie> serie, bool vu, bool aVoir)
 * \brief Méthode ajoutant ou mettant à jour jour un épisode dans la base
 * \param episode shared_ptr vers l'épisode à traiter
 */
-void ComportementSQL::traiterEpisode(shared_ptr<Episode> episode, bool vu, bool aVoir) {
+void ComportementSQL::traiterEpisode(shared_ptr<Episode> episode, string id_serie, bool vu, bool aVoir) {
 	
 	string sql;
 	string sql_test_existence = "SELECT * FROM Episodes WHERE id_episode = '" + episode->getId() + "';";
@@ -204,19 +218,19 @@ void ComportementSQL::traiterEpisode(shared_ptr<Episode> episode, bool vu, bool 
 	//si le film n'est pas déjà présent en base, on l'ajoute
 	if( this->database->isReturnEmpty(sql_test_existence) ) {	
 			
-		sql = "INSERT INTO Episodes"
+		sql = "INSERT INTO Episodes "
 				"VALUES ('" + episode->getId() 
-				+ "', '" + episode->getTitre()
-				+ "', '" + episode->getLien() 
+				+ "', '" + escape_string(episode->getTitre())
+				+ "', '" + escape_string(episode->getLien()) 
 				+ "', " + to_string(episode->getAnnee()) 
-				+ "', '" + episode->getAffiche()
-				+ "', '" + episode->getSynopsis() 
+				+ ", '" + escape_string(episode->getAffiche())
+				+ "', '" + escape_string(episode->getSynopsis()) 
 				+ "', " + to_string(episode->getNumero())
 				+ ", " + to_string(episode->getSaison()) 
-				+ ", '" + episode->getSerie()
-				+ ", '" + episode->getPays()
+				+ ", '" + id_serie
+				+ "', '" + escape_string(episode->getPays())
 				+ "', " + to_string(vu) + ", " + to_string(aVoir) + ");";
-					
+
 		//on effectue la requête
 		this->database->query(sql);
 			
@@ -224,17 +238,17 @@ void ComportementSQL::traiterEpisode(shared_ptr<Episode> episode, bool vu, bool 
 		//on récupère les listes des acteurs & réalisateurs
 		vector<string> acteurs = episode->getActeurs();
 		vector<string> realisateurs = episode->getReal();
-			
+	
 		//parcours de la liste des acteurs
 		for(const auto &acteur: acteurs) {
 			this->addActeur(acteur, episode->getId());
 		}
-			
+	
 		//parcours de la liste des réalisateurs
 		for(const auto &realisateur: realisateurs) {
 			this->addRealisateur(realisateur, episode->getId());
 		}
-			
+	
 	} else { //sinon, on le met à jour
 		sql = "UPDATE Episodes "
 				"SET vu = " + to_string(vu) 

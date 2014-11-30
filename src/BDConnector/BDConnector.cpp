@@ -119,10 +119,14 @@ int BDConnector::count(string nom_table) {
 * \return Id de la dernière ligne de la table
 */
 int BDConnector::lastId(string nom_id, string nom_table) {
-	//on fait la requête pour récupérer les id de la table classés par ordre décroissant
-	vector<vector<string> > table = this->query("SELECT " + nom_id + " FROM " + nom_table + " ORDER BY " + nom_id + " DESC;");
-	int res = atoi(table[0][0].c_str()); //conversion de la string en int
-	return res;
+	if(!this->isReturnEmpty("SELECT * FROM " + nom_table)) {
+		//on fait la requête pour récupérer les id de la table classés par ordre décroissant
+		vector<vector<string> > table = this->query("SELECT " + nom_id + " FROM " + nom_table + " ORDER BY " + nom_id + " DESC;");
+		int res = atoi(table[0][0].c_str()); //conversion de la string en int
+		return res;
+	} else {
+		return -1;
+	}
 }
 
 //--------------------------------------------------

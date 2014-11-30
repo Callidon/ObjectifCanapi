@@ -190,7 +190,7 @@ void Bibliotheque::setStatutCurrentVideo(bool vu, bool aVoir) {
 	}
 
 	//on transmet l'objet à la chaîne de responsabilité pour le mettre à jour en base
-	this->responsable->traiter(this->currentVideo,false,false);
+	this->responsable->traiter(this->currentVideo,vu,aVoir);
 	
 	cout << this->currentVideo->getTitre() << " est maintenant marqué " << this->currentVideo->getStatut() << endl;
 }

@@ -27,6 +27,7 @@ class ComportementSQL : public ComportementBD {
 		//Méthodes protected (héritées de ComportementBD)
 		void addActeur(std::string nom, std::string id_video);
 		void addRealisateur(std::string nom, std::string id_video); 
+		std::string escape_string(std::string str);
 		
 	public:
 		//Constructeur & destructeur
@@ -35,7 +36,7 @@ class ComportementSQL : public ComportementBD {
 		//Méthodes publiques (héritées de ComportementBD)
 		void traiterFilm(std::shared_ptr<Film> film, bool vu, bool aVoir);
 		void traiterSerie(std::shared_ptr<Serie> serie, bool vu, bool aVoir);
-		void traiterEpisode(std::shared_ptr<Episode> episode, bool vu, bool aVoir);
+		void traiterEpisode(std::shared_ptr<Episode> episode, std::string id_serie, bool vu, bool aVoir);
 
 };
 //--------------------------------------------------

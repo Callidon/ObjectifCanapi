@@ -39,7 +39,7 @@ void ResponsableEpisode::traiter(std::shared_ptr<Video> video, bool vu, bool aVo
 	if(episode) {
 		
 		//on utilise le comportement pour effectuer les requêtes adéquates sur l'objet
-		comportement->traiterEpisode(episode, vu, aVoir);
+		comportement->traiterEpisode(episode, "", vu, aVoir);
 		
 	} else {
 		//Il n'y a plus de successeur après ce responsable, on affiche une erreur

@@ -86,7 +86,7 @@ vector<shared_ptr<Video> > FactorySQLFilm::recupererAll() {
 	
 	//on parcours la liste des films et on les ajoute à la liste de réponse
 	for(const auto &film: films) {
-		result.push_back(this->genererFilm(film[0], film[1], film[2], atoi(film[3].c_str()), film[4], film[5], film[6], atoi(film[7].c_str()), atoi(film[8].c_str())));
+		result.push_back(this->genererFilm(film[0], film[1], film[2], atoi(film[3].c_str()), film[5], film[4], film[6], atoi(film[7].c_str()), atoi(film[8].c_str())));
 	}
 	//on retourne le résultat
 	return result;

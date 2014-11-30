@@ -56,11 +56,12 @@ shared_ptr<Serie> FactorySQLSerie::genererSerie(string id, string titre, string 
 		  "Episodes.vu, Episodes.aVoir"
 		  " FROM Series,Episodes"
 		  " WHERE Series.id_serie = '" + id + "' AND Series.id_serie = Episodes.id_serie;";
+
 	vector<vector<string> > episodes = bd->query(sql);
 	
 	//on parcours la liste des épisodes
 	for(const auto &episode: episodes) {
-		nouvelleSerie->addEpisode(this->genererEpisode(episode[0], episode[1], episode[2], atoi(episode[3].c_str()), episode[4], atoi(episode[5].c_str()), atoi(episode[6].c_str()), episode[7], episode[8], episode[9], atoi(episode[10].c_str()), atoi(episode[11].c_str())));
+		nouvelleSerie->addEpisode(this->genererEpisode(episode[1], episode[2], episode[3], atoi(episode[4].c_str()), episode[5], atoi(episode[6].c_str()), atoi(episode[7].c_str()), episode[8], episode[9], episode[10], atoi(episode[11].c_str()), atoi(episode[12].c_str())));
 	}
 	
 	//on récupère tous les acteurs liés au film depuis la base
@@ -155,7 +156,7 @@ vector<shared_ptr<Video> > FactorySQLSerie::recupererAll() {
 	
 	//on parcours la liste des épisodes et on les ajoute à la liste de réponse
 	for(const auto &serie: series) {
-		result.push_back(this->genererSerie(serie[0], serie[1], serie[2], atoi(serie[3].c_str()), serie[4], serie[5], serie[6], atoi(serie[7].c_str()), atoi(serie[8].c_str())));
+		result.push_back(this->genererSerie(serie[0], serie[1], serie[2], atoi(serie[3].c_str()), serie[5], serie[4], serie[6], atoi(serie[7].c_str()), atoi(serie[8].c_str())));
 	}
 	//on retourne le résultat
 	return result;
