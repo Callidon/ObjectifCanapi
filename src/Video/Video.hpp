@@ -46,7 +46,7 @@ class Video {
 		~Video();
 		//Méthodes publiques
 		std::string getId();
-		void setId(string id);
+		void setId(std::string id);
 		std::string getTitre();
 		void setTitre(std::string titre);
 		std::string getLien();
@@ -63,12 +63,16 @@ class Video {
 		void addActeur(std::string acteur);
 		std::vector<std::string> getReal();
 		void addReal(std::string real);
+		bool getVu();
+		bool getVoir();
+		
 		
 		virtual std::string getStatut() = 0; //"à voir" ou "vu"
 		void marquerVu();
 		void marquerVoir();
 		
 		void lire(); //lire BA
+		void voirAffiche();
 };
 //--------------------------------------------------
 #endif

@@ -255,3 +255,23 @@ void Video::lire(){
 	string command = "firefox " + this->lien;
 	system((char*)command.c_str());
 }
+
+//--------------------------------------------------
+/*!
+* \brief Méthode qui ouvre l'affiche dans un navigateur
+*/
+void Video::voirAffiche(){
+	string command = "firefox " + this->affiche;
+	system((char*)command.c_str());
+}
+
+//--------------------------------------------------
+/*!
+* \brief Méthodes retournant les statuts de la video
+*/
+bool Video::getVu(){
+	return this->vu;
+}
+bool Video::getVoir(){
+	return this->aVoir;
+}

@@ -55,10 +55,10 @@ Serie::~Serie() {
 */
 string Serie::getStatut(){
 	if(this->vu){
-		return("Serie vu");
+		return("vue");
 	}
 	else if(this->aVoir){
-		return("Serie à voir");
+		return("à voir");
 	}
 	else {
 		return("aucun marquage");

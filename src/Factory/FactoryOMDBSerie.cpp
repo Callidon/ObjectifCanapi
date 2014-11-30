@@ -123,4 +123,3 @@ shared_ptr<Video> FactoryOMDBSerie::makeVideo(string title){
 	}
 	return serie;
 }
-

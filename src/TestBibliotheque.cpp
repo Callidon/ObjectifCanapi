@@ -16,9 +16,13 @@ int main() {
 	/*cout << "on ajoute Hot Fuzz" << endl;
 	biblio->addVideo("Hot Fuzz","Film");*/
 	
-	/*cout << "on set le statut 'à voir'" << endl;
+	//cout << "on set le statut 'à voir'" << endl;
 	biblio->selectVideo("Game of Thrones");
-	biblio->setStatutCurrentVideo(false,true);*/
+	vector<shared_ptr<Episode>> ep = biblio->getCurrentVideo()->getEpisodes();
+	for(shared_ptr<Episode> e : ep){
+		cout << ep->getTitre() << endl;
+	}
+	//biblio->setStatutCurrentVideo(false,true);
 	
 	return 0;
 }

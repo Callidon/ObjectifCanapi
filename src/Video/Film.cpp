@@ -55,10 +55,10 @@ Film::~Film() {
 */
 string Film::getStatut(){
 	if(this->vu){
-		return("Film vu");
+		return("vu");
 	}
 	else if(this->aVoir){
-		return("Film à voir");
+		return("à voir");
 	}
 	else {
 		return("aucun marquage");

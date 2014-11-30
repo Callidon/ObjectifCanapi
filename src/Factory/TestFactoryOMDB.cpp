@@ -1,11 +1,12 @@
-#include "FactoryOMDB.hpp"
+#include "FactoryOMDBSerie.hpp"
+#include "FactoryOMDBFilm.hpp"
 #include <iostream>
 
 using namespace std;
 
 int main() {
 	
-	shared_ptr<FactoryOMDB> facto(new FactoryOMDB());
+	shared_ptr<FactoryOMDBSerie> facto(new FactoryOMDBSerie());
 	/*
 	shared_ptr<Film> testFilm = facto->genererFilm("id","titre","lien",2014,"affiche","synopsis");
 	//Test pour la génération d'un film depuis la base de donnée

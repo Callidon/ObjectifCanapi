@@ -143,10 +143,10 @@ void Episode::setSerie(string serie){
 */
 string Episode::getStatut(){
 	if(this->vu){
-		return("Episode vu");
+		return("vu");
 	}
 	else if(this->aVoir){
-		return("Episode à voir");
+		return("à voir");
 	}
 	else {
 		return("aucun marquage");

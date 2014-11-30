@@ -110,6 +110,8 @@ void Bibliotheque::addVideo(string nom_video, string type_video) {
 		//on l'ajoute ensuite en base
 		this->responsable->traiter(film,false,false);
 		
+		this->currentVideo = film;
+		
 	} else if(type_video == "Serie") {
 		
 		//on instancie la bonne factory
@@ -123,6 +125,8 @@ void Bibliotheque::addVideo(string nom_video, string type_video) {
 		
 		//on l'ajoute ensuite en base
 		this->responsable->traiter(serie,false,false);
+		
+		this->currentVideo = serie;
 		
 	} else {
 		cout << "Erreur : type de vidéo inconnu" << endl;
@@ -188,7 +192,7 @@ void Bibliotheque::setStatutCurrentVideo(bool vu, bool aVoir) {
 	//on transmet l'objet à la chaîne de responsabilité pour le mettre à jour en base
 	this->responsable->traiter(this->currentVideo,false,false);
 	
-	cout << this->currentVideo->getStatut() << endl;
+	cout << this->currentVideo->getTitre() << " est maintenant marqué " << this->currentVideo->getStatut() << endl;
 }
 
 //--------------------------------------------------

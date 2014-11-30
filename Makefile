@@ -82,7 +82,11 @@ Serie:
 	
 Video:
 	$(CXX) $(FLAGS) -o build/$@.o src/Video/$@.cpp -c
-
+	
+Main: $(OBJETS) 
+	@$(CXX) $(FLAGS) src/$@.cpp $(foreach file, $^, build/$(file).o) $(SQLITEFLAGS) -o main
+	@clear
+	@ ./main
 #---------------------------------------------------------
 # Compilaton des programmes utlisées pour tester les différents modules
 #---------------------------------------------------------
@@ -94,10 +98,10 @@ Test: Video Film Episode Bibliotheque
 TestFactory: Video Film Serie Episode BDConnector FactorySQL
 	$(CXX) $(FLAGS) -g src/Factory/$@.cpp build/FactorySQL.o build/Video.o build/Serie.o build/Film.o build/Episode.o build/BDConnector.o build/sqlite3.o $(SQLITEFLAGS) -o testFactory
 	./testFactory
-
-TestFactoryOMDB: Video Film Serie Episode FactoryOMDB
-	$(CXX) $(FLAGS) src/Factory/$@.cpp build/FactoryOMDB.o build/Video.o build/Film.o build/Serie.o build/Episode.o build/BDConnector.o build/sqlite3.o $(SQLITEFLAGS) -o testFactoryOMDB
-	./testFactoryOMDB
+#include <iostream>
+TestFactoryOMDB: Video Film Serie Episode FactoryOMDBFilm FactoryOMDBSerie
+	$(CXX) -g $(FLAGS) src/Factory/$@.cpp build/FactoryOMDBFilm.o build/FactoryOMDBSerie.o  build/Video.o build/Film.o build/Serie.o build/Episode.o build/BDConnector.o build/sqlite3.o $(SQLITEFLAGS) -o testFactoryOMDB
+	gdb testFactoryOMDB
 
 TestBibliotheque: $(OBJETS) 
 	$(CXX) $(FLAGS) src/$@.cpp $(foreach file, $^, build/$(file).o) $(SQLITEFLAGS) -o testBibliotheque

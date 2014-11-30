@@ -20,8 +20,9 @@
 class FactoryOMDBSerie : public FactoryOMDB {
 	
 	private:
-		//Méthode privée	
-		std::string queryTitle(std::string title);
+		//Méthode privée
+		std::string queryTitle(std::string title);	
+		
 	
 	public:
 		FactoryOMDBSerie();
