@@ -27,10 +27,9 @@ Bibliotheque::Bibliotheque(string user) {
 	//on teste si l'utilisateur n'a pas une base de données associée
 	struct stat buffer;
 	if(stat (nom_db.c_str(), &buffer) != 0) {
-		cout << "hey" << endl;
 		//on copie le fichier modèle de la base
 		string commande = "cp database/default.db " + nom_db;
-		cout << "on copie colle" << endl;
+		cout << "Création d'un nouveau fichier bd" << endl;
 		system((char*)commande.c_str());
 	}
 	
