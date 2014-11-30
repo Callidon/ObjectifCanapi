@@ -30,7 +30,7 @@ class ComportementBD {
 		//Méthodes publiques
 		virtual void traiterFilm(std::shared_ptr<Film> film, bool vu, bool aVoir) = 0;
 		virtual void traiterSerie(std::shared_ptr<Serie> serie, bool vu, bool aVoir) = 0;
-		virtual void traiterEpisode(std::shared_ptr<Episode> episode, bool vu, bool aVoir) = 0;
+		virtual void traiterEpisode(std::shared_ptr<Episode> episode, std::string id_serie, bool vu, bool aVoir) = 0;
 
 };
 //--------------------------------------------------

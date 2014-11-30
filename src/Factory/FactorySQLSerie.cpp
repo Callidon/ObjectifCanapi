@@ -56,11 +56,12 @@ shared_ptr<Serie> FactorySQLSerie::genererSerie(string id, string titre, string 
 		  "Episodes.vu, Episodes.aVoir"
 		  " FROM Series,Episodes"
 		  " WHERE Series.id_serie = '" + id + "' AND Series.id_serie = Episodes.id_serie;";
+
 	vector<vector<string> > episodes = bd->query(sql);
 	
 	//on parcours la liste des épisodes
 	for(const auto &episode: episodes) {
-		nouvelleSerie->addEpisode(this->genererEpisode(episode[0], episode[1], episode[2], atoi(episode[3].c_str()), episode[4], atoi(episode[5].c_str()), atoi(episode[6].c_str()), episode[7], episode[8], episode[9], atoi(episode[10].c_str()), atoi(episode[11].c_str())));
+		nouvelleSerie->addEpisode(this->genererEpisode(episode[1], episode[2], episode[3], atoi(episode[4].c_str()), episode[5], atoi(episode[6].c_str()), atoi(episode[7].c_str()), episode[8], episode[9], episode[10], atoi(episode[11].c_str()), atoi(episode[12].c_str())));
 	}
 	
 	//on récupère tous les acteurs liés au film depuis la base

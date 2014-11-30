@@ -46,7 +46,7 @@ class Video {
 		~Video();
 		//Méthodes publiques
 		std::string getId();
-		void setId(string id);
+		void setId(std::string id);
 		std::string getTitre();
 		void setTitre(std::string titre);
 		std::string getLien();

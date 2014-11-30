@@ -46,10 +46,10 @@ void ResponsableSerie::traiter(std::shared_ptr<Video> video, bool vu, bool aVoir
 		//on traite aussi tous les épisodes de la série
 		//on récupère la liste des épisodes
 		vector<shared_ptr<Episode> > episodes = serie->getEpisodes();
-			
+
 		//on parcours la liste des épisodes & on les insère en base via le responsable suivant
 		for(const auto &episode: episodes) {
-			this->suivant->traiter(episode,false,false);
+			comportement->traiterEpisode(episode, serie->getId(), vu, aVoir);
 		}
 
 	} else { //sinon, on passe au responsable suivant
