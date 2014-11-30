@@ -156,7 +156,7 @@ vector<shared_ptr<Video> > FactorySQLSerie::recupererAll() {
 	
 	//on parcours la liste des épisodes et on les ajoute à la liste de réponse
 	for(const auto &serie: series) {
-		result.push_back(this->genererSerie(serie[0], serie[1], serie[2], atoi(serie[3].c_str()), serie[4], serie[5], serie[6], atoi(serie[7].c_str()), atoi(serie[8].c_str())));
+		result.push_back(this->genererSerie(serie[0], serie[1], serie[2], atoi(serie[3].c_str()), serie[5], serie[4], serie[6], atoi(serie[7].c_str()), atoi(serie[8].c_str())));
 	}
 	//on retourne le résultat
 	return result;
