@@ -30,35 +30,47 @@ void menuConnexion(){
 }
 
 void menuPrincipal(shared_ptr<Bibliotheque> biblio){
-	int choix;
-	int recherche;
+	char choix;
+	char recherche;
 	string titre;
 	vector<shared_ptr<Video> > videos;
 	
 	int i = 0;
 	char select;
-	int vid;
+	char vid;
+	int choixVideo;
+	bool test;
 	cout << "\n Que voulez-vous faire?" << endl;
 	cout << "1 : Mes videos marquées" << endl;
 	cout << "2 : Recherche" << endl;
 	cout << "3 : Déconnexion" << endl;
 	cout << "4 : Quitter" << endl;
-	cout << "Votre choix : ";
-	cin >> choix;
- 	
+	do{
+		cout << "Votre choix : ";
+		cin >> choix;
+	}while(!(choix=='1' || choix=='2' || choix=='3' || choix=='4'));
+	
 	switch(choix){
-		case 1: //Mes videos
+		case '1': //Mes videos
 			videos = biblio->getVideos();
 			cout << "\n";
 			for(const auto &video: videos) {
 				cout << ++i << " " << video->getTitre() << " - " << video->getAnnee() << endl;
 			}
-			cout << "Sélectionner une video? (y/n) ";
-			cin >> select;
+			do{
+				cout << "Sélectionner une video? (y/n) ";
+				cin >> select;
+			}while(select != 'y' && select !='Y' && select!='n' && select!='N');
+			
 			if(select == 'y' || select == 'Y'){
-					cout << "La quelle selectionner?";
-					cin >> vid;
-					biblio->selectVideo(biblio->getVideos().at(vid-1)->getTitre());
+					do{
+						cout << "La quelle selectionner?";
+						cin >> vid;
+						choixVideo = (int)vid;
+						cout << choixVideo-48 << endl;
+					}while(!(choixVideo - 48 >= 1 && choixVideo-48 <= biblio->getVideos().size() + 1)); 
+					
+					biblio->selectVideo(biblio->getVideos().at(choixVideo-48-1)->getTitre());
 					menuVideo(biblio);
 			}
 			else if(select == 'n' || select == 'N'){
@@ -66,12 +78,14 @@ void menuPrincipal(shared_ptr<Bibliotheque> biblio){
 			}
 			break;
 		
-		case 2: //Rercherche
-			cout << "\nVoulez-vous rechercher un film ou une série? (1 ou 2)" << endl;
-			cin >> recherche;
+		case '2': //Rercherche
+			do{
+				cout << "\nVoulez-vous rechercher un film ou une série? (1 ou 2)  : ";
+				cin >> recherche;
+			}while(recherche!= '1' && recherche!='2');
 			
 			switch(recherche){
-				case 1 :
+				case '1' :
 					cout << "Titre du film à rechercher : ";
 					//nettoie le buffer d'entrée
 					std::cin.ignore( std::numeric_limits<std::streamsize>::max(), '\n' );
@@ -80,7 +94,7 @@ void menuPrincipal(shared_ptr<Bibliotheque> biblio){
 					biblio->addVideo(titre, "Film");
 					break;
 					
-				case 2 :
+				case '2' :
 					cout << "Titre de la série à rechercher : ";
 					cin >> titre;
 					biblio->addVideo(titre, "Serie");
@@ -89,14 +103,14 @@ void menuPrincipal(shared_ptr<Bibliotheque> biblio){
 			menuVideo(biblio);
 			break;
 		
-		case 3: //Déconnexion
+		case '3': //Déconnexion
 			cout << "Déconnexion" << endl;
 			system("clear");
 			menuConnexion();
 			break;
 		
 		
-		case 4: //Quitter
+		case '4': //Quitter
 			cout << "A bientôt." << endl;
 			exit(0);
 			break;
@@ -118,31 +132,33 @@ void menuVideo(shared_ptr<Bibliotheque> biblio){
 	cout << "7 : Retour" << endl;
 	
 	char ok;
-	int choix;
-	cin >> choix;
+	char choix;
+	do{
+		cin >> choix;
+	}while(!(choix=='1' || choix=='2' || choix=='3' || choix=='4' || choix=='5' || choix=='6' || choix=='7'));
 	
 	vector<string> acteurs = video->getActeurs();
 	vector<string> real = video->getReal();
 	
 	switch(choix){
-		case 1: //marquer a voir
+		case '1': //marquer a voir
 			biblio->setStatutCurrentVideo(video->getVu(), true);
 			cout << "Retour au menu principal" << endl;
 			menuPrincipal(biblio);
 			break;
 		
-		case 2: //marcher vu
+		case '2': //marcher vu
 			biblio->setStatutCurrentVideo(true, video->getVoir());
 			cout << "Retour au menu principal" << endl;
 			menuPrincipal(biblio);
 			break;
 		
-		case 3: //voir statut
+		case '3': //voir statut
 			cout << biblio->getCurrentVideo()->getTitre() << " est " << biblio->getCurrentVideo()->getStatut() << endl;
 			menuPrincipal(biblio);
 			break;
 		
-		case 4: //informations
+		case '4': //informations
 			cout << video->getTitre() << " - " << video->getAnnee() << " - " << video->getPays() << endl;
 			cout << "De : ";
 			for(string act : acteurs){
@@ -158,15 +174,15 @@ void menuVideo(shared_ptr<Bibliotheque> biblio){
 				menuPrincipal(biblio);
 			break;
 		
-		case 5: //affiche
+		case '5': //affiche
 			video->voirAffiche();
 			break;
 		
-		case 6:  //BA
+		case '6':  //BA
 			video->lire();
 			break;
 	
-		case 7: //retour
+		case '7': //retour
 			menuPrincipal(biblio);
 			break;
 	}

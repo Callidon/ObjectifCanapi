@@ -7,8 +7,8 @@
 # Variables
 #---------------------------------------------------------
 # Flags utilisés
-CC = gcc
-CXX = g++
+CC = @ gcc
+CXX = @ g++
 FLAGS = -std=c++0x
 SQLITEFLAGS = -lpthread -ldl
 # Liste de tous les objets du projet
@@ -39,6 +39,7 @@ sqlite3:
 # Compilations individuelles des différentes classes du projet
 #---------------------------------------------------------
 BDConnector:
+	@echo "Patience....."
 	$(CXX) $(FLAGS) -o build/$@.o src/BDConnector/$@.cpp $(SQLITEFLAGS) -c
 
 Bibliotheque:
@@ -84,9 +85,9 @@ Video:
 	$(CXX) $(FLAGS) -o build/$@.o src/Video/$@.cpp -c
 	
 Main: $(OBJETS) 
-	@$(CXX) $(FLAGS) src/$@.cpp $(foreach file, $^, build/$(file).o) $(SQLITEFLAGS) -o main
+	$(CXX) -g $(FLAGS) src/$@.cpp $(foreach file, $^, build/$(file).o) $(SQLITEFLAGS) -o main
 	@clear
-	@ ./main
+	@ gdb main
 #---------------------------------------------------------
 # Compilaton des programmes utlisées pour tester les différents modules
 #---------------------------------------------------------
