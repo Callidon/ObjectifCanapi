@@ -18,7 +18,7 @@ DEPENDANCES = $(foreach file, $(OBJETS), build/$(file).o)
 #---------------------------------------------------------
 # Compilation complète du projet & éxecution
 #---------------------------------------------------------
-all: Main
+all: prepare Main
 
 exec:
 	./main
