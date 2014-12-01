@@ -1,36 +1,33 @@
 <map id="src/Video/Episode.hpp" name="src/Video/Episode.hpp">
-<area shape="rect" id="node2" href="$Serie_8hpp.html" title="Fichier contenant les entêtes de la classe Serie. " alt="" coords="1520,80,1655,107"/>
-<area shape="rect" id="node3" href="$Film_8hpp.html" title="Fichier contenant les entêtes de la classe Film. " alt="" coords="1392,155,1521,181"/>
-<area shape="rect" id="node10" href="$Test_8cpp.html" title="src/Test.cpp" alt="" coords="34,592,128,619"/>
-<area shape="rect" id="node14" href="$ResponsableEpisode_8hpp.html" title="Fichier contenant les entêtes de la classe ResponsableEpisode. " alt="" coords="2539,411,2737,453"/>
-<area shape="rect" id="node25" href="$FactorySQL_8hpp.html" title="Fichier contenant la définition de l&#39;interface FactorySQL. " alt="" coords="1211,237,1397,264"/>
-<area shape="rect" id="node27" href="$FactoryOMDB_8hpp.html" title="Fichier contenant la définition de l&#39;interface FactoryOMDB. " alt="" coords="663,237,864,264"/>
-<area shape="rect" id="node35" href="$Episode_8cpp.html" title="Fichier contenant l&#39;implémentation de la classe Episode. " alt="" coords="2433,80,2585,107"/>
-<area shape="rect" id="node4" href="$BDConnector_8hpp.html" title="Fichier contenant les entêtes de la classe BDConnector. " alt="" coords="1590,237,1820,264"/>
-<area shape="rect" id="node17" href="$ResponsableSerie_8hpp.html" title="Fichier contenant les entêtes de la classe ResponsableSerie. " alt="" coords="2315,411,2513,453"/>
-<area shape="rect" id="node24" href="$ComportementBD_8hpp.html" title="Fichier contenant les entêtes de l&#39;interface ComportementBD. " alt="" coords="2083,230,2239,271"/>
-<area shape="rect" id="node34" href="$Serie_8cpp.html" title="Fichier contenant l&#39;implémentation de la classe Serie. " alt="" coords="1547,155,1681,181"/>
-<area shape="rect" id="node7" href="$ResponsableFilm_8hpp.html" title="Fichier contenant les entêtes de la classe ResponsableFilm. " alt="" coords="1843,411,2041,453"/>
-<area shape="rect" id="node33" href="$Film_8cpp.html" title="Fichier contenant l&#39;implémentation de la classe Film. " alt="" coords="1421,237,1551,264"/>
-<area shape="rect" id="node5" href="$BDConnector_8cpp.html" title="Fichier contenant l&#39;implémentation de la classe BDConnector. " alt="" coords="1590,328,1820,355"/>
-<area shape="rect" id="node6" href="$Responsable_8hpp.html" title="Fichier contenant les entêtes de la classe Responsable. " alt="" coords="2082,328,2307,355"/>
-<area shape="rect" id="node18" href="$FactorySQLFilm_8hpp.html" title="Fichier contenant la définition de la classe FactorySQLFilm. " alt="" coords="1354,328,1565,355"/>
-<area shape="rect" id="node20" href="$FactorySQLSerie_8hpp.html" title="Fichier contenant la définition de la classe FactorySQLSerie. " alt="" coords="1113,328,1329,355"/>
-<area shape="rect" id="node22" href="$ComportementSQL_8hpp.html" title="Fichier contenant les entêtes de la classe ComportementSQL. " alt="" coords="1845,321,2008,362"/>
-<area shape="rect" id="node13" href="$Responsable_8cpp.html" title="Fichier contenant l&#39;implémentation de la classe Responsable. " alt="" coords="2066,419,2291,445"/>
-<area shape="rect" id="node8" href="$Bibliotheque_8hpp.html" title="Fichier contenant les entêtes de la classe Bibliotheque. " alt="" coords="1657,509,1796,536"/>
-<area shape="rect" id="node12" href="$ResponsableFilm_8cpp.html" title="Fichier contenant les entêtes de la classe ResponsableFilm. " alt="" coords="1967,502,2165,543"/>
-<area shape="rect" id="node9" href="$Bibliotheque_8cpp.html" title="Fichier contenant l&#39;implémentation de la classe Bibliotheque. " alt="" coords="1117,592,1256,619"/>
-<area shape="rect" id="node11" href="$TestBibliotheque_8cpp.html" title="src/TestBibliotheque.cpp" alt="" coords="1643,592,1809,619"/>
-<area shape="rect" id="node15" href="$ResponsableEpisode_8cpp.html" title="Fichier contenant les entêtes de la classe ResponsableEpisode. " alt="" coords="2539,502,2737,543"/>
-<area shape="rect" id="node16" href="$ResponsableSerie_8cpp.html" title="Fichier contenant les entêtes de la classe ResponsableSerie. " alt="" coords="2315,502,2513,543"/>
-<area shape="rect" id="node19" href="$FactorySQLFilm_8cpp.html" title="Fichier contenant l&#39;implémentation de la classe FactorySQLFilm. " alt="" coords="1370,419,1581,445"/>
-<area shape="rect" id="node21" href="$FactorySQLSerie_8cpp.html" title="Fichier contenant l&#39;implémentation de la classe FactorySQLSerie. " alt="" coords="1078,419,1295,445"/>
-<area shape="rect" id="node23" href="$ComportementSQL_8cpp.html" title="Fichier contenant l&#39;implémentation de la classe ComportementSQL. " alt="" coords="1656,411,1819,453"/>
-<area shape="rect" id="node26" href="$TestFactory_8cpp.html" title="src/Factory/TestFactory.cpp" alt="" coords="901,328,1088,355"/>
-<area shape="rect" id="node28" href="$FactoryOMDBFilm_8hpp.html" title="Fichier contenant la définition de la classe FactoryOMDBFilm. " alt="" coords="400,328,627,355"/>
-<area shape="rect" id="node31" href="$FactoryOMDBSerie_8hpp.html" title="Fichier contenant la définition de la classe FactoryOMDBSerie. " alt="" coords="145,328,375,355"/>
-<area shape="rect" id="node32" href="$TestFactoryOMDB_8cpp.html" title="src/Factory/TestFactoryOMDB.cpp" alt="" coords="651,328,877,355"/>
-<area shape="rect" id="node29" href="$FactoryOMDBFilm_8cpp.html" title="Fichier contenant l&#39;implémentation de la classe FactoryOMDBFilm. " alt="" coords="553,419,780,445"/>
-<area shape="rect" id="node30" href="$FactoryOMDBSerie_8cpp.html" title="Fichier contenant l&#39;implémentation de la classe FactoryOMDBSerie. " alt="" coords="298,419,528,445"/>
+<area shape="rect" id="node2" href="$Serie_8hpp.html" title="Fichier contenant les entêtes de la classe Serie. " alt="" coords="1116,80,1251,107"/>
+<area shape="rect" id="node3" href="$Film_8hpp.html" title="Fichier contenant les entêtes de la classe Film. " alt="" coords="975,155,1104,181"/>
+<area shape="rect" id="node13" href="$ResponsableEpisode_8hpp.html" title="Fichier contenant les entêtes de la classe ResponsableEpisode. " alt="" coords="2096,411,2295,453"/>
+<area shape="rect" id="node24" href="$FactorySQL_8hpp.html" title="Fichier contenant la définition de l&#39;interface FactorySQL. " alt="" coords="764,237,951,264"/>
+<area shape="rect" id="node25" href="$FactoryOMDB_8hpp.html" title="Fichier contenant la définition de l&#39;interface FactoryOMDB. " alt="" coords="538,237,739,264"/>
+<area shape="rect" id="node32" href="$Episode_8cpp.html" title="Fichier contenant l&#39;implémentation de la classe Episode. " alt="" coords="1974,80,2127,107"/>
+<area shape="rect" id="node4" href="$BDConnector_8hpp.html" title="Fichier contenant les entêtes de la classe BDConnector. " alt="" coords="1181,237,1411,264"/>
+<area shape="rect" id="node16" href="$ResponsableSerie_8hpp.html" title="Fichier contenant les entêtes de la classe ResponsableSerie. " alt="" coords="1872,411,2071,453"/>
+<area shape="rect" id="node23" href="$ComportementBD_8hpp.html" title="Fichier contenant les entêtes de l&#39;interface ComportementBD. " alt="" coords="1438,230,1594,271"/>
+<area shape="rect" id="node31" href="$Serie_8cpp.html" title="Fichier contenant l&#39;implémentation de la classe Serie. " alt="" coords="1130,155,1264,181"/>
+<area shape="rect" id="node7" href="$ResponsableFilm_8hpp.html" title="Fichier contenant les entêtes de la classe ResponsableFilm. " alt="" coords="1212,411,1411,453"/>
+<area shape="rect" id="node30" href="$Film_8cpp.html" title="Fichier contenant l&#39;implémentation de la classe Film. " alt="" coords="975,237,1104,264"/>
+<area shape="rect" id="node5" href="$BDConnector_8cpp.html" title="Fichier contenant l&#39;implémentation de la classe BDConnector. " alt="" coords="1181,328,1411,355"/>
+<area shape="rect" id="node6" href="$Responsable_8hpp.html" title="Fichier contenant les entêtes de la classe Responsable. " alt="" coords="1624,328,1848,355"/>
+<area shape="rect" id="node17" href="$FactorySQLFilm_8hpp.html" title="Fichier contenant la définition de la classe FactorySQLFilm. " alt="" coords="652,328,863,355"/>
+<area shape="rect" id="node19" href="$FactorySQLSerie_8hpp.html" title="Fichier contenant la définition de la classe FactorySQLSerie. " alt="" coords="888,328,1104,355"/>
+<area shape="rect" id="node21" href="$ComportementSQL_8hpp.html" title="Fichier contenant les entêtes de la classe ComportementSQL. " alt="" coords="1436,321,1599,362"/>
+<area shape="rect" id="node12" href="$Responsable_8cpp.html" title="Fichier contenant l&#39;implémentation de la classe Responsable. " alt="" coords="1624,419,1848,445"/>
+<area shape="rect" id="node8" href="$Bibliotheque_8hpp.html" title="Fichier contenant les entêtes de la classe Bibliotheque. " alt="" coords="1228,509,1367,536"/>
+<area shape="rect" id="node11" href="$ResponsableFilm_8cpp.html" title="Fichier contenant les entêtes de la classe ResponsableFilm. " alt="" coords="1520,502,1719,543"/>
+<area shape="rect" id="node9" href="$Bibliotheque_8cpp.html" title="Fichier contenant l&#39;implémentation de la classe Bibliotheque. " alt="" coords="908,592,1047,619"/>
+<area shape="rect" id="node10" href="$Main_8cpp.html" title="Fichier contenant la classe principale, permettant l&#39;interaction avec l&#39;utilisateur. " alt="" coords="1249,592,1346,619"/>
+<area shape="rect" id="node14" href="$ResponsableEpisode_8cpp.html" title="Fichier contenant les entêtes de la classe ResponsableEpisode. " alt="" coords="2096,502,2295,543"/>
+<area shape="rect" id="node15" href="$ResponsableSerie_8cpp.html" title="Fichier contenant les entêtes de la classe ResponsableSerie. " alt="" coords="1872,502,2071,543"/>
+<area shape="rect" id="node18" href="$FactorySQLFilm_8cpp.html" title="Fichier contenant l&#39;implémentation de la classe FactorySQLFilm. " alt="" coords="582,419,794,445"/>
+<area shape="rect" id="node20" href="$FactorySQLSerie_8cpp.html" title="Fichier contenant l&#39;implémentation de la classe FactorySQLSerie. " alt="" coords="869,419,1086,445"/>
+<area shape="rect" id="node22" href="$ComportementSQL_8cpp.html" title="Fichier contenant l&#39;implémentation de la classe ComportementSQL. " alt="" coords="1436,411,1599,453"/>
+<area shape="rect" id="node26" href="$FactoryOMDBFilm_8hpp.html" title="Fichier contenant la définition de la classe FactoryOMDBFilm. " alt="" coords="340,328,567,355"/>
+<area shape="rect" id="node29" href="$FactoryOMDBSerie_8hpp.html" title="Fichier contenant la définition de la classe FactoryOMDBSerie. " alt="" coords="26,328,256,355"/>
+<area shape="rect" id="node27" href="$FactoryOMDBFilm_8cpp.html" title="Fichier contenant l&#39;implémentation de la classe FactoryOMDBFilm. " alt="" coords="282,419,508,445"/>
+<area shape="rect" id="node28" href="$FactoryOMDBSerie_8cpp.html" title="Fichier contenant l&#39;implémentation de la classe FactoryOMDBSerie. " alt="" coords="26,419,256,445"/>
 </map>

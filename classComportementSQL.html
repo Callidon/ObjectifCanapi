@@ -126,9 +126,9 @@ Fonctions membres publiques</h2></td></tr>
 <tr class="memitem:a28e889f40e1b1835c4b80e52c32f85c9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classComportementSQL.html#a28e889f40e1b1835c4b80e52c32f85c9">traiterSerie</a> (std::shared_ptr&lt; <a class="el" href="classSerie.html">Serie</a> &gt; serie, bool vu, bool aVoir)</td></tr>
 <tr class="memdesc:a28e889f40e1b1835c4b80e52c32f85c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Méthode ajoutant ou mettant à jour jour une série dans la base.  <a href="#a28e889f40e1b1835c4b80e52c32f85c9">Plus de détails...</a><br/></td></tr>
 <tr class="separator:a28e889f40e1b1835c4b80e52c32f85c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af98674060b6cb8dae940ab405d4e27e8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classComportementSQL.html#af98674060b6cb8dae940ab405d4e27e8">traiterEpisode</a> (std::shared_ptr&lt; <a class="el" href="classEpisode.html">Episode</a> &gt; episode, bool vu, bool aVoir)</td></tr>
-<tr class="memdesc:af98674060b6cb8dae940ab405d4e27e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Méthode ajoutant ou mettant à jour jour un épisode dans la base.  <a href="#af98674060b6cb8dae940ab405d4e27e8">Plus de détails...</a><br/></td></tr>
-<tr class="separator:af98674060b6cb8dae940ab405d4e27e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a76712cdc2af4b78abef4cdec53eabf2a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classComportementSQL.html#a76712cdc2af4b78abef4cdec53eabf2a">traiterEpisode</a> (std::shared_ptr&lt; <a class="el" href="classEpisode.html">Episode</a> &gt; episode, std::string id_serie, bool vu, bool aVoir)</td></tr>
+<tr class="memdesc:a76712cdc2af4b78abef4cdec53eabf2a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Méthode ajoutant ou mettant à jour jour un épisode dans la base.  <a href="#a76712cdc2af4b78abef4cdec53eabf2a">Plus de détails...</a><br/></td></tr>
+<tr class="separator:a76712cdc2af4b78abef4cdec53eabf2a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
 Fonctions membres protégées</h2></td></tr>
@@ -138,6 +138,9 @@ Fonctions membres protégées</h2></td></tr>
 <tr class="memitem:a792b80fd371a0da579bb7caa97110e86"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classComportementSQL.html#a792b80fd371a0da579bb7caa97110e86">addRealisateur</a> (std::string nom, std::string id_video)</td></tr>
 <tr class="memdesc:a792b80fd371a0da579bb7caa97110e86"><td class="mdescLeft">&#160;</td><td class="mdescRight">Méthode ajoutant un réalisateur à la base.  <a href="#a792b80fd371a0da579bb7caa97110e86">Plus de détails...</a><br/></td></tr>
 <tr class="separator:a792b80fd371a0da579bb7caa97110e86"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a23fd9262f25f7bc7ef14529f811d7e88"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classComportementSQL.html#a23fd9262f25f7bc7ef14529f811d7e88">escape_string</a> (std::string str)</td></tr>
+<tr class="memdesc:a23fd9262f25f7bc7ef14529f811d7e88"><td class="mdescLeft">&#160;</td><td class="mdescRight">Méthode qui échappe les caractères spéciaux d'une chaîne selon la nomre sqlite.  <a href="#a23fd9262f25f7bc7ef14529f811d7e88">Plus de détails...</a><br/></td></tr>
+<tr class="separator:a23fd9262f25f7bc7ef14529f811d7e88"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
 Attributs protégés</h2></td></tr>
@@ -280,7 +283,40 @@ Attributs protégés</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="af98674060b6cb8dae940ab405d4e27e8"></a>
+<a class="anchor" id="a23fd9262f25f7bc7ef14529f811d7e88"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">string ComportementSQL::escape_string </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>str</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Méthode qui échappe les caractères spéciaux d'une chaîne selon la nomre sqlite. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">str</td><td>Chaîne de caractère a échapper </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>La chaîne de caractère dont les caractères ont été échappés </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a76712cdc2af4b78abef4cdec53eabf2a"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -292,6 +328,12 @@ Attributs protégés</h2></td></tr>
           <td>(</td>
           <td class="paramtype">std::shared_ptr&lt; <a class="el" href="classEpisode.html">Episode</a> &gt;&#160;</td>
           <td class="paramname"><em>episode</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>id_serie</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -326,7 +368,7 @@ Attributs protégés</h2></td></tr>
   </dd>
 </dl>
 
-<p>Implémente <a class="el" href="classComportementBD.html#a73d3aaf2cfce242d51f127eef57ac157">ComportementBD</a>.</p>
+<p>Implémente <a class="el" href="classComportementBD.html#a78582df68699347b45e63de22fdbd876">ComportementBD</a>.</p>
 
 </div>
 </div>
@@ -460,7 +502,7 @@ Attributs protégés</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Généré le Jeudi 27 Novembre 2014 12:10:48 pour ObjectifCanapi par &#160;<a href="http://www.doxygen.org/index.html">
+Généré le Lundi 1 Décembre 2014 17:43:54 pour ObjectifCanapi par &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

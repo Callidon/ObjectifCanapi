@@ -20,5 +20,7 @@ var searchData=
   ['getsynopsis',['getSynopsis',['../classVideo.html#aeae9d4f8a8e7e4623cf92176d20bc674',1,'Video']]],
   ['gettitre',['getTitre',['../classVideo.html#ab3716a4b954daa9b7760d44f14164f3f',1,'Video']]],
   ['getuser',['getUser',['../classBibliotheque.html#afe2b560a40354b0467cc7a253b2f62b9',1,'Bibliotheque']]],
-  ['getvideos',['getVideos',['../classBibliotheque.html#ae1aa002d561de8252aaec96a4f638600',1,'Bibliotheque']]]
+  ['getvideos',['getVideos',['../classBibliotheque.html#ae1aa002d561de8252aaec96a4f638600',1,'Bibliotheque']]],
+  ['getvoir',['getVoir',['../classVideo.html#aa37f8b31eb05947f4509ad0643c88cbe',1,'Video']]],
+  ['getvu',['getVu',['../classVideo.html#a5a6ce1d51966bac01bd6459aac8e2790',1,'Video']]]
 ];

@@ -100,19 +100,20 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
 <div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="classFactoryOMDBSerie.html">   20</a></span>&#160;<span class="comment"></span><span class="keyword">class </span><a class="code" href="classFactoryOMDBSerie.html">FactoryOMDBSerie</a> : <span class="keyword">public</span> <a class="code" href="classFactoryOMDB.html">FactoryOMDB</a> {</div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    </div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        <span class="comment">//Méthode privée    </span></div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        std::string <a class="code" href="classFactoryOMDBSerie.html#acc9e81ca958d97e473b53959eafbe3ca">queryTitle</a>(std::string title);</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    </div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        <a class="code" href="classFactoryOMDBSerie.html#ab5f2c34dab0cecec5513e6e6e4077fb3">FactoryOMDBSerie</a>();</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        <a class="code" href="classFactoryOMDBSerie.html#a7a4d32a5fb8b2dfd231af1eaf8fb8d57">~FactoryOMDBSerie</a>();</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        </div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        std::shared_ptr&lt;Video&gt; <a class="code" href="classFactoryOMDBSerie.html#afe3cc09c3377ca97f23095eeb430df4f">makeVideo</a>(std::string title);</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;};</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="comment">//--------------------------------------------------</span></div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="ttc" id="classFactoryOMDBSerie_html_afe3cc09c3377ca97f23095eeb430df4f"><div class="ttname"><a href="classFactoryOMDBSerie.html#afe3cc09c3377ca97f23095eeb430df4f">FactoryOMDBSerie::makeVideo</a></div><div class="ttdeci">std::shared_ptr&lt; Video &gt; makeVideo(std::string title)</div><div class="ttdoc">Méthode permettant de creer un objet série en fonction du resultat de la requete. ...</div><div class="ttdef"><b>Definition:</b> FactoryOMDBSerie.cpp:59</div></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        <span class="comment">//Méthode privée</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        std::string <a class="code" href="classFactoryOMDBSerie.html#acc9e81ca958d97e473b53959eafbe3ca">queryTitle</a>(std::string title);  </div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        </div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    </div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        <a class="code" href="classFactoryOMDBSerie.html#ab5f2c34dab0cecec5513e6e6e4077fb3">FactoryOMDBSerie</a>();</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        <a class="code" href="classFactoryOMDBSerie.html#a7a4d32a5fb8b2dfd231af1eaf8fb8d57">~FactoryOMDBSerie</a>();</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        </div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        std::shared_ptr&lt;Video&gt; <a class="code" href="classFactoryOMDBSerie.html#afe3cc09c3377ca97f23095eeb430df4f">makeVideo</a>(std::string title);</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;};</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="comment">//--------------------------------------------------</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="ttc" id="classFactoryOMDBSerie_html_afe3cc09c3377ca97f23095eeb430df4f"><div class="ttname"><a href="classFactoryOMDBSerie.html#afe3cc09c3377ca97f23095eeb430df4f">FactoryOMDBSerie::makeVideo</a></div><div class="ttdeci">std::shared_ptr&lt; Video &gt; makeVideo(std::string title)</div><div class="ttdoc">Méthode permettant de creer un objet série en fonction du resultat de la requete. ...</div><div class="ttdef"><b>Definition:</b> FactoryOMDBSerie.cpp:62</div></div>
 <div class="ttc" id="FactoryOMDB_8hpp_html"><div class="ttname"><a href="FactoryOMDB_8hpp.html">FactoryOMDB.hpp</a></div><div class="ttdoc">Fichier contenant la définition de l&#39;interface FactoryOMDB. </div></div>
 <div class="ttc" id="classFactoryOMDBSerie_html"><div class="ttname"><a href="classFactoryOMDBSerie.html">FactoryOMDBSerie</a></div><div class="ttdoc">Classe réalisant l&#39;interface FactoryOMDB &amp; qui interargit avec l&#39;api OMDB pour créer des objets Video...</div><div class="ttdef"><b>Definition:</b> FactoryOMDBSerie.hpp:20</div></div>
 <div class="ttc" id="classFactoryOMDB_html"><div class="ttname"><a href="classFactoryOMDB.html">FactoryOMDB</a></div><div class="ttdoc">Interface représentant une fabrique créant des objets de type Video à partir de l&#39;APi du site IMDB...</div><div class="ttdef"><b>Definition:</b> FactoryOMDB.hpp:25</div></div>
@@ -122,7 +123,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Généré le Jeudi 27 Novembre 2014 12:10:48 pour ObjectifCanapi par &#160;<a href="http://www.doxygen.org/index.html">
+Généré le Lundi 1 Décembre 2014 17:43:53 pour ObjectifCanapi par &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

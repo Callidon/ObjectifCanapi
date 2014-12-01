@@ -1,0 +1,5 @@
+<map id="menuPrincipal" name="menuPrincipal">
+<area shape="rect" id="node2" href="$Main_8cpp.html#a93851566f3c9914c5c1111cd289b664a" title="Procédure affichant le menu de gestion d&#39;une vidéo. " alt="" coords="173,5,259,32"/>
+<area shape="rect" id="node4" href="$Main_8cpp.html#a74ceae2e8f41ae9c5822398bb77a4ac1" title="Procédure affichant le menu de connexion. " alt="" coords="158,56,274,83"/>
+<area shape="rect" id="node3" href="$classSerie.html#af5168f4a9355227d31ce27d3566aa15f" title="Méthode qui retourne la liste des episodes. " alt="" coords="323,5,455,32"/>
+</map>

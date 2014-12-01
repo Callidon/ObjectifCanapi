@@ -1,8 +1,6 @@
 <map id="src/Factory/FactoryOMDB.hpp" name="src/Factory/FactoryOMDB.hpp">
 <area shape="rect" id="node2" href="$FactoryOMDBFilm_8hpp.html" title="Fichier contenant la définition de la classe FactoryOMDBFilm. " alt="" coords="260,80,487,107"/>
 <area shape="rect" id="node6" href="$FactoryOMDBSerie_8hpp.html" title="Fichier contenant la définition de la classe FactoryOMDBSerie. " alt="" coords="5,80,235,107"/>
-<area shape="rect" id="node7" href="$TestFactoryOMDB_8cpp.html" title="src/Factory/TestFactoryOMDB.cpp" alt="" coords="511,80,737,107"/>
-<area shape="rect" id="node8" href="$Test_8cpp.html" title="src/Test.cpp" alt="" coords="762,80,856,107"/>
 <area shape="rect" id="node3" href="$Bibliotheque_8cpp.html" title="Fichier contenant l&#39;implémentation de la classe Bibliotheque. " alt="" coords="259,155,399,181"/>
 <area shape="rect" id="node4" href="$FactoryOMDBFilm_8cpp.html" title="Fichier contenant l&#39;implémentation de la classe FactoryOMDBFilm. " alt="" coords="424,155,651,181"/>
 <area shape="rect" id="node5" href="$FactoryOMDBSerie_8cpp.html" title="Fichier contenant l&#39;implémentation de la classe FactoryOMDBSerie. " alt="" coords="5,155,235,181"/>

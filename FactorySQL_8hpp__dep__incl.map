@@ -1,7 +1,6 @@
 <map id="src/Factory/FactorySQL.hpp" name="src/Factory/FactorySQL.hpp">
 <area shape="rect" id="node2" href="$FactorySQLFilm_8hpp.html" title="Fichier contenant la définition de la classe FactorySQLFilm. " alt="" coords="86,80,297,107"/>
 <area shape="rect" id="node5" href="$FactorySQLSerie_8hpp.html" title="Fichier contenant la définition de la classe FactorySQLSerie. " alt="" coords="322,80,539,107"/>
-<area shape="rect" id="node7" href="$TestFactory_8cpp.html" title="src/Factory/TestFactory.cpp" alt="" coords="564,80,751,107"/>
 <area shape="rect" id="node3" href="$Bibliotheque_8cpp.html" title="Fichier contenant l&#39;implémentation de la classe Bibliotheque. " alt="" coords="241,155,380,181"/>
 <area shape="rect" id="node4" href="$FactorySQLFilm_8cpp.html" title="Fichier contenant l&#39;implémentation de la classe FactorySQLFilm. " alt="" coords="5,155,216,181"/>
 <area shape="rect" id="node6" href="$FactorySQLSerie_8cpp.html" title="Fichier contenant l&#39;implémentation de la classe FactorySQLSerie. " alt="" coords="405,155,621,181"/>
