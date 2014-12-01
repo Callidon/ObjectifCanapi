@@ -85,9 +85,9 @@ Video:
 	$(CXX) $(FLAGS) -o build/$@.o src/Video/$@.cpp -c
 	
 Main: $(OBJETS) 
-	$(CXX) -g $(FLAGS) src/$@.cpp $(foreach file, $^, build/$(file).o) $(SQLITEFLAGS) -o main
+	$(CXX) $(FLAGS) src/$@.cpp $(foreach file, $^, build/$(file).o) $(SQLITEFLAGS) -o main
 	@clear
-	@ gdb main
+	@ ./main
 #---------------------------------------------------------
 # Compilaton des programmes utlisées pour tester les différents modules
 #---------------------------------------------------------
@@ -106,7 +106,7 @@ TestFactoryOMDB: Video Film Serie Episode FactoryOMDBFilm FactoryOMDBSerie
 
 TestBibliotheque: $(OBJETS) 
 	$(CXX) $(FLAGS) src/$@.cpp $(foreach file, $^, build/$(file).o) $(SQLITEFLAGS) -o testBibliotheque
-	./testBibliotheque
+	./ testBibliotheque
 	
 #---------------------------------------------------------
 # Génération de la documentation Doxygen

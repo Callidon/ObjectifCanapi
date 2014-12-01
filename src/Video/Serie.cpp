@@ -47,7 +47,6 @@ Serie::Serie(string id, string titre, string lien, int annee, string affiche, st
 */
 Serie::~Serie() {
 }
-
 //--------------------------------------------------
 /*!
 * \brief Méthode qui retourne le statut du Serie ("a voir" ou "vu")

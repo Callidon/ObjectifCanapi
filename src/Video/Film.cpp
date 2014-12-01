@@ -47,7 +47,6 @@ Film::Film(string id, string titre, string lien, int annee, string affiche, stri
 */
 Film::~Film() {
 }
-
 //--------------------------------------------------
 /*!
 * \brief Méthode qui retourne le statut du film ("a voir" ou "vu")

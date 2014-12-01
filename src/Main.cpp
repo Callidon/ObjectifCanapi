@@ -37,7 +37,7 @@ void menuPrincipal(shared_ptr<Bibliotheque> biblio){
 	
 	int i = 0;
 	char select;
-	char vid;
+	string vid;
 	int choixVideo;
 	bool test;
 	cout << "\n Que voulez-vous faire?" << endl;
@@ -66,11 +66,10 @@ void menuPrincipal(shared_ptr<Bibliotheque> biblio){
 					do{
 						cout << "La quelle selectionner?";
 						cin >> vid;
-						choixVideo = (int)vid;
-						cout << choixVideo-48 << endl;
-					}while(!(choixVideo - 48 >= 1 && choixVideo-48 <= biblio->getVideos().size() + 1)); 
+						choixVideo = stoi(vid);
+					}while(!(choixVideo >= 1 && choixVideo <= biblio->getVideos().size() + 1)); 
 					
-					biblio->selectVideo(biblio->getVideos().at(choixVideo-48-1)->getTitre());
+					biblio->selectVideo(biblio->getVideos().at(choixVideo-1)->getTitre());
 					menuVideo(biblio);
 			}
 			else if(select == 'n' || select == 'N'){
@@ -121,6 +120,11 @@ void menuPrincipal(shared_ptr<Bibliotheque> biblio){
 void menuVideo(shared_ptr<Bibliotheque> biblio){
 	shared_ptr<Video> video = biblio->getCurrentVideo();
 	string titre = video->getTitre();
+	int i = 0;
+	string vid;
+	char select;
+	vector<shared_ptr<Episode> > eps;
+	int choixVideo;
 	
 	cout << "\nQue voulez-vous faire de " << titre << "?" << endl;
 	cout << "1 : Marquer " << titre << "\"a voir" << endl;
@@ -129,9 +133,10 @@ void menuVideo(shared_ptr<Bibliotheque> biblio){
 	cout << "4 : Afficher les informations" << endl;
 	cout << "5 : Voir l'affiche" << endl;
 	cout << "6 : Rechercher la bande-annonce" << endl;
-	cout << "7 : Retour" << endl;
+	cout << "7 : Liste des episodes : pour les séries uniquement!" << endl;
+	cout << "8 : Retour" << endl;
 	
-	char ok;
+	string ok;
 	char choix;
 	do{
 		cin >> choix;
@@ -139,6 +144,7 @@ void menuVideo(shared_ptr<Bibliotheque> biblio){
 	
 	vector<string> acteurs = video->getActeurs();
 	vector<string> real = video->getReal();
+	shared_ptr<Serie> serie;
 	
 	switch(choix){
 		case '1': //marquer a voir
@@ -170,8 +176,9 @@ void menuVideo(shared_ptr<Bibliotheque> biblio){
 			}
 			cout << video->getSynopsis() << endl;
 			cout << "Retour au menu principal. Pressez une touche quand vous êtes prêt." << endl;
-			cin >> ok;
-				menuPrincipal(biblio);
+			std::cin.ignore( std::numeric_limits<std::streamsize>::max(), '\n' );
+			getline (cin, ok);
+			menuPrincipal(biblio);
 			break;
 		
 		case '5': //affiche
@@ -182,7 +189,33 @@ void menuVideo(shared_ptr<Bibliotheque> biblio){
 			video->lire();
 			break;
 	
-		case '7': //retour
+		case '7':  //BA
+			serie = dynamic_pointer_cast<Serie>(video);
+			eps = serie->getEpisodes();
+			for(const auto &ep: eps) {
+				cout << ++i << " : " << ep->getSaison() << "x" << ep->getNumero() <<  " : " << ep->getTitre() << endl;
+			}
+			do{
+				cout << "Sélectionner un épisode? (y/n) ";
+				cin >> select;
+			}while(select != 'y' && select !='Y' && select!='n' && select!='N');
+
+			if(select == 'y' || select == 'Y'){
+					do{
+						cout << "Le quel selectionner?";
+						cin >> vid;
+						choixVideo = stoi(vid);
+					}while(!(choixVideo >= 1 && choixVideo <= serie->getEpisodes().size() + 1)); 
+					biblio->selectVideo(serie->getEpisodes().at(choixVideo-1)->getTitre());
+					cout << serie->getEpisodes().at(choixVideo-1)->getTitre() << endl;
+					menuVideo(biblio);
+			}
+			else if(select == 'n' || select == 'N'){
+					menuPrincipal(biblio);
+			}
+			break;
+	
+		case '8': //retour
 			menuPrincipal(biblio);
 			break;
 	}
