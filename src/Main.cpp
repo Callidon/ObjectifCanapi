@@ -206,7 +206,7 @@ void menuVideo(shared_ptr<Bibliotheque> biblio){
 						cin >> vid;
 						choixVideo = stoi(vid);
 					}while(!(choixVideo >= 1 && choixVideo <= serie->getEpisodes().size() + 1)); 
-					biblio->selectVideo(serie->getEpisodes().at(choixVideo-1)->getTitre());
+					biblio->selectEpisode(serie->getEpisodes().at(choixVideo-1)->getTitre());
 					cout << serie->getEpisodes().at(choixVideo-1)->getTitre() << endl;
 					menuVideo(biblio);
 			}
