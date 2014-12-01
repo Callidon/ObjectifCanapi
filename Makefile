@@ -21,7 +21,7 @@ DEPENDANCES = $(foreach file, $(OBJETS), build/$(file).o)
 all: Main
 
 exec:
-	@echo "nothing yet"
+	./main
 #---------------------------------------------------------
 # Création du dossier de build
 #---------------------------------------------------------
