@@ -32,9 +32,11 @@ FactoryOMDBSerie::~FactoryOMDBSerie() {};
 */
 string FactoryOMDBSerie::queryTitle(string title){
 	FILE *fp;
+	//lance la requete OMDB
 	fp=popen((char*)("wget --quiet -O - \"http://imdbapi.poromenos.org/js/?name=" + title + "\"").c_str(), "r");
 	char buffer[128];
 	string res = "";
+	//recupere le résultat
 	while(!feof(fp)){
 		if(fgets(buffer, 128, fp) != NULL){
 			res += buffer;
@@ -42,6 +44,7 @@ string FactoryOMDBSerie::queryTitle(string title){
 	}
 	pclose(fp);
 	
+	//récupère la liste des episodes
 	string find = "\"episodes\":";
 	int size = find.size();
 	int posd = res.find(find) + size + 1;
@@ -67,6 +70,7 @@ shared_ptr<Video> FactoryOMDBSerie::makeVideo(string title){
 	shared_ptr<Film> ep;
 	shared_ptr<Episode> epi;
 	
+	//lance la requete OMDB pour chaque Episode
 	string liste = queryTitle(serie->getTitre());
 	
 	string episode;
@@ -76,6 +80,7 @@ shared_ptr<Video> FactoryOMDBSerie::makeVideo(string title){
 	int saison, num;
 	string sep = "}";
 	cout << "Recupération des données..... veuillez patienter et l'attente en vaut la peine" << endl;
+	//Séparer les données pour correspondre aux attributs des Episodes
 	while(i<liste.size() && j!= -1){
 		j = liste.find(sep, i);
 		episode = liste.substr(i, j - i);

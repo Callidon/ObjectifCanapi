@@ -25,6 +25,11 @@ ComportementSQL::ComportementSQL(shared_ptr<BDConnector> db) {
 ComportementSQL::~ComportementSQL() {}
 
 //--------------------------------------------------
+/*!
+* \brief Méthode qui échappe les caractères spéciaux d'une chaîne selon la nomre sqlite
+* \param str Chaîne de caractère a échapper
+* \return La chaîne de caractère dont les caractères ont été échappés
+*/
 string ComportementSQL::escape_string(string str) {
 	string res = "";
 	for (string::iterator it = str.begin(); it != str.end(); ++it) {

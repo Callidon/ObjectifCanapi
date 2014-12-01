@@ -51,6 +51,7 @@ shared_ptr<Film> FactoryOMDBFilm::genererFilm(string id, string titre, string li
 */
 string FactoryOMDBFilm::queryTitle(string title){
 	FILE *fp;
+	//Lance la requete OMDB
 	fp=popen((char*)("wget --quiet -O - \"http://www.omdbapi.com/?t=" + title + "\"").c_str(), "r");
 	char buffer[128];
 	string res = "";
@@ -71,11 +72,12 @@ string FactoryOMDBFilm::queryTitle(string title){
 */
 shared_ptr<Video> FactoryOMDBFilm::makeVideo(string title){
 	string res = queryTitle(title);
-	
+	//si le film pas trouvé/pas dans le BD
 	if(res.substr(13,5) == "False"){
-		//cout << "Film non trouvé" << endl;
+		cout << "Film non trouvé" << endl;
 		throw -1;
 	}
+	//sinon, on sépare les données pour correspondre aux attributs de film
 	else {
 		string separateur = "\","; string find; int size; int posd; int posf;
 		vector<string> real;
@@ -155,6 +157,7 @@ shared_ptr<Video> FactoryOMDBFilm::makeVideo(string title){
 		}
 		string lien = "https://www.youtube.com/results?search_query=" + titreLien + "+trailer";
 		
+		//appele la création de film
 		return genererFilm(id, titre, lien, annee, affiche, synopsis, acteurs, real, pays);
 	}
 }

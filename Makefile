@@ -18,8 +18,7 @@ DEPENDANCES = $(foreach file, $(OBJETS), build/$(file).o)
 #---------------------------------------------------------
 # Compilation complète du projet & éxecution
 #---------------------------------------------------------
-all: $(OBJETS)
-	$(CXX) $(FLAGS) main.cpp $(DEPENDANCES) $(SQLITEFLAGS) -o main
+all: Main
 
 exec:
 	@echo "nothing yet"
@@ -66,6 +65,11 @@ FactorySQLFilm:
 Film:
 	$(CXX) $(FLAGS) -o build/$@.o src/Video/$@.cpp -c
 	
+Main: $(OBJETS) 
+	$(CXX) $(FLAGS) src/$@.cpp $(DEPENDANCES) $(SQLITEFLAGS) -o main
+	@clear
+	@ ./main
+	
 Responsable:
 	$(CXX) $(FLAGS) -o build/$@.o src/Responsable/$@.cpp -c
 	
@@ -82,31 +86,7 @@ Serie:
 	$(CXX) -g $(FLAGS) -o build/$@.o src/Video/$@.cpp -c
 	
 Video:
-	$(CXX) $(FLAGS) -o build/$@.o src/Video/$@.cpp -c
-	
-Main: $(OBJETS) 
-	$(CXX) $(FLAGS) src/$@.cpp $(foreach file, $^, build/$(file).o) $(SQLITEFLAGS) -o main
-	@clear
-	@ ./main
-#---------------------------------------------------------
-# Compilaton des programmes utlisées pour tester les différents modules
-#---------------------------------------------------------
-
-Test: Video Film Episode Bibliotheque
-	$(CXX) $(FLAGS) src/$@.cpp build/Video.o build/Personne.o build/Film.o build/Episode.o build/Bibliotheque.o build/BDConnector.o build/sqlite3.o $(SQLITEFLAGS) -o test
-	./test
-	
-TestFactory: Video Film Serie Episode BDConnector FactorySQL
-	$(CXX) $(FLAGS) -g src/Factory/$@.cpp build/FactorySQL.o build/Video.o build/Serie.o build/Film.o build/Episode.o build/BDConnector.o build/sqlite3.o $(SQLITEFLAGS) -o testFactory
-	./testFactory
-#include <iostream>
-TestFactoryOMDB: Video Film Serie Episode FactoryOMDBFilm FactoryOMDBSerie
-	$(CXX) -g $(FLAGS) src/Factory/$@.cpp build/FactoryOMDBFilm.o build/FactoryOMDBSerie.o  build/Video.o build/Film.o build/Serie.o build/Episode.o build/BDConnector.o build/sqlite3.o $(SQLITEFLAGS) -o testFactoryOMDB
-	gdb testFactoryOMDB
-
-TestBibliotheque: $(OBJETS) 
-	$(CXX) $(FLAGS) src/$@.cpp $(foreach file, $^, build/$(file).o) $(SQLITEFLAGS) -o testBibliotheque
-	./ testBibliotheque
+	$(CXX) $(FLAGS) -o build/$@.o src/Video/$@.cpp -c	
 	
 #---------------------------------------------------------
 # Génération de la documentation Doxygen

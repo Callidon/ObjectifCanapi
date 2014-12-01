@@ -17,6 +17,9 @@ void menuVideo(shared_ptr<Bibliotheque> biblio);
 void menuPrincipal(shared_ptr<Bibliotheque> biblio);
 void menuConnexion();
 
+/*!
+* \brief Procédure affichant le menu de connexion
+*/
 void menuConnexion(){
 	string user;
 	
@@ -29,6 +32,10 @@ void menuConnexion(){
 	menuPrincipal(biblio);
 }
 
+/*!
+* \brief Procédure affichant le menu principal
+* \param biblio shared_ptr vers l'objet Bibliotheque à utiliser
+*/
 void menuPrincipal(shared_ptr<Bibliotheque> biblio){
 	char choix;
 	char recherche;
@@ -64,7 +71,7 @@ void menuPrincipal(shared_ptr<Bibliotheque> biblio){
 			
 			if(select == 'y' || select == 'Y'){
 					do{
-						cout << "La quelle selectionner?";
+						cout << "La quelle selectionner? ";
 						cin >> vid;
 						choixVideo = stoi(vid);
 					}while(!(choixVideo >= 1 && choixVideo <= biblio->getVideos().size() + 1)); 
@@ -89,13 +96,13 @@ void menuPrincipal(shared_ptr<Bibliotheque> biblio){
 					//nettoie le buffer d'entrée
 					std::cin.ignore( std::numeric_limits<std::streamsize>::max(), '\n' );
 					getline (cin, titre); //pour lire plusieurs mots séparer par un espace (ce que le cin ne fait pas)
-					cout << "titre : " << titre << endl;
 					biblio->addVideo(titre, "Film");
 					break;
 					
 				case '2' :
 					cout << "Titre de la série à rechercher : ";
-					cin >> titre;
+					std::cin.ignore( std::numeric_limits<std::streamsize>::max(), '\n' );
+					getline (cin, titre); //pour lire plusieurs mots séparer par un espace (ce que le cin ne fait pas)
 					biblio->addVideo(titre, "Serie");
 					break;
 			}//switch recherche
@@ -117,6 +124,10 @@ void menuPrincipal(shared_ptr<Bibliotheque> biblio){
 	}//switch menu principal
 }
 
+/*!
+* \brief Procédure affichant le menu de gestion d'une vidéo
+* \param biblio shared_ptr vers l'objet Bibliotheque à utiliser
+*/
 void menuVideo(shared_ptr<Bibliotheque> biblio){
 	shared_ptr<Video> video = biblio->getCurrentVideo();
 	string titre = video->getTitre();
@@ -140,7 +151,7 @@ void menuVideo(shared_ptr<Bibliotheque> biblio){
 	char choix;
 	do{
 		cin >> choix;
-	}while(!(choix=='1' || choix=='2' || choix=='3' || choix=='4' || choix=='5' || choix=='6' || choix=='7'));
+	}while(!(choix=='1' || choix=='2' || choix=='3' || choix=='4' || choix=='5' || choix=='6' || choix=='7' || choix=='8'));
 	
 	vector<string> acteurs = video->getActeurs();
 	vector<string> real = video->getReal();
@@ -174,7 +185,7 @@ void menuVideo(shared_ptr<Bibliotheque> biblio){
 			for(string r : real){
 				cout << r;
 			}
-			cout << video->getSynopsis() << endl;
+			cout << "\n" << video->getSynopsis() << endl;
 			cout << "Retour au menu principal. Pressez une touche quand vous êtes prêt." << endl;
 			std::cin.ignore( std::numeric_limits<std::streamsize>::max(), '\n' );
 			getline (cin, ok);
@@ -183,13 +194,15 @@ void menuVideo(shared_ptr<Bibliotheque> biblio){
 		
 		case '5': //affiche
 			video->voirAffiche();
+			menuPrincipal(biblio);
 			break;
 		
 		case '6':  //BA
 			video->lire();
+			menuPrincipal(biblio);
 			break;
 	
-		case '7':  //BA
+		case '7':  //Liste episodes
 			serie = dynamic_pointer_cast<Serie>(video);
 			eps = serie->getEpisodes();
 			for(const auto &ep: eps) {
@@ -202,7 +215,7 @@ void menuVideo(shared_ptr<Bibliotheque> biblio){
 
 			if(select == 'y' || select == 'Y'){
 					do{
-						cout << "Le quel selectionner?";
+						cout << "Le quel selectionner? ";
 						cin >> vid;
 						choixVideo = stoi(vid);
 					}while(!(choixVideo >= 1 && choixVideo <= serie->getEpisodes().size() + 1)); 
@@ -221,6 +234,9 @@ void menuVideo(shared_ptr<Bibliotheque> biblio){
 	}
 }
 
+/*!
+* \brief Fonction principale
+*/
 int main(){
 	menuConnexion();
 	return(0);
